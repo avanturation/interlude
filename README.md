@@ -137,17 +137,10 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 
 ## Build
 
-Inter와 Pretendard의 원본 소스를 `git submodule`로 연결해 최신 버전으로 빌드한 후, Inter CJK 설계 원칙에 맞는 패치를 진행해 빌드합니다.
+Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Inter CJK 설계 원칙에 맞는 패치를 진행해 빌드합니다.
 
 ```bash
-# 클론 시 submodule을 함께 받기
 git clone --recurse-submodules https://github.com/avanturation/inter-cjk.git
-
-# 이미 클론한 경우 submodule 초기화
-git submodule update --init --depth 1
-```
-
-```bash
 python3 -m pip install -r requirements.txt
 make clean
 make all

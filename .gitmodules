@@ -1,6 +1,3 @@
-[submodule "src/inter"]
-	path = src/inter
-	url = https://github.com/rsms/inter.git
 [submodule "src/pretendard"]
 	path = src/pretendard
 	url = https://github.com/orioncactus/pretendard.git

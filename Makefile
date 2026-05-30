@@ -2,8 +2,9 @@ SRCDIR   := $(abspath $(lastword $(MAKEFILE_LIST))/..)
 VERSION  := $(shell cat version.txt)
 DISTDIR  := build/InterCJK-$(VERSION)
 
-INTER_SRC      := src/inter/src/Inter-Roman.glyphspackage
-PRETENDARD_CSS := src/pretendard/dist/web/variable/pretendardvariable-jp-dynamic-subset.css
+INTER_VERSION      := 4.1
+PRETENDARD_VERSION := 1.3.9
+PRETENDARD_CSS     := src/pretendard/dist/web/variable/pretendardvariable-jp-dynamic-subset.css
 
 default: all
 
@@ -16,17 +17,16 @@ all: fonts web
 build/InterCJKVariable.ttf: build/inter-variable.ttf build/pretendard-variable.ttf misc/build-full.py | build
 	python3 misc/build-full.py $< build/pretendard-variable.ttf $@
 
-build/inter-variable.ttf: $(INTER_SRC) | build
-	cd src/inter && python3 -m fontmake -g src/Inter-Roman.glyphspackage \
-		-o variable \
-		--output-path ../../$@ \
-		--flatten-components \
-		--filter DecomposeTransformedComponentsFilter \
-		--verbose WARNING
+build/inter-variable.ttf: | build
+	curl -L -o build/inter.zip \
+		"https://github.com/rsms/inter/releases/download/v$(INTER_VERSION)/Inter-$(INTER_VERSION).zip"
+	unzip -o build/inter.zip "InterVariable.ttf" -d build/
+	mv build/InterVariable.ttf $@
+	rm -f build/inter.zip
 
 build/pretendard-variable.ttf: | build
 	curl -L -o build/pretendard-jp.zip \
-		"https://github.com/orioncactus/pretendard/releases/download/v1.3.9/PretendardJP-1.3.9.zip"
+		"https://github.com/orioncactus/pretendard/releases/download/v$(PRETENDARD_VERSION)/PretendardJP-$(PRETENDARD_VERSION).zip"
 	unzip -o build/pretendard-jp.zip "public/variable/PretendardJPVariable.ttf" -d build/
 	mv build/public/variable/PretendardJPVariable.ttf $@
 	rm -rf build/pretendard-jp.zip build/public
@@ -124,7 +124,6 @@ check: $(DISTDIR)/InterCJKVariable.ttf
 # =================================================================================
 
 setup:
-	git submodule update --init --depth 1
 	pip install -r requirements.txt
 
 build:
