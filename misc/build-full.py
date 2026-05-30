@@ -495,13 +495,21 @@ def merge(inter_ttf, pretendard_ttf, output_path):
             fr.Feature.FeatureParams = params
 
 
-    # Decompose transformed components (Inter's --flatten handles its own, this catches Pretendard's)
+    # Decompose only transformed components (with scale/rotation flags)
     from fontTools.pens.recordingPen import DecomposingRecordingPen
     from fontTools.pens.ttGlyphPen import TTGlyphPen
     glyphset = inter.getGlyphSet()
+    inter_gvar = inter['gvar']
     decomposed = 0
     for gname in list(inter_glyf.glyphs.keys()):
-        if not inter_glyf[gname].isComposite():
+        g = inter_glyf[gname]
+        if not g.isComposite():
+            continue
+        has_transform = any(
+            (comp.flags & 0x0008) or (comp.flags & 0x0040) or (comp.flags & 0x0080)
+            for comp in g.components
+        )
+        if not has_transform:
             continue
         try:
             rec = DecomposingRecordingPen(glyphset)
