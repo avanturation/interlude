@@ -2,7 +2,7 @@
 
 Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/orioncactus/pretendard)를 결합하고, UI 등 주요 사용 환경에 맞게 보정해 한국어, 일본어, 중국어까지 커버하는 서체입니다. Inter와 Pretendard가 지원하는 모든 OpenType 기능을 그대로 포함하며, 9가지 굵기와 가변 (Variable) 글꼴을 지원합니다.
 
-[**최신 버전 다운로드하기**](https://github.com/avanturation/inter-cjk/releases/tag/v1.0.0)
+[**최신 버전 다운로드하기**](https://github.com/avanturation/inter-cjk/releases/latest)
 
 <br/>
 
@@ -30,7 +30,7 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 ## Inter CJK 사용하기
 
-[**최신 버전 다운로드하기**](https://github.com/avanturation/inter-cjk/releases/tag/v1.0.0)
+[**최신 버전 다운로드하기**](https://github.com/avanturation/inter-cjk/releases/latest)
 
 ### 웹 폰트로 사용하기
 
