@@ -1,7 +1,7 @@
 """Inter CJK 자동 QA 검증 스크립트.
 
 검증 항목:
-- rclt 작동 (harfbuzz shaping)
+- calt CJK 컨텍스트 치환 (harfbuzz shaping)
 - Vertical metrics 정합성
 - 모든 weight에서 CJK 글리프 변형
 - Display vs Text width 차이
@@ -59,11 +59,11 @@ def check_line_height(font_path):
         check(want % 2 == 0, f"{size}px line-height {want}은 짝수")
 
 
-def check_rclt(font_path):
+def check_calt_cjk(font_path):
     try:
         import uharfbuzz as hb
     except ImportError:
-        print(f"  - rclt 검증 스킵 (uharfbuzz 미설치)")
+        print(f"  - calt CJK 검증 스킵 (uharfbuzz 미설치)")
         return
 
     blob = hb.Blob.from_file_path(font_path)
@@ -89,8 +89,8 @@ def check_rclt(font_path):
     ids_kr = shape("가@나")
     ids_en = shape("a@b")
 
-    check(at_case_id in ids_kr, "rclt: 가@나 → @.case 치환됨")
-    check(at_case_id not in ids_en, "rclt: a@b → @ 원본 유지")
+    check(at_case_id in ids_kr, "calt: 가@나 → @.case 치환됨")
+    check(at_case_id not in ids_en, "calt: a@b → @ 원본 유지")
 
 
 def check_ss05(font_path):
@@ -172,7 +172,7 @@ def check_features(font_path):
     features = set(fr.FeatureTag for fr in gsub.FeatureList.FeatureRecord)
 
     required = ['calt', 'ccmp', 'case', 'dlig', 'frac', 'tnum',
-                'zero', 'rclt', 'ss01', 'ss02', 'ss05', 'ss06',
+                'zero', 'ss01', 'ss02', 'ss05', 'ss06',
                 'ss07', 'ss08', 'ss09', 'ss10']
     for f in required:
         check(f in features, f"GSUB feature '{f}' 존재")
@@ -250,8 +250,8 @@ def main():
     print("\n[Variable Axes]")
     check_opsz_axis(text_path)
 
-    print("\n[rclt 컨텍스트 치환]")
-    check_rclt(text_path)
+    print("\n[calt CJK 컨텍스트 치환]")
+    check_calt_cjk(text_path)
 
     print("\n[ss05 한국 현지화]")
     check_ss05(text_path)

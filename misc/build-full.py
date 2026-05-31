@@ -164,10 +164,8 @@ def merge(inter_ttf, pretendard_ttf, output_path):
 
         inter_gvar.variations[target] = variations
 
-    # Add CJK contextual symbol alignment via rclt feature
-    # rclt (Required Contextual Alternates) fires for ALL scripts including Hangul
-    # When CJK glyph is adjacent to a symbol, substitute symbol with .case version
-    print("  Adding rclt: CJK-context symbol .case substitution...")
+    # Add CJK contextual symbol alignment via calt feature
+    print("  Adding calt: CJK-context symbol .case substitution...")
     gsub = inter['GSUB'].table
     cjk_glyph_list = sorted(set(glyph_order[2937:]), key=lambda g: glyph_order.index(g))
 
@@ -232,23 +230,30 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     gsub.LookupList.Lookup.append(chain_lookup)
     gsub.LookupList.LookupCount = len(gsub.LookupList.Lookup)
 
-    # Register as rclt feature for all scripts
-    rclt_fr = otTables.FeatureRecord()
-    rclt_fr.FeatureTag = 'rclt'
-    rclt_fr.Feature = otTables.Feature()
-    rclt_fr.Feature.LookupListIndex = [chain_idx]
-    rclt_fr.Feature.LookupCount = 1
-    rclt_fr.Feature.FeatureParams = None
-    rclt_idx = len(gsub.FeatureList.FeatureRecord)
-    gsub.FeatureList.FeatureRecord.append(rclt_fr)
+    # Append to existing calt feature
+    for fr in gsub.FeatureList.FeatureRecord:
+        if fr.FeatureTag == 'calt':
+            fr.Feature.LookupListIndex.append(chain_idx)
+            fr.Feature.LookupCount = len(fr.Feature.LookupListIndex)
+            break
+
+    # Also register as rlig (harfbuzz Hangul shaper skips calt but processes rlig)
+    rlig_fr = otTables.FeatureRecord()
+    rlig_fr.FeatureTag = 'rlig'
+    rlig_fr.Feature = otTables.Feature()
+    rlig_fr.Feature.LookupListIndex = [chain_idx]
+    rlig_fr.Feature.LookupCount = 1
+    rlig_fr.Feature.FeatureParams = None
+    rlig_idx = len(gsub.FeatureList.FeatureRecord)
+    gsub.FeatureList.FeatureRecord.append(rlig_fr)
     gsub.FeatureList.FeatureCount = len(gsub.FeatureList.FeatureRecord)
 
     for sr in gsub.ScriptList.ScriptRecord:
         if sr.Script.DefaultLangSys:
-            sr.Script.DefaultLangSys.FeatureIndex.append(rclt_idx)
+            sr.Script.DefaultLangSys.FeatureIndex.append(rlig_idx)
             sr.Script.DefaultLangSys.FeatureCount = len(sr.Script.DefaultLangSys.FeatureIndex)
 
-    print(f"    {len(case_mapping)} symbol→.case pairs via rclt")
+    print(f"    {len(case_mapping)} symbol→.case pairs via calt+rlig")
 
     # Replace ₩ with Pretendard's Korean-style won sign
     print("  Replacing ₩ with Pretendard glyph...")
@@ -277,7 +282,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                     if sr.ScriptTag == 'DFLT':
                         dflt = sr.Script
                         break
-                for tag in ['hang', 'kana', 'hani']:
+                for tag in ['kana', 'hani']:
                     if tag not in existing:
                         nr = otTables.ScriptRecord()
                         nr.ScriptTag = tag
@@ -477,7 +482,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     # Add ss descriptions (fontbakery stylisticset_description)
     ss_descriptions = {
         'ss05': 'Korean Localization',
-        'ss06': 'Disambiguation',
+        'ss06': 'Pretendard Disambiguation',
         'ss10': 'Medium Symbols',
         'ss11': 'Outlined Symbols',
         'ss12': 'Circled Symbols',
@@ -487,7 +492,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         'ss16': 'Large Symbols',
     }
     for fr in inter['GSUB'].table.FeatureList.FeatureRecord:
-        if fr.FeatureTag in ss_descriptions and fr.Feature.FeatureParams is None:
+        if fr.FeatureTag in ss_descriptions:
             from fontTools.ttLib.tables.otTables import FeatureParamsStylisticSet
             params = FeatureParamsStylisticSet()
             params.Version = 0
