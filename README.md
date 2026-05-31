@@ -6,7 +6,11 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 <br/>
 
-![overview](docs/overview.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/overview-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/overview.png">
+  <img alt="overview" src="docs/overview.png">
+</picture>
 
 <br/>
 
@@ -14,7 +18,15 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 자세한 배경과 OpenType 기능, Inter 및 Pretendard와의 차이점은 [이곳](https://avanturation.com/inter-cjk)에서 확인하실 수 있습니다.
 
+<br/>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/why-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/why.png">
+  <img alt="why" src="docs/why.png">
+</picture>
+
+<br/>
 
 ## Inter CJK 사용하기
 
@@ -114,6 +126,8 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 - `Inter CJK` — 본문용
 - `Inter CJK Display` — 제목용
 
+<br/>
+
 ## Font Families
 
 - **Inter CJK** — UI, 본문에 최적화 (optical size 14)
@@ -134,6 +148,7 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 - 7,138자 CJK 통합 한자 (Pretendard 기반)
 - CJK 기호·호환·반각/전각 문자 (Inter & Pretendard 혼합)
 
+<br/>
 
 ## Build
 
@@ -145,6 +160,8 @@ python3 -m pip install -r requirements.txt
 make clean
 make all
 ```
+
+<br/>
 
 ## Credits
 

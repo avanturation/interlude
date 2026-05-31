@@ -90,7 +90,7 @@ dist: all
 	cp $(DISTDIR)/InterCJKVariable.ttf dist/variable/
 	cp $(DISTDIR)/InterCJK.ttc dist/variable/
 	cp $(DISTDIR)/extras/ttf/*.ttf dist/static/ttf/
-	cp $(DISTDIR)/extras/ttf/*.otf dist/static/otf/
+	cp $(DISTDIR)/extras/otf/*.otf dist/static/otf/
 	cp $(DISTDIR)/web/*.woff2 dist/web/
 	cp $(DISTDIR)/web/*.css dist/web/
 	cp -r $(DISTDIR)/web/dynamic-subset/* dist/web/dynamic-subset/

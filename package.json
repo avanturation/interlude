@@ -1,6 +1,6 @@
 {
   "name": "inter-cjk",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Inter + CJK (Korean, Japanese) variable font with contextual symbol alignment",
   "license": "OFL-1.1",
   "author": "avanturation",
@@ -22,7 +22,8 @@
     "opentype"
   ],
   "files": [
-    "dist/",
+    "dist/web/",
+    "dist/variable/InterCJKVariable.ttf",
     "packages/next/dist/",
     "packages/next/font.d.ts"
   ],
