@@ -1,3 +1,4 @@
 [submodule "src/pretendard"]
 	path = src/pretendard
 	url = https://github.com/orioncactus/pretendard.git
+	branch = v1.3.9

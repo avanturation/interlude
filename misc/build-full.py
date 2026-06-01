@@ -17,6 +17,24 @@ from fontTools.ttLib.tables.TupleVariation import TupleVariation
 from fontTools.ttLib.tables import otTables
 from fontTools.ttLib.tables._f_v_a_r import NamedInstance
 
+
+def _read_version():
+    """Read the release version from version.txt (repo root), default '0.0.0'."""
+    path = os.path.join(os.path.dirname(__file__), "..", "version.txt")
+    try:
+        with open(path) as f:
+            return f.read().strip()
+    except OSError:
+        return "0.0.0"
+
+
+def _version_to_revision(version):
+    """head.fontRevision as major.minor float, e.g. '1.0.1' -> 1.0 (matches name ID 5 major.minor)."""
+    parts = version.split(".")
+    major = int(parts[0]) if parts and parts[0].isdigit() else 0
+    minor = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 0
+    return float(f"{major}.{minor}")
+
 Y_OFFSET = 21
 CJK_HSCALE = 0.99
 OPSZ_SCALE = 0.03
@@ -90,6 +108,11 @@ def merge(inter_ttf, pretendard_ttf, output_path):
 
     # Add to glyph order
     glyph_order = inter.getGlyphOrder()
+    # Boundary between original Inter glyphs and the appended CJK glyphs.
+    # Captured from the live font (not a hardcoded 2937) so a future Inter
+    # version with a different glyph count doesn't silently mis-slice the
+    # CJK glyph set used for calt/rlig context and Latin-CJK kern.
+    inter_glyph_count = len(glyph_order)
     for gname in glyphs_to_copy:
         glyph_order.append(name_map[gname])
     inter.setGlyphOrder(glyph_order)
@@ -167,7 +190,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     # Add CJK contextual symbol alignment via calt feature
     print("  Adding calt: CJK-context symbol .case substitution...")
     gsub = inter['GSUB'].table
-    cjk_glyph_list = sorted(set(glyph_order[2937:]), key=lambda g: glyph_order.index(g))
+    cjk_glyph_list = sorted(set(glyph_order[inter_glyph_count:]), key=lambda g: glyph_order.index(g))
 
     # Get case mapping: find all glyph.case pairs in the font
     case_mapping = {}
@@ -299,7 +322,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     final_cmap = inter.getBestCmap()
     latin_glyphs = [final_cmap[cp] for cp in range(0x41, 0x7B) if cp in final_cmap] + \
                    [final_cmap[cp] for cp in range(0x30, 0x3A) if cp in final_cmap]
-    cjk_kern_glyphs = [glyph_order[i] for i in range(2937, min(2937 + 5000, len(glyph_order)))]
+    cjk_kern_glyphs = [glyph_order[i] for i in range(inter_glyph_count, min(inter_glyph_count + 5000, len(glyph_order)))]
 
     cd1 = {g: 1 for g in latin_glyphs}
     for g in cjk_kern_glyphs:
@@ -380,7 +403,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     print("  Setting font metadata...")
     name_table = inter['name']
 
-    VERSION = "0.1.0"
+    VERSION = _read_version()
     metadata = {
         0: f"Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)\n"
            f"Copyright 2021 The Pretendard Project Authors (https://github.com/orioncactus/pretendard)\n"
@@ -539,20 +562,26 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                 table.ScriptList.ScriptRecord.sort(key=lambda r: r.ScriptTag)
                 table.ScriptList.ScriptCount = len(table.ScriptList.ScriptRecord)
             if table.FeatureList:
-                old_order = list(range(len(table.FeatureList.FeatureRecord)))
-                table.FeatureList.FeatureRecord.sort(key=lambda r: r.FeatureTag)
-                new_order = [old_order[table.FeatureList.FeatureRecord.index(r)] for r in sorted(table.FeatureList.FeatureRecord, key=lambda r: r.FeatureTag)]
-                # Remap feature indices in script records
-                idx_map = {}
-                sorted_records = sorted(enumerate(table.FeatureList.FeatureRecord), key=lambda x: x[1].FeatureTag)
-                for new_idx, (old_idx, _) in enumerate(sorted_records):
-                    idx_map[old_idx] = new_idx
-                table.FeatureList.FeatureRecord = [r for _, r in sorted_records]
+                records = table.FeatureList.FeatureRecord
+                # Build the remap from the ORIGINAL order, before reordering, so
+                # idx_map[old_position] -> new_position. Computing it after the
+                # in-place sort would yield a useless identity map.
+                order = sorted(range(len(records)), key=lambda i: records[i].FeatureTag)
+                idx_map = {old: new for new, old in enumerate(order)}
+                table.FeatureList.FeatureRecord = [records[i] for i in order]
                 table.FeatureList.FeatureCount = len(table.FeatureList.FeatureRecord)
+
+                def _remap_langsys(langsys):
+                    if langsys:
+                        langsys.FeatureIndex = sorted(idx_map[i] for i in langsys.FeatureIndex)
+                        langsys.FeatureCount = len(langsys.FeatureIndex)
+
+                # Remap every LangSys: default AND non-default (e.g. latn ROM/CAT/MOL),
+                # otherwise those language systems point at the wrong feature tags.
                 for sr in table.ScriptList.ScriptRecord:
-                    if sr.Script.DefaultLangSys:
-                        sr.Script.DefaultLangSys.FeatureIndex = sorted([idx_map.get(i, i) for i in sr.Script.DefaultLangSys.FeatureIndex])
-                        sr.Script.DefaultLangSys.FeatureCount = len(sr.Script.DefaultLangSys.FeatureIndex)
+                    _remap_langsys(sr.Script.DefaultLangSys)
+                    for lsr in (sr.Script.LangSysRecord or []):
+                        _remap_langsys(lsr.LangSys)
 
     # Sort all GSUB/GPOS coverages by glyph order to suppress fonttools warning
     glyph_to_idx = {g: i for i, g in enumerate(inter.getGlyphOrder())}
@@ -593,7 +622,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                     st.mapping = {rename_map.get(s, s): rename_map.get(d, d) for s, d in st.mapping.items()}
 
     # Fix font_version mismatch (head.fontRevision must match name ID 5)
-    inter['head'].fontRevision = 0.1
+    inter['head'].fontRevision = _version_to_revision(VERSION)
 
 
     # Add smart dropout control (fontbakery smart_dropout)

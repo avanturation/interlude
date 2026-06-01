@@ -36,25 +36,42 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 #### Variable (권장)
 
+전체 글리프를 하나의 가변 폰트로 로드합니다.
+
 ```html
 <link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/inter-cjk.css" rel="stylesheet">
 ```
 
-#### Dynamic Subset (경량 로딩)
+이 CSS는 세 가지 `font-family`를 정의합니다.
+
+- `Inter CJK Variable` — 가변 (opsz 14–32, wght 100–900)
+- `Inter CJK` — 정적 본문용 (opsz 14)
+- `Inter CJK Display` — 정적 제목용 (opsz 32)
+
+#### Dynamic Subset (경량 로딩, 권장)
 
 페이지에서 실제로 사용하는 글리프만 로드합니다. CJK 폰트의 용량 문제를 해결합니다.
+
+Variable (하나의 폰트로 모든 굵기 커버):
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css" rel="stylesheet">
 ```
 
-#### 개별 Weight (Static)
+```css
+body { font-family: "Inter CJK Variable", sans-serif; }
+```
 
-특정 굵기만 필요한 경우:
+Static (가변 미지원 환경, 본문 `Inter CJK` / 제목 `Inter CJK Display`):
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/InterCJK-Regular.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/InterCJK-Bold.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset-static/inter-cjk-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset-static/inter-cjk-display-dynamic-subset.css" rel="stylesheet">
+```
+
+```css
+body { font-family: "Inter CJK", sans-serif; }
+h1, h2, h3 { font-family: "Inter CJK Display", sans-serif; }
 ```
 
 ### Next.js에서 사용하기
@@ -93,6 +110,30 @@ h1, h2, h3 {
 import { InterCJK } from "inter-cjk/font/sans";
 import { InterCJKDisplay } from "inter-cjk/font/display";
 ```
+
+### Tailwind CSS v4에서 사용하기
+
+Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토큰 등록이 끝납니다.
+
+```css
+@import "tailwindcss";
+@import "inter-cjk/tailwind";
+```
+
+```html
+<div class="font-sans">본문 Body</div>
+<h1 class="font-display font-opsz-display">제목 Heading</h1>
+```
+
+`inter-cjk/tailwind`은 dynamic-subset `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
+
+> 모든 `@import`는 다른 CSS 규칙보다 먼저 와야 합니다. 그렇지 않으면 `@font-face`가 드롭됩니다.
+
+> 번들러(Vite, Next.js 등)는 폰트 `url()`을 자동으로 재배치하므로 그대로 동작합니다. 다만 Tailwind standalone CLI(`@tailwindcss/cli`)는 `@import` 인라인 시 `url()`을 재배치하지 않아 woff2 경로가 깨집니다. CLI만 쓰는 환경이라면 아래 CDN CSS를 직접 로드하세요.
+>
+> ```html
+> <link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css" rel="stylesheet">
+> ```
 
 ## font-family
 

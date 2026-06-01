@@ -1,6 +1,6 @@
-const localFont = require("next/font/local");
+import localFont from "next/font/local";
 
-const InterCJKDisplay = localFont.default({
+export const InterCJKDisplay = localFont({
   src: "./fonts/InterCJKVariable.woff2",
   variable: "--font-inter-cjk-display",
   weight: "100 900",
@@ -11,5 +11,3 @@ const InterCJKDisplay = localFont.default({
     "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "sans-serif",
   ],
 });
-
-module.exports = { InterCJKDisplay };
