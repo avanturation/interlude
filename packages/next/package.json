@@ -1,6 +1,6 @@
 {
   "name": "inter-cjk",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Inter + CJK (Korean, Japanese) variable font for Next.js",
   "license": "OFL-1.1",
   "author": "avanturation",
@@ -13,19 +13,23 @@
     "next": ">=13.0.0"
   },
   "exports": {
-    "./font": "./dist/font.js",
-    "./font/sans": "./dist/sans.js",
-    "./font/display": "./dist/display.js"
-  },
-  "typesVersions": {
-    "*": {
-      "font": ["./font.d.ts"],
-      "font/sans": ["./font.d.ts"],
-      "font/display": ["./font.d.ts"]
+    "./font": {
+      "types": "./font.d.ts",
+      "import": "./dist/font.mjs"
+    },
+    "./font/sans": {
+      "types": "./sans.d.ts",
+      "import": "./dist/sans.mjs"
+    },
+    "./font/display": {
+      "types": "./display.d.ts",
+      "import": "./dist/display.mjs"
     }
   },
   "files": [
     "dist/",
-    "font.d.ts"
+    "font.d.ts",
+    "sans.d.ts",
+    "display.d.ts"
   ]
 }

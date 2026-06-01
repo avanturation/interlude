@@ -27,7 +27,11 @@ def _generate_one(args):
     variable_ttf, out_dir, opsz_val, prefix, family_name, weight_name, weight_value = args
 
     font = TTFont(variable_ttf)
-    for tag in ['MVAR', 'HVAR', 'GDEF']:
+    # Keep GDEF through instancing: its VarStore holds the GPOS anchor deltas, so
+    # the instancer needs it to interpolate mark/cursive anchors to this weight.
+    # Deleting it first freezes every anchor at the default master, and also
+    # leaves GPOS lookups with dangling UseMarkFilteringSet references.
+    for tag in ['MVAR', 'HVAR']:
         if tag in font:
             del font[tag]
     instance = instantiateVariableFont(font, {"opsz": opsz_val, "wght": weight_value}, inplace=True, overlap=True)

@@ -26,7 +26,7 @@ http://scripts.sil.org/OFL
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
-	src: url('./InterCJKVariable.woff2') format('woff2-variations');
+	src: url('./InterCJKVariable.woff2') format('woff2');
 }
 
 @font-face { font-family: 'Inter CJK'; font-weight: 900; font-display: swap; src: local('Inter CJK Black'), url('./InterCJK-Black.woff2') format('woff2'); }

@@ -29,6 +29,34 @@ def unicode_range_to_codepoints(range_str):
     return codepoints
 
 
+# Codepoints that must never be split across subset files. GSUB ligature
+# substitution (calt/dlig/rlig: -> => <= |> fi fl ...) only works when every
+# input glyph lives in the SAME woff2. Pretendard's CJK-oriented unicode-range
+# split scatters these ASCII operators across files, which silently breaks all
+# multi-character ligatures. Keeping the full ASCII block + arrows together in a
+# single "base" subset fixes the whole ligature system at once (and these are
+# the highest-frequency glyphs, so co-locating them helps load performance too).
+BASE_CODEPOINTS = set(range(0x0020, 0x007F)) | set(range(0x2190, 0x2200))
+
+
+def codepoints_to_range_str(codepoints):
+    """Compact a set of codepoints into a CSS unicode-range string."""
+    cps = sorted(codepoints)
+    parts = []
+    start = prev = cps[0]
+    for cp in cps[1:]:
+        if cp == prev + 1:
+            prev = cp
+            continue
+        parts.append((start, prev))
+        start = prev = cp
+    parts.append((start, prev))
+    out = []
+    for a, b in parts:
+        out.append(f"U+{a:04X}" if a == b else f"U+{a:04X}-{b:04X}")
+    return ", ".join(out)
+
+
 def _subset_one(args):
     font_path, codepoints, output_path = args
     try:
@@ -43,6 +71,7 @@ def _subset_one(args):
         subsetter = Subsetter(options=options)
         subsetter.populate(unicodes=codepoints)
         subsetter.subset(font)
+        font.flavor = 'woff2'
         font.save(output_path)
 
         size_kb = os.path.getsize(output_path) / 1024
@@ -60,14 +89,30 @@ def generate(font_path, reference_css, output_dir, family_name, css_filename):
     ranges = parse_unicode_ranges(reference_css)
     font_basename = os.path.splitext(os.path.basename(font_path))[0]
 
+    # Base subset: all ligature-input codepoints (ASCII + arrows) that the font
+    # actually has, kept in one file so GSUB ligature closures stay intact.
+    font_cmap = set(TTFont(font_path).getBestCmap().keys())
+    base_cps = BASE_CODEPOINTS & font_cmap
+
     jobs = []
+    if base_cps:
+        base_filename = f"{font_basename}.subset.base.woff2"
+        base_path = os.path.join(output_dir, base_filename)
+        base_range = codepoints_to_range_str(base_cps)
+        jobs.append((font_path, base_cps, base_path, 'base', base_range, base_filename))
+
     for i, range_str in enumerate(ranges):
         codepoints = unicode_range_to_codepoints(range_str)
+        # Remove base codepoints so they aren't scattered back into other files.
+        codepoints -= base_cps
         if not codepoints:
             continue
         subset_filename = f"{font_basename}.subset.{i}.woff2"
         subset_path = os.path.join(output_dir, subset_filename)
-        jobs.append((font_path, codepoints, subset_path, i, range_str, subset_filename))
+        # Re-derive the unicode-range from the (carved) codepoint set so the CSS
+        # matches what the file actually contains.
+        carved_range = codepoints_to_range_str(codepoints)
+        jobs.append((font_path, codepoints, subset_path, i, carved_range, subset_filename))
 
     workers = min(cpu_count(), 6)
     pool_args = [(j[0], j[1], j[2]) for j in jobs]

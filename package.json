@@ -23,24 +23,30 @@
   ],
   "files": [
     "dist/web/",
+    "dist/tailwind/",
     "dist/variable/InterCJKVariable.ttf",
     "packages/next/dist/",
-    "packages/next/font.d.ts"
+    "packages/next/font.d.ts",
+    "packages/next/sans.d.ts",
+    "packages/next/display.d.ts"
   ],
   "exports": {
     ".": "./dist/web/inter-cjk.css",
     "./css": "./dist/web/inter-cjk.css",
     "./css/dynamic-subset": "./dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css",
+    "./tailwind": "./dist/tailwind/inter-cjk.css",
     "./variable": "./dist/variable/InterCJKVariable.ttf",
-    "./font": "./packages/next/dist/font.js",
-    "./font/sans": "./packages/next/dist/sans.js",
-    "./font/display": "./packages/next/dist/display.js"
-  },
-  "typesVersions": {
-    "*": {
-      "font": ["./packages/next/font.d.ts"],
-      "font/sans": ["./packages/next/font.d.ts"],
-      "font/display": ["./packages/next/font.d.ts"]
+    "./font": {
+      "types": "./packages/next/font.d.ts",
+      "import": "./packages/next/dist/font.mjs"
+    },
+    "./font/sans": {
+      "types": "./packages/next/sans.d.ts",
+      "import": "./packages/next/dist/sans.mjs"
+    },
+    "./font/display": {
+      "types": "./packages/next/display.d.ts",
+      "import": "./packages/next/dist/display.mjs"
     }
   },
   "scripts": {

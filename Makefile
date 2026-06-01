@@ -58,7 +58,7 @@ ttc = TTCollection(); ttc.fonts = fonts; ttc.save('$@')"
 # WEB: woff2, CSS, dynamic-subset (for npm/CDN)
 # =================================================================================
 
-web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok
+web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok $(DISTDIR)/web/dynamic-subset-static/.ok
 
 $(DISTDIR)/web/.ok: $(DISTDIR)/InterCJKVariable.ttf $(DISTDIR)/extras/ttf/.ok | $(DISTDIR)/web
 	python3 -m fontTools ttLib.woff2 compress $(DISTDIR)/InterCJKVariable.ttf \
@@ -80,13 +80,20 @@ $(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterCJKVariable.ttf misc/gen-dyna
 		"inter-cjk-variable-dynamic-subset.css"
 	touch $@
 
+$(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok misc/gen-dynamic-subset-static.py | $(DISTDIR)/web/dynamic-subset-static
+	python3 misc/gen-dynamic-subset-static.py \
+		$(DISTDIR)/extras/ttf \
+		$(PRETENDARD_CSS) \
+		$(DISTDIR)/web/dynamic-subset-static
+	touch $@
+
 # =================================================================================
 # DIST: npm publish-ready
 # =================================================================================
 
 dist: all
 	rm -rf dist
-	mkdir -p dist/variable dist/static/ttf dist/static/otf dist/web/dynamic-subset
+	mkdir -p dist/variable dist/static/ttf dist/static/otf dist/web/dynamic-subset dist/web/dynamic-subset-static dist/tailwind
 	cp $(DISTDIR)/InterCJKVariable.ttf dist/variable/
 	cp $(DISTDIR)/InterCJK.ttc dist/variable/
 	cp $(DISTDIR)/extras/ttf/*.ttf dist/static/ttf/
@@ -94,6 +101,8 @@ dist: all
 	cp $(DISTDIR)/web/*.woff2 dist/web/
 	cp $(DISTDIR)/web/*.css dist/web/
 	cp -r $(DISTDIR)/web/dynamic-subset/* dist/web/dynamic-subset/
+	cp -r $(DISTDIR)/web/dynamic-subset-static/* dist/web/dynamic-subset-static/
+	cp misc/inter-cjk-tailwind.css dist/tailwind/inter-cjk.css
 	cp LICENSE.txt dist/
 	mkdir -p packages/next/dist/fonts
 	cp dist/web/InterCJKVariable.woff2 packages/next/dist/fonts/
@@ -139,6 +148,9 @@ $(DISTDIR)/web:
 	mkdir -p $@
 
 $(DISTDIR)/web/dynamic-subset:
+	mkdir -p $@
+
+$(DISTDIR)/web/dynamic-subset-static:
 	mkdir -p $@
 
 clean:

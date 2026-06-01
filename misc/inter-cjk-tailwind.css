@@ -1,0 +1,48 @@
+/*
+Inter CJK — Tailwind v4 entry
+https://github.com/avanturation/inter-cjk
+
+Usage (consumer CSS):
+  @import "tailwindcss";
+  @import "inter-cjk/tailwind";
+
+  <div class="font-sans">본문 Body</div>
+  <h1 class="font-display font-opsz-display">제목 Heading</h1>
+
+Notes:
+  - All @import rules must come before any other CSS rule, otherwise the
+    @font-face declarations get dropped.
+  - This file loads the dynamic-subset @font-face set (downloads only the
+    unicode-range subsets a page actually uses) and registers theme tokens.
+  - The dynamic-subset CSS references url('./InterCJKVariable.subset.N.woff2');
+    your bundler (Lightning CSS in v4 / Vite / PostCSS) rewrites those relative
+    URLs. If your setup can't resolve url() from node_modules, use the CDN CSS
+    instead: https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css
+
+Copyright (c) 2025 The Inter CJK Project Authors
+Licensed under the SIL Open Font License, Version 1.1.
+http://scripts.sil.org/OFL
+*/
+
+/* Load: @font-face declarations (variable, dynamic-subset) */
+@import "../web/dynamic-subset/inter-cjk-variable-dynamic-subset.css";
+
+/* Register: theme tokens so font-sans / font-display emit the family */
+@theme {
+  --font-sans: "Inter CJK Variable", -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-display: "Inter CJK Variable", -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+    sans-serif;
+}
+
+/* opsz has no built-in Tailwind utility — expose explicit ones.
+   Inter CJK Variable carries both Text (opsz 14) and Display (opsz 32). */
+@utility font-opsz-text {
+  font-variation-settings: "opsz" 14;
+}
+@utility font-opsz-display {
+  font-variation-settings: "opsz" 32;
+}
