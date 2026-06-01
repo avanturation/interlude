@@ -1,9 +1,12 @@
 """Generate static font instances from a single opsz+wght variable TTF."""
 import sys
 import os
+import asyncio
 from multiprocessing import Pool, cpu_count
+from pathlib import Path
 from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
+import east_asian_spacing as chws
 
 WEIGHTS = [
     ("Thin", 100),
@@ -48,7 +51,7 @@ def _generate_one(args):
     for record in name_table.names:
         try:
             record.toUnicode()
-        except:
+        except Exception:
             continue
         if record.nameID == 1:
             name_table.setName(family_name, record.nameID, record.platformID, record.platEncID, record.langID)
@@ -63,14 +66,28 @@ def _generate_one(args):
 
     instance['OS/2'].usWeightClass = weight_value
 
+    os2 = instance['OS/2']
+    head = instance['head']
+    is_bold = weight_value >= 700
+    if is_bold:
+        os2.fsSelection = (os2.fsSelection | 0x0020) & ~0x0040  # BOLD on, REGULAR off
+        head.macStyle |= 0x0001  # bold bit
+    else:
+        os2.fsSelection = (os2.fsSelection | 0x0040) & ~0x0020  # REGULAR on, BOLD off
+        head.macStyle &= ~0x0001
+
+    win_subfamily = "Bold" if is_bold else "Regular"
+    name_table.setName(family_name, 16, 3, 1, 0x0409)
+    name_table.setName(weight_name, 17, 3, 1, 0x0409)
+    name_table.setName(family_name, 16, 1, 0, 0)
+    name_table.setName(weight_name, 17, 1, 0, 0)
+    for record in name_table.names:
+        if record.nameID == 2:
+            name_table.setName(win_subfamily, 2, record.platformID, record.platEncID, record.langID)
+
     out_path = os.path.join(out_dir, f"{prefix}-{weight_name}.ttf")
     instance.save(out_path)
-
-    otf_dir = os.path.join(out_dir, "..", "otf")
-    os.makedirs(otf_dir, exist_ok=True)
-    otf_path = os.path.join(otf_dir, f"{prefix}-{weight_name}.otf")
-    instance.flavor = None
-    instance.save(otf_path)
+    asyncio.run(chws.Builder(Path(out_path)).build_and_save(Path(out_path)))
 
     return f"{prefix}-{weight_name}.ttf ({os.path.getsize(out_path) / 1024:.0f} KB)"
 

@@ -196,7 +196,7 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Inter CJK 설계 원칙에 맞는 패치를 진행해 빌드합니다.
 
 ```bash
-git clone --recurse-submodules https://github.com/avanturation/inter-cjk.git
+git clone https://github.com/avanturation/inter-cjk.git
 python3 -m pip install -r requirements.txt
 make clean
 make all

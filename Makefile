@@ -4,7 +4,7 @@ DISTDIR  := build/InterCJK-$(VERSION)
 
 INTER_VERSION      := 4.1
 PRETENDARD_VERSION := 1.3.9
-PRETENDARD_CSS     := src/pretendard/dist/web/variable/pretendardvariable-jp-dynamic-subset.css
+PRETENDARD_CSS     := build/pretendardvariable-jp-dynamic-subset.css
 
 default: all
 
@@ -30,6 +30,10 @@ build/pretendard-variable.ttf: | build
 	unzip -o build/pretendard-jp.zip "public/variable/PretendardJPVariable.ttf" -d build/
 	mv build/public/variable/PretendardJPVariable.ttf $@
 	rm -rf build/pretendard-jp.zip build/public
+
+$(PRETENDARD_CSS): | build
+	curl -L -o $@ \
+		"https://raw.githubusercontent.com/orioncactus/pretendard/main/dist/web/variable/pretendardvariable-jp-dynamic-subset.css"
 
 # =================================================================================
 # FONTS: Inter 4.1-style release (Variable TTF, Static TTF/OTF, TTC)
@@ -93,11 +97,10 @@ $(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok misc/gen-dyn
 
 dist: all
 	rm -rf dist
-	mkdir -p dist/variable dist/static/ttf dist/static/otf dist/web/dynamic-subset dist/web/dynamic-subset-static dist/tailwind
+	mkdir -p dist/variable dist/static/ttf dist/web/dynamic-subset dist/web/dynamic-subset-static dist/tailwind
 	cp $(DISTDIR)/InterCJKVariable.ttf dist/variable/
 	cp $(DISTDIR)/InterCJK.ttc dist/variable/
 	cp $(DISTDIR)/extras/ttf/*.ttf dist/static/ttf/
-	cp $(DISTDIR)/extras/otf/*.otf dist/static/otf/
 	cp $(DISTDIR)/web/*.woff2 dist/web/
 	cp $(DISTDIR)/web/*.css dist/web/
 	cp -r $(DISTDIR)/web/dynamic-subset/* dist/web/dynamic-subset/

@@ -21,7 +21,13 @@ def unicode_range_to_codepoints(range_str):
     codepoints = set()
     for part in range_str.split(','):
         part = part.strip().replace('U+', '').replace('u+', '')
-        if '-' in part:
+        if '?' in part:
+            prefix = part.replace('?', '')
+            suffix_len = part.count('?')
+            start = int(prefix + '0' * suffix_len, 16)
+            end = int(prefix + 'F' * suffix_len, 16)
+            codepoints.update(range(start, end + 1))
+        elif '-' in part:
             start, end = part.split('-')
             codepoints.update(range(int(start, 16), int(end, 16) + 1))
         else:

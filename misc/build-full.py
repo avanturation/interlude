@@ -38,7 +38,6 @@ def _version_to_revision(version):
 Y_OFFSET = 21
 CJK_HSCALE = 0.99
 OPSZ_SCALE = 0.03
-LATIN_CJK_SPACING = 0
 
 CJK_RANGES = [
     (0x1100, 0x11FF), (0x2E80, 0x2EFF), (0x2F00, 0x2FDF),
@@ -284,7 +283,17 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     if won_cp in pretendard_cmap:
         p_won_name = pretendard_cmap[won_cp]
         i_won_name = inter.getBestCmap()[won_cp]
-        inter_glyf[i_won_name] = copy.deepcopy(pretendard_glyf[p_won_name])
+        g = copy.deepcopy(pretendard_glyf[p_won_name])
+        width = pretendard_hmtx[p_won_name][0]
+        x_center = width / 2.0
+        if g.numberOfContours > 0 and g.coordinates:
+            new_coords = [(round(x_center + (x - x_center) * CJK_HSCALE), y + Y_OFFSET)
+                          for x, y in g.coordinates]
+            g.coordinates = type(g.coordinates)(new_coords)
+        if hasattr(g, 'yMin') and g.yMin is not None:
+            g.yMin += Y_OFFSET
+            g.yMax += Y_OFFSET
+        inter_glyf[i_won_name] = g
         inter_hmtx[i_won_name] = pretendard_hmtx[p_won_name]
         if p_won_name in pretendard_gvar and pretendard_gvar[p_won_name]:
             won_variations = []
@@ -316,65 +325,6 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                         table.ScriptList.ScriptRecord.append(nr)
                 table.ScriptList.ScriptCount = len(table.ScriptList.ScriptRecord)
 
-    # Latin-CJK kern
-    print("  Adding Latin-CJK kern...")
-    gpos = inter['GPOS'].table
-    final_cmap = inter.getBestCmap()
-    latin_glyphs = [final_cmap[cp] for cp in range(0x41, 0x7B) if cp in final_cmap] + \
-                   [final_cmap[cp] for cp in range(0x30, 0x3A) if cp in final_cmap]
-    cjk_kern_glyphs = [glyph_order[i] for i in range(inter_glyph_count, min(inter_glyph_count + 5000, len(glyph_order)))]
-
-    cd1 = {g: 1 for g in latin_glyphs}
-    for g in cjk_kern_glyphs:
-        cd1[g] = 2
-    cd2 = {g: 1 for g in cjk_kern_glyphs}
-    for g in latin_glyphs:
-        cd2[g] = 2
-
-    pairpos = otTables.PairPos()
-    pairpos.Format = 2
-    pairpos.ValueFormat1 = 4
-    pairpos.ValueFormat2 = 0
-    coverage = otTables.Coverage()
-    coverage.Format = 1
-    coverage.glyphs = sorted(set(latin_glyphs + cjk_kern_glyphs),
-                             key=lambda g: glyph_order.index(g) if g in glyph_order else 999999)
-    pairpos.Coverage = coverage
-    pairpos.ClassDef1 = otTables.ClassDef()
-    pairpos.ClassDef1.classDefs = cd1
-    pairpos.ClassDef2 = otTables.ClassDef()
-    pairpos.ClassDef2.classDefs = cd2
-
-    class1_records = []
-    for c1 in range(3):
-        c1r = otTables.Class1Record()
-        c2rs = []
-        for c2 in range(3):
-            c2r = otTables.Class2Record()
-            vr = otTables.ValueRecord()
-            vr.XAdvance = LATIN_CJK_SPACING if (c1 == 1 and c2 == 1) or (c1 == 2 and c2 == 2) else 0
-            c2r.Value1 = vr
-            c2r.Value2 = None
-            c2rs.append(c2r)
-        c1r.Class2Record = c2rs
-        class1_records.append(c1r)
-    pairpos.Class1Record = class1_records
-    pairpos.Class1Count = 3
-    pairpos.Class2Count = 3
-
-    new_lookup = otTables.Lookup()
-    new_lookup.LookupType = 2
-    new_lookup.LookupFlag = 0
-    new_lookup.SubTable = [pairpos]
-    new_lookup.SubTableCount = 1
-    li = len(gpos.LookupList.Lookup)
-    gpos.LookupList.Lookup.append(new_lookup)
-    gpos.LookupList.LookupCount = len(gpos.LookupList.Lookup)
-    for fr in gpos.FeatureList.FeatureRecord:
-        if fr.FeatureTag == 'kern':
-            fr.Feature.LookupListIndex.append(li)
-            fr.Feature.LookupCount = len(fr.Feature.LookupListIndex)
-
     # Vertical metrics (SUIT-matched)
     print("  Setting vertical metrics (ratio 1.125, total=2304)...")
     os2 = inter['OS/2']
@@ -382,12 +332,16 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     os2.sTypoAscender = 2024
     os2.sTypoDescender = -532
     os2.sTypoLineGap = 0
-    os2.usWinAscent = 2024
-    os2.usWinDescent = 532
     os2.fsSelection |= (1 << 7)
     hhea.ascent = 2024
     hhea.descent = -532
     hhea.lineGap = 0
+
+    glyf_table = inter['glyf']
+    y_max = max((glyf_table[g].yMax for g in inter.getGlyphOrder() if hasattr(glyf_table.get(g), 'yMax') and glyf_table[g].yMax is not None), default=2024)
+    y_min = min((glyf_table[g].yMin for g in inter.getGlyphOrder() if hasattr(glyf_table.get(g), 'yMin') and glyf_table[g].yMin is not None), default=-532)
+    os2.usWinAscent = max(2024, y_max)
+    os2.usWinDescent = max(532, abs(y_min))
 
     # OS/2 ranges
     os2.ulUnicodeRange1 |= (1 << 28)
@@ -468,7 +422,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     for record in name_table.names:
         try:
             record.toUnicode()
-        except:
+        except Exception:
             continue
         if record.nameID == 1:
             name_table.setName("Inter CJK Variable", record.nameID, record.platformID, record.platEncID, record.langID)
@@ -550,7 +504,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                     inter_glyf.glyphs[gname] = new_g
                     inter_gvar.variations[gname] = []
                     decomposed += 1
-        except:
+        except Exception:
             pass
     print(f"  Decomposed {decomposed} transformed components")
 
@@ -642,15 +596,15 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     # Fix STAT table (add axis values for fvar/STAT consistency)
     if 'STAT' in inter:
         stat = inter['STAT'].table
+        stat.DesignAxisRecord.Axis = [a for a in stat.DesignAxisRecord.Axis if a.AxisTag != 'ital']
+        stat.DesignAxisCount = len(stat.DesignAxisRecord.Axis)
         stat.AxisValueArray = otTables.AxisValueArray()
         stat.AxisValueArray.AxisValue = []
 
-
-        # opsz axis values (short names to stay under 31 char limit)
         av_text = otTables.AxisValue()
         av_text.Format = 1
         av_text.AxisIndex = 0
-        av_text.Flags = 2
+        av_text.Flags = 2  # elidable (default)
         av_text.Value = 14.0
         av_text.ValueNameID = inter['name'].addName("Text")
         stat.AxisValueArray.AxisValue.append(av_text)
@@ -658,12 +612,11 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         av_display = otTables.AxisValue()
         av_display.Format = 1
         av_display.AxisIndex = 0
-        av_display.Flags = 2
+        av_display.Flags = 0
         av_display.Value = 32.0
         av_display.ValueNameID = inter['name'].addName("Display")
         stat.AxisValueArray.AxisValue.append(av_display)
 
-        # wght axis values
         for wght_val, wght_name in WEIGHTS:
             av = otTables.AxisValue()
             av.Format = 1

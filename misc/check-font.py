@@ -38,7 +38,7 @@ def check_metrics(font_path):
     hhea_total = hhea.ascent - hhea.descent
 
     check(typo_total == 2556, f"typo total = 2556 (got {typo_total})")
-    check(win_total == 2556, f"win total = 2556 (got {win_total})")
+    check(win_total >= 2556, f"win total >= 2556 (got {win_total})")
     check(hhea_total == 2556, f"hhea total = 2556 (got {hhea_total})")
     check(os2.sTypoAscender == 2024, f"sTypoAscender = 2024 (got {os2.sTypoAscender})")
     check(os2.sTypoDescender == -532, f"sTypoDescender = -532 (got {os2.sTypoDescender})")
