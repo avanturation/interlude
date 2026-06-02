@@ -75,7 +75,7 @@ $(DISTDIR)/web/.ok: $(DISTDIR)/InterCJKVariable.ttf $(DISTDIR)/extras/ttf/.ok | 
 	python3 -c "import re,sys;f=open(sys.argv[1]);c=f.read();f.close();m=re.sub(r'/\*[^*]*\*+(?:[^/*][^*]*\*+)*/','',c);m=re.sub(r'\s+',' ',m).strip();open(sys.argv[1].replace('.css','.min.css'),'w').write(m)" $(DISTDIR)/web/inter-cjk.css
 	touch $@
 
-$(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterCJKVariable.ttf misc/gen-dynamic-subset.py | $(DISTDIR)/web/dynamic-subset
+$(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterCJKVariable.ttf $(PRETENDARD_CSS) misc/gen-dynamic-subset.py | $(DISTDIR)/web/dynamic-subset
 	python3 misc/gen-dynamic-subset.py \
 		$(DISTDIR)/InterCJKVariable.ttf \
 		$(PRETENDARD_CSS) \
@@ -84,7 +84,7 @@ $(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterCJKVariable.ttf misc/gen-dyna
 		"inter-cjk-variable-dynamic-subset.css"
 	touch $@
 
-$(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok misc/gen-dynamic-subset-static.py | $(DISTDIR)/web/dynamic-subset-static
+$(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok $(PRETENDARD_CSS) misc/gen-dynamic-subset-static.py | $(DISTDIR)/web/dynamic-subset-static
 	python3 misc/gen-dynamic-subset-static.py \
 		$(DISTDIR)/extras/ttf \
 		$(PRETENDARD_CSS) \
