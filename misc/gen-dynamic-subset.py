@@ -42,7 +42,13 @@ def unicode_range_to_codepoints(range_str):
 # multi-character ligatures. Keeping the full ASCII block + arrows together in a
 # single "base" subset fixes the whole ligature system at once (and these are
 # the highest-frequency glyphs, so co-locating them helps load performance too).
-BASE_CODEPOINTS = set(range(0x0020, 0x007F)) | set(range(0x2190, 0x2200))
+BASE_CODEPOINTS = (
+    set(range(0x0020, 0x007F)) |  # ASCII (ligature inputs)
+    set(range(0x2190, 0x2200)) |  # Arrows
+    set(range(0x3000, 0x3040)) |  # CJK Symbols and Punctuation (chws/halt)
+    set(range(0xFF00, 0xFF61)) |  # Fullwidth Forms
+    set(range(0xFE30, 0xFE50))    # CJK Compatibility Forms
+)
 
 
 def codepoints_to_range_str(codepoints):
