@@ -436,6 +436,12 @@ def merge(inter_ttf, pretendard_ttf, output_path):
             name_table.setName("Interlude", record.nameID, record.platformID, record.platEncID, record.langID)
 
     inter['fvar'].instances = []
+    def _is_stale(record):
+        try:
+            return 'InterVariable' in record.toUnicode()
+        except Exception:
+            return False
+    name_table.names = [r for r in name_table.names if not _is_stale(r)]
     max_nid = max(r.nameID for r in name_table.names)
     nid = max_nid + 1
     for opsz_val in [14.0]:
