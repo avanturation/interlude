@@ -16,6 +16,7 @@ from fontTools.ttLib import TTFont
 from fontTools.ttLib.tables.TupleVariation import TupleVariation
 from fontTools.ttLib.tables import otTables
 from fontTools.ttLib.tables._f_v_a_r import NamedInstance
+from fontTools.varLib.instancer import instantiateVariableFont
 
 
 def _read_version():
@@ -38,6 +39,9 @@ def _version_to_revision(version):
 Y_OFFSET = 0
 CJK_HSCALE = 1.0
 CJK_VSCALE = 1.029  # Inter capHeight(1490) / Pretendard capHeight(1448)
+CJK_WGHT_DEFAULT = 430  # our wght=400 uses Pretendard at this weight
+CJK_WGHT_BOLD_SCALE = 0.887  # (900 - 430) / (930 - 400)
+CJK_WGHT_THIN_SCALE = 0.930  # (430 - 100) / (400 - 45)
 OPSZ_SCALE = 0.03
 
 CJK_RANGES = [
@@ -83,6 +87,12 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     pretendard_hmtx = pretendard['hmtx']
     pretendard_gvar = pretendard['gvar'].variations
 
+    print(f"  Instancing Pretendard at wght={CJK_WGHT_DEFAULT} for default master...")
+    pretendard_instanced = TTFont(pretendard_ttf)
+    instantiateVariableFont(pretendard_instanced, {"wght": CJK_WGHT_DEFAULT}, inplace=True, overlap=True)
+    pret_inst_glyf = pretendard_instanced['glyf']
+    pret_inst_hmtx = pretendard_instanced['hmtx']
+
     inter_cmap = inter.getBestCmap()
     inter_glyf = inter['glyf']
     inter_hmtx = inter['hmtx']
@@ -117,12 +127,12 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         glyph_order.append(name_map[gname])
     inter.setGlyphOrder(glyph_order)
 
-    # Copy glyphs with adjustments
+    # Copy glyphs with adjustments (using wght=420 instanced master)
     print("  Copying glyphs (Y offset, horizontal scaling)...")
     for gname in glyphs_to_copy:
         target = name_map[gname]
-        g = copy.deepcopy(pretendard_glyf[gname])
-        width = pretendard_hmtx[gname][0]
+        g = copy.deepcopy(pret_inst_glyf[gname])
+        width = pret_inst_hmtx[gname][0]
         x_center = width / 2.0
 
         if g.isComposite():
@@ -161,17 +171,21 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         target = name_map[gname]
         variations = []
 
-        # wght variation from Pretendard
+        # wght variation from Pretendard (scaled to new default=420 mapping)
         if gname in pretendard_gvar and pretendard_gvar[gname]:
             for tv in pretendard_gvar[gname]:
                 if 'wght' in tv.axes:
+                    axis_range = tv.axes['wght']
+                    is_bold = axis_range[1] > 0
+                    scale = CJK_WGHT_BOLD_SCALE if is_bold else CJK_WGHT_THIN_SCALE
                     new_coords = []
                     for coord in tv.coordinates:
                         if coord is None:
                             new_coords.append(None)
                         else:
-                            new_coords.append((round(coord[0] * CJK_HSCALE), coord[1]))
-                    variations.append(TupleVariation({'wght': tv.axes['wght']}, new_coords))
+                            new_coords.append((round(coord[0] * CJK_HSCALE * scale),
+                                               round(coord[1] * scale)))
+                    variations.append(TupleVariation({'wght': axis_range}, new_coords))
 
         # opsz variation (3% tighter at Display)
         g = inter_glyf[target]

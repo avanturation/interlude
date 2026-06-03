@@ -1,5 +1,41 @@
 # 변경 이력
 
+## 1.1.0 (2025-06-04)
+
+리브랜딩 + CJK 밸런스 보정.
+
+### 브랜딩
+- Inter CJK → **Interlude**로 폰트명 전면 변경
+- vendorID: ICJK → INTL
+- name table 전면 정비 (stale InterVariable-* 레코드 제거, nameID 3/25 설정, instance postScriptNameID 할당)
+- npm 패키지: `inter-cjk` → `interlude`
+
+### CJK 밸런스
+- CJK 수직 스케일 1.029 적용 (Inter capHeight 1490 / Pretendard capHeight 1448 비율 보정)
+- CJK weight 매핑: 우리 wght=400에서 Pretendard wght=430 두께 사용 (한영 회색도 균형)
+- CJK_HSCALE 1.0으로 변경 (수평 축소 제거)
+- Y_OFFSET 0으로 변경 (수직 스케일이 자연 정렬 처리)
+
+### 버그 수정
+- Static 폰트 fsSelection/macStyle BOLD 비트 정상 설정
+- nameID 16/17 (Typographic Family/Subfamily) 추가
+- OTF 가짜 파일 제거 (CFF 없는 .otf 출력 중단)
+- Pretendard submodule 제거, CSS를 GitHub raw에서 다운로드
+- usWinAscent/Descent를 글리프 bbox 커버하도록 수정 (Windows 클리핑 방지)
+- STAT 테이블: ital 축 제거, Display opsz=32 elidable 해제
+- Latin-CJK kern dead code 제거 (LATIN_CJK_SPACING=0 no-op)
+- ₩ 글리프에 CJK 보정 (Y_OFFSET, HSCALE, VSCALE) 적용
+- chws를 static 폰트에도 적용
+- bare except → except Exception 변환
+- unicode-range ? 와일드카드 파싱 지원
+- gen-css.py 죽은 코드 삭제
+- ZIP 패키징에 -X 플래그 추가 (macOS 잡파일 제거)
+- PRETENDARD_CSS를 Makefile dependency에 추가
+
+### 빌드
+- Inter/Pretendard 모두 릴리즈 바이너리 다운로드 (submodule 완전 제거)
+- `git clone` 한 방으로 빌드 가능 (submodule 불필요)
+
 ## 1.0.0 (2025-05-31)
 
 정식 릴리즈.
