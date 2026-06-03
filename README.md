@@ -2,7 +2,7 @@
 
 Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/orioncactus/pretendard)를 결합하고, UI 등 주요 사용 환경에 맞게 보정해 한국어, 일본어, 중국어까지 커버하는 서체입니다. Inter와 Pretendard가 지원하는 모든 OpenType 기능을 그대로 포함하며, 9가지 굵기와 가변 (Variable) 글꼴을 지원합니다.
 
-[**최신 버전 다운로드하기**](https://github.com/avanturation/interlude-font/releases/latest)
+[**최신 버전 다운로드하기**](https://github.com/avanturation/interlude-ui/releases/latest)
 
 <br/>
 
@@ -16,7 +16,7 @@ Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 ## 기능 및 배경
 
-자세한 배경과 OpenType 기능, Inter 및 Pretendard와의 차이점은 [이곳](https://avanturation.com/interlude-font)에서 확인하실 수 있습니다.
+자세한 배경과 OpenType 기능, Inter 및 Pretendard와의 차이점은 [이곳](https://avanturation.com/interlude-ui)에서 확인하실 수 있습니다.
 
 <br/>
 
@@ -30,7 +30,7 @@ Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 ## Interlude 사용하기
 
-[**최신 버전 다운로드하기**](https://github.com/avanturation/interlude-font/releases/latest)
+[**최신 버전 다운로드하기**](https://github.com/avanturation/interlude-ui/releases/latest)
 
 ### 웹 폰트로 사용하기
 
@@ -39,7 +39,7 @@ Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 전체 글리프를 하나의 가변 폰트로 로드합니다.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/interlude-font.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/interlude-ui.css" rel="stylesheet">
 ```
 
 이 CSS는 세 가지 `font-family`를 정의합니다.
@@ -55,7 +55,7 @@ Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 Variable (하나의 폰트로 모든 굵기 커버):
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset/interlude-font-variable-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
 ```
 
 ```css
@@ -65,8 +65,8 @@ body { font-family: "Interlude Variable", sans-serif; }
 Static (가변 미지원 환경, 본문 `Interlude` / 제목 `Interlude Display`):
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset-static/interlude-font-dynamic-subset.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset-static/interlude-font-display-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset-static/interlude-ui-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset-static/interlude-ui-display-dynamic-subset.css" rel="stylesheet">
 ```
 
 ```css
@@ -77,12 +77,12 @@ h1, h2, h3 { font-family: "Interlude Display", sans-serif; }
 ### Next.js에서 사용하기
 
 ```bash
-npm install interlude-font
+npm install interlude-ui
 ```
 
 ```tsx
 // app/layout.tsx
-import { Interlude, InterludeDisplay } from "interlude-font/font";
+import { Interlude, InterludeDisplay } from "interlude-ui/font";
 
 export default function RootLayout({ children }) {
   return (
@@ -96,19 +96,19 @@ export default function RootLayout({ children }) {
 ```css
 /* globals.css */
 body {
-  font-family: var(--font-interlude-font), sans-serif;
+  font-family: var(--font-interlude-ui), sans-serif;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-interlude-font-display), sans-serif;
+  font-family: var(--font-interlude-ui-display), sans-serif;
 }
 ```
 
 개별 import도 가능합니다:
 
 ```tsx
-import { Interlude } from "interlude-font/font/sans";
-import { InterludeDisplay } from "interlude-font/font/display";
+import { Interlude } from "interlude-ui/font/sans";
+import { InterludeDisplay } from "interlude-ui/font/display";
 ```
 
 ### Tailwind CSS v4에서 사용하기
@@ -117,7 +117,7 @@ Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토
 
 ```css
 @import "tailwindcss";
-@import "interlude-font/tailwind";
+@import "interlude-ui/tailwind";
 ```
 
 ```html
@@ -125,14 +125,14 @@ Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토
 <h1 class="font-display font-opsz-display">제목 Heading</h1>
 ```
 
-`interlude-font/tailwind`은 dynamic-subset `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
+`interlude-ui/tailwind`은 dynamic-subset `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
 
 > 모든 `@import`는 다른 CSS 규칙보다 먼저 와야 합니다. 그렇지 않으면 `@font-face`가 드롭됩니다.
 
 > 번들러(Vite, Next.js 등)는 폰트 `url()`을 자동으로 재배치하므로 그대로 동작합니다. 다만 Tailwind standalone CLI(`@tailwindcss/cli`)는 `@import` 인라인 시 `url()`을 재배치하지 않아 woff2 경로가 깨집니다. CLI만 쓰는 환경이라면 아래 CDN CSS를 직접 로드하세요.
 >
 > ```html
-> <link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset/interlude-font-variable-dynamic-subset.css" rel="stylesheet">
+> <link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
 > ```
 
 ## font-family
@@ -196,7 +196,7 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Interlude 설계 원칙에 맞는 패치를 진행해 빌드합니다.
 
 ```bash
-git clone https://github.com/avanturation/interlude-font.git
+git clone https://github.com/avanturation/interlude-ui.git
 python3 -m pip install -r requirements.txt
 make clean
 make all
