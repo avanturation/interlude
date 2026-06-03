@@ -43,7 +43,7 @@ def check_metrics(font_path):
     check(os2.sTypoAscender == 2024, f"sTypoAscender = 2024 (got {os2.sTypoAscender})")
     check(os2.sTypoDescender == -532, f"sTypoDescender = -532 (got {os2.sTypoDescender})")
     check(bool(os2.fsSelection & (1 << 7)), "USE_TYPO_METRICS set")
-    check(os2.achVendID == "ICJK", f"vendorID = ICJK (got '{os2.achVendID}')")
+    check(os2.achVendID == "INTL", f"vendorID = INTL (got '{os2.achVendID}')")
 
 
 def check_line_height(font_path):

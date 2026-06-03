@@ -1,2 +1,2 @@
-export { InterCJK } from "./sans.mjs";
-export { InterCJKDisplay } from "./display.mjs";
+export { Interlude } from "./sans.mjs";
+export { InterludeDisplay } from "./display.mjs";

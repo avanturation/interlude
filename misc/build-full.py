@@ -1,4 +1,4 @@
-"""Merge Inter Variable + Pretendard JP Variable into InterCJK-full.ttf.
+"""Merge Inter Variable + Pretendard JP Variable into Interlude Variable.
 
 Applies all design adjustments:
 - CJK vertical alignment: Y offset +21 (matches Pretendard's 가-H center diff of +3)
@@ -361,14 +361,14 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     metadata = {
         0: f"Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)\n"
            f"Copyright 2021 The Pretendard Project Authors (https://github.com/orioncactus/pretendard)\n"
-           f"Copyright 2025 The Inter CJK Project Authors (https://github.com/avanturation/inter-cjk)",
+           f"Copyright 2025 The Interlude Project Authors (https://github.com/avanturation/interlude)",
         5: f"Version {VERSION}",
-        7: "Inter CJK is a trademark of the Inter CJK Project Authors.",
-        8: "Inter CJK Project Authors",
+        7: "Interlude is a trademark of the Interlude Project Authors.",
+        8: "Interlude Project Authors",
         9: "Rasmus Andersson, Kil Hyung-jin, avanturation",
-        10: "Inter CJK combines Inter and Pretendard JP for seamless Latin-CJK mixed typography.",
-        11: "https://github.com/avanturation/inter-cjk",
-        12: "https://github.com/avanturation/inter-cjk",
+        10: "Interlude combines Inter and Pretendard JP for seamless Latin-CJK mixed typography.",
+        11: "https://github.com/avanturation/interlude",
+        12: "https://github.com/avanturation/interlude",
         13: "This Font Software is licensed under the SIL Open Font License, Version 1.1.",
         14: "https://scripts.sil.org/OFL",
     }
@@ -378,7 +378,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
             if record.nameID == nid:
                 name_table.setName(value, nid, record.platformID, record.platEncID, record.langID)
 
-    inter['OS/2'].achVendID = "ICJK"
+    inter['OS/2'].achVendID = "INTL"
 
     # Add Pretendard ss features (ss05, ss06, ss10-ss16)
     # First, move Inter's ss05(Circled) + ss06(Squared) to ss09
@@ -425,11 +425,15 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         except Exception:
             continue
         if record.nameID == 1:
-            name_table.setName("Inter CJK Variable", record.nameID, record.platformID, record.platEncID, record.langID)
+            name_table.setName("Interlude Variable", record.nameID, record.platformID, record.platEncID, record.langID)
         elif record.nameID == 4:
-            name_table.setName("Inter CJK Variable", record.nameID, record.platformID, record.platEncID, record.langID)
+            name_table.setName("Interlude Variable", record.nameID, record.platformID, record.platEncID, record.langID)
         elif record.nameID == 6:
-            name_table.setName("InterCJK-Variable", record.nameID, record.platformID, record.platEncID, record.langID)
+            name_table.setName("Interlude-Variable", record.nameID, record.platformID, record.platEncID, record.langID)
+        elif record.nameID == 3:
+            name_table.setName(f"{VERSION};INTL;Interlude-Variable", record.nameID, record.platformID, record.platEncID, record.langID)
+        elif record.nameID == 25:
+            name_table.setName("Interlude", record.nameID, record.platformID, record.platEncID, record.langID)
 
     inter['fvar'].instances = []
     max_nid = max(r.nameID for r in name_table.names)
@@ -440,6 +444,10 @@ def merge(inter_ttf, pretendard_ttf, output_path):
             inst.subfamilyNameID = nid
             name_table.setName(wght_name, nid, 3, 1, 0x0409)
             name_table.setName(wght_name, nid, 1, 0, 0)
+            ps_nid = nid + 100
+            ps_name = f"Interlude-{wght_name}" if wght_name != "Regular" else "Interlude-Regular"
+            name_table.setName(ps_name, ps_nid, 3, 1, 0x0409)
+            inst.postScriptNameID = ps_nid
             inst.coordinates = {"opsz": opsz_val, "wght": float(wght_val)}
             inter['fvar'].instances.append(inst)
             nid += 1

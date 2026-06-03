@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 
-export const InterCJK = localFont({
-  src: "./fonts/InterCJKVariable.woff2",
-  variable: "--font-inter-cjk",
+export const Interlude = localFont({
+  src: "./fonts/InterludeVariable.woff2",
+  variable: "--font-interlude",
   weight: "100 900",
   display: "swap",
   fallback: [

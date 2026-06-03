@@ -5,13 +5,13 @@ font-weight: 100 900), this splits every static weight separately and emits
 one CSS per family, each @font-face carrying its real font-weight value.
 
 Input is the directory of static TTFs produced by gen-static.py, e.g.
-  InterCJK-Regular.ttf, InterCJK-Bold.ttf, ..., InterCJKDisplay-Black.ttf
+  Interlude-Regular.ttf, Interlude-Bold.ttf, ..., InterludeDisplay-Black.ttf
 
 Output (into output_dir):
-  InterCJK-Regular.subset.0.woff2, ...           (one set per weight)
-  InterCJKDisplay-Bold.subset.5.woff2, ...
-  inter-cjk-dynamic-subset.css                   (family "Inter CJK")
-  inter-cjk-display-dynamic-subset.css           (family "Inter CJK Display")
+  Interlude-Regular.subset.0.woff2, ...           (one set per weight)
+  InterludeDisplay-Bold.subset.5.woff2, ...
+  interlude-dynamic-subset.css                   (family "Interlude")
+  interlude-display-dynamic-subset.css           (family "Interlude Display")
 """
 import sys
 import os
@@ -34,8 +34,8 @@ WEIGHTS = [
 
 # prefix -> (family_name, css_filename)
 FAMILIES = [
-    ("InterCJK", "Inter CJK", "inter-cjk-dynamic-subset.css"),
-    ("InterCJKDisplay", "Inter CJK Display", "inter-cjk-display-dynamic-subset.css"),
+    ("Interlude", "Interlude", "interlude-dynamic-subset.css"),
+    ("InterludeDisplay", "Interlude Display", "interlude-display-dynamic-subset.css"),
 ]
 
 

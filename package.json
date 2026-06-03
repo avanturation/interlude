@@ -1,17 +1,17 @@
 {
-  "name": "inter-cjk",
+  "name": "interlude-font",
   "version": "1.0.1",
-  "description": "Inter + CJK (Korean, Japanese) variable font with contextual symbol alignment",
+  "description": "Interlude — Korean-first CJK variable font combining Inter and Pretendard JP",
   "license": "OFL-1.1",
   "author": "avanturation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/avanturation/inter-cjk"
+    "url": "https://github.com/avanturation/interlude"
   },
-  "homepage": "https://github.com/avanturation/inter-cjk",
+  "homepage": "https://github.com/avanturation/interlude",
   "keywords": [
     "font",
-    "inter",
+    "interlude",
     "cjk",
     "korean",
     "japanese",
@@ -24,18 +24,18 @@
   "files": [
     "dist/web/",
     "dist/tailwind/",
-    "dist/variable/InterCJKVariable.ttf",
+    "dist/variable/InterludeVariable.ttf",
     "packages/next/dist/",
     "packages/next/font.d.ts",
     "packages/next/sans.d.ts",
     "packages/next/display.d.ts"
   ],
   "exports": {
-    ".": "./dist/web/inter-cjk.css",
-    "./css": "./dist/web/inter-cjk.css",
-    "./css/dynamic-subset": "./dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css",
-    "./tailwind": "./dist/tailwind/inter-cjk.css",
-    "./variable": "./dist/variable/InterCJKVariable.ttf",
+    ".": "./dist/web/interlude.css",
+    "./css": "./dist/web/interlude.css",
+    "./css/dynamic-subset": "./dist/web/dynamic-subset/interlude-variable-dynamic-subset.css",
+    "./tailwind": "./dist/tailwind/interlude.css",
+    "./variable": "./dist/variable/InterludeVariable.ttf",
     "./font": {
       "types": "./packages/next/font.d.ts",
       "import": "./packages/next/dist/font.mjs"

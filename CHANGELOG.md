@@ -25,13 +25,13 @@
 - GSUB/GPOS에 CJK 스크립트 등록 (kana, hani)
 
 ### 배포
-- Variable TTF: InterCJKVariable.ttf (단일 파일에 Text + Display)
-- Static TTF: 9 weight × 2 패밀리 (Inter CJK + Inter CJK Display) = 18 파일
-- TTC: InterCJK.ttc (18 static 합본)
+- Variable TTF: InterludeVariable.ttf (단일 파일에 Text + Display)
+- Static TTF: 9 weight × 2 패밀리 (Interlude + Interlude Display) = 18 파일
+- TTC: Interlude.ttc (18 static 합본)
 - 웹: woff2 (variable + static) + dynamic subset (119분할)
-- CSS: inter-cjk.css (Variable + Static + Display + @font-feature-values)
-- npm: `inter-cjk` 패키지, jsDelivr CDN 지원
-- Next.js: `inter-cjk/font` 패키지
+- CSS: interlude.css (Variable + Static + Display + @font-feature-values)
+- npm: `interlude` 패키지, jsDelivr CDN 지원
+- Next.js: `interlude/font` 패키지
 
 ### 빌드
 - 소스: Inter 4.1 릴리즈 TTF + Pretendard JP 1.3.9 릴리즈 TTF (자동 다운로드)
@@ -70,11 +70,11 @@
 - GSUB/GPOS에 CJK 스크립트 등록 (hang, kana, hani)
 
 ### 배포
-- Variable TTF: InterCJKVariable.ttf
+- Variable TTF: InterludeVariable.ttf
 - Static TTF: 9 weight × 2 패밀리 = 18 파일
 - 웹: woff2 (variable + static) + dynamic subset (119분할)
-- CSS: inter-cjk.css + minified
-- npm: `inter-cjk` 패키지, jsDelivr CDN 지원
+- CSS: interlude.css + minified
+- npm: `interlude` 패키지, jsDelivr CDN 지원
 
 ### 빌드
 - 소스: Inter (git submodule) + Pretendard JP (릴리즈 다운로드)

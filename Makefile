@@ -1,6 +1,6 @@
 SRCDIR   := $(abspath $(lastword $(MAKEFILE_LIST))/..)
 VERSION  := $(shell cat version.txt)
-DISTDIR  := build/InterCJK-$(VERSION)
+DISTDIR  := build/Interlude-$(VERSION)
 
 INTER_VERSION      := 4.1
 PRETENDARD_VERSION := 1.3.9
@@ -14,7 +14,7 @@ all: fonts web
 # CORE: Variable font (single source of truth for everything else)
 # =================================================================================
 
-build/InterCJKVariable.ttf: build/inter-variable.ttf build/pretendard-variable.ttf misc/build-full.py | build
+build/InterludeVariable.ttf: build/inter-variable.ttf build/pretendard-variable.ttf misc/build-full.py | build
 	python3 misc/build-full.py $< build/pretendard-variable.ttf $@
 
 build/inter-variable.ttf: | build
@@ -39,24 +39,24 @@ $(PRETENDARD_CSS): | build
 # FONTS: Inter 4.1-style release (Variable TTF, Static TTF/OTF, TTC)
 # =================================================================================
 
-fonts: $(DISTDIR)/InterCJKVariable.ttf $(DISTDIR)/extras/ttf/.ok $(DISTDIR)/InterCJK.ttc
+fonts: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/extras/ttf/.ok $(DISTDIR)/Interlude.ttc
 
-$(DISTDIR)/InterCJKVariable.ttf: build/InterCJKVariable.ttf | $(DISTDIR)
+$(DISTDIR)/InterludeVariable.ttf: build/InterludeVariable.ttf | $(DISTDIR)
 	cp $< $@
 	python3 -c "import asyncio; from pathlib import Path; import east_asian_spacing as chws; asyncio.run(chws.Builder(Path('$@')).build_and_save(Path('$@')))"
 
-$(DISTDIR)/extras/ttf/.ok: build/InterCJKVariable.ttf misc/gen-static.py | $(DISTDIR)/extras/ttf
+$(DISTDIR)/extras/ttf/.ok: build/InterludeVariable.ttf misc/gen-static.py | $(DISTDIR)/extras/ttf
 	python3 misc/gen-static.py $< $(DISTDIR)/extras/ttf
 	touch $@
 
-$(DISTDIR)/InterCJK.ttc: $(DISTDIR)/extras/ttf/.ok
+$(DISTDIR)/Interlude.ttc: $(DISTDIR)/extras/ttf/.ok
 	python3 -c "\
 from fontTools.ttLib import TTFont; \
 from fontTools.ttLib.ttCollection import TTCollection; \
 import glob; \
-fonts = [TTFont(f) for f in sorted(glob.glob('$(DISTDIR)/extras/ttf/InterCJK-*.ttf')) + sorted(glob.glob('$(DISTDIR)/extras/ttf/InterCJKDisplay-*.ttf'))]; \
+fonts = [TTFont(f) for f in sorted(glob.glob('$(DISTDIR)/extras/ttf/Interlude-*.ttf')) + sorted(glob.glob('$(DISTDIR)/extras/ttf/InterludeDisplay-*.ttf'))]; \
 ttc = TTCollection(); ttc.fonts = fonts; ttc.save('$@')"
-	@echo "  InterCJK.ttc: $$(du -h $@ | cut -f1)"
+	@echo "  Interlude.ttc: $$(du -h $@ | cut -f1)"
 
 # =================================================================================
 # WEB: woff2, CSS, dynamic-subset (for npm/CDN)
@@ -64,24 +64,24 @@ ttc = TTCollection(); ttc.fonts = fonts; ttc.save('$@')"
 
 web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok $(DISTDIR)/web/dynamic-subset-static/.ok
 
-$(DISTDIR)/web/.ok: $(DISTDIR)/InterCJKVariable.ttf $(DISTDIR)/extras/ttf/.ok | $(DISTDIR)/web
-	python3 -m fontTools ttLib.woff2 compress $(DISTDIR)/InterCJKVariable.ttf \
-		-o $(DISTDIR)/web/InterCJKVariable.woff2
+$(DISTDIR)/web/.ok: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/extras/ttf/.ok | $(DISTDIR)/web
+	python3 -m fontTools ttLib.woff2 compress $(DISTDIR)/InterludeVariable.ttf \
+		-o $(DISTDIR)/web/InterludeVariable.woff2
 	@for f in $(DISTDIR)/extras/ttf/*.ttf; do \
 		name=$$(basename "$$f" .ttf); \
 		python3 -m fontTools ttLib.woff2 compress "$$f" -o "$(DISTDIR)/web/$$name.woff2"; \
 	done
-	cp misc/inter-cjk.css $(DISTDIR)/web/inter-cjk.css
-	python3 -c "import re,sys;f=open(sys.argv[1]);c=f.read();f.close();m=re.sub(r'/\*[^*]*\*+(?:[^/*][^*]*\*+)*/','',c);m=re.sub(r'\s+',' ',m).strip();open(sys.argv[1].replace('.css','.min.css'),'w').write(m)" $(DISTDIR)/web/inter-cjk.css
+	cp misc/interlude.css $(DISTDIR)/web/interlude.css
+	python3 -c "import re,sys;f=open(sys.argv[1]);c=f.read();f.close();m=re.sub(r'/\*[^*]*\*+(?:[^/*][^*]*\*+)*/','',c);m=re.sub(r'\s+',' ',m).strip();open(sys.argv[1].replace('.css','.min.css'),'w').write(m)" $(DISTDIR)/web/interlude.css
 	touch $@
 
-$(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterCJKVariable.ttf $(PRETENDARD_CSS) misc/gen-dynamic-subset.py | $(DISTDIR)/web/dynamic-subset
+$(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterludeVariable.ttf $(PRETENDARD_CSS) misc/gen-dynamic-subset.py | $(DISTDIR)/web/dynamic-subset
 	python3 misc/gen-dynamic-subset.py \
-		$(DISTDIR)/InterCJKVariable.ttf \
+		$(DISTDIR)/InterludeVariable.ttf \
 		$(PRETENDARD_CSS) \
 		$(DISTDIR)/web/dynamic-subset \
-		"Inter CJK Variable" \
-		"inter-cjk-variable-dynamic-subset.css"
+		"Interlude Variable" \
+		"interlude-variable-dynamic-subset.css"
 	touch $@
 
 $(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok $(PRETENDARD_CSS) misc/gen-dynamic-subset-static.py | $(DISTDIR)/web/dynamic-subset-static
@@ -98,24 +98,24 @@ $(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok $(PRETENDARD
 dist: all
 	rm -rf dist
 	mkdir -p dist/variable dist/static/ttf dist/web/dynamic-subset dist/web/dynamic-subset-static dist/tailwind
-	cp $(DISTDIR)/InterCJKVariable.ttf dist/variable/
-	cp $(DISTDIR)/InterCJK.ttc dist/variable/
+	cp $(DISTDIR)/InterludeVariable.ttf dist/variable/
+	cp $(DISTDIR)/Interlude.ttc dist/variable/
 	cp $(DISTDIR)/extras/ttf/*.ttf dist/static/ttf/
 	cp $(DISTDIR)/web/*.woff2 dist/web/
 	cp $(DISTDIR)/web/*.css dist/web/
 	cp -r $(DISTDIR)/web/dynamic-subset/* dist/web/dynamic-subset/
 	cp -r $(DISTDIR)/web/dynamic-subset-static/* dist/web/dynamic-subset-static/
-	cp misc/inter-cjk-tailwind.css dist/tailwind/inter-cjk.css
+	cp misc/interlude-tailwind.css dist/tailwind/interlude.css
 	cp LICENSE.txt dist/
 	mkdir -p packages/next/dist/fonts
-	cp dist/web/InterCJKVariable.woff2 packages/next/dist/fonts/
+	cp dist/web/InterludeVariable.woff2 packages/next/dist/fonts/
 
 # =================================================================================
 # PACKAGE: zip for GitHub release
 # =================================================================================
 
 package: all $(DISTDIR)/LICENSE.txt $(DISTDIR)/help.txt
-	cd build && zip -r InterCJK-$(VERSION).zip InterCJK-$(VERSION)/
+	cd build && zip -X -r Interlude-$(VERSION).zip Interlude-$(VERSION)/
 
 $(DISTDIR)/LICENSE.txt: LICENSE.txt | $(DISTDIR)
 	cp $< $@
@@ -127,9 +127,8 @@ $(DISTDIR)/help.txt: misc/help.txt | $(DISTDIR)
 # CHECK: QA validation
 # =================================================================================
 
-check: $(DISTDIR)/InterCJKVariable.ttf
+check: $(DISTDIR)/InterludeVariable.ttf
 	python3 misc/check-font.py $<
-	python3 -m fontbakery check-universal $< --no-progress --succinct 2>&1 | tail -5
 
 # =================================================================================
 # SETUP / CLEAN

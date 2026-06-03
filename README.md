@@ -1,8 +1,8 @@
-# Inter CJK
+# Interlude
 
-Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/orioncactus/pretendard)를 결합하고, UI 등 주요 사용 환경에 맞게 보정해 한국어, 일본어, 중국어까지 커버하는 서체입니다. Inter와 Pretendard가 지원하는 모든 OpenType 기능을 그대로 포함하며, 9가지 굵기와 가변 (Variable) 글꼴을 지원합니다.
+Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/orioncactus/pretendard)를 결합하고, UI 등 주요 사용 환경에 맞게 보정해 한국어, 일본어, 중국어까지 커버하는 서체입니다. Inter와 Pretendard가 지원하는 모든 OpenType 기능을 그대로 포함하며, 9가지 굵기와 가변 (Variable) 글꼴을 지원합니다.
 
-[**최신 버전 다운로드하기**](https://github.com/avanturation/inter-cjk/releases/latest)
+[**최신 버전 다운로드하기**](https://github.com/avanturation/interlude-font/releases/latest)
 
 <br/>
 
@@ -16,7 +16,7 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 ## 기능 및 배경
 
-자세한 배경과 OpenType 기능, Inter 및 Pretendard와의 차이점은 [이곳](https://avanturation.com/inter-cjk)에서 확인하실 수 있습니다.
+자세한 배경과 OpenType 기능, Inter 및 Pretendard와의 차이점은 [이곳](https://avanturation.com/interlude-font)에서 확인하실 수 있습니다.
 
 <br/>
 
@@ -28,9 +28,9 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 
 <br/>
 
-## Inter CJK 사용하기
+## Interlude 사용하기
 
-[**최신 버전 다운로드하기**](https://github.com/avanturation/inter-cjk/releases/latest)
+[**최신 버전 다운로드하기**](https://github.com/avanturation/interlude-font/releases/latest)
 
 ### 웹 폰트로 사용하기
 
@@ -39,14 +39,14 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 전체 글리프를 하나의 가변 폰트로 로드합니다.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/inter-cjk.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/interlude-font.css" rel="stylesheet">
 ```
 
 이 CSS는 세 가지 `font-family`를 정의합니다.
 
-- `Inter CJK Variable` — 가변 (opsz 14–32, wght 100–900)
-- `Inter CJK` — 정적 본문용 (opsz 14)
-- `Inter CJK Display` — 정적 제목용 (opsz 32)
+- `Interlude Variable` — 가변 (opsz 14–32, wght 100–900)
+- `Interlude` — 정적 본문용 (opsz 14)
+- `Interlude Display` — 정적 제목용 (opsz 32)
 
 #### Dynamic Subset (경량 로딩, 권장)
 
@@ -55,38 +55,38 @@ Inter CJK는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 Variable (하나의 폰트로 모든 굵기 커버):
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset/interlude-font-variable-dynamic-subset.css" rel="stylesheet">
 ```
 
 ```css
-body { font-family: "Inter CJK Variable", sans-serif; }
+body { font-family: "Interlude Variable", sans-serif; }
 ```
 
-Static (가변 미지원 환경, 본문 `Inter CJK` / 제목 `Inter CJK Display`):
+Static (가변 미지원 환경, 본문 `Interlude` / 제목 `Interlude Display`):
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset-static/inter-cjk-dynamic-subset.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset-static/inter-cjk-display-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset-static/interlude-font-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset-static/interlude-font-display-dynamic-subset.css" rel="stylesheet">
 ```
 
 ```css
-body { font-family: "Inter CJK", sans-serif; }
-h1, h2, h3 { font-family: "Inter CJK Display", sans-serif; }
+body { font-family: "Interlude", sans-serif; }
+h1, h2, h3 { font-family: "Interlude Display", sans-serif; }
 ```
 
 ### Next.js에서 사용하기
 
 ```bash
-npm install inter-cjk
+npm install interlude-font
 ```
 
 ```tsx
 // app/layout.tsx
-import { InterCJK, InterCJKDisplay } from "inter-cjk/font";
+import { Interlude, InterludeDisplay } from "interlude-font/font";
 
 export default function RootLayout({ children }) {
   return (
-    <html className={`${InterCJK.variable} ${InterCJKDisplay.variable}`}>
+    <html className={`${Interlude.variable} ${InterludeDisplay.variable}`}>
       <body>{children}</body>
     </html>
   );
@@ -96,19 +96,19 @@ export default function RootLayout({ children }) {
 ```css
 /* globals.css */
 body {
-  font-family: var(--font-inter-cjk), sans-serif;
+  font-family: var(--font-interlude-font), sans-serif;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-inter-cjk-display), sans-serif;
+  font-family: var(--font-interlude-font-display), sans-serif;
 }
 ```
 
 개별 import도 가능합니다:
 
 ```tsx
-import { InterCJK } from "inter-cjk/font/sans";
-import { InterCJKDisplay } from "inter-cjk/font/display";
+import { Interlude } from "interlude-font/font/sans";
+import { InterludeDisplay } from "interlude-font/font/display";
 ```
 
 ### Tailwind CSS v4에서 사용하기
@@ -117,7 +117,7 @@ Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토
 
 ```css
 @import "tailwindcss";
-@import "inter-cjk/tailwind";
+@import "interlude-font/tailwind";
 ```
 
 ```html
@@ -125,14 +125,14 @@ Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토
 <h1 class="font-display font-opsz-display">제목 Heading</h1>
 ```
 
-`inter-cjk/tailwind`은 dynamic-subset `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
+`interlude-font/tailwind`은 dynamic-subset `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
 
 > 모든 `@import`는 다른 CSS 규칙보다 먼저 와야 합니다. 그렇지 않으면 `@font-face`가 드롭됩니다.
 
 > 번들러(Vite, Next.js 등)는 폰트 `url()`을 자동으로 재배치하므로 그대로 동작합니다. 다만 Tailwind standalone CLI(`@tailwindcss/cli`)는 `@import` 인라인 시 `url()`을 재배치하지 않아 woff2 경로가 깨집니다. CLI만 쓰는 환경이라면 아래 CDN CSS를 직접 로드하세요.
 >
 > ```html
-> <link href="https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css" rel="stylesheet">
+> <link href="https://cdn.jsdelivr.net/npm/interlude-font/dist/web/dynamic-subset/interlude-font-variable-dynamic-subset.css" rel="stylesheet">
 > ```
 
 ## font-family
@@ -140,7 +140,7 @@ Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토
 권장하는 `font-family` 조합은 아래와 같습니다.
 
 ```css
-font-family: "Inter CJK Variable", "Inter CJK",
+font-family: "Interlude Variable", "Interlude",
   -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
   "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -148,31 +148,31 @@ font-family: "Inter CJK Variable", "Inter CJK",
 
 ### Display 사용하기
 
-Inter CJK Variable은 하나의 파일에 Text(opsz=14)와 Display(opsz=32)를 모두 포함합니다.
+Interlude Variable은 하나의 파일에 Text(opsz=14)와 Display(opsz=32)를 모두 포함합니다.
 
 ```css
 /* 본문 (기본, opsz=14) */
 body {
-  font-family: "Inter CJK Variable", sans-serif;
+  font-family: "Interlude Variable", sans-serif;
 }
 
 /* 제목/Hero (opsz=32) */
 h1 {
-  font-family: "Inter CJK Variable", sans-serif;
+  font-family: "Interlude Variable", sans-serif;
   font-variation-settings: 'opsz' 32;
 }
 ```
 
 Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
-- `Inter CJK` — 본문용
-- `Inter CJK Display` — 제목용
+- `Interlude` — 본문용
+- `Interlude Display` — 제목용
 
 <br/>
 
 ## Font Families
 
-- **Inter CJK** — UI, 본문에 최적화 (optical size 14)
-- **Inter CJK Display** — Display, Hero에 최적화 (optical size 32)
+- **Interlude** — UI, 본문에 최적화 (optical size 14)
+- **Interlude Display** — Display, Hero에 최적화 (optical size 32)
 
 ### Variable Axes
 
@@ -193,10 +193,10 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 
 ## Build
 
-Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Inter CJK 설계 원칙에 맞는 패치를 진행해 빌드합니다.
+Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Interlude 설계 원칙에 맞는 패치를 진행해 빌드합니다.
 
 ```bash
-git clone https://github.com/avanturation/inter-cjk.git
+git clone https://github.com/avanturation/interlude-font.git
 python3 -m pip install -r requirements.txt
 make clean
 make all
@@ -211,7 +211,7 @@ make all
 
 ### Contribute
 
-Inter CJK는 UI 디자이너로서 평소 가지고 있던 생각들을 조합해, `Glyphs`와 같은 서체 전용 툴 없이 OpenCode 만으로 제작되었습니다. 
+Interlude는 UI 디자이너로서 평소 가지고 있던 생각들을 조합해, `Glyphs`와 같은 서체 전용 툴 없이 OpenCode 만으로 제작되었습니다. 
 
 폰트에 대한 지식이 부족한 만큼, 오픈소스 커뮤니티의 많은 피드백과 기여가 필요합니다. Issues와 Pull Request를 통해 기여해주시면 감사하겠습니다.
 

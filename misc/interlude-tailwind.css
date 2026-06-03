@@ -1,10 +1,10 @@
 /*
-Inter CJK — Tailwind v4 entry
-https://github.com/avanturation/inter-cjk
+Interlude — Tailwind v4 entry
+https://github.com/avanturation/interlude
 
 Usage (consumer CSS):
   @import "tailwindcss";
-  @import "inter-cjk/tailwind";
+  @import "interlude/tailwind";
 
   <div class="font-sans">본문 Body</div>
   <h1 class="font-display font-opsz-display">제목 Heading</h1>
@@ -14,32 +14,32 @@ Notes:
     @font-face declarations get dropped.
   - This file loads the dynamic-subset @font-face set (downloads only the
     unicode-range subsets a page actually uses) and registers theme tokens.
-  - The dynamic-subset CSS references url('./InterCJKVariable.subset.N.woff2');
+  - The dynamic-subset CSS references url('./InterludeVariable.subset.N.woff2');
     your bundler (Lightning CSS in v4 / Vite / PostCSS) rewrites those relative
     URLs. If your setup can't resolve url() from node_modules, use the CDN CSS
-    instead: https://cdn.jsdelivr.net/npm/inter-cjk/dist/web/dynamic-subset/inter-cjk-variable-dynamic-subset.css
+    instead: https://cdn.jsdelivr.net/npm/interlude/dist/web/dynamic-subset/interlude-variable-dynamic-subset.css
 
-Copyright (c) 2025 The Inter CJK Project Authors
+Copyright (c) 2025 The Interlude Project Authors
 Licensed under the SIL Open Font License, Version 1.1.
 http://scripts.sil.org/OFL
 */
 
 /* Load: @font-face declarations (variable, dynamic-subset) */
-@import "../web/dynamic-subset/inter-cjk-variable-dynamic-subset.css";
+@import "../web/dynamic-subset/interlude-variable-dynamic-subset.css";
 
 /* Register: theme tokens so font-sans / font-display emit the family */
 @theme {
-  --font-sans: "Inter CJK Variable", -apple-system, BlinkMacSystemFont,
+  --font-sans: "Interlude Variable", -apple-system, BlinkMacSystemFont,
     "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
-  --font-display: "Inter CJK Variable", -apple-system, BlinkMacSystemFont,
+  --font-display: "Interlude Variable", -apple-system, BlinkMacSystemFont,
     "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
     sans-serif;
 }
 
 /* opsz has no built-in Tailwind utility — expose explicit ones.
-   Inter CJK Variable carries both Text (opsz 14) and Display (opsz 32). */
+   Interlude Variable carries both Text (opsz 14) and Display (opsz 32). */
 @utility font-opsz-text {
   font-variation-settings: "opsz" 14;
 }

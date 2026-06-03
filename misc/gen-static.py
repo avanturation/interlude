@@ -21,8 +21,8 @@ WEIGHTS = [
 ]
 
 FAMILIES = [
-    (14.0, "InterCJK", "Inter CJK"),
-    (32.0, "InterCJKDisplay", "Inter CJK Display"),
+    (14.0, "Interlude", "Interlude"),
+    (32.0, "InterludeDisplay", "Interlude Display"),
 ]
 
 
