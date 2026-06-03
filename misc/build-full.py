@@ -365,7 +365,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         5: f"Version {VERSION}",
         7: "Interlude is a trademark of the Interlude Project Authors.",
         8: "Interlude Project Authors",
-        9: "avanturation",
+        9: "Rasmus Andersson, Kil Hyung-jin, avanturation",
         10: "Interlude combines Inter and Pretendard JP for seamless Latin-CJK mixed typography.",
         11: "https://github.com/avanturation/interlude",
         12: "https://github.com/avanturation/interlude",
