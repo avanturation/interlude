@@ -35,8 +35,9 @@ def _version_to_revision(version):
     minor = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 0
     return float(f"{major}.{minor}")
 
-Y_OFFSET = 21
-CJK_HSCALE = 0.99
+Y_OFFSET = 0
+CJK_HSCALE = 1.0
+CJK_VSCALE = 1.029  # Inter capHeight(1490) / Pretendard capHeight(1448)
 OPSZ_SCALE = 0.03
 
 CJK_RANGES = [
@@ -129,17 +130,17 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                 if comp.glyphName in name_map:
                     comp.glyphName = name_map[comp.glyphName]
                 if hasattr(comp, 'y'):
-                    comp.y += Y_OFFSET
+                    comp.y = round(comp.y * CJK_VSCALE) + Y_OFFSET
         elif g.numberOfContours > 0:
             coords = g.coordinates
             if coords:
-                new_coords = [(round(x_center + (x - x_center) * CJK_HSCALE), y + Y_OFFSET)
+                new_coords = [(round(x_center + (x - x_center) * CJK_HSCALE), round(y * CJK_VSCALE) + Y_OFFSET)
                               for x, y in coords]
                 g.coordinates = type(coords)(new_coords)
 
         if hasattr(g, 'yMin') and g.yMin is not None:
-            g.yMin += Y_OFFSET
-            g.yMax += Y_OFFSET
+            g.yMin = round(g.yMin * CJK_VSCALE) + Y_OFFSET
+            g.yMax = round(g.yMax * CJK_VSCALE) + Y_OFFSET
 
         inter_glyf[target] = g
         inter_hmtx[target] = pretendard_hmtx[gname]
@@ -287,12 +288,12 @@ def merge(inter_ttf, pretendard_ttf, output_path):
         width = pretendard_hmtx[p_won_name][0]
         x_center = width / 2.0
         if g.numberOfContours > 0 and g.coordinates:
-            new_coords = [(round(x_center + (x - x_center) * CJK_HSCALE), y + Y_OFFSET)
+            new_coords = [(round(x_center + (x - x_center) * CJK_HSCALE), round(y * CJK_VSCALE) + Y_OFFSET)
                           for x, y in g.coordinates]
             g.coordinates = type(g.coordinates)(new_coords)
         if hasattr(g, 'yMin') and g.yMin is not None:
-            g.yMin += Y_OFFSET
-            g.yMax += Y_OFFSET
+            g.yMin = round(g.yMin * CJK_VSCALE) + Y_OFFSET
+            g.yMax = round(g.yMax * CJK_VSCALE) + Y_OFFSET
         inter_glyf[i_won_name] = g
         inter_hmtx[i_won_name] = pretendard_hmtx[p_won_name]
         if p_won_name in pretendard_gvar and pretendard_gvar[p_won_name]:
