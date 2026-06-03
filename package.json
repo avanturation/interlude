@@ -24,7 +24,6 @@
   "files": [
     "dist/web/",
     "dist/tailwind/",
-    "dist/variable/InterludeVariable.ttf",
     "packages/next/dist/",
     "packages/next/font.d.ts",
     "packages/next/sans.d.ts",
@@ -35,7 +34,7 @@
     "./css": "./dist/web/interlude.css",
     "./css/dynamic-subset": "./dist/web/dynamic-subset/interlude-variable-dynamic-subset.css",
     "./tailwind": "./dist/tailwind/interlude.css",
-    "./variable": "./dist/variable/InterludeVariable.ttf",
+    "./variable": "./dist/web/InterludeVariable.woff2",
     "./font": {
       "types": "./packages/next/font.d.ts",
       "import": "./packages/next/dist/font.mjs"
