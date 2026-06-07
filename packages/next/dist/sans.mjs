@@ -5,6 +5,7 @@ export const Interlude = localFont({
   variable: "--font-interlude",
   weight: "100 900",
   display: "swap",
+  declarations: [{ prop: "font-stretch", value: "75% 150%" }],
   fallback: [
     "-apple-system", "BlinkMacSystemFont", "Apple SD Gothic Neo",
     "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "sans-serif",

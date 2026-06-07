@@ -6,9 +6,24 @@ INTER_VERSION      := 4.1
 PRETENDARD_VERSION := 1.3.9
 PRETENDARD_CSS     := build/pretendardvariable-jp-dynamic-subset.css
 
+# OS detection for font installation target
+ifeq ($(OS),Windows_NT)
+    FONT_INSTALL_DIR  := $(LOCALAPPDATA)/Microsoft/Windows/Fonts
+    FONT_POST_INSTALL := echo "  Windows: 사용자 폰트 폴더에 복사 완료. 자동 등록 안 되면 .ttf 우클릭 > 설치하세요."
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Darwin)
+        FONT_INSTALL_DIR  := $(HOME)/Library/Fonts
+        FONT_POST_INSTALL := echo "  macOS: $(HOME)/Library/Fonts 에 설치 완료."
+    else
+        FONT_INSTALL_DIR  := $(HOME)/.local/share/fonts
+        FONT_POST_INSTALL := fc-cache -f "$(HOME)/.local/share/fonts" && echo "  Linux: 폰트 캐시 갱신 완료."
+    endif
+endif
+
 default: all
 
-all: fonts web
+all: fonts web install
 
 # =================================================================================
 # CORE: Variable font (single source of truth for everything else)
@@ -127,6 +142,15 @@ $(DISTDIR)/help.txt: misc/help.txt | $(DISTDIR)
 	cp $< $@
 
 # =================================================================================
+# INSTALL: 운영체제별 폰트 폴더에 설치 (macOS/Windows/Linux 자동 감지)
+# =================================================================================
+
+install: $(DISTDIR)/InterludeVariable.ttf
+	@mkdir -p "$(FONT_INSTALL_DIR)"
+	cp "$(DISTDIR)/InterludeVariable.ttf" "$(FONT_INSTALL_DIR)/InterludeVariable.ttf"
+	@$(FONT_POST_INSTALL)
+
+# =================================================================================
 # CHECK: QA validation
 # =================================================================================
 
@@ -161,4 +185,4 @@ $(DISTDIR)/web/dynamic-subset-static:
 clean:
 	rm -rf build dist
 
-.PHONY: default all fonts web dist package check setup clean
+.PHONY: default all fonts web dist package check setup clean install

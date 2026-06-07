@@ -143,6 +143,7 @@ def generate(font_path, reference_css, output_dir, family_name, css_filename):
         css_lines.append(f"\tfont-style: normal;")
         css_lines.append(f"\tfont-display: swap;")
         css_lines.append(f"\tfont-weight: 100 900;")
+        css_lines.append(f"\tfont-stretch: 75% 150%;")
         css_lines.append(f"\tsrc: url('./{subset_filename}') format('woff2');")
         css_lines.append(f"\tunicode-range: {range_str};")
         css_lines.append("}")

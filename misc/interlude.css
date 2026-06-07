@@ -3,7 +3,7 @@ Interlude
 https://github.com/avanturation/interlude
 
 Font families defined by this CSS:
-  - Interlude Variable   variable font for modern browsers (opsz 14-32, wght 100-900)
+  - Interlude Variable   variable font for modern browsers (opsz 14-32, wght 100-900, wdth 75-150)
   - Interlude            static fonts for text/body (optical size 14)
   - Interlude Display    static fonts for headings/hero (optical size 32)
 
@@ -24,6 +24,7 @@ http://scripts.sil.org/OFL
 @font-face {
 	font-family: 'Interlude Variable';
 	font-weight: 100 900;
+	font-stretch: 75% 150%;
 	font-style: normal;
 	font-display: swap;
 	src: url('./InterludeVariable.woff2') format('woff2');

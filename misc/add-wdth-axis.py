@@ -414,6 +414,34 @@ def _apply_wght_evenness_avar(f):
     seg['wght'] = dict(sorted(wght.items()))
 
 
+# Latin wght=900 stem을 약 3% 미세하게 얇게 (400 고정, 900으로 점진).
+# wght peak 튜플 (0,1,1)만 스케일 → wght=400(norm0)에서 scalar 0이라 불변,
+# wght=900(norm1.0)에서 델타가 LATIN_WGHT_THIN_SCALE배. CJK 델타는 별도라 무영향.
+LATIN_WGHT_THIN_SCALE = 0.944  # I stem 404->392 (-3%); 500~800은 -1.0~-2.7% 점진
+
+
+def _apply_latin_wght_thinning(f):
+    cmap = f.getBestCmap()
+    g2cp = {}
+    for cp, gn in cmap.items():
+        g2cp.setdefault(gn, cp)
+    s = LATIN_WGHT_THIN_SCALE
+    gv = f['gvar']
+    touched = 0
+    for gn, tvs in gv.variations.items():
+        if not is_latin_base(g2cp.get(gn)):
+            continue
+        for tv in tvs:
+            ax = tv.axes
+            if ax.get('wght') == (0.0, 1.0, 1.0) and 'wdth' not in ax and 'opsz' not in ax:
+                tv.coordinates = [
+                    ((round(p[0] * s), round(p[1] * s)) if p else p)
+                    for p in tv.coordinates
+                ]
+                touched += 1
+    return touched
+
+
 def add_wdth(src, out):
     t0 = time.time()
     print('  Measuring class stem medians...', flush=True)
@@ -471,6 +499,8 @@ def add_wdth(src, out):
     _rebuild_stat(f)
     _sync_variation_tables(f)
     _apply_wght_evenness_avar(f)
+    nthin = _apply_latin_wght_thinning(f)
+    print(f'  latin wght thinning (heavy -3%): {nthin} glyphs', flush=True)
     _strip_mac_names(f)
     f.save(out)
     print(f'  wdth axis added: simple={len(cond)} ({relaxed} relaxed) composite={comp} '
