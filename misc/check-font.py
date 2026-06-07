@@ -154,10 +154,13 @@ def check_opsz_axis(font_path):
 
     check('opsz' in axes, "opsz 축 존재")
     check('wght' in axes, "wght 축 존재")
+    check('wdth' in axes, "wdth 축 존재")
     if 'opsz' in axes:
         check(axes['opsz'] == (14.0, 32.0), f"opsz 범위 14-32 (got {axes['opsz']})")
     if 'wght' in axes:
         check(axes['wght'] == (100.0, 900.0), f"wght 범위 100-900 (got {axes['wght']})")
+    if 'wdth' in axes:
+        check(axes['wdth'] == (75.0, 150.0), f"wdth 범위 75-150 (got {axes['wdth']})")
 
 
 def check_glyph_count(font_path):

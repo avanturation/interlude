@@ -2,7 +2,7 @@
 
 Applies all design adjustments:
 - CJK vertical alignment: Y offset +21 (matches Pretendard's 가-H center diff of +3)
-- CJK weight matching: 1% horizontal thinning (gray-level balance with Latin)
+- CJK vertical scale: 1.029 (capHeight alignment); horizontal scale 1.007 (W/H ratio 0.93)
 - CJK optical size: 3% tighter at opsz=32 (Display)
 - Contextual symbol alignment: CJK added to calt @UC class so symbols get .case forms
 - Latin-CJK kern: +100 units between script transitions
@@ -37,11 +37,11 @@ def _version_to_revision(version):
     return float(f"{major}.{minor}")
 
 Y_OFFSET = 0
-CJK_HSCALE = 1.0
+CJK_HSCALE = 1.007
 CJK_VSCALE = 1.029  # Inter capHeight(1490) / Pretendard capHeight(1448)
 CJK_WGHT_DEFAULT = 430  # our wght=400 uses Pretendard at this weight
-CJK_WGHT_BOLD_SCALE = 0.887  # (900 - 430) / (930 - 400)
-CJK_WGHT_THIN_SCALE = 0.930  # (430 - 100) / (400 - 45)
+CJK_WGHT_BOLD_SCALE = 1.0  # CJK uses Pretendard native bold deltas; keeps CJK/Latin ratio ~0.73-0.75 flat across 400-900 without over-darkening Black (0.887 made CJK lag from Medium up; 1.10 over-thickened Black)
+CJK_WGHT_THIN_SCALE = 1.0  # CJK uses Pretendard native thin deltas; 0.930 left CJK too heavy at Thin (ratio 1.33 vs Latin), native thinning balances toward hairline without extrapolating (legibility-safe for dense Hanja)
 OPSZ_SCALE = 0.03
 
 CJK_RANGES = [

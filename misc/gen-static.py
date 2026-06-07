@@ -37,7 +37,11 @@ def _generate_one(args):
     for tag in ['MVAR', 'HVAR']:
         if tag in font:
             del font[tag]
-    instance = instantiateVariableFont(font, {"opsz": opsz_val, "wght": weight_value}, inplace=True, overlap=True)
+    axis_tags = {a.axisTag for a in font['fvar'].axes}
+    pins = {"opsz": opsz_val, "wght": weight_value}
+    if "wdth" in axis_tags:
+        pins["wdth"] = 100
+    instance = instantiateVariableFont(font, pins, inplace=True, overlap=True)
 
     for tag in ['fvar', 'STAT', 'gvar', 'avar', 'HVAR', 'MVAR']:
         if tag in instance:

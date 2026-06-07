@@ -8,6 +8,7 @@ __pycache__/
 venv/
 .venv/
 node_modules/
+.playwright-mcp/
 
 # Submodule build artifacts
 src/inter/build/
