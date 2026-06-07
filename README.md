@@ -1,6 +1,8 @@
 # Interlude
 
-> **Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, 문자 사이의 밀도와 리듬을 다시 맞춘 인터페이스 서체입니다.** [Inter](https://rsms.me/inter)의 라틴 글리프와 [Pretendard](https://github.com/orioncactus/pretendard)의 CJK 글리프를 기반으로, 4px Grid 중심의 UI 환경에 더 유연하게 대응하도록 조율했습니다. 9가지 굵기와 `wdth` 축을 통한 너비 조절, Variable Font를 지원해 다양한 화면 밀도와 인터페이스 조건에 맞춰 사용할 수 있습니다.
+Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, 문자 사이의 밀도와 리듬을 다시 맞춘 인터페이스 서체입니다.
+
+[Inter](https://rsms.me/inter)의 라틴 글리프와 [Pretendard](https://github.com/orioncactus/pretendard)의 CJK 글리프를 기반으로, 4px Grid 중심의 UI 환경에 맞게 폭과 밀도를 다시 조율했습니다. 라틴과 CJK가 함께 쓰일 때 생기는 크기감과 굵기 차이를 미세하게 조정해, 어느 한쪽이 튀지 않고 자연스럽게 읽히도록 맞췄습니다. 9가지 굵기와 `wdth` 축을 통한 너비 조절, Variable을 지원해 다양한 화면 밀도와 인터페이스 조건에 유연하게 대응합니다.
 
 [**최신 버전 다운로드하기**](https://github.com/avanturation/interlude/releases/latest)
 
@@ -40,7 +42,7 @@
 
 #### Dynamic Subset
 
-페이지에서 실제로 사용하는 글리프만 로드합니다. CJK 폰트의 용량 문제를 해결합니다.
+페이지에서 실제로 사용하는 글리프만 로드하며, CJK 폰트의 용량 문제를 해결합니다.
 
 Variable (하나의 폰트로 모든 굵기 커버):
 
@@ -103,8 +105,6 @@ import { InterludeDisplay } from "interlude-ui/font/display";
 
 ### Tailwind CSS v4에서 사용하기
 
-Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토큰 등록이 끝납니다.
-
 ```css
 @import "tailwindcss";
 @import "interlude-ui/tailwind";
@@ -115,15 +115,15 @@ Tailwind v4는 CSS-first 설정이라, CSS 한 줄 import로 폰트 로드 + 토
 <h1 class="font-display font-opsz-display">제목 Heading</h1>
 ```
 
-`interlude-ui/tailwind`은 dynamic-subset `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
+Dynamic Subset용 `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--font-display` 토큰과 optical size 유틸리티(`font-opsz-text`, `font-opsz-display`)를 등록합니다.
 
-> 모든 `@import`는 다른 CSS 규칙보다 먼저 와야 합니다. 그렇지 않으면 `@font-face`가 드롭됩니다.
+`@font-face` 규칙이 정상적으로 적용되도록, 이 import는 CSS 파일의 가장 위에 두는 것을 권장합니다.
 
-> 번들러(Vite, Next.js 등)는 폰트 `url()`을 자동으로 재배치하므로 그대로 동작합니다. 다만 Tailwind standalone CLI(`@tailwindcss/cli`)는 `@import` 인라인 시 `url()`을 재배치하지 않아 woff2 경로가 깨집니다. CLI만 쓰는 환경이라면 아래 CDN CSS를 직접 로드하세요.
->
-> ```html
-> <link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
-> ```
+또한 Vite나 Next.js 같은 번들러는 폰트 경로를 자동으로 처리하지만, Tailwind standalone CLI 환경에서는 import된 폰트 URL이 제대로 재작성되지 않을 수 있습니다. 이런 경우, CDN의 CSS를 직접 불러와주세요.
+
+ ```html
+ <link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
+ ```
 
 ## font-family
 
