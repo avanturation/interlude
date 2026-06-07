@@ -1,14 +1,14 @@
 {
   "name": "interlude-ui",
-  "version": "1.1.0",
-  "description": "Interlude — Korean-first CJK variable font combining Inter and Pretendard JP",
+  "version": "1.2.0",
+  "description": "Interface typeface balancing Latin–CJK harmony with screen density",
   "license": "OFL-1.1",
   "author": "avanturation",
   "repository": {
     "type": "git",
     "url": "https://github.com/avanturation/interlude"
   },
-  "homepage": "https://github.com/avanturation/interlude",
+  "homepage": "https://avanturation.com/interlude",
   "keywords": [
     "font",
     "interlude",

@@ -1,6 +1,6 @@
 # Interlude
 
-Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/orioncactus/pretendard)를 결합하고, UI 등 주요 사용 환경에 맞게 보정해 한국어, 일본어, 중국어까지 커버하는 서체입니다. Inter와 Pretendard가 지원하는 모든 OpenType 기능을 그대로 포함하며, 9가지 굵기와 가변 (Variable) 글꼴을 지원합니다.
+> **Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, 문자 사이의 밀도와 리듬을 다시 맞춘 인터페이스 서체입니다.** [Inter](https://rsms.me/inter)의 라틴 글리프와 [Pretendard](https://github.com/orioncactus/pretendard)의 CJK 글리프를 기반으로, 4px Grid 중심의 UI 환경에 더 유연하게 대응하도록 조율했습니다. 9가지 굵기와 `wdth` 축을 통한 너비 조절, Variable Font를 지원해 다양한 화면 밀도와 인터페이스 조건에 맞춰 사용할 수 있습니다.
 
 [**최신 버전 다운로드하기**](https://github.com/avanturation/interlude/releases/latest)
 
@@ -17,16 +17,6 @@ Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 ## 기능 및 배경
 
 자세한 배경과 OpenType 기능, Inter 및 Pretendard와의 차이점은 [이곳](https://avanturation.com/interlude)에서 확인하실 수 있습니다.
-
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/why-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/why.png">
-  <img alt="why" src="docs/why.png">
-</picture>
-
-<br/>
 
 ## Interlude 사용하기
 
@@ -48,7 +38,7 @@ Interlude는 [Inter](https://rsms.me/inter)와 [Pretendard](https://github.com/o
 - `Interlude` — 정적 본문용 (opsz 14)
 - `Interlude Display` — 정적 제목용 (opsz 32)
 
-#### Dynamic Subset (경량 로딩, 권장)
+#### Dynamic Subset
 
 페이지에서 실제로 사용하는 글리프만 로드합니다. CJK 폰트의 용량 문제를 해결합니다.
 
@@ -167,8 +157,6 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 - `Interlude` — 본문용
 - `Interlude Display` — 제목용
 
-<br/>
-
 ## Font Families
 
 - **Interlude** — UI, 본문에 최적화 (optical size 14)
@@ -190,8 +178,6 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 - 7,138자 CJK 통합 한자 (Pretendard 기반)
 - CJK 기호·호환·반각/전각 문자 (Inter & Pretendard 혼합)
 
-<br/>
-
 ## Build
 
 Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Interlude 설계 원칙에 맞는 패치를 진행해 빌드합니다.
@@ -203,8 +189,6 @@ make clean
 make all
 ```
 
-<br/>
-
 ## Credits
 
 - [Inter](https://rsms.me/inter/) by @rsms
@@ -212,9 +196,7 @@ make all
 
 ### Contribute
 
-Interlude는 UI 디자이너로서 평소 가지고 있던 생각들을 조합해, `Glyphs`와 같은 서체 전용 툴 없이 OpenCode 만으로 제작되었습니다. 
-
-폰트에 대한 지식이 부족한 만큼, 오픈소스 커뮤니티의 많은 피드백과 기여가 필요합니다. Issues와 Pull Request를 통해 기여해주시면 감사하겠습니다.
+Interlude는 UI 디자이너로서 평소 가지고 있던 생각들을 조합해 서체 전용 툴 없이 OpenCode 만으로 제작되었습니다. 폰트에 대한 지식이 부족한 만큼, 오픈소스 커뮤니티의 많은 피드백과 기여가 필요합니다. Issues와 Pull Request를 통해 기여해주시면 감사하겠습니다.
 
 ### License
 

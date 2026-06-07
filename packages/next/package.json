@@ -1,13 +1,14 @@
 {
   "name": "interlude-ui",
-  "version": "1.1.0",
-  "description": "Interlude — Korean-first CJK variable font for Next.js",
+  "version": "1.2.0",
+  "description": "Interface typeface balancing Latin–CJK harmony with screen density — for Next.js",
   "license": "OFL-1.1",
   "author": "avanturation",
   "repository": {
     "type": "git",
     "url": "https://github.com/avanturation/interlude"
   },
+  "homepage": "https://avanturation.com/interlude",
   "keywords": ["font", "interlude", "cjk", "korean", "japanese", "nextjs", "variable-font"],
   "peerDependencies": {
     "next": ">=13.0.0"

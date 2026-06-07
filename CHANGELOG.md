@@ -1,5 +1,33 @@
 # 변경 이력
 
+## 1.2.0 (2026-06-07)
+
+가변 폭(wdth) 축 추가 + Latin/CJK 굵기 밸런스 정교화.
+
+### wdth 축
+- **wdth 축 신규 추가 (75–150)**: Condensed부터 Expanded까지 가변 폭 지원
+  - dual expansion master (125 / 150)로 전 구간 0.00u fidelity
+  - 대각선 글자 직선성 보정 (Y/X/V/W/A/v/z), k/K weld min-overlap clamp
+  - Condensed-Black 카운터 막힘 보정: wght×wdth 교차 gvar 튜플 (18,406 글자)
+- named instances 27개 (Condensed/Normal/Expanded × 9 weights)
+- STAT 테이블 width 축 4단계 (Condensed/Normal/Expanded/Extra Expanded)
+
+### 굵기 밸런스
+- CJK weight 매핑: BOLD_SCALE/THIN_SCALE 1.0 (Pretendard native deltas, 전 구간 회색도 평탄화)
+- Latin straight-stem(H/l/I/n) 균일 thinning (corner correction 전체 알파벳 확장)
+- Latin Medium~Black avar evenness: 끝점 고정, 500–800 재분배 (+38.5 plateau → +42/43 균일)
+- Latin heavy 미세 thinning: wght 400 고정, 900으로 갈수록 -3% 점진 (peak 델타 0.944배)
+
+### 웹/패키지
+- CSS/Next.js wdth 지원: `@font-face`에 `font-stretch: 75% 150%`
+  - misc/interlude.css, gen-dynamic-subset.py
+  - packages/next sans/display.mjs: declarations로 font-stretch 주입
+
+### 빌드
+- Makefile: OS 자동 감지 폰트 설치 타겟 (macOS/Windows/Linux), `make all`에 연결
+- check-font: wdth 75–150 범위 검증 추가
+- gen-static: 정적 폰트 생성 시 wdth=100 핀
+
 ## 1.1.0 (2025-06-04)
 
 리브랜딩 + CJK 밸런스 보정.
