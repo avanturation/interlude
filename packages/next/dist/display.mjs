@@ -6,7 +6,7 @@ export const InterludeDisplay = localFont({
   weight: "100 900",
   display: "swap",
   declarations: [
-    { prop: "font-stretch", value: "75% 150%" },
+    { prop: "font-stretch", value: "75% 125%" },
     { prop: "font-variation-settings", value: "'opsz' 32" },
   ],
   fallback: [

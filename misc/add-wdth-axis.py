@@ -21,14 +21,29 @@ from fontTools.otlLib.builder import buildStatTable
 
 WDTH_MIN = 75.0
 WDTH_DEFAULT = 100.0
-WDTH_MID = 125.0
-WDTH_MAX = 150.0
+WDTH_MAX = 125.0
 S_CONDENSE = 0.75
 S_EXPAND = 1.25
-S_EXPAND_MAX = 1.5
-# wdth=125 sits at normalized +0.5 (min75/def100/max150). It stays a true
-# master via an intermediate-region tuple peaking at 0.5; 150 peaks at 1.0.
-WDTH_MID_NORM = (WDTH_MID - WDTH_DEFAULT) / (WDTH_MAX - WDTH_DEFAULT)
+# Round latin glyphs (o c e a b d p q g ...) condense their bowl bodies to a higher
+# scale than straight-stem glyphs at the heavy+condensed corner. A pure s=0.75 body
+# is too narrow to hold both thick bowl walls and an open counter, so the old
+# counter-opening correction (mult*0.82) thinned the walls ~25% below the straight
+# stems (Black-Condensed "Typeface" read as uneven). SF Pro instead condenses round
+# glyphs less; matching that with s=0.86 (full wall restoration) keeps walls at the
+# straight-stem weight AND the counter open, at the same advance width.
+S_ROUND_CONDENSE = 0.86
+# Mixed glyphs carry both a straight stem and a closed bowl joined on one contour, so
+# the counter-opening normal push that cleanly thickens symmetric bowls (o e 0) flips
+# direction sharply at the stem/bowl junction, spiking the edge's second derivative (6
+# hits 151 vs o's 8) and reading as a bump-next-to-dent or a lopsided counter. b p q are
+# mirror-images of d and share its junction, so they need the same attenuation. Dropping
+# the push to 0.90 cuts those spikes ~4x (6: 151->37, g: 94->0, d: 118->20) and brings
+# b/p/q from a 12.6u push down to d's 3.6u, while symmetric bowls keep the full push.
+S_MIXED_OPENING = 0.90
+_MIXED_GLYPHS = set('6cdgsabpq')
+# wdth axis: min75/def100/max125. Single master per side: wdth=75 (s=0.75) and
+# wdth=125 (s=1.25), both at normalized -1.0/+1.0. wdth=150 was removed because
+# expansion to s=1.5 broke diagonals (X strokes not meeting, x/g/m/y distortion).
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -114,14 +129,22 @@ def _add_axis_and_instances(f):
     for inst in fvar.instances:
         inst.coordinates.setdefault('wdth', WDTH_DEFAULT)
     base = [i for i in fvar.instances if i.coordinates.get('wdth') == WDTH_DEFAULT]
+    for inst in base:
+        if inst.postscriptNameID in (None, 0xFFFF):
+            weight = name.getDebugName(inst.subfamilyNameID)
+            ps_weight = '' if weight == 'Regular' else weight
+            inst.postscriptNameID = name.addName(f'Interlude-{ps_weight}' if ps_weight else 'Interlude-Regular')
     added = []
-    for prefix, wd in (('Condensed', WDTH_MIN), ('Expanded', WDTH_MID)):
+    for prefix, wd in (('Condensed', WDTH_MIN), ('Expanded', WDTH_MAX)):
         for inst in base:
             weight = name.getDebugName(inst.subfamilyNameID)
             ni = NamedInstance()
             ni.coordinates = dict(inst.coordinates)
             ni.coordinates['wdth'] = wd
             ni.subfamilyNameID = name.addName(f'{prefix} {weight}')
+            ps_weight = '' if weight == 'Regular' else weight
+            ps_name = f'Interlude-{prefix}{ps_weight}'
+            ni.postscriptNameID = name.addName(ps_name)
             added.append(ni)
     fvar.instances.extend(added)
 
@@ -279,9 +302,8 @@ def _rebuild_stat(f):
             for v, n in weights]),
         dict(tag='wdth', name='Width', ordering=2, values=[
             dict(value=WDTH_MIN, name='Condensed'),
-            dict(value=WDTH_DEFAULT, name='Normal', flags=0x2, linkedValue=WDTH_MID),
-            dict(value=WDTH_MID, name='Expanded'),
-            dict(value=WDTH_MAX, name='Extra Expanded')]),
+            dict(value=WDTH_DEFAULT, name='Normal', flags=0x2, linkedValue=WDTH_MAX),
+            dict(value=WDTH_MAX, name='Expanded')]),
     ]
     buildStatTable(f, axes)
 
@@ -294,7 +316,6 @@ def _corner_worker(args):
     bglyf = _W['bglyf']
     bhmtx = _W['bhmtx']
     medians = _W['medians']
-    extra_latin = _W['extra_latin']
     extra_cjk = _W['extra_cjk']
     out = {}
     for gn, cp in chunk:
@@ -306,9 +327,12 @@ def _corner_worker(args):
         wg, reliable = ST.get_stem_width(bglyf, gn, cjk, medians)
         if cjk and reliable:
             mult = MU.cjk_stem_multiplier(S_CONDENSE, wg) * extra_cjk
+            res = DP.displace_v2(bglyf, gn, S_CONDENSE, wg, mult, allow_diag=True)
         else:
-            mult = MU.latin_stem_multiplier(S_CONDENSE) * extra_latin
-        res = DP.displace_v2(bglyf, gn, S_CONDENSE, wg, mult, allow_diag=True)
+            opening = MU.latin_stem_multiplier(S_ROUND_CONDENSE)
+            if cp is not None and chr(cp) in _MIXED_GLYPHS:
+                opening *= S_MIXED_OPENING
+            res = DP.displace_v2(bglyf, gn, S_ROUND_CONDENSE, wg, opening, allow_diag=True)
         if res is None:
             continue
         coords, ends, flags, base, _ = res
@@ -340,10 +364,15 @@ def _add_corner_corrections(f, src):
     extra_cjk = 0.80
     min_corr = 3
 
+    # Round latin glyphs use S_ROUND_CONDENSE (less-condensed bowl body) for full wall
+    # restoration with an open counter; round CJK glyphs keep the mult*extra_cjk
+    # counter-opening path. Straight-stem glyphs (I l H E T F M N h k ...) are excluded:
+    # the correction only over-thins their stems (Bold I 82% vs 98%) without needing help.
     latin_set = set(
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        'abcdefghijklmnopqrstuvwxyz'
-        '0123456789&$@'
+        'BCDGOPQRSU'
+        'abcdegopqs'
+        '0689'
+        '&$@'
     ) | set('\u00e6\u0153\u00df')
 
     black = TTFont(src)
@@ -403,21 +432,164 @@ def _add_corner_corrections(f, src):
 def _apply_wght_evenness_avar(f):
     if 'avar' not in f:
         return
+    # Remap the wght axis to SF Pro's stem-progression curve. Interlude's stems are
+    # near-linear in wght (n stem 22->190 per 1000UPM), while SF Pro's Thin end is
+    # heavier with a flatter low curve (SF Thin n=36 vs Interlude 22). Without this,
+    # Thin reads ~40% lighter than SF Pro and looks invisible. The map pulls light
+    # weights toward heavier interpolation positions (wght=100 -> ~167 internally,
+    # matching SF stem 36). The heavier Thin also masks the small curve-vs-stem
+    # thickness gap (o side vs l stem ~6u) that is visually distracting at hairline
+    # weight. wght=400 stays fixed and the wght=900 endpoint keeps full reach.
     seg = f['avar'].segments
     wght = dict(seg.get('wght', {}))
     wght.update({
-        0.20001220703125: 0.20199999213,
-        0.4000244140625: 0.40000000596,
-        0.5999755859375: 0.59799998998,
-        0.79998779296875: 0.79900002479,
+        -1.0: -0.77778,
+        -0.66667: -0.52381,
+        -0.33333: -0.25397,
+        0.0: 0.0,
+        0.2: 0.18095,
+        0.4: 0.36190,
+        0.6: 0.55238,
+        0.8: 0.73333,
+        1.0: 1.0,
     })
     seg['wght'] = dict(sorted(wght.items()))
 
 
-# Latin wght=900 stem을 약 3% 미세하게 얇게 (400 고정, 900으로 점진).
+# Latin wght=900 stem을 얇게 잘라 CJK 줄기 굵기와 맞춘다 (400 고정, 900으로 점진).
 # wght peak 튜플 (0,1,1)만 스케일 → wght=400(norm0)에서 scalar 0이라 불변,
 # wght=900(norm1.0)에서 델타가 LATIN_WGHT_THIN_SCALE배. CJK 델타는 별도라 무영향.
-LATIN_WGHT_THIN_SCALE = 0.944  # I stem 404->392 (-3%); 500~800은 -1.0~-2.7% 점진
+LATIN_WGHT_THIN_SCALE = 0.82  # I stem 404->331 at Black (-8%); tapers to 0 at Regular.
+
+
+THIN_CORR_SCALE = 0.30
+THIN_CORR_BOOST = 1.06
+
+
+def _thin_corr_worker(args):
+    chunk, = args
+    DP = _W['DP']
+    ST = _W['ST']
+    MU = _W['MU']
+    glyf = _W['glyf']
+    medians = _W['medians']
+    out = {}
+    for gn, cp in chunk:
+        g = glyf[gn]
+        g.expand(glyf)
+        if not hasattr(g, 'numberOfContours') or g.numberOfContours <= 0:
+            continue
+        cjk = is_cjk(cp)
+        wg, reliable = ST.get_stem_width(glyf, gn, cjk, medians)
+        if cjk and reliable:
+            mult = MU.cjk_stem_multiplier(S_CONDENSE, wg)
+        else:
+            mult = MU.latin_stem_multiplier(S_CONDENSE)
+        rb = DP.displace_v2(glyf, gn, S_CONDENSE, wg, mult, allow_anchor=False, allow_diag=True)
+        rh = DP.displace_v2(glyf, gn, S_CONDENSE, wg, mult * THIN_CORR_BOOST, allow_anchor=False, allow_diag=True)
+        if rb is None or rh is None:
+            continue
+        cb = rb[0]
+        chh = rh[0]
+        n = min(len(cb), len(chh))
+        corr = [(round(THIN_CORR_SCALE * (chh[i][0] - cb[i][0])),
+                 round(THIN_CORR_SCALE * (chh[i][1] - cb[i][1]))) for i in range(n)]
+        if not corr or max(abs(d[0]) + abs(d[1]) for d in corr) < 1:
+            continue
+        out[gn] = corr
+    return out
+
+
+def _thin_corr_init(src, medians):
+    _W['DP'] = _load('wdth_displace', 'wdth_displace.py')
+    _W['ST'] = _load('wdth_stems', 'wdth_stems.py')
+    _W['MU'] = _load('wdth_multipliers', 'wdth_multipliers.py')
+    _W['ST'].set_fallback_stem(medians.get('fallback'))
+    f = TTFont(src)
+    _W['glyf'] = f['glyf']
+    _W['medians'] = medians
+
+
+def _add_thin_correction(f, src):
+    # The condense tuple's stem-restoration is an absolute amount fixed at the
+    # wght=400 master, so light weights over-thin (Thin I stem ~89% vs Regular 97%).
+    # Inject a thin-side wght x wdth correction = 0.30 * (displace(mult*1.06) -
+    # displace(mult)), zero at Regular and full at Thin, lifting Thin stems to ~96%
+    # without touching Regular/Bold. Scale 0.30 found empirically against the target.
+    medians = _compute_medians(src)
+    rev = {}
+    for cp, gn in TTFont(src).getBestCmap().items():
+        rev.setdefault(gn, cp)
+    jobs = []
+    for gn in f.getGlyphOrder():
+        cp = rev.get(gn)
+        if cp is None or not (is_cjk(cp) or is_latin_base(cp)):
+            continue
+        jobs.append((gn, cp))
+    nproc = min(cpu_count(), 14)
+    size = 64
+    chunks = [(jobs[i:i + size],) for i in range(0, len(jobs), size)]
+    corrs = {}
+    with Pool(nproc, initializer=_thin_corr_init, initargs=(src, medians)) as pool:
+        for r in pool.imap_unordered(_thin_corr_worker, chunks):
+            corrs.update(r)
+    gvar = f['gvar']
+    glyf = f['glyf']
+    added = 0
+    for gn, corr in corrs.items():
+        g = glyf[gn]
+        g.expand(glyf)
+        npts = len(g.coordinates)
+        c = list(corr[:npts])
+        while len(c) < npts + 4:
+            c.append((0, 0))
+        gvar.variations.setdefault(gn, []).append(
+            TupleVariation({'wght': (-1.0, -1.0, 0.0), 'wdth': (-1.0, -1.0, 0.0)}, c))
+        added += 1
+    return added
+
+
+def _add_e_overlap_correction(f, src):
+    DG = _load('wdth_diagonal', 'wdth_diagonal.py')
+    cmap = f.getBestCmap()
+    glyf = f['glyf']
+    gvar = f['gvar']
+    gn = cmap.get(ord('e'))
+    if gn is None:
+        return 0
+    g = glyf[gn]
+    g.expand(glyf)
+    if not hasattr(g, 'numberOfContours') or g.numberOfContours <= 0:
+        return 0
+    coords = [(x, y) for x, y in g.coordinates]
+    ends = list(g.endPtsOfContours)
+    flags = list(g.flags)
+    corr = DG.e_overlap_wall_pull(coords, ends, flags)
+    if not corr:
+        return 0
+    npts = len(coords)
+
+    def _tuple_for(scale, axes):
+        c = [corr.get(i, (0, 0)) for i in range(npts)]
+        c = [(round(dx * scale), round(dy * scale)) for dx, dy in c]
+        if max(abs(d[0]) + abs(d[1]) for d in c) < 1:
+            return None
+        while len(c) < npts + 4:
+            c.append((0, 0))
+        return TupleVariation(axes, c)
+
+    added = 0
+    specs = [
+        (9.0 / 13.0, {'wdth': (0.0, 1.0, 1.0)}),
+        (4.0 / 13.0, {'wght': (-1.0, -1.0, 0.0), 'wdth': (0.0, 1.0, 1.0)}),
+        (-4.0 / 13.0, {'wght': (0.0, 1.0, 1.0), 'wdth': (0.0, 1.0, 1.0)}),
+    ]
+    for scale, axes in specs:
+        tv = _tuple_for(scale, axes)
+        if tv is not None:
+            gvar.variations.setdefault(gn, []).append(tv)
+            added += 1
+    return added
 
 
 def _apply_latin_wght_thinning(f):
@@ -442,6 +614,83 @@ def _apply_latin_wght_thinning(f):
     return touched
 
 
+_Y_PIN_POINT = 7
+_Y_PIN_CHORD = (6, 8)
+
+
+def _pin_y_tail_tuples(f):
+    import numpy as np
+    from fontTools.varLib.models import supportScalar
+
+    cmap = f.getBestCmap()
+    gn = cmap.get(ord('y'))
+    if gn is None or gn not in f['gvar'].variations:
+        return False
+    g = f['glyf'][gn]
+    g.expand(f['glyf'])
+    co = g.coordinates
+    p, a, b = _Y_PIN_POINT, _Y_PIN_CHORD[0], _Y_PIN_CHORD[1]
+    if len(co) <= p:
+        return False
+    gv = f['gvar'].variations[gn]
+    if any(tv.coordinates[p] is None for tv in gv):
+        return False
+
+    axes = {ax.axisTag: (ax.minValue, ax.defaultValue, ax.maxValue)
+            for ax in f['fvar'].axes}
+
+    def nrm(tag, val):
+        lo, de, hi = axes[tag]
+        if val == de:
+            return 0.0
+        return (val - de) / (de - lo) if val < de else (val - de) / (hi - de)
+
+    sups = [{k: (v[0], v[1], v[2]) for k, v in tv.axes.items()} for tv in gv]
+
+    def loc(wght=400, wdth=100, opsz=14):
+        return {'wght': nrm('wght', wght), 'wdth': nrm('wdth', wdth),
+                'opsz': nrm('opsz', opsz)}
+
+    # Pin the default-master point onto the chord first; gvar scalars are zero at the
+    # default location so tuples cannot correct it there.
+    xa0, ya0 = co[a]
+    xp0, yp0 = co[p]
+    xb0, yb0 = co[b]
+    t0 = (yp0 - ya0) / (yb0 - ya0)
+    co[p] = (round(xa0 + t0 * (xb0 - xa0)), yp0)
+    xp0 = co[p][0]
+
+    samples = [(loc(100, 100), 10), (loc(900, 100), 10), (loc(400, 75), 10),
+               (loc(400, 125), 10), (loc(100, 75), 10), (loc(900, 75), 10),
+               (loc(100, 125), 10), (loc(900, 125), 10),
+               (loc(400, 100, 32), 3), (loc(100, 100, 32), 3),
+               (loc(900, 100, 32), 3), (loc(100, 75, 32), 2),
+               (loc(900, 125, 32), 2), (loc(700, 90), 3), (loc(250, 110), 3)]
+    n = len(gv)
+    A = np.zeros((len(samples), n))
+    rhs = np.zeros(len(samples))
+    wts = np.zeros(len(samples))
+    for j, (L, wt) in enumerate(samples):
+        xa, ya, xb, yb, yp = xa0, ya0, xb0, yb0, yp0
+        for i, tv in enumerate(gv):
+            s = supportScalar(L, sups[i])
+            if s == 0:
+                continue
+            c = tv.coordinates
+            xa += s * c[a][0]; ya += s * c[a][1]
+            xb += s * c[b][0]; yb += s * c[b][1]
+            yp += s * c[p][1]
+            A[j, i] = s
+        t = (yp - ya) / (yb - ya)
+        rhs[j] = (xa + t * (xb - xa)) - xp0
+        wts[j] = wt
+    sw = np.sqrt(wts)
+    sol, _, _, _ = np.linalg.lstsq(A * sw[:, None], rhs * sw, rcond=None)
+    for i, tv in enumerate(gv):
+        tv.coordinates[p] = (round(float(sol[i])), tv.coordinates[p][1])
+    return True
+
+
 def add_wdth(src, out):
     t0 = time.time()
     print('  Measuring class stem medians...', flush=True)
@@ -453,9 +702,6 @@ def add_wdth(src, out):
     print('  Computing expansion (wdth=125) deltas...', flush=True)
     expand = _compute(src, S_EXPAND, medians)
     print(f'    {len(expand)} glyphs ({time.time() - t0:.0f}s)', flush=True)
-    print('  Computing expansion (wdth=150) deltas...', flush=True)
-    expand_max = _compute(src, S_EXPAND_MAX, medians)
-    print(f'    {len(expand_max)} glyphs ({time.time() - t0:.0f}s)', flush=True)
 
     f = TTFont(src)
     glyf = f['glyf']
@@ -463,7 +709,6 @@ def add_wdth(src, out):
     hmtx = f['hmtx']
     _add_axis_and_instances(f)
 
-    m = WDTH_MID_NORM
     relaxed = 0
     for gn, (deltas, seff) in cond.items():
         if seff > S_CONDENSE:
@@ -472,10 +717,7 @@ def add_wdth(src, out):
             TupleVariation({'wdth': (-1.0, -1.0, 0.0)}, deltas))
     for gn, (deltas, seff) in expand.items():
         gvar.variations.setdefault(gn, []).append(
-            TupleVariation({'wdth': (0.0, m, 1.0)}, deltas))
-    for gn, (deltas, seff) in expand_max.items():
-        gvar.variations.setdefault(gn, []).append(
-            TupleVariation({'wdth': (m, 1.0, 1.0)}, deltas))
+            TupleVariation({'wdth': (0.0, 1.0, 1.0)}, deltas))
 
     comp = 0
     for gn in f.getGlyphOrder():
@@ -489,18 +731,22 @@ def add_wdth(src, out):
         gvar.variations.setdefault(gn, []).append(
             TupleVariation({'wdth': (-1.0, -1.0, 0.0)}, _composite_deltas(g.components, aw, lsb, rsb, S_CONDENSE, glyf, cond)))
         gvar.variations.setdefault(gn, []).append(
-            TupleVariation({'wdth': (0.0, m, 1.0)}, _composite_deltas(g.components, aw, lsb, rsb, S_EXPAND, glyf, expand)))
-        gvar.variations.setdefault(gn, []).append(
-            TupleVariation({'wdth': (m, 1.0, 1.0)}, _composite_deltas(g.components, aw, lsb, rsb, S_EXPAND_MAX, glyf, expand_max)))
+            TupleVariation({'wdth': (0.0, 1.0, 1.0)}, _composite_deltas(g.components, aw, lsb, rsb, S_EXPAND, glyf, expand)))
         comp += 1
 
     ncorner = _add_corner_corrections(f, src)
     print(f'  corner corrections (Condensed-Black counter opening): {ncorner} glyphs', flush=True)
+    nthincorr = _add_thin_correction(f, src)
+    print(f'  thin condense correction (light-weight stem lift): {nthincorr} glyphs', flush=True)
+    necorr = _add_e_overlap_correction(f, src)
+    print(f'  e overlap correction (thin-expand eye gap): {necorr} glyphs', flush=True)
     _rebuild_stat(f)
     _sync_variation_tables(f)
     _apply_wght_evenness_avar(f)
     nthin = _apply_latin_wght_thinning(f)
     print(f'  latin wght thinning (heavy -3%): {nthin} glyphs', flush=True)
+    if _pin_y_tail_tuples(f):
+        print('  y tail chord-pinned across weight/width/opsz tuples', flush=True)
     _strip_mac_names(f)
     f.save(out)
     print(f'  wdth axis added: simple={len(cond)} ({relaxed} relaxed) composite={comp} '

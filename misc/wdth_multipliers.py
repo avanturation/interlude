@@ -11,10 +11,13 @@ def scale_sidebearing(sb0, s):
 
 
 def latin_stem_multiplier(s):
-    if s < 1.0:
-        t = 1.0 - s
-        return 1.0 - 0.139 * t - 0.113 * t * t
-    return 1.0 + 0.460 * (s - 1.0)
+    # wdth axis preserves stroke weight (SF Pro model): condensing/expanding changes
+    # glyph width and spacing, not stem thickness. Returning 1.0 keeps the vertical
+    # stem at its master weight across all widths, matching the frozen horizontal
+    # curve strokes (which an x-only displacement model cannot thicken). The old
+    # 0.460 expand slope ballooned stems to 1.23x at wd150 while curves stayed
+    # constant, causing the Expanded weight imbalance.
+    return 1.0
 
 
 W_REF_CJK = 166.0

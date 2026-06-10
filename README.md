@@ -36,7 +36,7 @@ Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, �
 
 이 CSS는 세 가지 `font-family`를 정의합니다.
 
-- `Interlude Variable` — 가변 (opsz 14–32, wght 100–900, wdth 75–150)
+- `Interlude Variable` — 가변 (opsz 14–32, wght 100–900, wdth 75–125)
 - `Interlude` — 정적 본문용 (opsz 14)
 - `Interlude Display` — 정적 제목용 (opsz 32)
 
@@ -168,7 +168,7 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 |------|-----|-------|---------|
 | Optical Size | `opsz` | 14–32 | 14 |
 | Weight | `wght` | 100–900 | 400 |
-| Width | `wdth` | 75–150 | 100 |
+| Width | `wdth` | 75–125 | 100 |
 
 ### 언어 커버리지
 

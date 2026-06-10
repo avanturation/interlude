@@ -72,7 +72,10 @@ $(DISTDIR)/Interlude.ttc: $(DISTDIR)/extras/ttf/.ok
 from fontTools.ttLib import TTFont; \
 from fontTools.ttLib.ttCollection import TTCollection; \
 import glob; \
-fonts = [TTFont(f) for f in sorted(glob.glob('$(DISTDIR)/extras/ttf/Interlude-*.ttf')) + sorted(glob.glob('$(DISTDIR)/extras/ttf/InterludeDisplay-*.ttf'))]; \
+g = lambda p: sorted(glob.glob('$(DISTDIR)/extras/ttf/' + p)); \
+text = g('Interlude-*.ttf') + g('InterludeCondensed-*.ttf') + g('InterludeExpanded-*.ttf'); \
+disp = g('InterludeDisplay-*.ttf') + g('InterludeDisplayCondensed-*.ttf') + g('InterludeDisplayExpanded-*.ttf'); \
+fonts = [TTFont(f) for f in text + disp]; \
 ttc = TTCollection(); ttc.fonts = fonts; ttc.save('$@')"
 	@echo "  Interlude.ttc: $$(du -h $@ | cut -f1)"
 
@@ -85,7 +88,7 @@ web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok $(DISTDIR)/web/dynamic
 $(DISTDIR)/web/.ok: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/extras/ttf/.ok | $(DISTDIR)/web
 	python3 -m fontTools ttLib.woff2 compress $(DISTDIR)/InterludeVariable.ttf \
 		-o $(DISTDIR)/web/InterludeVariable.woff2
-	@for f in $(DISTDIR)/extras/ttf/*.ttf; do \
+	@for f in $(DISTDIR)/extras/ttf/Interlude-*.ttf $(DISTDIR)/extras/ttf/InterludeDisplay-*.ttf; do \
 		name=$$(basename "$$f" .ttf); \
 		python3 -m fontTools ttLib.woff2 compress "$$f" -o "$(DISTDIR)/web/$$name.woff2"; \
 	done

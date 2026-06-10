@@ -2,6 +2,9 @@ import math
 
 _SELF_X_TOL = 2
 _FLAG_ON_CURVE = 0x01
+_DSD_MAX_YDEV_RATIO = 0.10
+_DSD_MAX_YDEV_FLOOR = 6.0
+_DSD_MIN_VSTEM_WIDTH_RATIO = 0.6
 
 import os as _os2, importlib.util as _ilu2
 _ds = _ilu2.spec_from_file_location("wdth_diagonal", _os2.path.join(_os2.path.dirname(__file__), "wdth_diagonal.py"))
@@ -52,6 +55,30 @@ def _vertical_edge_unit_nx(poly_scaled, allpolys_scaled, i, min_len=8.0, max_abs
     if raw is None or abs(raw)<1e-6:return None
     return 1.0 if raw>0 else -1.0
 
+def _stem_cap_bridge(cont, allpolys, idx):
+    # A short horizontal cap that connects to a vertical stem edge (e.g. g's stem-top
+    # cap meeting the bowl) must move WITH the stem, not average stem(-1) and bowl(+0.x)
+    # which splays the corner and kinks the bowl entry. If this point is one end of a
+    # short near-horizontal edge whose other end has a vertical stem edge (nx=+-1),
+    # inherit that stem sign so the cap translates rigidly with the stem.
+    n = len(cont)
+    for nb in ((idx + 1) % n, (idx - 1) % n):
+        ax, ay = cont[idx]
+        bx, by = cont[nb]
+        dx = bx - ax
+        dy = by - ay
+        L = math.hypot(dx, dy)
+        if L < 8.0 or L > 100.0:
+            continue
+        if abs(dx) < 1e-6 or abs(dy) / L > 0.18:
+            continue
+        for e in ((nb - 1) % n, nb):
+            v = _vertical_edge_unit_nx(cont, allpolys, e)
+            if v is not None:
+                return v
+    return None
+
+
 def _pt_normal_x(cont_scaled, allpolys_scaled, idx):
     n=len(cont_scaled)
     prev_i=(idx-1)%n
@@ -61,11 +88,58 @@ def _pt_normal_x(cont_scaled, allpolys_scaled, idx):
     if verticals:
         if all(v>0 for v in verticals):return 1.0
         if all(v<0 for v in verticals):return -1.0
+    bridge=_stem_cap_bridge(cont_scaled,allpolys_scaled,idx)
+    if bridge is not None:
+        return bridge
     nx_prev=_edge_normal_x(cont_scaled,allpolys_scaled,prev_i)
     nx_cur=_edge_normal_x(cont_scaled,allpolys_scaled,idx)
     vals=[v for v in (nx_prev,nx_cur) if v is not None]
     if not vals:return 0.0
     return sum(vals)/len(vals)
+
+
+def _curve_aware_nx(conts, scaled, flags, ends):
+    # Per-point outward-normal-x for the condensation field. On-curve points use the
+    # edge-normal logic (which snaps vertical stem edges to +-1 so stem thickness is
+    # restored). Off-curve control points must NOT use their own control-polygon edge
+    # normal: it differs from the curve's true normal, so adjacent points get
+    # different nx, distorting the control polygon and kinking the Bezier (f hook, y
+    # tail, g bowl). Instead an off-curve control takes its nx from the surrounding
+    # on-curve anchors (ordinal lerp) so the whole curve segment scales coherently.
+    starts = []
+    st = 0
+    for e in ends:
+        starts.append(st)
+        st = e + 1
+    out = []
+    for ci, cont in enumerate(scaled):
+        n = len(cont)
+        base0 = starts[ci]
+        on = [bool(flags[base0 + i] & _FLAG_ON_CURVE) for i in range(n)]
+        nx = [0.0] * n
+        any_on = any(on)
+        for i in range(n):
+            if on[i] or not any_on:
+                nx[i] = _pt_normal_x(cont, scaled, i)
+        for i in range(n):
+            if on[i] or not any_on:
+                continue
+            prev_on = (i - 1) % n
+            steps_p = 1
+            while not on[prev_on]:
+                prev_on = (prev_on - 1) % n
+                steps_p += 1
+            next_on = (i + 1) % n
+            steps_n = 1
+            while not on[next_on]:
+                next_on = (next_on + 1) % n
+                steps_n += 1
+            total = steps_p + steps_n
+            t = steps_p / total
+            nx[i] = (1.0 - t) * nx[prev_on] + t * nx[next_on]
+        out.append(nx)
+    return out
+
 
 def _contour_orientation(poly):
     a = 0.0
@@ -289,13 +363,17 @@ def _stems_mod():
 
 
 def _measure_coords(coords, ends, flags):
+    return _stems_mod().measure_stem({"_m": _mk_glyph(coords, ends, flags)}, "_m")
+
+
+def _mk_glyph(coords, ends, flags):
     from fontTools.ttLib.tables._g_l_y_f import Glyph, GlyphCoordinates
     g = Glyph()
     g.numberOfContours = len(ends)
     g.coordinates = GlyphCoordinates([(round(x), round(y)) for x, y in coords])
     g.endPtsOfContours = list(ends)
     g.flags = bytearray(flags)
-    return _stems_mod().measure_stem({"_m": g}, "_m")
+    return g
 
 
 def _solve_lambda(measure_at, target, tol=2.0, lam_cap=5.0, step=0.125):
@@ -407,7 +485,7 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
     conts = _contours_xy(base, ends)
 
     scaled_s = [[(x * s, y) for x, y in c] for c in conts]
-    nxs = [[_pt_normal_x(cont, scaled_s, i) for i in range(len(cont))] for cont in scaled_s]
+    nxs = _curve_aware_nx(conts, scaled_s, flags, ends)
     if allow_anchor:
         oc = []
         start = 0
@@ -422,7 +500,58 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
 
     if allow_diag:
         claimed = _DIAG.claim_diagonal_points(base, ends, flags, Wg)
+        dsd = _DIAG.diagonal_stroke_deltas(base, ends, flags, Wg, s, mult) if abs(s - 1.0) > 1e-6 else {}
     else:
+        claimed = set()
+        dsd = {}
+
+    if dsd:
+        def _claimed_coords(use_dsd):
+            out = []
+            gi = 0
+            for cont in conts:
+                for x, y in cont:
+                    if use_dsd and gi in dsd:
+                        out.append(dsd[gi])
+                    else:
+                        out.append((x * s, y))
+                    gi += 1
+            return [(round(x), round(y)) for x, y in out]
+        affine_self = _count_self_x(_claimed_coords(False), ends, flags)
+        perstroke_self = _count_self_x(_claimed_coords(True), ends, flags)
+        # Crossing-stroke glyphs (x, X, y at expansion) genuinely self-intersect, so a
+        # per-stroke affine can transiently raise the self-x count above plain uniform
+        # scaling without being degenerate. Comparing against affine_self alone false-
+        # positives there and discards a kink-free dsd, forcing the nx fallback which
+        # kinks the diagonal tips (x tips 0deg->8deg at wd125). Allow the glyph's
+        # inherent crossing budget plus tolerance; a real needle/spike still exceeds it.
+        base_self = (
+            baseline_self
+            if baseline_self is not None
+            else _count_self_x([(round(x), round(y)) for x, y in base], ends, flags)
+        )
+        allowed_self = max(base_self, affine_self) + _SELF_X_TOL
+        if perstroke_self > allowed_self:
+            dsd = {}
+
+    if dsd:
+        ydev_limit = max(_DSD_MAX_YDEV_RATIO * Wg, _DSD_MAX_YDEV_FLOOR)
+        max_ydev = 0.0
+        for gi in dsd:
+            if not (flags[gi] & _FLAG_ON_CURVE):
+                continue
+            dy = abs(dsd[gi][1] - base[gi][1])
+            if dy > max_ydev:
+                max_ydev = dy
+        if max_ydev > ydev_limit:
+            dsd = {}
+
+    if dsd and s > 1.0:
+        vratio = _DIAG.dsd_vstem_collapse_ratio(base, ends, flags, dsd)
+        if vratio is not None and vratio < _DSD_MIN_VSTEM_WIDTH_RATIO:
+            dsd = {}
+
+    if allow_diag and claimed and not dsd and abs(s - 1.0) > 1e-6:
         claimed = set()
 
     def build(s_eff, lam):
@@ -432,7 +561,13 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
         for ci, cont in enumerate(conts):
             for i, (x, y) in enumerate(cont):
                 if gi in claimed:
-                    out.append((x * s_eff, y))
+                    if gi in dsd:
+                        px, py = dsd[gi]
+                        if s_eff != s and s > 1e-9:
+                            px = px * (s_eff / s)
+                        out.append((px, py))
+                    else:
+                        out.append((x * s_eff, y))
                 else:
                     anc = anchors[ci][i]
                     if anc is not None:
@@ -445,6 +580,17 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
 
     target = mult * Wg
     lam = _solve_lambda(lambda l: _measure_coords(build(s, l), ends, flags), target)
+
+    if s < 1.0:
+        worst_base = _stems_mod().measure_worst_stem(
+            {"_m": _mk_glyph(base, ends, flags)}, "_m")
+        if worst_base is not None and worst_base >= 20.0:
+            def _worst_at(l):
+                return _stems_mod().measure_worst_stem(
+                    {"_m": _mk_glyph(build(s, l), ends, flags)}, "_m")
+            lam_w = _solve_lambda(_worst_at, mult * worst_base)
+            if lam_w is not None and lam_w > lam:
+                lam = min(lam_w, 1.10)
 
     coords = build(s, lam)
     used_seff = s
@@ -495,7 +641,116 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
         corr = _DIAG.weld_corrections(base, ends, flags, claimed, coords)
         if corr:
             coords = [(coords[i][0] + corr.get(i, 0.0), coords[i][1]) for i in range(len(coords))]
+    if used_seff > 1.0 and len(ends) >= 2:
+        ocorr = _DIAG.cjk_overlap_corrections(base, ends, coords)
+        if ocorr:
+            coords = [(coords[i][0] + ocorr.get(i, 0.0), coords[i][1]) for i in range(len(coords))]
+    if used_seff < 1.0:
+        coords = _clamp_arch_spring_undercut(coords, base, ends, flags)
+    elif used_seff > 1.0:
+        coords = _floor_arch_spring_undercut(coords, base, ends, flags)
     return coords, ends, flags, base, used_seff
+
+
+def _clamp_arch_spring_undercut(coords, base, ends, flags):
+    # Inter's arch glyphs (n m r h u a...) spring off the stem with a small leftward
+    # undercut at the on-curve point following the inner stem wall. The condensation
+    # field moves the vertical wall (nx snapped to +-1) far more than the near-flat
+    # spring point, amplifying that undercut 4-5x (n 12u->57u) into a visible notch/spur.
+    # SF Pro springs flush. Clamp the condensed undercut so it never exceeds the master's,
+    # translating the trailing off-curve handle rigidly to preserve the spring tangent.
+    on = [bool(f & _FLAG_ON_CURVE) for f in flags]
+    out = list(coords)
+    st = 0
+    for e in ends:
+        m = e - st + 1
+        if m < 3:
+            st = e + 1
+            continue
+        for j in range(m):
+            k = st + j % m
+            k1 = st + (j + 1) % m
+            k2 = st + (j + 2) % m
+            km = st + (j - 1) % m
+            if not (on[k] and on[k1] and not on[k2]):
+                continue
+            if abs(base[k][1] - base[k1][1]) > 6:
+                continue
+            base_und = base[k][0] - base[k1][0]
+            if base_und <= 4:
+                cond_floor = 0.0
+            else:
+                cond_floor = base_und
+            wall_v = base[km][1] - base[k][1]
+            wall_h = abs(base[k][0] - base[km][0])
+            if wall_v < 60 or wall_h > 0.35 * wall_v:
+                continue
+            if not (base[k2][1] > base[k1][1] + 8):
+                continue
+            wall_x = out[k][0]
+            spring_x = out[k1][0]
+            und = wall_x - spring_x
+            if und - cond_floor <= 1.0:
+                continue
+            new_spring_x = wall_x - cond_floor
+            dx = new_spring_x - spring_x
+            out[k1] = (new_spring_x, out[k1][1])
+            out[k2] = (out[k2][0] + dx, out[k2][1])
+        st = e + 1
+    return out
+
+
+def _floor_arch_spring_undercut(coords, base, ends, flags):
+    # Inverse of the condensation clamp: under expansion the vertical wall (nx +-1) moves
+    # outward far more than the near-flat spring point, so the master undercut shrinks and
+    # crosses sign (n 25u->-14u, m 14u->-28u, h 31u->-6u; u springs from the bottom with
+    # the opposite sign, -24u->+15u), flipping the spring to the wrong side of the wall and
+    # reading as a shoulder notch. Enforce a signed minimum undercut that preserves the
+    # master's side, translating the trailing off-curve handle rigidly to keep the spring
+    # tangent. Sign-symmetric so top arches (n m h) and bottom arches (u) share one path.
+    on = [bool(f & _FLAG_ON_CURVE) for f in flags]
+    out = list(coords)
+    st = 0
+    for e in ends:
+        m = e - st + 1
+        if m < 3:
+            st = e + 1
+            continue
+        for j in range(m):
+            k = st + j % m
+            k1 = st + (j + 1) % m
+            k2 = st + (j + 2) % m
+            km = st + (j - 1) % m
+            if not (on[k] and on[k1] and not on[k2]):
+                continue
+            if abs(base[k][1] - base[k1][1]) > 6:
+                continue
+            wall_dir = base[km][1] - base[k][1]
+            if abs(base[k][0] - base[km][0]) > 6 or abs(wall_dir) < 60:
+                continue
+            handle_dir = base[k2][1] - base[k1][1]
+            if abs(handle_dir) <= 8 or (handle_dir > 0) != (wall_dir > 0):
+                continue
+            base_und = base[k][0] - base[k1][0]
+            if abs(base_und) <= 4:
+                continue
+            floor = max(4.0, 0.35 * abs(base_und))
+            signed_floor = math.copysign(floor, base_und)
+            wall_x = out[k][0]
+            spring_x = out[k1][0]
+            und = wall_x - spring_x
+            if base_und > 0:
+                if und >= signed_floor - 1.0:
+                    continue
+            else:
+                if und <= signed_floor + 1.0:
+                    continue
+            new_spring_x = wall_x - signed_floor
+            dx = new_spring_x - spring_x
+            out[k1] = (new_spring_x, out[k1][1])
+            out[k2] = (out[k2][0] + dx, out[k2][1])
+        st = e + 1
+    return out
 
 
 def finalize_metrics(coords, base, lsb0, rsb0, aw0, s):

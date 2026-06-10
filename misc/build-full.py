@@ -74,6 +74,44 @@ def get_deps(gname, glyf_table, visited=None):
     return visited
 
 
+# Inter's lowercase y descender tail has an inherited angular notch on its left
+# edge: the on-curve point where the straight diagonal meets the hook ([6]->[7]->[8]
+# are three consecutive on-curve points) bulges ~62u right of the [6]-[8] chord,
+# reading as a kink/spur at every weight (SF Pro's tail flows smoothly there). We
+# project that point exactly onto the [6]-[8] chord in the wght=400 master (481->419,
+# i.e. -62u). gvar tuple scalars are zero at the default location, so the default
+# position must be corrected here in the master; the per-tuple deltas for [7] are then
+# re-solved in add-wdth-axis._pin_y_tail_tuples so the point stays on the chord across
+# every weight/width/opsz instance. Guarded by an exact geometry check so a future
+# Inter version with a different y outline is left alone.
+_Y_TAIL_POINT = 7
+_Y_TAIL_EXPECT = (481, -6)
+_Y_TAIL_NEIGHBORS = {6: (449, -99), 8: (54, 1118)}
+_Y_TAIL_DX = -62
+
+
+def _smooth_y_tail(inter, glyf, cmap):
+    gname = cmap.get(ord('y'))
+    if gname is None:
+        return
+    g = glyf[gname]
+    g.expand(glyf)
+    if g.numberOfContours <= 0 or len(g.coordinates) <= _Y_TAIL_POINT:
+        return
+    coords = g.coordinates
+    if (round(coords[_Y_TAIL_POINT][0]), round(coords[_Y_TAIL_POINT][1])) != _Y_TAIL_EXPECT:
+        print("    y tail smoothing skipped (outline differs from expected Inter geometry)")
+        return
+    for idx, expect in _Y_TAIL_NEIGHBORS.items():
+        if (round(coords[idx][0]), round(coords[idx][1])) != expect:
+            print("    y tail smoothing skipped (neighbor geometry differs)")
+            return
+    x, y = coords[_Y_TAIL_POINT]
+    coords[_Y_TAIL_POINT] = (x + _Y_TAIL_DX, y)
+    g.coordinates = coords
+    print(f"    y tail smoothed (point {_Y_TAIL_POINT} x {x:+.0f} -> {x + _Y_TAIL_DX:+.0f})")
+
+
 def merge(inter_ttf, pretendard_ttf, output_path):
     print("Loading Inter Variable...")
     inter = TTFont(inter_ttf)
@@ -96,6 +134,8 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     inter_cmap = inter.getBestCmap()
     inter_glyf = inter['glyf']
     inter_hmtx = inter['hmtx']
+
+    _smooth_y_tail(inter, inter_glyf, inter_cmap)
 
     # Identify CJK codepoints to add
     new_codepoints = set()
@@ -468,7 +508,7 @@ def merge(inter_ttf, pretendard_ttf, output_path):
             ps_nid = nid + 100
             ps_name = f"Interlude-{wght_name}" if wght_name != "Regular" else "Interlude-Regular"
             name_table.setName(ps_name, ps_nid, 3, 1, 0x0409)
-            inst.postScriptNameID = ps_nid
+            inst.postscriptNameID = ps_nid
             inst.coordinates = {"opsz": opsz_val, "wght": float(wght_val)}
             inter['fvar'].instances.append(inst)
             nid += 1

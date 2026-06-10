@@ -196,6 +196,61 @@ def get_stem_width(glyf, gn, is_cjk_glyph, medians):
     return wg, True
 
 
+def measure_worst_stem(glyf, gn, flatness=0.6, support_frac=0.5):
+    # Min width among vertical stems that persist across >=support_frac of scanlines.
+    # Used by the condense solver so multi-stem glyphs (m, q, ...) don't satisfy a
+    # single-mode target while their sibling stems collapse. Returns None if no
+    # reliable stem cluster is found (caller falls back to single-stem measure).
+    polys = _OL.flatten_contours(glyf, gn, flatness)
+    if not polys:
+        return None
+    ally = [y for p in polys for x, y in p]
+    if not ally:
+        return None
+    ylo, yhi = min(ally), max(ally)
+    ysp = yhi - ylo
+    if ysp < 1.0:
+        return None
+    nscan = 20
+    fr = [0.15 + 0.7 * i / (nscan - 1) for i in range(nscan)]
+    clusters = []
+    for r in fr:
+        for w, xc in _scan_runs_xc(polys, ylo + ysp * r):
+            if not (MIN_STEM <= w <= MAX_STEM):
+                continue
+            placed = False
+            for cl in clusters:
+                if abs(cl['xc'] - xc) < 60.0:
+                    cl['ws'].append(w)
+                    cl['xc'] = (cl['xc'] * cl['n'] + xc) / (cl['n'] + 1)
+                    cl['n'] += 1
+                    placed = True
+                    break
+            if not placed:
+                clusters.append({'xc': xc, 'ws': [w], 'n': 1})
+    cand = [_median(cl['ws']) for cl in clusters if cl['n'] >= nscan * support_frac]
+    return min(cand) if cand else None
+
+
+def _scan_runs_xc(polys, axis_val):
+    crossings = []
+    for poly in polys:
+        n = len(poly)
+        for i in range(n):
+            p1 = poly[i]
+            p2 = poly[(i + 1) % n]
+            a1, b1 = p1[1], p1[0]
+            a2, b2 = p2[1], p2[0]
+            if (a1 <= axis_val < a2) or (a2 <= axis_val < a1):
+                t = (axis_val - a1) / (a2 - a1)
+                crossings.append(b1 + t * (b2 - b1))
+    crossings.sort()
+    out = []
+    for i in range(0, len(crossings) - 1, 2):
+        out.append((crossings[i + 1] - crossings[i], (crossings[i] + crossings[i + 1]) / 2.0))
+    return out
+
+
 def compute_class_medians(glyf, glyph_order, cjk_set):
     cjk_vals = []
     latin_vals = []

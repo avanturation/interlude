@@ -25,9 +25,16 @@ FAMILIES = [
     (32.0, "InterludeDisplay", "Interlude Display"),
 ]
 
+WIDTHS = [
+    ("Condensed", 75, 3),
+    ("", 100, 5),
+    ("Expanded", 125, 7),
+]
+
 
 def _generate_one(args):
-    variable_ttf, out_dir, opsz_val, prefix, family_name, weight_name, weight_value = args
+    (variable_ttf, out_dir, opsz_val, prefix, family_name,
+     weight_name, weight_value, width_label, width_value, width_class) = args
 
     font = TTFont(variable_ttf)
     # Keep GDEF through instancing: its VarStore holds the GPOS anchor deltas, so
@@ -40,7 +47,7 @@ def _generate_one(args):
     axis_tags = {a.axisTag for a in font['fvar'].axes}
     pins = {"opsz": opsz_val, "wght": weight_value}
     if "wdth" in axis_tags:
-        pins["wdth"] = 100
+        pins["wdth"] = width_value
     instance = instantiateVariableFont(font, pins, inplace=True, overlap=True)
 
     for tag in ['fvar', 'STAT', 'gvar', 'avar', 'HVAR', 'MVAR']:
@@ -48,9 +55,13 @@ def _generate_one(args):
             del instance[tag]
 
     name_table = instance['name']
-    subfamily = "Regular" if weight_name == "Regular" else weight_name
-    full_name = f"{family_name} {weight_name}" if weight_name != "Regular" else family_name
-    ps_name = f"{prefix}-{weight_name}"
+    wfam = f"{family_name} {width_label}".strip()
+    wps_prefix = f"{prefix}{width_label}"
+    typo_subfamily = f"{width_label} {weight_name}".strip()
+    is_bold = weight_value >= 700
+    ribbi_subfamily = "Bold" if is_bold else "Regular"
+    full_name = f"{wfam} {weight_name}" if weight_name != "Regular" else wfam
+    ps_name = f"{wps_prefix}-{weight_name}"
 
     for record in name_table.names:
         try:
@@ -58,9 +69,9 @@ def _generate_one(args):
         except Exception:
             continue
         if record.nameID == 1:
-            name_table.setName(family_name, record.nameID, record.platformID, record.platEncID, record.langID)
+            name_table.setName(wfam, record.nameID, record.platformID, record.platEncID, record.langID)
         elif record.nameID == 2:
-            name_table.setName(subfamily, record.nameID, record.platformID, record.platEncID, record.langID)
+            name_table.setName(ribbi_subfamily, record.nameID, record.platformID, record.platEncID, record.langID)
         elif record.nameID == 4:
             name_table.setName(full_name, record.nameID, record.platformID, record.platEncID, record.langID)
         elif record.nameID == 6:
@@ -69,31 +80,28 @@ def _generate_one(args):
             name_table.setName(f"1.000;{ps_name}", record.nameID, record.platformID, record.platEncID, record.langID)
 
     instance['OS/2'].usWeightClass = weight_value
+    instance['OS/2'].usWidthClass = width_class
 
     os2 = instance['OS/2']
     head = instance['head']
-    is_bold = weight_value >= 700
     if is_bold:
         os2.fsSelection = (os2.fsSelection | 0x0020) & ~0x0040  # BOLD on, REGULAR off
         head.macStyle |= 0x0001  # bold bit
     else:
         os2.fsSelection = (os2.fsSelection | 0x0040) & ~0x0020  # REGULAR on, BOLD off
         head.macStyle &= ~0x0001
+    os2.fsSelection |= 0x0100  # WWS bit: family differs only by weight/width/slope
 
-    win_subfamily = "Bold" if is_bold else "Regular"
     name_table.setName(family_name, 16, 3, 1, 0x0409)
-    name_table.setName(weight_name, 17, 3, 1, 0x0409)
+    name_table.setName(typo_subfamily, 17, 3, 1, 0x0409)
     name_table.setName(family_name, 16, 1, 0, 0)
-    name_table.setName(weight_name, 17, 1, 0, 0)
-    for record in name_table.names:
-        if record.nameID == 2:
-            name_table.setName(win_subfamily, 2, record.platformID, record.platEncID, record.langID)
+    name_table.setName(typo_subfamily, 17, 1, 0, 0)
 
-    out_path = os.path.join(out_dir, f"{prefix}-{weight_name}.ttf")
+    out_path = os.path.join(out_dir, f"{ps_name}.ttf")
     instance.save(out_path)
     asyncio.run(chws.Builder(Path(out_path)).build_and_save(Path(out_path)))
 
-    return f"{prefix}-{weight_name}.ttf ({os.path.getsize(out_path) / 1024:.0f} KB)"
+    return f"{ps_name}.ttf ({os.path.getsize(out_path) / 1024:.0f} KB)"
 
 
 def main():
@@ -103,8 +111,10 @@ def main():
 
     jobs = []
     for opsz_val, prefix, family_name in FAMILIES:
-        for weight_name, weight_value in WEIGHTS:
-            jobs.append((variable_ttf, out_dir, opsz_val, prefix, family_name, weight_name, weight_value))
+        for width_label, width_value, width_class in WIDTHS:
+            for weight_name, weight_value in WEIGHTS:
+                jobs.append((variable_ttf, out_dir, opsz_val, prefix, family_name,
+                             weight_name, weight_value, width_label, width_value, width_class))
 
     workers = min(cpu_count(), 6)
     print(f"Generating {len(jobs)} static instances ({workers} parallel workers):")
