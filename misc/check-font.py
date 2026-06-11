@@ -160,7 +160,7 @@ def check_opsz_axis(font_path):
     if 'wght' in axes:
         check(axes['wght'] == (100.0, 900.0), f"wght 범위 100-900 (got {axes['wght']})")
     if 'wdth' in axes:
-        check(axes['wdth'] == (75.0, 150.0), f"wdth 범위 75-150 (got {axes['wdth']})")
+        check(axes['wdth'] == (75.0, 125.0), f"wdth 범위 75-125 (got {axes['wdth']})")
 
 
 def check_glyph_count(font_path):

@@ -2,6 +2,95 @@ import math
 
 ON = 0x01
 
+# Per-glyph flattened outline (list of polygons), set by claim_diagonal_points /
+# diagonal_stroke_deltas so the partner tests can ask "is the gap between these two
+# edges actually ink?" instead of gating separation against the measured min-stem Wg.
+# Wg is an unreliable proxy for diagonal stroke thickness across weights (sep/Wg ranges
+# 0.3 at Thin to ~5 at Black), which made diagonal glyphs pair correctly only near
+# wght=400 and break at the extremes. The ink test is weight-independent.
+_INK_POLYS = None
+
+
+def _winding(polys, px, py):
+    w = 0
+    for poly in polys:
+        n = len(poly)
+        for i in range(n):
+            x1, y1 = poly[i]
+            x2, y2 = poly[(i + 1) % n]
+            if y1 <= py:
+                if y2 > py and ((x2 - x1) * (py - y1) - (px - x1) * (y2 - y1)) > 0:
+                    w += 1
+            else:
+                if y2 <= py and ((x2 - x1) * (py - y1) - (px - x1) * (y2 - y1)) < 0:
+                    w -= 1
+    return w
+
+
+def _gap_is_ink(m1, m2):
+    # True if the span between two edge midpoints lies inside the glyph (a single
+    # stroke) rather than crossing a counter (opposite limbs). Falls back to True when
+    # no outline context is set so legacy callers behave as before.
+    if _INK_POLYS is None:
+        return True
+    for t in (0.25, 0.5, 0.75):
+        px = m1[0] + (m2[0] - m1[0]) * t
+        py = m1[1] + (m2[1] - m1[1]) * t
+        if _winding(_INK_POLYS, px, py) == 0:
+            return False
+    return True
+
+
+def _flatten_for_ink(base_coords, ends, flags):
+    # Lightweight contour flattening (quadratic beziers subdivided) for the ink test.
+    out = []
+    st = 0
+    for e in ends:
+        m = e - st + 1
+        raw = [(base_coords[st + i][0], base_coords[st + i][1], bool(flags[st + i] & ON))
+               for i in range(m)]
+        st = e + 1
+        if not any(on for _, _, on in raw):
+            pts = []
+            for i in range(m):
+                x0, y0, _ = raw[i]
+                x1, y1, _ = raw[(i + 1) % m]
+                pts.append(((x0 + x1) / 2, (y0 + y1) / 2, True))
+                pts.append(raw[(i + 1) % m])
+            raw = pts
+            m = len(raw)
+        seq = []
+        for i in range(m):
+            cur = raw[i]
+            seq.append(cur)
+            nxt = raw[(i + 1) % m]
+            if (not cur[2]) and (not nxt[2]):
+                seq.append(((cur[0] + nxt[0]) / 2, (cur[1] + nxt[1]) / 2, True))
+        mm = len(seq)
+        foi = next((k for k in range(mm) if seq[k][2]), None)
+        if foi is None:
+            continue
+        seq = seq[foi:] + seq[:foi]
+        mm = len(seq)
+        poly = []
+        k = 0
+        while k < mm:
+            x, y, on = seq[k]
+            poly.append((x, y))
+            nx, ny, non = seq[(k + 1) % mm]
+            if not non:
+                ex, ey, _ = seq[(k + 2) % mm]
+                for tt in (0.25, 0.5, 0.75):
+                    bx = (1 - tt) ** 2 * x + 2 * (1 - tt) * tt * nx + tt * tt * ex
+                    by = (1 - tt) ** 2 * y + 2 * (1 - tt) * tt * ny + tt * tt * ey
+                    poly.append((bx, by))
+                k += 2
+            else:
+                k += 1
+        if len(poly) >= 3:
+            out.append(poly)
+    return out
+
 
 def _contours(coords, ends, flags):
     out = []
@@ -122,10 +211,18 @@ def _find_partner(feat, feats, Wg):
             continue
         nx, ny = ty, -tx
         sep = abs((g['mid'][0] - px) * nx + (g['mid'][1] - py) * ny)
-        if sep < 0.45 * Wg or sep > 2.2 * Wg:
+        # Lower bound rejects coincidental near-touching edges; the upper bound is a
+        # generous safety ceiling (a single stroke is never thicker than ~6x the
+        # min-stem even at Black). The real discriminator is the ink test below, which
+        # is weight-independent unlike a tight Wg-scaled window. The lower bound is an
+        # absolute floor (not Wg-scaled) so thin strokes whose min-stem is measured
+        # elsewhere on the glyph (W at Thin: sep 46 vs Wg 173) are not falsely rejected.
+        if sep < 20.0 or sep > 6.0 * Wg:
             continue
         ov = _overlap(feat, g)
         if ov < 0.30:
+            continue
+        if not _gap_is_ink(feat['mid'], g['mid']):
             continue
         if best is None or ov > best[2]:
             best = (g, sep, ov)
@@ -251,6 +348,8 @@ def _has_vstem_pair(cont, min_len=180.0, tall_len=900.0, min_ang=80.0, max_gap=4
 
 def claim_diagonal_points(base_coords, ends, flags, Wg, neighbor_pad=True):
     """Global point indices on mutual diagonal stroke-pairs (get pure affine, not nx-displacement)."""
+    global _INK_POLYS
+    _INK_POLYS = _flatten_for_ink(base_coords, ends, flags)
     conts = _contours([(x, y) for x, y in base_coords], ends, flags)
     starts = []
     st = 0
@@ -383,7 +482,7 @@ def _staggered_score(f, g, Wg):
         return None
     nx, ny = ty, -tx
     sep = abs((g['mid'][0] - f['p'][0]) * nx + (g['mid'][1] - f['p'][1]) * ny)
-    if sep < 0.45 * Wg or sep > 2.2 * Wg:
+    if sep < 0.30 * Wg or sep > 6.0 * Wg:
         return None
     if _overlap(f, g) >= 0.30:
         return None
@@ -486,6 +585,8 @@ def diagonal_stroke_deltas(base_coords, ends, flags, Wg, s, m):
     thickness is restored to m*original (plain x*s thins it by an angle-dependent
     factor). Shared join points land on the intersection of the transformed edges.
     """
+    global _INK_POLYS
+    _INK_POLYS = _flatten_for_ink(base_coords, ends, flags)
     conts = _contours([(x, y) for x, y in base_coords], ends, flags)
     starts = []
     st = 0
@@ -547,7 +648,12 @@ def diagonal_stroke_deltas(base_coords, ends, flags, Wg, s, m):
             for o in orphan:
                 fidx = _adopt_frame(o, pair_edges, Wg)
                 if fidx is None:
-                    return {}
+                    # No frame fits this stray stroke (e.g. y's descender-tail terminal
+                    # at Black sits far from the arm pair). Don't discard the whole
+                    # glyph's per-stroke affine over one orphan: leave its points
+                    # unassigned so the leftover loop below maps them through the
+                    # nearest frame, which keeps the well-formed arms on DSD.
+                    continue
                 u, c0, A, Hc0 = frames[fidx]
                 for ei in o['idxs']:
                     for i in (ei, (ei + 1) % n):
@@ -585,6 +691,53 @@ def diagonal_stroke_deltas(base_coords, ends, flags, Wg, s, m):
             new_pos[gi] = pt
     _flatten_terminals(conts, starts, flags, multi, new_pos)
     return new_pos
+
+
+def straighten_collinear_joins(coords, base_coords, ends, flags, max_master_kink=3.0, min_arm=180.0):
+    # Where two diagonal strokes meet smoothly in the master (an on-curve join whose two
+    # neighbouring on-curve points are nearly collinear, e.g. y's long left arm flowing
+    # into its short descender-tail stub), the displacement field can drift the shared
+    # join a degree or two off the master line (y pt7: 0.1deg master -> ~1.5deg after the
+    # condense delta is stored and the renderer interpolates). On a long straight arm that
+    # reads as a kink. This is a general rule, not a per-glyph patch: any join that was
+    # straight in the master is forced back onto the x-chord between its displaced
+    # neighbours, leaving y untouched so other (wght/opsz) tuples are undisturbed.
+    out = list(coords)
+    on = [bool(f & ON) for f in flags]
+    st = 0
+    for e in ends:
+        m = e - st + 1
+        if m < 3:
+            st = e + 1
+            continue
+        for j in range(m):
+            i = st + j
+            ip = st + (j - 1) % m
+            inx = st + (j + 1) % m
+            if not (on[i] and on[ip] and on[inx]):
+                continue
+            ax, ay = base_coords[ip]
+            bx, by = base_coords[i]
+            cx, cy = base_coords[inx]
+            v1x, v1y = bx - ax, by - ay
+            v2x, v2y = cx - bx, cy - by
+            l1 = math.hypot(v1x, v1y)
+            l2 = math.hypot(v2x, v2y)
+            if max(l1, l2) < min_arm or min(l1, l2) < 1e-6:
+                continue
+            cosv = (v1x * v2x + v1y * v2y) / (l1 * l2)
+            if cosv < math.cos(math.radians(max_master_kink)):
+                continue
+            px, py = out[ip]
+            qx, qy = out[inx]
+            jy = out[i][1]
+            if abs(qy - py) > 1e-6:
+                t = (jy - py) / (qy - py)
+                if 0.0 <= t <= 1.0:
+                    out[i] = (px + (qx - px) * t, jy)
+        st = e + 1
+    return out
+
 
 
 def _flatten_terminals(conts, starts, flags, multi, new_pos):

@@ -614,83 +614,6 @@ def _apply_latin_wght_thinning(f):
     return touched
 
 
-_Y_PIN_POINT = 7
-_Y_PIN_CHORD = (6, 8)
-
-
-def _pin_y_tail_tuples(f):
-    import numpy as np
-    from fontTools.varLib.models import supportScalar
-
-    cmap = f.getBestCmap()
-    gn = cmap.get(ord('y'))
-    if gn is None or gn not in f['gvar'].variations:
-        return False
-    g = f['glyf'][gn]
-    g.expand(f['glyf'])
-    co = g.coordinates
-    p, a, b = _Y_PIN_POINT, _Y_PIN_CHORD[0], _Y_PIN_CHORD[1]
-    if len(co) <= p:
-        return False
-    gv = f['gvar'].variations[gn]
-    if any(tv.coordinates[p] is None for tv in gv):
-        return False
-
-    axes = {ax.axisTag: (ax.minValue, ax.defaultValue, ax.maxValue)
-            for ax in f['fvar'].axes}
-
-    def nrm(tag, val):
-        lo, de, hi = axes[tag]
-        if val == de:
-            return 0.0
-        return (val - de) / (de - lo) if val < de else (val - de) / (hi - de)
-
-    sups = [{k: (v[0], v[1], v[2]) for k, v in tv.axes.items()} for tv in gv]
-
-    def loc(wght=400, wdth=100, opsz=14):
-        return {'wght': nrm('wght', wght), 'wdth': nrm('wdth', wdth),
-                'opsz': nrm('opsz', opsz)}
-
-    # Pin the default-master point onto the chord first; gvar scalars are zero at the
-    # default location so tuples cannot correct it there.
-    xa0, ya0 = co[a]
-    xp0, yp0 = co[p]
-    xb0, yb0 = co[b]
-    t0 = (yp0 - ya0) / (yb0 - ya0)
-    co[p] = (round(xa0 + t0 * (xb0 - xa0)), yp0)
-    xp0 = co[p][0]
-
-    samples = [(loc(100, 100), 10), (loc(900, 100), 10), (loc(400, 75), 10),
-               (loc(400, 125), 10), (loc(100, 75), 10), (loc(900, 75), 10),
-               (loc(100, 125), 10), (loc(900, 125), 10),
-               (loc(400, 100, 32), 3), (loc(100, 100, 32), 3),
-               (loc(900, 100, 32), 3), (loc(100, 75, 32), 2),
-               (loc(900, 125, 32), 2), (loc(700, 90), 3), (loc(250, 110), 3)]
-    n = len(gv)
-    A = np.zeros((len(samples), n))
-    rhs = np.zeros(len(samples))
-    wts = np.zeros(len(samples))
-    for j, (L, wt) in enumerate(samples):
-        xa, ya, xb, yb, yp = xa0, ya0, xb0, yb0, yp0
-        for i, tv in enumerate(gv):
-            s = supportScalar(L, sups[i])
-            if s == 0:
-                continue
-            c = tv.coordinates
-            xa += s * c[a][0]; ya += s * c[a][1]
-            xb += s * c[b][0]; yb += s * c[b][1]
-            yp += s * c[p][1]
-            A[j, i] = s
-        t = (yp - ya) / (yb - ya)
-        rhs[j] = (xa + t * (xb - xa)) - xp0
-        wts[j] = wt
-    sw = np.sqrt(wts)
-    sol, _, _, _ = np.linalg.lstsq(A * sw[:, None], rhs * sw, rcond=None)
-    for i, tv in enumerate(gv):
-        tv.coordinates[p] = (round(float(sol[i])), tv.coordinates[p][1])
-    return True
-
-
 def add_wdth(src, out):
     t0 = time.time()
     print('  Measuring class stem medians...', flush=True)
@@ -745,8 +668,6 @@ def add_wdth(src, out):
     _apply_wght_evenness_avar(f)
     nthin = _apply_latin_wght_thinning(f)
     print(f'  latin wght thinning (heavy -3%): {nthin} glyphs', flush=True)
-    if _pin_y_tail_tuples(f):
-        print('  y tail chord-pinned across weight/width/opsz tuples', flush=True)
     _strip_mac_names(f)
     f.save(out)
     print(f'  wdth axis added: simple={len(cond)} ({relaxed} relaxed) composite={comp} '

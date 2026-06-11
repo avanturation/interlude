@@ -646,19 +646,30 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
         if ocorr:
             coords = [(coords[i][0] + ocorr.get(i, 0.0), coords[i][1]) for i in range(len(coords))]
     if used_seff < 1.0:
-        coords = _clamp_arch_spring_undercut(coords, base, ends, flags)
+        coords = _constrain_arch_spring_undercut(coords, base, ends, flags, used_seff)
     elif used_seff > 1.0:
-        coords = _floor_arch_spring_undercut(coords, base, ends, flags)
+        coords = _constrain_arch_spring_undercut(coords, base, ends, flags, used_seff)
+    if allow_diag and dsd and abs(used_seff - 1.0) > 1e-6:
+        coords = _DIAG.straighten_collinear_joins(coords, base, ends, flags)
     return coords, ends, flags, base, used_seff
 
 
-def _clamp_arch_spring_undercut(coords, base, ends, flags):
-    # Inter's arch glyphs (n m r h u a...) spring off the stem with a small leftward
-    # undercut at the on-curve point following the inner stem wall. The condensation
-    # field moves the vertical wall (nx snapped to +-1) far more than the near-flat
-    # spring point, amplifying that undercut 4-5x (n 12u->57u) into a visible notch/spur.
-    # SF Pro springs flush. Clamp the condensed undercut so it never exceeds the master's,
-    # translating the trailing off-curve handle rigidly to preserve the spring tangent.
+def _constrain_arch_spring_undercut(coords, base, ends, flags, s):
+    # Unified arch/bowl junction guard for BOTH condensation and expansion.
+    #
+    # Inter's arch/bowl glyphs (n m r h u a b d p q ...) spring off the inner stem
+    # wall with a small undercut at the on-curve point right after the wall. The x-only
+    # displacement field moves the near-vertical wall (nx snapped to +-1) far more than
+    # the near-flat spring point (nx ~ 0), so the master undercut is amplified, crushed,
+    # or sign-flipped into a visible notch/spur. Worst observed (Black): condensed d
+    # 10u->-189u, expanded b -6u->-154u, expanded u -12u->+64u.
+    #
+    # SF Pro keeps these junctions reading the same at every width. We keep each
+    # junction's undercut on the master's side and within a band around the master
+    # magnitude, translating the trailing off-curve handle rigidly so the spring tangent
+    # is preserved. One sign-symmetric rule covers top arches (n m h), bottom arches (u),
+    # terminals (a), and bowls (b d p q r) in both directions; in-band junctions pass
+    # through untouched so well-behaved glyphs are never disturbed.
     on = [bool(f & _FLAG_ON_CURVE) for f in flags]
     out = list(coords)
     st = 0
@@ -676,77 +687,34 @@ def _clamp_arch_spring_undercut(coords, base, ends, flags):
                 continue
             if abs(base[k][1] - base[k1][1]) > 6:
                 continue
-            base_und = base[k][0] - base[k1][0]
-            if base_und <= 4:
-                cond_floor = 0.0
-            else:
-                cond_floor = base_und
             wall_v = base[km][1] - base[k][1]
             wall_h = abs(base[k][0] - base[km][0])
-            if wall_v < 60 or wall_h > 0.35 * wall_v:
-                continue
-            if not (base[k2][1] > base[k1][1] + 8):
-                continue
-            wall_x = out[k][0]
-            spring_x = out[k1][0]
-            und = wall_x - spring_x
-            if und - cond_floor <= 1.0:
-                continue
-            new_spring_x = wall_x - cond_floor
-            dx = new_spring_x - spring_x
-            out[k1] = (new_spring_x, out[k1][1])
-            out[k2] = (out[k2][0] + dx, out[k2][1])
-        st = e + 1
-    return out
-
-
-def _floor_arch_spring_undercut(coords, base, ends, flags):
-    # Inverse of the condensation clamp: under expansion the vertical wall (nx +-1) moves
-    # outward far more than the near-flat spring point, so the master undercut shrinks and
-    # crosses sign (n 25u->-14u, m 14u->-28u, h 31u->-6u; u springs from the bottom with
-    # the opposite sign, -24u->+15u), flipping the spring to the wrong side of the wall and
-    # reading as a shoulder notch. Enforce a signed minimum undercut that preserves the
-    # master's side, translating the trailing off-curve handle rigidly to keep the spring
-    # tangent. Sign-symmetric so top arches (n m h) and bottom arches (u) share one path.
-    on = [bool(f & _FLAG_ON_CURVE) for f in flags]
-    out = list(coords)
-    st = 0
-    for e in ends:
-        m = e - st + 1
-        if m < 3:
-            st = e + 1
-            continue
-        for j in range(m):
-            k = st + j % m
-            k1 = st + (j + 1) % m
-            k2 = st + (j + 2) % m
-            km = st + (j - 1) % m
-            if not (on[k] and on[k1] and not on[k2]):
-                continue
-            if abs(base[k][1] - base[k1][1]) > 6:
-                continue
-            wall_dir = base[km][1] - base[k][1]
-            if abs(base[k][0] - base[km][0]) > 6 or abs(wall_dir) < 60:
+            if abs(wall_v) < 60 or wall_h > 0.35 * abs(wall_v):
                 continue
             handle_dir = base[k2][1] - base[k1][1]
-            if abs(handle_dir) <= 8 or (handle_dir > 0) != (wall_dir > 0):
+            if abs(handle_dir) <= 8 or (handle_dir > 0) != (wall_v > 0):
                 continue
             base_und = base[k][0] - base[k1][0]
             if abs(base_und) <= 4:
-                continue
-            floor = max(4.0, 0.35 * abs(base_und))
-            signed_floor = math.copysign(floor, base_und)
-            wall_x = out[k][0]
-            spring_x = out[k1][0]
-            und = wall_x - spring_x
-            if base_und > 0:
-                if und >= signed_floor - 1.0:
-                    continue
+                sign = 1.0 if base_und >= 0 else -1.0
+                lo, hi = 0.0, 6.0
             else:
-                if und <= signed_floor + 1.0:
+                sign = 1.0 if base_und > 0 else -1.0
+                a = abs(base_und)
+                lo, hi = 0.40 * a, 1.15 * a
+            und = out[k][0] - out[k1][0]
+            if und * sign < 0:
+                target = sign * lo
+            else:
+                mag = abs(und)
+                if mag < lo - 1.0:
+                    target = sign * lo
+                elif mag > hi + 1.0:
+                    target = sign * hi
+                else:
                     continue
-            new_spring_x = wall_x - signed_floor
-            dx = new_spring_x - spring_x
+            new_spring_x = out[k][0] - target
+            dx = new_spring_x - out[k1][0]
             out[k1] = (new_spring_x, out[k1][1])
             out[k2] = (out[k2][0] + dx, out[k2][1])
         st = e + 1
