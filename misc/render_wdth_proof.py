@@ -15,7 +15,9 @@ LINES = [
     "영문 Latin과 한글 CJK 혼용 The quick brown fox",
     "AaBbCc 0123456789 가나다라마바사 ABCDEFG",
 ]
-WIDTHS = [75, 100, 125, 150]
+import os
+WGHT = int(os.environ.get('PROOF_WGHT', '400'))
+WIDTHS = [75, 100, 125]
 PX = 48
 PAD = 40
 UPM = 2048
@@ -27,7 +29,7 @@ CANVAS_W = 1700
 
 def instanced_bytes(width):
     f = TTFont(FONT)
-    instantiateVariableFont(f, {"opsz": 14, "wght": 400, "wdth": width}, inplace=True)
+    instantiateVariableFont(f, {"opsz": 14, "wght": WGHT, "wdth": width}, inplace=True)
     buf = io.BytesIO()
     f.save(buf)
     return buf.getvalue()

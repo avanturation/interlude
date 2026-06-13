@@ -62,6 +62,38 @@ def is_cjk(cp):
     )
 
 
+import unicodedata as _ud
+_SFPRO = _load('wdth_sfpro_cps', 'wdth_sfpro_cps.py')
+_SFPRO_WDTH_CPS = _SFPRO.SFPRO_WDTH_CPS
+
+# Whitelist model (follows SF Pro): width-vary real letters/digits and CJK; leave
+# arrows, pictographs, box drawing and other non-letter symbols fixed. Letters are
+# decided by Unicode category (L*, N*, plus combining marks M* that ride on them),
+# NOT by SF Pro's list, because SF Pro lacks many extended-latin/greek letters that
+# Interlude must still vary (e.g. U+0186 OPEN O, U+03D5 PHI SYMBOL). For symbols and
+# punctuation we defer to SF Pro's actual choice (it varies a few like < > and most
+# punctuation, but keeps arrows/pictographs fixed).
+
+
+def is_wdth_excluded(cp):
+    if cp is None:
+        # Unmapped glyphs (ligature components, .ss variants) are reached through
+        # their parent letter's composite/contours, so the simple-glyph path never
+        # sees them; excluding here is a safe default.
+        return True
+    if is_cjk(cp):
+        return False
+    try:
+        cat = _ud.category(chr(cp))
+    except (ValueError, TypeError):
+        return True
+    # All letters, numbers, and combining marks vary (marks must track their base).
+    if cat[0] in ('L', 'N', 'M'):
+        return False
+    # Symbols / punctuation: vary only what SF Pro varies.
+    return cp not in _SFPRO_WDTH_CPS
+
+
 def is_latin_base(cp):
     return cp is not None and (
         0x0041 <= cp <= 0x005A or 0x0061 <= cp <= 0x007A or 0x00C0 <= cp <= 0x024F
@@ -102,7 +134,7 @@ def _work(args):
             mult = MU.cjk_stem_multiplier(scale, wg)
         else:
             mult = MU.latin_stem_multiplier(scale)
-        res = DP.displace_v2(glyf, gn, scale, wg, mult, allow_anchor=False, allow_diag=True)
+        res = DP.displace_v2(glyf, gn, scale, wg, mult, allow_anchor=False, allow_diag=True, use_field=not cjk)
         if res is None:
             continue
         coords, ends, flags, base, seff = res
@@ -192,7 +224,10 @@ def _compute(src, scale, medians):
         g.expand(glyf)
         if not hasattr(g, 'numberOfContours') or g.numberOfContours <= 0:
             continue
-        jobs.append((gn, rev.get(gn)))
+        cp = rev.get(gn)
+        if is_wdth_excluded(cp):
+            continue
+        jobs.append((gn, cp))
     nproc = min(cpu_count(), 14)
     size = 64
     chunks = [(jobs[i:i + size], scale) for i in range(0, len(jobs), size)]
@@ -332,7 +367,7 @@ def _corner_worker(args):
             opening = MU.latin_stem_multiplier(S_ROUND_CONDENSE)
             if cp is not None and chr(cp) in _MIXED_GLYPHS:
                 opening *= S_MIXED_OPENING
-            res = DP.displace_v2(bglyf, gn, S_ROUND_CONDENSE, wg, opening, allow_diag=True)
+            res = DP.displace_v2(bglyf, gn, S_ROUND_CONDENSE, wg, opening, allow_diag=True, use_field=True)
         if res is None:
             continue
         coords, ends, flags, base, _ = res
@@ -467,7 +502,7 @@ THIN_CORR_BOOST = 1.06
 
 
 def _thin_corr_worker(args):
-    chunk, = args
+    chunk, scale = args
     DP = _W['DP']
     ST = _W['ST']
     MU = _W['MU']
@@ -482,11 +517,11 @@ def _thin_corr_worker(args):
         cjk = is_cjk(cp)
         wg, reliable = ST.get_stem_width(glyf, gn, cjk, medians)
         if cjk and reliable:
-            mult = MU.cjk_stem_multiplier(S_CONDENSE, wg)
+            mult = MU.cjk_stem_multiplier(scale, wg)
         else:
-            mult = MU.latin_stem_multiplier(S_CONDENSE)
-        rb = DP.displace_v2(glyf, gn, S_CONDENSE, wg, mult, allow_anchor=False, allow_diag=True)
-        rh = DP.displace_v2(glyf, gn, S_CONDENSE, wg, mult * THIN_CORR_BOOST, allow_anchor=False, allow_diag=True)
+            mult = MU.latin_stem_multiplier(scale)
+        rb = DP.displace_v2(glyf, gn, scale, wg, mult, allow_anchor=False, allow_diag=True, use_field=not cjk)
+        rh = DP.displace_v2(glyf, gn, scale, wg, mult * THIN_CORR_BOOST, allow_anchor=False, allow_diag=True, use_field=not cjk)
         if rb is None or rh is None:
             continue
         cb = rb[0]
@@ -511,11 +546,13 @@ def _thin_corr_init(src, medians):
 
 
 def _add_thin_correction(f, src):
-    # The condense tuple's stem-restoration is an absolute amount fixed at the
-    # wght=400 master, so light weights over-thin (Thin I stem ~89% vs Regular 97%).
-    # Inject a thin-side wght x wdth correction = 0.30 * (displace(mult*1.06) -
-    # displace(mult)), zero at Regular and full at Thin, lifting Thin stems to ~96%
-    # without touching Regular/Bold. Scale 0.30 found empirically against the target.
+    # The wdth tuple's stem-restoration is an absolute amount fixed at the wght=400
+    # master, so light weights over-thin at BOTH width extremes (Thin I stem ~89% vs
+    # Regular 97%). Inject a thin-side wght x wdth correction = 0.30 * (displace(mult*
+    # 1.06) - displace(mult)) at each width corner, zero at Regular and full at Thin,
+    # lifting Thin stems to ~96% without touching Regular/Bold. Originally only the
+    # Condensed corner was corrected, leaving Thin-Expanded ~5% thinner than Thin-
+    # Condensed (wd75 stem 79.8 vs wd125 76.1); the Expanded corner restores symmetry.
     medians = _compute_medians(src)
     rev = {}
     for cp, gn in TTFont(src).getBestCmap().items():
@@ -528,24 +565,25 @@ def _add_thin_correction(f, src):
         jobs.append((gn, cp))
     nproc = min(cpu_count(), 14)
     size = 64
-    chunks = [(jobs[i:i + size],) for i in range(0, len(jobs), size)]
-    corrs = {}
-    with Pool(nproc, initializer=_thin_corr_init, initargs=(src, medians)) as pool:
-        for r in pool.imap_unordered(_thin_corr_worker, chunks):
-            corrs.update(r)
     gvar = f['gvar']
     glyf = f['glyf']
     added = 0
-    for gn, corr in corrs.items():
-        g = glyf[gn]
-        g.expand(glyf)
-        npts = len(g.coordinates)
-        c = list(corr[:npts])
-        while len(c) < npts + 4:
-            c.append((0, 0))
-        gvar.variations.setdefault(gn, []).append(
-            TupleVariation({'wght': (-1.0, -1.0, 0.0), 'wdth': (-1.0, -1.0, 0.0)}, c))
-        added += 1
+    for scale, wdth_tent in ((S_CONDENSE, (-1.0, -1.0, 0.0)), (S_EXPAND, (0.0, 1.0, 1.0))):
+        chunks = [(jobs[i:i + size], scale) for i in range(0, len(jobs), size)]
+        corrs = {}
+        with Pool(nproc, initializer=_thin_corr_init, initargs=(src, medians)) as pool:
+            for r in pool.imap_unordered(_thin_corr_worker, chunks):
+                corrs.update(r)
+        for gn, corr in corrs.items():
+            g = glyf[gn]
+            g.expand(glyf)
+            npts = len(g.coordinates)
+            c = list(corr[:npts])
+            while len(c) < npts + 4:
+                c.append((0, 0))
+            gvar.variations.setdefault(gn, []).append(
+                TupleVariation({'wght': (-1.0, -1.0, 0.0), 'wdth': wdth_tent}, c))
+            added += 1
     return added
 
 
@@ -592,6 +630,38 @@ def _add_e_overlap_correction(f, src):
     return added
 
 
+def _add_beak_correction(f, src):
+    # 'a' inner-counter off-curve (pt46) overshoots the compressed wall at wd75,
+    # making an inward spur. Weight-dependent x-correction corr(w) = -25 +
+    # 20*max(0,(w-400)/500) restores the d100 shelf, split into two wdth-condensed
+    # gvar tuples: base -25 (all weights) + Black-only +20 residual.
+    cmap = f.getBestCmap()
+    glyf = f['glyf']
+    gvar = f['gvar']
+    gn = cmap.get(ord('a'))
+    if gn is None:
+        return 0
+    g = glyf[gn]
+    g.expand(glyf)
+    if not hasattr(g, 'numberOfContours') or g.numberOfContours <= 0:
+        return 0
+    npts = len(g.coordinates)
+    PT = 46
+    if npts <= PT:
+        return 0
+
+    def _delta(dx):
+        c = [(0, 0)] * (npts + 4)
+        c[PT] = (dx, 0)
+        return c
+
+    gvar.variations.setdefault(gn, []).append(
+        TupleVariation({'wdth': (-1.0, -1.0, 0.0)}, _delta(-25)))
+    gvar.variations.setdefault(gn, []).append(
+        TupleVariation({'wght': (0.0, 1.0, 1.0), 'wdth': (-1.0, -1.0, 0.0)}, _delta(20)))
+    return 1
+
+
 def _apply_latin_wght_thinning(f):
     cmap = f.getBestCmap()
     g2cp = {}
@@ -631,6 +701,9 @@ def add_wdth(src, out):
     gvar = f['gvar']
     hmtx = f['hmtx']
     _add_axis_and_instances(f)
+    _rev = {}
+    for _cp, _gn in f.getBestCmap().items():
+        _rev.setdefault(_gn, _cp)
 
     relaxed = 0
     for gn, (deltas, seff) in cond.items():
@@ -648,6 +721,8 @@ def add_wdth(src, out):
         g.expand(glyf)
         if not hasattr(g, 'numberOfContours') or g.numberOfContours >= 0:
             continue
+        if is_wdth_excluded(_rev.get(gn)):
+            continue
         aw, lsb = hmtx[gn]
         g.recalcBounds(glyf)
         rsb = aw - lsb - (g.xMax - g.xMin)
@@ -663,6 +738,8 @@ def add_wdth(src, out):
     print(f'  thin condense correction (light-weight stem lift): {nthincorr} glyphs', flush=True)
     necorr = _add_e_overlap_correction(f, src)
     print(f'  e overlap correction (thin-expand eye gap): {necorr} glyphs', flush=True)
+    nbeak = _add_beak_correction(f, src)
+    print(f'  a inner-counter beak correction: {nbeak} glyphs', flush=True)
     _rebuild_stat(f)
     _sync_variation_tables(f)
     _apply_wght_evenness_avar(f)

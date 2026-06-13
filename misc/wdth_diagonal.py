@@ -578,6 +578,21 @@ def _pair_centerline(fa, fb):
     return (ux, uy), c0
 
 
+def _on_horizontal_edge(cont, i, min_len=80.0, max_slope=0.20):
+    # True if point i is an endpoint of a long near-horizontal edge (|dy/dx| small).
+    # Used to spare bar terminals (Z top/bottom bars, etc.) from a diagonal frame's
+    # vertical shear during leftover adoption.
+    n = len(cont)
+    for nb in ((i + 1) % n, (i - 1) % n):
+        dx = cont[nb][0] - cont[i][0]
+        dy = cont[nb][1] - cont[i][1]
+        if math.hypot(dx, dy) < min_len:
+            continue
+        if abs(dx) > 1e-6 and abs(dy) / abs(dx) <= max_slope:
+            return True
+    return False
+
+
 def diagonal_stroke_deltas(base_coords, ends, flags, Wg, s, m):
     """Per-stroke affine for pure-diagonal glyphs; returns {global_idx: (x, y)}.
 
@@ -679,6 +694,15 @@ def diagonal_stroke_deltas(base_coords, ends, flags, Wg, s, m):
                     continue
                 u, c0, A, Hc0 = frames[best[1]]
                 pos = _transform_point(A, c0, Hc0, cont[i])
+                # A point that sits on a (near-)horizontal edge must NOT inherit the
+                # diagonal frame's vertical shear: e.g. Z's top/bottom bars end at
+                # p10/p11/p22/p23, which are not part of the diagonal but get adopted
+                # by it here and dragged +-115u in y, skewing the bars into a
+                # parallelogram. For such points keep the affine's x (so the bar end
+                # still tracks the widened diagonal horizontally) but hold y at the
+                # plain uniform-scale value, leaving the bar level.
+                if _on_horizontal_edge(cont, i):
+                    pos = (pos[0], cont[i][1])
                 multi.setdefault(base0 + i, []).append((pos, (pos, (s * u[0], u[1]))))
     for gi, cands in multi.items():
         if len(cands) == 1:

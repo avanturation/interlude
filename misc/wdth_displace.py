@@ -11,6 +11,10 @@ _ds = _ilu2.spec_from_file_location("wdth_diagonal", _os2.path.join(_os2.path.di
 _DIAG = _ilu2.module_from_spec(_ds)
 _ds.loader.exec_module(_DIAG)
 
+_fs = _ilu2.spec_from_file_location("wdth_field", _os2.path.join(_os2.path.dirname(__file__), "wdth_field.py"))
+_FIELD = _ilu2.module_from_spec(_fs)
+_fs.loader.exec_module(_FIELD)
+
 def _wind(polys, px, py):
     w=0
     for poly in polys:
@@ -474,7 +478,63 @@ def _solve_lambda(measure_at, target, tol=2.0, lam_cap=5.0, step=0.125):
     return 1.0
 
 
-def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_anchor=False, allow_diag=False):
+_FIELD_K_STEPS = 10
+
+
+def _field_path(base, ends, flags, Wg, s, mult, do_guard, baseline_self):
+    # Self-x is non-monotonic in the blend knob k, so safety is never inferred:
+    # every emitted candidate is explicitly counted and only a passing one is
+    # returned. The four legacy post-guards compensate for the old nx/DSD field
+    # and would corrupt this field's geometry, so they are deliberately skipped.
+    fd = _FIELD.field_deltas(base, ends, flags, Wg, s, mult)
+    if not fd:
+        return None
+    n = len(base)
+
+    def build(k):
+        out = []
+        for i in range(n):
+            x, y = base[i]
+            dx, dy = fd.get(i, (x * s - x, 0.0))
+            sx = x * s
+            out.append((sx + k * ((x + dx) - sx), y + k * dy))
+        return out
+
+    full = build(1.0)
+    if not (do_guard and s < 1.0):
+        return [(round(px), round(py)) for px, py in full], ends, flags, base, s
+
+    bself = (baseline_self if baseline_self is not None
+             else _count_self_x([(round(x), round(y)) for x, y in base], ends, flags))
+    scaled0 = build(0.0)
+    s0_self = _count_self_x([(round(px), round(py)) for px, py in scaled0], ends, flags)
+    allowed = max(bself, s0_self) + _SELF_X_TOL
+
+    full_r = [(round(px), round(py)) for px, py in full]
+    if _count_self_x(full_r, ends, flags) <= allowed:
+        return full_r, ends, flags, base, s
+
+    for j in range(_FIELD_K_STEPS - 1, 0, -1):
+        k = j / _FIELD_K_STEPS
+        cand = [(round(px), round(py)) for px, py in build(k)]
+        if _count_self_x(cand, ends, flags) <= allowed:
+            return cand, ends, flags, base, s
+
+    s0_r = [(round(px), round(py)) for px, py in scaled0]
+    if _count_self_x(s0_r, ends, flags) <= allowed:
+        return s0_r, ends, flags, base, s
+
+    se = s + 0.05
+    while se < 1.0 + 1e-9:
+        sc = min(se, 1.0)
+        c2 = [(round(x * sc), round(y)) for x, y in base]
+        if _count_self_x(c2, ends, flags) <= allowed:
+            return c2, ends, flags, base, sc
+        se += 0.05
+    return [(round(x), round(y)) for x, y in base], ends, flags, base, 1.0
+
+
+def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_anchor=False, allow_diag=False, use_field=False):
     g = glyf[gn]
     if g.numberOfContours <= 0:
         return None
@@ -482,6 +542,12 @@ def displace_v2(glyf, gn, s, Wg, mult, do_guard=True, baseline_self=None, allow_
     base = [(x, y) for x, y in g.coordinates]
     ends = list(g.endPtsOfContours)
     flags = list(g.flags)
+
+    if use_field and abs(s - 1.0) > 1e-6:
+        fres = _field_path(base, ends, flags, Wg, s, mult, do_guard, baseline_self)
+        if fres is not None:
+            return fres
+
     conts = _contours_xy(base, ends)
 
     scaled_s = [[(x * s, y) for x, y in c] for c in conts]
