@@ -135,7 +135,12 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     inter_glyf = inter['glyf']
     inter_hmtx = inter['hmtx']
 
-    _smooth_y_tail(inter, inter_glyf, inter_cmap)
+    # _smooth_y_tail removed: it projected y point [7] onto the [6]-[8] chord to kill
+    # a perceived spur, but Inter's original tail is already smooth (p5->p6->p7 x =
+    # 422->449->481 is monotonic, p6 sits on the p5-p7 chord within 0.3u). Pulling p7
+    # left by 62u instead turned p6 into a real 28u spur, and the companion tuple re-
+    # solve it relied on (_pin_y_tail_tuples) was never implemented, so the spur
+    # propagated to every wght/wdth/opsz instance. Leaving Inter's geometry intact.
 
     # Identify CJK codepoints to add
     new_codepoints = set()
