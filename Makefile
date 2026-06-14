@@ -29,7 +29,7 @@ all: fonts web install
 # CORE: Variable font (single source of truth for everything else)
 # =================================================================================
 
-build/InterludeVariable.ttf: build/InterludeVariable-base.ttf misc/add-wdth-axis.py misc/wdth_displace.py misc/wdth_offset.py misc/wdth_diagonal.py misc/wdth_stems.py misc/wdth_multipliers.py | build
+build/InterludeVariable.ttf: build/InterludeVariable-base.ttf misc/add-wdth-axis.py misc/wdth_sfpro_cps.py | build
 	python3 misc/add-wdth-axis.py $< $@
 
 build/InterludeVariable-base.ttf: build/inter-variable.ttf build/pretendard-variable.ttf misc/build-full.py | build
