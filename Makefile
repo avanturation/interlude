@@ -83,7 +83,7 @@ ttc = TTCollection(); ttc.fonts = fonts; ttc.save('$@')"
 # WEB: woff2, CSS, dynamic-subset (for npm/CDN)
 # =================================================================================
 
-web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok $(DISTDIR)/web/dynamic-subset-static/.ok
+web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok
 
 $(DISTDIR)/web/.ok: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/extras/ttf/.ok | $(DISTDIR)/web
 	python3 -m fontTools ttLib.woff2 compress $(DISTDIR)/InterludeVariable.ttf \
@@ -105,12 +105,6 @@ $(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterludeVariable.ttf $(PRETENDARD
 		"interlude-variable-dynamic-subset.css"
 	touch $@
 
-$(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok $(PRETENDARD_CSS) misc/gen-dynamic-subset-static.py | $(DISTDIR)/web/dynamic-subset-static
-	python3 misc/gen-dynamic-subset-static.py \
-		$(DISTDIR)/extras/ttf \
-		$(PRETENDARD_CSS) \
-		$(DISTDIR)/web/dynamic-subset-static
-	touch $@
 
 # =================================================================================
 # DIST: npm publish-ready
@@ -118,14 +112,13 @@ $(DISTDIR)/web/dynamic-subset-static/.ok: $(DISTDIR)/extras/ttf/.ok $(PRETENDARD
 
 dist: all
 	rm -rf dist
-	mkdir -p dist/variable dist/static/ttf dist/web/dynamic-subset dist/web/dynamic-subset-static dist/tailwind
+	mkdir -p dist/variable dist/static/ttf dist/web/dynamic-subset dist/tailwind
 	cp $(DISTDIR)/InterludeVariable.ttf dist/variable/
 	cp $(DISTDIR)/Interlude.ttc dist/variable/
 	cp $(DISTDIR)/extras/ttf/*.ttf dist/static/ttf/
 	cp $(DISTDIR)/web/*.woff2 dist/web/
 	cp $(DISTDIR)/web/*.css dist/web/
 	cp -r $(DISTDIR)/web/dynamic-subset/* dist/web/dynamic-subset/
-	cp -r $(DISTDIR)/web/dynamic-subset-static/* dist/web/dynamic-subset-static/
 	cp misc/interlude-tailwind.css dist/tailwind/interlude.css
 	cp LICENSE.txt dist/
 	mkdir -p packages/next/dist/fonts
@@ -135,13 +128,10 @@ dist: all
 # PACKAGE: zip for GitHub release
 # =================================================================================
 
-package: all $(DISTDIR)/LICENSE.txt $(DISTDIR)/help.txt
+package: all $(DISTDIR)/LICENSE.txt
 	cd build && zip -X -r Interlude-$(VERSION).zip Interlude-$(VERSION)/
 
 $(DISTDIR)/LICENSE.txt: LICENSE.txt | $(DISTDIR)
-	cp $< $@
-
-$(DISTDIR)/help.txt: misc/help.txt | $(DISTDIR)
 	cp $< $@
 
 # =================================================================================
@@ -180,9 +170,6 @@ $(DISTDIR)/web:
 	mkdir -p $@
 
 $(DISTDIR)/web/dynamic-subset:
-	mkdir -p $@
-
-$(DISTDIR)/web/dynamic-subset-static:
 	mkdir -p $@
 
 clean:

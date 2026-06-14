@@ -44,26 +44,12 @@ Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, �
 
 페이지에서 실제로 사용하는 글리프만 로드하며, CJK 폰트의 용량 문제를 해결합니다.
 
-Variable (하나의 폰트로 모든 굵기 커버):
-
 ```html
 <link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
 ```
 
 ```css
 body { font-family: "Interlude Variable", sans-serif; }
-```
-
-Static (가변 미지원 환경, 본문 `Interlude` / 제목 `Interlude Display`):
-
-```html
-<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset-static/interlude-ui-dynamic-subset.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset-static/interlude-ui-display-dynamic-subset.css" rel="stylesheet">
-```
-
-```css
-body { font-family: "Interlude", sans-serif; }
-h1, h2, h3 { font-family: "Interlude Display", sans-serif; }
 ```
 
 ### Next.js에서 사용하기
