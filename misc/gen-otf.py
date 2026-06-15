@@ -45,7 +45,7 @@ def convert_one(args):
             width = glyph.width
 
             try:
-                t2_pen = T2CharStringPen(width=width, glyphSet=None)
+                t2_pen = T2CharStringPen(width=width, glyphSet=glyph_set)
                 qu2cu_pen = Qu2CuPen(
                     t2_pen,
                     max_err=tolerance,
@@ -55,7 +55,7 @@ def convert_one(args):
                 glyph.draw(qu2cu_pen)
                 charstrings[glyph_name] = t2_pen.getCharString()
             except NotImplementedError:
-                t2_pen = T2CharStringPen(width=width, glyphSet=None)
+                t2_pen = T2CharStringPen(width=width, glyphSet=glyph_set)
                 glyph.draw(t2_pen)
                 charstrings[glyph_name] = t2_pen.getCharString()
 
@@ -81,7 +81,6 @@ def convert_one(args):
         for glyph_name in fb.font.getGlyphOrder():
             cs = charstrings.get(glyph_name)
             if cs is not None:
-                cs.recalcBounds(charstrings)
                 bounds = cs.calcBounds(charstrings)
                 width = cs.width
                 lsb = int(bounds[0]) if bounds else 0
