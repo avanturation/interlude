@@ -1,6 +1,6 @@
 {
   "name": "interlude-ui",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Interface typeface balancing Latin–CJK harmony with screen density",
   "license": "OFL-1.1",
   "author": "avanturation",
@@ -22,7 +22,9 @@
     "opentype"
   ],
   "files": [
-    "dist/web/",
+    "dist/woff2/",
+    "dist/css/",
+    "dist/dynamic-subset/",
     "dist/tailwind/",
     "packages/next/dist/",
     "packages/next/font.d.ts",
@@ -30,11 +32,11 @@
     "packages/next/display.d.ts"
   ],
   "exports": {
-    ".": "./dist/web/interlude.css",
-    "./css": "./dist/web/interlude.css",
-    "./css/dynamic-subset": "./dist/web/dynamic-subset/interlude-variable-dynamic-subset.css",
+    ".": "./dist/css/interlude.css",
+    "./css": "./dist/css/interlude.css",
+    "./css/dynamic-subset": "./dist/dynamic-subset/interlude-variable-dynamic-subset.css",
     "./tailwind": "./dist/tailwind/interlude.css",
-    "./variable": "./dist/web/InterludeVariable.woff2",
+    "./variable": "./dist/woff2/InterludeVariable.woff2",
     "./font": {
       "types": "./packages/next/font.d.ts",
       "import": "./packages/next/dist/font.mjs"

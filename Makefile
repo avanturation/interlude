@@ -57,22 +57,22 @@ $(PRETENDARD_CSS): | build
 # FONTS: Inter 4.1-style release (Variable TTF, Static TTF/OTF, TTC)
 # =================================================================================
 
-fonts: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/extras/ttf/.ok $(DISTDIR)/Interlude.ttc
+fonts: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/static/.ok $(DISTDIR)/Interlude.ttc
 
 $(DISTDIR)/InterludeVariable.ttf: build/InterludeVariable.ttf | $(DISTDIR)
 	cp $< $@
 	python3 -c "import asyncio; from pathlib import Path; import east_asian_spacing as chws; asyncio.run(chws.Builder(Path('$@')).build_and_save(Path('$@')))"
 
-$(DISTDIR)/extras/ttf/.ok: build/InterludeVariable.ttf misc/gen-static.py | $(DISTDIR)/extras/ttf
-	python3 misc/gen-static.py $< $(DISTDIR)/extras/ttf
+$(DISTDIR)/static/.ok: build/InterludeVariable.ttf misc/gen-static.py | $(DISTDIR)/static
+	python3 misc/gen-static.py $< $(DISTDIR)/static
 	touch $@
 
-$(DISTDIR)/Interlude.ttc: $(DISTDIR)/extras/ttf/.ok
+$(DISTDIR)/Interlude.ttc: $(DISTDIR)/static/.ok
 	python3 -c "\
 from fontTools.ttLib import TTFont; \
 from fontTools.ttLib.ttCollection import TTCollection; \
 import glob; \
-g = lambda p: sorted(glob.glob('$(DISTDIR)/extras/ttf/' + p)); \
+g = lambda p: sorted(glob.glob('$(DISTDIR)/static/' + p)); \
 text = g('Interlude-*.ttf') + g('InterludeCondensed-*.ttf') + g('InterludeExpanded-*.ttf'); \
 disp = g('InterludeDisplay-*.ttf') + g('InterludeDisplayCondensed-*.ttf') + g('InterludeDisplayExpanded-*.ttf'); \
 fonts = [TTFont(f) for f in text + disp]; \
@@ -83,24 +83,24 @@ ttc = TTCollection(); ttc.fonts = fonts; ttc.save('$@')"
 # WEB: woff2, CSS, dynamic-subset (for npm/CDN)
 # =================================================================================
 
-web: $(DISTDIR)/web/.ok $(DISTDIR)/web/dynamic-subset/.ok
+web: $(DISTDIR)/woff2/.ok $(DISTDIR)/dynamic-subset/.ok
 
-$(DISTDIR)/web/.ok: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/extras/ttf/.ok | $(DISTDIR)/web
+$(DISTDIR)/woff2/.ok: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/static/.ok | $(DISTDIR)/woff2 $(DISTDIR)/css
 	python3 -m fontTools ttLib.woff2 compress $(DISTDIR)/InterludeVariable.ttf \
-		-o $(DISTDIR)/web/InterludeVariable.woff2
-	@for f in $(DISTDIR)/extras/ttf/Interlude-*.ttf $(DISTDIR)/extras/ttf/InterludeDisplay-*.ttf; do \
+		-o $(DISTDIR)/woff2/InterludeVariable.woff2
+	@for f in $(DISTDIR)/static/Interlude-*.ttf $(DISTDIR)/static/InterludeDisplay-*.ttf; do \
 		name=$$(basename "$$f" .ttf); \
-		python3 -m fontTools ttLib.woff2 compress "$$f" -o "$(DISTDIR)/web/$$name.woff2"; \
+		python3 -m fontTools ttLib.woff2 compress "$$f" -o "$(DISTDIR)/woff2/$$name.woff2"; \
 	done
-	cp misc/interlude.css $(DISTDIR)/web/interlude.css
-	python3 -c "import re,sys;f=open(sys.argv[1]);c=f.read();f.close();m=re.sub(r'/\*[^*]*\*+(?:[^/*][^*]*\*+)*/','',c);m=re.sub(r'\s+',' ',m).strip();open(sys.argv[1].replace('.css','.min.css'),'w').write(m)" $(DISTDIR)/web/interlude.css
+	cp misc/interlude.css $(DISTDIR)/css/interlude.css
+	python3 -c "import re,sys;f=open(sys.argv[1]);c=f.read();f.close();m=re.sub(r'/\*[^*]*\*+(?:[^/*][^*]*\*+)*/','',c);m=re.sub(r'\s+',' ',m).strip();open(sys.argv[1].replace('.css','.min.css'),'w').write(m)" $(DISTDIR)/css/interlude.css
 	touch $@
 
-$(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterludeVariable.ttf $(PRETENDARD_CSS) misc/gen-dynamic-subset.py | $(DISTDIR)/web/dynamic-subset
+$(DISTDIR)/dynamic-subset/.ok: $(DISTDIR)/InterludeVariable.ttf $(PRETENDARD_CSS) misc/gen-dynamic-subset.py | $(DISTDIR)/dynamic-subset
 	python3 misc/gen-dynamic-subset.py \
 		$(DISTDIR)/InterludeVariable.ttf \
 		$(PRETENDARD_CSS) \
-		$(DISTDIR)/web/dynamic-subset \
+		$(DISTDIR)/dynamic-subset \
 		"Interlude Variable" \
 		"interlude-variable-dynamic-subset.css"
 	touch $@
@@ -112,24 +112,33 @@ $(DISTDIR)/web/dynamic-subset/.ok: $(DISTDIR)/InterludeVariable.ttf $(PRETENDARD
 
 dist: all
 	rm -rf dist
-	mkdir -p dist/variable dist/static/ttf dist/web/dynamic-subset dist/tailwind
+	mkdir -p dist/variable dist/static dist/woff2 dist/css dist/dynamic-subset dist/tailwind
 	cp $(DISTDIR)/InterludeVariable.ttf dist/variable/
 	cp $(DISTDIR)/Interlude.ttc dist/variable/
-	cp $(DISTDIR)/extras/ttf/*.ttf dist/static/ttf/
-	cp $(DISTDIR)/web/*.woff2 dist/web/
-	cp $(DISTDIR)/web/*.css dist/web/
-	cp -r $(DISTDIR)/web/dynamic-subset/* dist/web/dynamic-subset/
+	cp $(DISTDIR)/static/*.ttf dist/static/
+	cp $(DISTDIR)/woff2/*.woff2 dist/woff2/
+	cp $(DISTDIR)/css/*.css dist/css/
+	cp -r $(DISTDIR)/dynamic-subset/* dist/dynamic-subset/
 	cp misc/interlude-tailwind.css dist/tailwind/interlude.css
 	cp LICENSE.txt dist/
 	mkdir -p packages/next/dist/fonts
-	cp dist/web/InterludeVariable.woff2 packages/next/dist/fonts/
+	cp dist/woff2/InterludeVariable.woff2 packages/next/dist/fonts/
 
 # =================================================================================
 # PACKAGE: zip for GitHub release
 # =================================================================================
 
 package: all $(DISTDIR)/LICENSE.txt
-	cd build && zip -X -r Interlude-$(VERSION).zip Interlude-$(VERSION)/
+	cd build && zip -X -r Interlude-$(VERSION)-ttf.zip \
+		Interlude-$(VERSION)/InterludeVariable.ttf \
+		Interlude-$(VERSION)/Interlude.ttc \
+		Interlude-$(VERSION)/static/ \
+		Interlude-$(VERSION)/LICENSE.txt
+	cd build && zip -X -r Interlude-$(VERSION)-web.zip \
+		Interlude-$(VERSION)/woff2/ \
+		Interlude-$(VERSION)/css/ \
+		Interlude-$(VERSION)/dynamic-subset/ \
+		Interlude-$(VERSION)/LICENSE.txt
 
 $(DISTDIR)/LICENSE.txt: LICENSE.txt | $(DISTDIR)
 	cp $< $@
@@ -163,13 +172,16 @@ build:
 $(DISTDIR):
 	mkdir -p $@
 
-$(DISTDIR)/extras/ttf:
+$(DISTDIR)/static:
 	mkdir -p $@
 
-$(DISTDIR)/web:
+$(DISTDIR)/woff2:
 	mkdir -p $@
 
-$(DISTDIR)/web/dynamic-subset:
+$(DISTDIR)/css:
+	mkdir -p $@
+
+$(DISTDIR)/dynamic-subset:
 	mkdir -p $@
 
 clean:

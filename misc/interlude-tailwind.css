@@ -17,7 +17,7 @@ Notes:
   - The dynamic-subset CSS references url('./InterludeVariable.subset.N.woff2');
     your bundler (Lightning CSS in v4 / Vite / PostCSS) rewrites those relative
     URLs. If your setup can't resolve url() from node_modules, use the CDN CSS
-    instead: https://cdn.jsdelivr.net/npm/interlude/dist/web/dynamic-subset/interlude-variable-dynamic-subset.css
+    instead: https://cdn.jsdelivr.net/npm/interlude-ui/dist/dynamic-subset/interlude-variable-dynamic-subset.css
 
 Copyright (c) 2025 The Interlude Project Authors
 Licensed under the SIL Open Font License, Version 1.1.
@@ -25,7 +25,7 @@ http://scripts.sil.org/OFL
 */
 
 /* Load: @font-face declarations (variable, dynamic-subset) */
-@import "../web/dynamic-subset/interlude-variable-dynamic-subset.css";
+@import "../dynamic-subset/interlude-variable-dynamic-subset.css";
 
 /* Register: theme tokens so font-sans / font-display emit the family */
 @theme {

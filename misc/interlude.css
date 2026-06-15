@@ -27,28 +27,28 @@ http://scripts.sil.org/OFL
 	font-stretch: 75% 125%;
 	font-style: normal;
 	font-display: swap;
-	src: url('./InterludeVariable.woff2') format('woff2');
+	src: url('../woff2/InterludeVariable.woff2') format('woff2');
 }
 
-@font-face { font-family: 'Interlude'; font-weight: 900; font-display: swap; src: local('Interlude Black'), url('./Interlude-Black.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 800; font-display: swap; src: local('Interlude ExtraBold'), url('./Interlude-ExtraBold.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 700; font-display: swap; src: local('Interlude Bold'), url('./Interlude-Bold.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 600; font-display: swap; src: local('Interlude SemiBold'), url('./Interlude-SemiBold.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 500; font-display: swap; src: local('Interlude Medium'), url('./Interlude-Medium.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 400; font-display: swap; src: local('Interlude Regular'), local('Interlude'), url('./Interlude-Regular.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 300; font-display: swap; src: local('Interlude Light'), url('./Interlude-Light.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 200; font-display: swap; src: local('Interlude ExtraLight'), url('./Interlude-ExtraLight.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude'; font-weight: 100; font-display: swap; src: local('Interlude Thin'), url('./Interlude-Thin.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 900; font-display: swap; src: local('Interlude Black'), url('../woff2/Interlude-Black.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 800; font-display: swap; src: local('Interlude ExtraBold'), url('../woff2/Interlude-ExtraBold.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 700; font-display: swap; src: local('Interlude Bold'), url('../woff2/Interlude-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 600; font-display: swap; src: local('Interlude SemiBold'), url('../woff2/Interlude-SemiBold.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 500; font-display: swap; src: local('Interlude Medium'), url('../woff2/Interlude-Medium.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 400; font-display: swap; src: local('Interlude Regular'), local('Interlude'), url('../woff2/Interlude-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 300; font-display: swap; src: local('Interlude Light'), url('../woff2/Interlude-Light.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 200; font-display: swap; src: local('Interlude ExtraLight'), url('../woff2/Interlude-ExtraLight.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude'; font-weight: 100; font-display: swap; src: local('Interlude Thin'), url('../woff2/Interlude-Thin.woff2') format('woff2'); }
 
-@font-face { font-family: 'Interlude Display'; font-weight: 900; font-display: swap; src: local('Interlude Display Black'), url('./InterludeDisplay-Black.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 800; font-display: swap; src: local('Interlude Display ExtraBold'), url('./InterludeDisplay-ExtraBold.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 700; font-display: swap; src: local('Interlude Display Bold'), url('./InterludeDisplay-Bold.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 600; font-display: swap; src: local('Interlude Display SemiBold'), url('./InterludeDisplay-SemiBold.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 500; font-display: swap; src: local('Interlude Display Medium'), url('./InterludeDisplay-Medium.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 400; font-display: swap; src: local('Interlude Display Regular'), local('Interlude Display'), url('./InterludeDisplay-Regular.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 300; font-display: swap; src: local('Interlude Display Light'), url('./InterludeDisplay-Light.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 200; font-display: swap; src: local('Interlude Display ExtraLight'), url('./InterludeDisplay-ExtraLight.woff2') format('woff2'); }
-@font-face { font-family: 'Interlude Display'; font-weight: 100; font-display: swap; src: local('Interlude Display Thin'), url('./InterludeDisplay-Thin.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 900; font-display: swap; src: local('Interlude Display Black'), url('../woff2/InterludeDisplay-Black.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 800; font-display: swap; src: local('Interlude Display ExtraBold'), url('../woff2/InterludeDisplay-ExtraBold.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 700; font-display: swap; src: local('Interlude Display Bold'), url('../woff2/InterludeDisplay-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 600; font-display: swap; src: local('Interlude Display SemiBold'), url('../woff2/InterludeDisplay-SemiBold.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 500; font-display: swap; src: local('Interlude Display Medium'), url('../woff2/InterludeDisplay-Medium.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 400; font-display: swap; src: local('Interlude Display Regular'), local('Interlude Display'), url('../woff2/InterludeDisplay-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 300; font-display: swap; src: local('Interlude Display Light'), url('../woff2/InterludeDisplay-Light.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 200; font-display: swap; src: local('Interlude Display ExtraLight'), url('../woff2/InterludeDisplay-ExtraLight.woff2') format('woff2'); }
+@font-face { font-family: 'Interlude Display'; font-weight: 100; font-display: swap; src: local('Interlude Display Thin'), url('../woff2/InterludeDisplay-Thin.woff2') format('woff2'); }
 
 @font-feature-values Interlude Variable, Interlude, Interlude Display {
 	@character-variant {

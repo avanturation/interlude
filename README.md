@@ -31,7 +31,7 @@ Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, �
 전체 글리프를 하나의 가변 폰트로 로드합니다.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/interlude-ui.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/css/interlude.css" rel="stylesheet">
 ```
 
 이 CSS는 세 가지 `font-family`를 정의합니다.
@@ -45,7 +45,7 @@ Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, �
 페이지에서 실제로 사용하는 글리프만 로드하며, CJK 폰트의 용량 문제를 해결합니다.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/dynamic-subset/interlude-variable-dynamic-subset.css" rel="stylesheet">
 ```
 
 ```css
@@ -108,7 +108,7 @@ Dynamic Subset용 `@font-face`를 로드하고, `@theme`로 `--font-sans` / `--f
 또한 Vite나 Next.js 같은 번들러는 폰트 경로를 자동으로 처리하지만, Tailwind standalone CLI 환경에서는 import된 폰트 URL이 제대로 재작성되지 않을 수 있습니다. 이런 경우, CDN의 CSS를 직접 불러와주세요.
 
  ```html
- <link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/web/dynamic-subset/interlude-ui-variable-dynamic-subset.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/interlude-ui/dist/dynamic-subset/interlude-variable-dynamic-subset.css" rel="stylesheet">
  ```
 
 ## font-family
