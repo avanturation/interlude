@@ -1,5 +1,21 @@
 # 변경 이력
 
+## 1.2.1 (2026-06-15)
+
+wdth 축 획 균일성 근본 수정.
+
+### wdth 축 개선
+
+- **글리프 클래스 기반 압축 시스템**: narrow / diagonal / diag_multi / multi_stem / default 5개 클래스별 차별화된 stem_preserve, sb_damp 적용
+- 글리프 간 width ratio spread 0.235 → 0.056 (76% 감소)
+- Single-stem 글리프(I, l, i, j) 과도한 폭 유지 문제 해결 (0.98 → 0.75)
+- Multi-stem 글리프(h, n, u, H, E, F) 압축 부족 문제 해결 (0.81 → 0.79)
+- N/M/W diag_multi 클래스 분리: stem이 많은 대각선 글리프의 별도 압축 전략
+- Tangent repair를 projection 방식으로 교체: off-curve 회전 대신 법선 성분 제거로 곡선 형태 보존
+- 양방향 tangent repair (line→curve + curve→line junction)
+- Diagonal preservation + tangent repair를 whitelist 글리프에만 적용 (i/j/구두점 부작용 제거)
+- `_build_monotone_warp`에 stem_preserve 파라미터화: 클래스별 동적 stem 보존률
+
 ## 1.2.0 (2026-06-14)
 
 가변 폭(wdth) 축 추가.

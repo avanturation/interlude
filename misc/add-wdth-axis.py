@@ -70,6 +70,41 @@ MIN_DIAG_ANGLE = 15.0   # degrees from vertical
 MAX_DIAG_ANGLE = 60.0   # degrees from vertical
 MIN_DIAG_LENGTH = 150.0 # minimum segment length to qualify
 
+_DIAG_GLYPHS = frozenset('A V W X K N M Y Z v w x k z y'.split())
+_NARROW_GLYPHS = frozenset('I l i j'.split())
+_MULTI_STEM_GLYPHS = frozenset('H E F U m w h n u'.split())
+_DIAG_MULTI_STEM = frozenset('N M W'.split())
+
+
+def _glyph_class(gn):
+    if gn in _NARROW_GLYPHS:
+        return 'narrow'
+    if gn in _DIAG_MULTI_STEM:
+        return 'diag_multi'
+    if gn in _DIAG_GLYPHS:
+        return 'diagonal'
+    if gn in _MULTI_STEM_GLYPHS:
+        return 'multi_stem'
+    return 'default'
+
+
+def _class_params(glyph_class, scale):
+    condensing = scale < 1.0
+    if glyph_class == 'narrow':
+        return {'stem_preserve': 1.0, 'sb_damp': 1.0, 'use_warp': False}
+    elif glyph_class == 'diagonal':
+        sp = 0.75 if condensing else 1.0 + (scale - 1.0) * 0.46
+        return {'stem_preserve': sp, 'sb_damp': 0.35, 'use_warp': True}
+    elif glyph_class == 'diag_multi':
+        sp = 0.65 if condensing else 1.0 + (scale - 1.0) * 0.46
+        return {'stem_preserve': sp, 'sb_damp': 0.50, 'use_warp': True}
+    elif glyph_class == 'multi_stem':
+        sp = 0.70 if condensing else 1.0 + (scale - 1.0) * 0.46
+        return {'stem_preserve': sp, 'sb_damp': 0.35, 'use_warp': True}
+    else:
+        sp = 0.80 if condensing else 1.0 + (scale - 1.0) * 0.46
+        return {'stem_preserve': sp, 'sb_damp': 0.30, 'use_warp': True}
+
 
 def is_cjk(cp):
     """CJK codepoint ranges (Hangul, Kanji, Kana, symbols)."""
@@ -217,7 +252,8 @@ def _detect_stems(polys, ymin, ymax, body_width=0):
     return merged
 
 
-def _build_monotone_warp(x_min, x_max, stems, target_width, original_width):
+def _build_monotone_warp(x_min, x_max, stems, target_width, original_width,
+                         stem_preserve=None):
     """Build smooth monotone x-mapping with stem preservation.
 
     Instead of hard piecewise-linear slope changes at stem boundaries, this
@@ -225,6 +261,9 @@ def _build_monotone_warp(x_min, x_max, stems, target_width, original_width):
     band around each stem edge.  The result is C1-continuous, preventing
     tangent kinks at zone boundaries.
     """
+    if stem_preserve is None:
+        stem_preserve = STEM_PRESERVE
+
     if not stems or abs(target_width - original_width) < 1:
         s = target_width / original_width if original_width > 0 else 1.0
         center = (x_min + x_max) / 2
@@ -243,7 +282,7 @@ def _build_monotone_warp(x_min, x_max, stems, target_width, original_width):
                 (x_max, center + (x_max - center) * s)]
 
     if condensing:
-        stem_slope = STEM_PRESERVE
+        stem_slope = stem_preserve
         needed_flex = target_width - total_stem_width * stem_slope
         if total_flex_width < 1 or needed_flex < MIN_COUNTER * len(stems):
             center = (x_min + x_max) / 2
@@ -433,21 +472,21 @@ def _process_glyph(args):
 
     if is_cjk(cp):
         new_coords = _process_cjk(coords, aw, scale)
+        params = None
     else:
+        glyph_class = _glyph_class(gn)
+        params = _class_params(glyph_class, scale)
+        preserve_diag = gn in _DIAG_GLYPHS
         new_coords = _process_latin(
             coords, ends, flags, aw, lsb, rsb,
-            x_min_g, x_max_g, y_min_g, y_max_g, scale)
+            x_min_g, x_max_g, y_min_g, y_max_g, scale,
+            preserve_diag, params)
 
     new_xs = [nc[0] for nc in new_coords]
     new_x_min = min(new_xs)
 
-    # SF Pro sidebearing pattern: SB barely grows when expanding,
-    # and shrinks less than body when condensing.
-    # Measured: expanded SB_scale≈0.985 when body_scale=1.293
-    #           condensed SB_scale≈0.905 when body_scale=0.829
-    # Model: sb_scale = 1.0 + (scale - 1.0) * SB_DAMP
-    SB_DAMP = 0.10
-    sb_scale = 1.0 + (scale - 1.0) * SB_DAMP
+    sb_damp = params.get('sb_damp', 0.30) if params else 0.10
+    sb_scale = 1.0 + (scale - 1.0) * sb_damp
     target_lsb = round(lsb * sb_scale) if lsb >= 0 else lsb
     shift = target_lsb - new_x_min
     new_coords = [(x + shift, y) for x, y in new_coords]
@@ -469,14 +508,13 @@ def _process_cjk(coords, aw, scale):
 
 
 def _repair_diagonal_tangents(orig_coords, new_coords, ends, flags):
-    """Fix tangent breaks at line→curve junctions caused by non-uniform x-warp.
+    """Fix tangent breaks at diagonal/curve junctions via tangent projection.
 
-    When a straight diagonal (ON→ON) meets a curve (ON→off), the warp changes
-    the diagonal's angle but not the curve handle's direction. This rotates the
-    first off-curve point to restore the original tangent continuity.
+    Projects off-curve handles onto the corrected diagonal tangent direction,
+    removing only the normal component (kink source) while preserving tangential
+    reach. Handles both line→curve and curve→line junctions.
     """
     result = list(new_coords)
-    n = len(orig_coords)
     start = 0
     for end in ends:
         cnt = end - start + 1
@@ -488,60 +526,87 @@ def _repair_diagonal_tangents(orig_coords, new_coords, ends, flags):
             next_idx = start + ((i + 1) % cnt)
 
             prev_on = bool(flags[prev_idx] & 1)
-            next_off = not bool(flags[next_idx] & 1)
-            if not (prev_on and next_off):
+            next_on = bool(flags[next_idx] & 1)
+            prev_off = not prev_on
+            next_off = not next_on
+
+            if prev_on and next_off:
+                # line→curve: diagonal P→J, handle J→H
+                jx, jy = result[idx]
+                px, py = result[prev_idx]
+                hx, hy = result[next_idx]
+                diag_dx, diag_dy = jx - px, jy - py
+                handle_vec = (hx - jx, hy - jy)
+                orig_p = orig_coords[prev_idx]
+                orig_j = orig_coords[idx]
+                orig_diag_dx = orig_j[0] - orig_p[0]
+                orig_diag_dy = orig_j[1] - orig_p[1]
+                fix_target = next_idx
+                sign = 1
+            elif prev_off and next_on:
+                # curve→line: handle H→J, diagonal J→N
+                jx, jy = result[idx]
+                nx, ny = result[next_idx]
+                hx, hy = result[prev_idx]
+                diag_dx, diag_dy = nx - jx, ny - jy
+                handle_vec = (hx - jx, hy - jy)
+                orig_n = orig_coords[next_idx]
+                orig_j = orig_coords[idx]
+                orig_diag_dx = orig_n[0] - orig_j[0]
+                orig_diag_dy = orig_n[1] - orig_j[1]
+                fix_target = prev_idx
+                sign = 1
+            else:
                 continue
 
-            # line→curve junction at idx
-            # Original tangent angle at junction
-            opx, opy = orig_coords[prev_idx]
-            ocx, ocy = orig_coords[idx]
-            onx, ony = orig_coords[next_idx]
-
-            oin_dx, oin_dy = ocx - opx, ocy - opy
-            oout_dx, oout_dy = onx - ocx, ony - ocy
-            if (oin_dx**2 + oin_dy**2) < 4 or (oout_dx**2 + oout_dy**2) < 4:
+            diag_len = (diag_dx**2 + diag_dy**2)**0.5
+            if diag_len < 2:
                 continue
 
-            orig_kink = math.atan2(oout_dy, oout_dx) - math.atan2(oin_dy, oin_dx)
+            orig_diag_len = (orig_diag_dx**2 + orig_diag_dy**2)**0.5
+            if orig_diag_len < 2:
+                continue
+
+            # Only fix steep diagonals
+            diag_angle = abs(math.degrees(math.atan2(abs(diag_dy), abs(diag_dx))))
+            if not (15 < diag_angle < 85):
+                continue
+
+            # Check original kink was small (intentional smooth junction)
+            orig_h = orig_coords[next_idx] if prev_on else orig_coords[prev_idx]
+            orig_handle = (orig_h[0] - orig_j[0], orig_h[1] - orig_j[1])
+            orig_handle_len = (orig_handle[0]**2 + orig_handle[1]**2)**0.5
+            if orig_handle_len < 2:
+                continue
+            orig_kink = math.atan2(orig_handle[1], orig_handle[0]) - math.atan2(orig_diag_dy, orig_diag_dx)
             if orig_kink > math.pi: orig_kink -= 2*math.pi
             if orig_kink < -math.pi: orig_kink += 2*math.pi
-
-            # Skip intentional design corners (>15° = serif curls, etc.)
             if abs(orig_kink) > 0.26:
                 continue
 
-            # Warped tangent angle
-            npx, npy = result[prev_idx]
-            ncx, ncy = result[idx]
-            nnx, nny = result[next_idx]
+            # Tangent direction from warped diagonal
+            tx, ty = diag_dx / diag_len, diag_dy / diag_len
 
-            nin_dx, nin_dy = ncx - npx, ncy - npy
-            nout_dx, nout_dy = nnx - ncx, nny - ncy
-            if (nin_dx**2 + nin_dy**2) < 4 or (nout_dx**2 + nout_dy**2) < 4:
+            # Project handle onto tangent
+            vx, vy = handle_vec
+            a = vx * tx + vy * ty  # tangential reach
+            if a < 2:
                 continue
 
-            new_kink = math.atan2(nout_dy, nout_dx) - math.atan2(nin_dy, nin_dx)
-            if new_kink > math.pi: new_kink -= 2*math.pi
-            if new_kink < -math.pi: new_kink += 2*math.pi
+            # Normal component (the kink source)
+            bx = vx - a * tx
+            by = vy - a * ty
+            b_mag = (bx**2 + by**2)**0.5
 
-            # Only fix diagonal lines (20-70° from horizontal)
-            in_angle = abs(math.degrees(math.atan2(abs(nin_dy), abs(nin_dx))))
-            if not (15 < in_angle < 75):
+            if b_mag < 0.5:
                 continue
 
-            # Rotation needed to restore original kink
-            rot = orig_kink - new_kink
-            if abs(rot) < 0.002:
-                continue
+            # Cap correction: allow max 80% of normal removal to avoid over-correction
+            alpha = min(0.8, b_mag / (a * 0.3 + 1))
+            new_hx = jx + vx - bx * alpha
+            new_hy = jy + vy - by * alpha
 
-            # Rotate the off-curve point around the junction
-            dist = (nout_dx**2 + nout_dy**2)**0.5
-            target_angle = math.atan2(nin_dy, nin_dx) + orig_kink
-            result[next_idx] = (
-                ncx + dist * math.cos(target_angle),
-                ncy + dist * math.sin(target_angle)
-            )
+            result[fix_target] = (new_hx, new_hy)
         start = end + 1
     return result
 
@@ -747,31 +812,32 @@ def _preserve_diagonal_strokes(orig_coords, new_coords, ends, flags, scale):
 
 
 def _process_latin(coords, ends, flags, aw, lsb, rsb,
-                   x_min_g, x_max_g, y_min_g, y_max_g, scale):
+                   x_min_g, x_max_g, y_min_g, y_max_g, scale,
+                   preserve_diag=False, params=None):
+    if params is None:
+        params = _class_params('default', scale)
+
     body_width = x_max_g - x_min_g
     if body_width < 10:
         center = aw / 2.0
         return [(center + (x - center) * scale, y) for x, y in coords]
 
-    # Single-stem glyphs (l, I, etc.): body ≈ stem → no warp
-    if body_width <= MAX_STEM_WIDTH and len(ends) == 1:
-        return list(coords)
+    if not params.get('use_warp', True):
+        center = (x_min_g + x_max_g) / 2.0
+        return [(center + (x - center) * scale, y) for x, y in coords]
 
     polys = _flatten_contours_simple(coords, ends, flags)
     stems = _detect_stems(polys, y_min_g, y_max_g, body_width) if polys else []
 
-    if stems:
-        total_stem = sum(xr - xl for xl, xr in stems)
-        stem_body_ratio = total_stem / body_width
-        if stem_body_ratio > 0.85 and len(stems) <= 1:
-            return list(coords)
-
     target_body = body_width * scale
-    warp_map = _build_monotone_warp(x_min_g, x_max_g, stems, target_body, body_width)
+    stem_preserve = params.get('stem_preserve', STEM_PRESERVE)
+    warp_map = _build_monotone_warp(x_min_g, x_max_g, stems, target_body, body_width,
+                                    stem_preserve=stem_preserve)
 
     new_coords = [(_apply_warp(x, warp_map), y) for x, y in coords]
-    new_coords = _preserve_diagonal_strokes(coords, new_coords, ends, flags, scale)
-    new_coords = _repair_diagonal_tangents(coords, new_coords, ends, flags)
+    if preserve_diag:
+        new_coords = _preserve_diagonal_strokes(coords, new_coords, ends, flags, scale)
+        new_coords = _repair_diagonal_tangents(coords, new_coords, ends, flags)
     return new_coords
 
 
