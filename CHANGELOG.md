@@ -16,6 +16,10 @@ wdth 축 획 균일성 근본 수정.
 - Diagonal preservation + tangent repair를 whitelist 글리프에만 적용 (i/j/구두점 부작용 제거)
 - `_build_monotone_warp`에 stem_preserve 파라미터화: 클래스별 동적 stem 보존률
 
+### 글리프 조정
+
+- Bullet (U+2022) 크기를 SF Pro/Pretendard 수준으로 축소 (640→400, scale 0.625)
+
 ## 1.2.0 (2026-06-14)
 
 가변 폭(wdth) 축 추가.

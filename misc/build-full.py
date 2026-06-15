@@ -60,6 +60,56 @@ WEIGHTS = [
     (900, "Black"),
 ]
 
+# Bullet (U+2022) scale-down: Inter's bullet is 640×640, SF Pro/Pretendard ~400.
+# Scale to 0.625 about glyph center, adjust advance width proportionally.
+BULLET_SCALE = 0.625  # 400/640
+
+
+def _scale_bullet(font):
+    """Scale bullet glyph (U+2022) down to SF Pro/Pretendard proportions."""
+    cmap = font.getBestCmap()
+    gname = cmap.get(0x2022)
+    if not gname:
+        return
+    glyf = font['glyf']
+    hmtx = font['hmtx']
+    g = glyf[gname]
+    if g.numberOfContours <= 0:
+        return
+
+    # Scale about center
+    cx = (g.xMin + g.xMax) / 2
+    cy = (g.yMin + g.yMax) / 2
+    s = BULLET_SCALE
+
+    coords = list(g.coordinates)
+    for i, (x, y) in enumerate(coords):
+        coords[i] = (round(cx + (x - cx) * s), round(cy + (y - cy) * s))
+    from fontTools.ttLib.tables._g_l_y_f import GlyphCoordinates
+    g.coordinates = GlyphCoordinates(coords)
+    g.recalcBounds(glyf)
+
+    aw, lsb = hmtx[gname]
+    new_aw = round(aw * s)
+    body_w = g.xMax - g.xMin
+    new_lsb = round((new_aw - body_w) / 2)
+    hmtx[gname] = (new_aw, new_lsb)
+
+    # Scale gvar deltas
+    if 'gvar' in font:
+        gvar = font['gvar'].variations
+        if gname in gvar:
+            for tv in gvar[gname]:
+                new_coords = []
+                for c in tv.coordinates:
+                    if c is None:
+                        new_coords.append(None)
+                    else:
+                        new_coords.append((round(c[0] * s), round(c[1] * s)))
+                tv.coordinates = new_coords
+
+    print(f"  bullet scaled: {640}→{body_w} (factor {s})")
+
 
 def get_deps(gname, glyf_table, visited=None):
     if visited is None:
@@ -702,6 +752,8 @@ def merge(inter_ttf, pretendard_ttf, output_path):
 
     # Remove Mac name entries (fontbakery no_mac_entries) — must be last before save
     inter['name'].names = [r for r in inter['name'].names if r.platformID != 1]
+
+    _scale_bullet(inter)
 
     inter.save(output_path)
     size = os.path.getsize(output_path) / 1024 / 1024
