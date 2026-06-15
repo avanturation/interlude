@@ -57,7 +57,7 @@ $(PRETENDARD_CSS): | build
 # FONTS: Inter 4.1-style release (Variable TTF, Static TTF/OTF, TTC)
 # =================================================================================
 
-fonts: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/ttf/.ok $(DISTDIR)/otf/.ok $(DISTDIR)/Interlude.ttc
+fonts: $(DISTDIR)/InterludeVariable.ttf $(DISTDIR)/ttf/.ok $(DISTDIR)/Interlude.ttc
 
 $(DISTDIR)/InterludeVariable.ttf: build/InterludeVariable.ttf | $(DISTDIR)
 	cp $< $@
@@ -65,10 +65,6 @@ $(DISTDIR)/InterludeVariable.ttf: build/InterludeVariable.ttf | $(DISTDIR)
 
 $(DISTDIR)/ttf/.ok: build/InterludeVariable.ttf misc/gen-static.py | $(DISTDIR)/ttf
 	python3 misc/gen-static.py $< $(DISTDIR)/ttf
-	touch $@
-
-$(DISTDIR)/otf/.ok: $(DISTDIR)/ttf/.ok misc/gen-otf.py | $(DISTDIR)/otf
-	python3 misc/gen-otf.py $(DISTDIR)/ttf $(DISTDIR)/otf
 	touch $@
 
 $(DISTDIR)/Interlude.ttc: $(DISTDIR)/ttf/.ok
@@ -116,11 +112,10 @@ $(DISTDIR)/dynamic-subset/.ok: $(DISTDIR)/InterludeVariable.ttf $(PRETENDARD_CSS
 
 dist: all
 	rm -rf dist
-	mkdir -p dist/variable dist/ttf dist/otf dist/woff2 dist/css dist/dynamic-subset dist/tailwind
+	mkdir -p dist/variable dist/ttf dist/woff2 dist/css dist/dynamic-subset dist/tailwind
 	cp $(DISTDIR)/InterludeVariable.ttf dist/variable/
 	cp $(DISTDIR)/Interlude.ttc dist/variable/
 	cp $(DISTDIR)/ttf/*.ttf dist/ttf/
-	cp $(DISTDIR)/otf/*.otf dist/otf/
 	cp $(DISTDIR)/woff2/*.woff2 dist/woff2/
 	cp $(DISTDIR)/css/*.css dist/css/
 	cp -r $(DISTDIR)/dynamic-subset/* dist/dynamic-subset/
@@ -137,9 +132,6 @@ package: all $(DISTDIR)/LICENSE.txt
 	cd build && zip -X -r Interlude-$(VERSION)-ttf.zip \
 		Interlude-$(VERSION)/Interlude.ttc \
 		Interlude-$(VERSION)/ttf/ \
-		Interlude-$(VERSION)/LICENSE.txt
-	cd build && zip -X -r Interlude-$(VERSION)-otf.zip \
-		Interlude-$(VERSION)/otf/ \
 		Interlude-$(VERSION)/LICENSE.txt
 	cd build && zip -X -r Interlude-$(VERSION)-web.zip \
 		Interlude-$(VERSION)/woff2/ \
@@ -180,9 +172,6 @@ $(DISTDIR):
 	mkdir -p $@
 
 $(DISTDIR)/ttf:
-	mkdir -p $@
-
-$(DISTDIR)/otf:
 	mkdir -p $@
 
 $(DISTDIR)/woff2:
