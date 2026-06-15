@@ -485,7 +485,7 @@ def _process_glyph(args):
     new_xs = [nc[0] for nc in new_coords]
     new_x_min = min(new_xs)
 
-    sb_damp = params.get('sb_damp', 0.30) if params else 0.10
+    sb_damp = params.get('sb_damp', 0.30) if params else 1.0
     sb_scale = 1.0 + (scale - 1.0) * sb_damp
     target_lsb = round(lsb * sb_scale) if lsb >= 0 else lsb
     shift = target_lsb - new_x_min
