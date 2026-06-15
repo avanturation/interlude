@@ -2,16 +2,16 @@
 
 Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, 문자 사이의 밀도와 리듬을 다시 맞춘 인터페이스 서체입니다.
 
-[Inter](https://rsms.me/inter)의 라틴 글리프와 [Pretendard](https://github.com/orioncactus/pretendard)의 CJK 글리프를 기반으로, 4px Grid 중심의 UI 환경에 맞게 폭과 밀도를 다시 조율했습니다. 라틴과 CJK가 함께 쓰일 때 생기는 크기감과 굵기 차이를 미세하게 조정해, 어느 한쪽이 튀지 않고 자연스럽게 읽히도록 맞췄습니다. 9가지 굵기와 `wdth` 축을 통한 너비 조절, Variable을 지원해 다양한 화면 밀도와 인터페이스 조건에 유연하게 대응합니다.
+[Inter](https://rsms.me/inter)의 라틴 글리프와 [Pretendard](https://github.com/orioncactus/pretendard)의 CJK 글리프를 기반으로, 4px Grid 중심의 UI 환경에 맞게 폭과 밀도를 다시 조율했습니다. 라틴과 CJK가 함께 쓰일 때 생기는 크기감과 굵기 차이를 미세하게 조정해, 어느 한쪽이 튀지 않고 자연스럽게 읽히도록 맞췄습니다. 9가지 굵기와 wdth 축을 통한 Expanded & Condensed 너비 조절, Variable을 지원해 다양한 화면 밀도와 인터페이스 조건에 유연하게 대응합니다.
 
 [**최신 버전 다운로드하기**](https://github.com/avanturation/interlude/releases/latest)
 
 <br/>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/overview-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/overview.png">
-  <img alt="overview" src="docs/overview.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/avanturation/interlude/blob/main/docs/overview-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/avanturation/interlude/blob/main/docs/overview.png">
+  <img alt="overview" src="https://github.com/avanturation/interlude/blob/main/docs/overview.png">
 </picture>
 
 <br/>
@@ -124,7 +124,7 @@ font-family: "Interlude Variable", "Interlude",
 
 ### Display 사용하기
 
-Interlude Variable은 하나의 파일에 Text(opsz=14)와 Display(opsz=32)를 모두 포함합니다.
+Interlude Variable은 하나의 파일에 Text `opsz=14` 와 Display `opsz=32` 를 모두 포함합니다.
 
 ```css
 /* 본문 (기본, opsz=14) */
