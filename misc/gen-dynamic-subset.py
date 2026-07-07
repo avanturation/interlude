@@ -95,6 +95,12 @@ def _subset_one(args):
         return None
 
 
+def _chunk_codepoints(codepoints, max_per_chunk=200):
+    """Split a set of codepoints into chunks of max_per_chunk for subset files."""
+    cps = sorted(codepoints)
+    return [set(cps[i:i + max_per_chunk]) for i in range(0, len(cps), max_per_chunk)]
+
+
 def generate(font_path, reference_css, output_dir, family_name, css_filename):
     os.makedirs(output_dir, exist_ok=True)
 
@@ -113,8 +119,11 @@ def generate(font_path, reference_css, output_dir, family_name, css_filename):
         base_range = codepoints_to_range_str(base_cps)
         jobs.append((font_path, base_cps, base_path, 'base', base_range, base_filename))
 
+    # Collect all codepoints covered by the reference CSS ranges.
+    reference_covered = set()
     for i, range_str in enumerate(ranges):
         codepoints = unicode_range_to_codepoints(range_str)
+        reference_covered |= codepoints
         # Remove base codepoints so they aren't scattered back into other files.
         codepoints -= base_cps
         if not codepoints:
@@ -125,6 +134,20 @@ def generate(font_path, reference_css, output_dir, family_name, css_filename):
         # matches what the file actually contains.
         carved_range = codepoints_to_range_str(codepoints)
         jobs.append((font_path, codepoints, subset_path, i, carved_range, subset_filename))
+
+    # Generate additional subsets for codepoints in the font but NOT in the
+    # reference CSS (e.g. Hangul syllables U+AC00-D7A3 absent from Pretendard JP).
+    uncovered = font_cmap - reference_covered - base_cps
+    if uncovered:
+        chunks = _chunk_codepoints(uncovered, max_per_chunk=200)
+        next_idx = len(ranges)
+        print(f"  {len(uncovered)} uncovered codepoints → {len(chunks)} extra subsets")
+        for ci, chunk in enumerate(chunks):
+            idx = next_idx + ci
+            subset_filename = f"{font_basename}.subset.{idx}.woff2"
+            subset_path = os.path.join(output_dir, subset_filename)
+            chunk_range = codepoints_to_range_str(chunk)
+            jobs.append((font_path, chunk, subset_path, idx, chunk_range, subset_filename))
 
     workers = min(cpu_count(), 6)
     pool_args = [(j[0], j[1], j[2]) for j in jobs]

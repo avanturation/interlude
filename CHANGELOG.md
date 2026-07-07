@@ -1,5 +1,15 @@
 # 변경 이력
 
+## 1.2.2 (2026-07-07)
+
+Dynamic Subset에서 한글 음절 누락 수정.
+
+### 버그 수정
+
+- **Dynamic Subset 한글 음절 누락**: `unicode-range`에 한글 음절 블록(U+AC00–D7A3, 11,172자)이 선언되지 않아 브라우저가 해당 subset을 로드하지 않던 문제 수정
+- 원인: reference CSS로 Pretendard **JP**(일본어 전용)를 사용하여 한글 범위가 빠져 있었음
+- `gen-dynamic-subset.py`가 reference CSS에 없지만 폰트에 포함된 코드포인트를 자동으로 추가 subset으로 생성하도록 변경
+
 ## 1.2.1 (2026-06-15)
 
 wdth 축 획 균일성 근본 수정.
