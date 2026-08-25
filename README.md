@@ -1,3 +1,5 @@
+
+
 # Interlude
 
 Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, 문자 사이의 밀도와 리듬을 다시 맞춘 인터페이스 서체입니다.
@@ -169,7 +171,7 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Interlude 설계 원칙에 맞는 패치를 진행해 빌드합니다.
 
 ```bash
-git clone https://github.com/avanturation/interlude-ui.git
+git clone https://github.com/avanturation/interlude.git
 python3 -m pip install -r requirements.txt
 make clean
 make all
