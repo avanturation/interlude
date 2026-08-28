@@ -42,7 +42,28 @@ CJK_VSCALE = 1.029  # Inter capHeight(1490) / Pretendard capHeight(1448)
 CJK_WGHT_DEFAULT = 430  # our wght=400 uses Pretendard at this weight
 CJK_WGHT_BOLD_SCALE = 1.0  # CJK uses Pretendard native bold deltas; keeps CJK/Latin ratio ~0.73-0.75 flat across 400-900 without over-darkening Black (0.887 made CJK lag from Medium up; 1.10 over-thickened Black)
 CJK_WGHT_THIN_SCALE = 1.0  # CJK uses Pretendard native thin deltas; 0.930 left CJK too heavy at Thin (ratio 1.33 vs Latin), native thinning balances toward hairline without extrapolating (legibility-safe for dense Hanja)
-OPSZ_SCALE = 0.03
+
+# Display (opsz=32) CJK tightening, split into outline vs advance because the two
+# read very differently. Inter's own Latin Display behaviour is to tighten SPACING
+# hard while barely redrawing outlines (H: ink -0.69% but advance -4.73%; o: ink
+# -3.92%, advance -8.47%). CJK previously used a single 0.03 for both, so outline
+# and advance shrank in lockstep. A pure horizontal outline scale thins vertical
+# stems while horizontal strokes keep their weight, inverting CJK stroke-contrast
+# logic — that anisotropic squash is what reads as "찌부" at 40px+, not the density
+# itself. Keeping the advance reduction (tasteful display tracking, and the real
+# carrier of the dense look) while cutting outline compression preserves the
+# signature and drops the distortion.
+#
+# Bounded by CJK sidebearing slack (advance - ink width) across 18,492 glyphs:
+# min 6u, p0.5 64u, p1 72u, median 140u. Shrinking the advance while holding ink
+# consumes that slack directly, so advance cannot chase Inter's -5..-8%. These
+# deltas are computed at the wdth=100 master and applied as absolute units, and
+# add-wdth-axis.py builds no opsz×wdth cross tuples, so the effective ratio rises
+# as wdth narrows: at wdth=75 outline reads -2.67% and advance -4.00%. Verified at
+# wdth=75 the resulting Display slack holds p0.5=29u / p1=33u with a single
+# negative glyph (ゼ, already only 6u of slack at wdth=100).
+OPSZ_OUTLINE_SCALE = 0.02
+OPSZ_ADVANCE_SCALE = 0.03
 
 CJK_RANGES = [
     (0x1100, 0x11FF), (0x2E80, 0x2EFF), (0x2F00, 0x2FDF),
@@ -59,6 +80,25 @@ WEIGHTS = [
     (500, "Medium"), (600, "SemiBold"), (700, "Bold"), (800, "ExtraBold"),
     (900, "Black"),
 ]
+
+# Enclosed/squared symbols exist in BOTH Inter and Pretendard, so the
+# `cp not in inter_cmap` guard in merge() keeps Inter's version. Inter draws these
+# to a display spec (① is 2798x2798, 1.53x the height of 가, overshooting the
+# 2024/-532 em box) while Pretendard sizes them to sit beside CJK text (1578x1580,
+# 0.86x 가). Next to Hangul/Kanji the Inter forms read as oversized, so prefer
+# Pretendard as the source for these ranges. Latin-context codepoints are NOT
+# listed here — only symbols that are typeset inline with CJK.
+PRETENDARD_PREFERRED_RANGES = [
+    (0x2117, 0x2117),    # ℗ sound recording copyright (circled P)
+    (0x2460, 0x24FF),    # circled/parenthesized digits and latin letters
+    (0x3200, 0x32FF),    # parenthesized/circled Hangul and CJK
+    (0x3300, 0x33FF),    # squared CJK compatibility
+    (0x1F100, 0x1F1AC),  # squared/circled alphanumeric supplement
+]
+
+# Only swap when Inter's glyph is meaningfully larger than Pretendard's, so a
+# future Inter release that already matches CJK proportions is left alone.
+PRETENDARD_PREFERRED_MIN_RATIO = 1.25
 
 # Bullet (U+2022) scale-down: Inter's bullet is 640×640, SF Pro/Pretendard ~400.
 # Scale to 0.625 about glyph center, adjust advance width proportionally.
@@ -282,15 +322,16 @@ def merge(inter_ttf, pretendard_ttf, output_path):
                                                round(coord[1] * scale)))
                     variations.append(TupleVariation({'wght': axis_range}, new_coords))
 
-        # opsz variation (3% tighter at Display)
+        # opsz variation at Display: outline and advance tighten by different
+        # amounts on purpose (see OPSZ_OUTLINE_SCALE / OPSZ_ADVANCE_SCALE).
         g = inter_glyf[target]
         if not g.isComposite() and g.numberOfContours > 0:
             coords = g.coordinates
             if coords:
                 width = inter_hmtx[target][0]
                 xc = width / 2.0
-                opsz_deltas = [(round((x - xc) * (-OPSZ_SCALE)), 0) for x, y in coords]
-                adv_delta = round(width * (-OPSZ_SCALE))
+                opsz_deltas = [(round((x - xc) * (-OPSZ_OUTLINE_SCALE)), 0) for x, y in coords]
+                adv_delta = round(width * (-OPSZ_ADVANCE_SCALE))
                 opsz_deltas += [(0, 0), (adv_delta, 0), (0, 0), (0, 0)]
                 variations.append(TupleVariation({'opsz': (0, 1.0, 1.0)}, opsz_deltas))
 
@@ -387,30 +428,57 @@ def merge(inter_ttf, pretendard_ttf, output_path):
 
     print(f"    {len(case_mapping)} symbol→.case pairs via calt+rlig")
 
-    # Replace ₩ with Pretendard's Korean-style won sign
-    print("  Replacing ₩ with Pretendard glyph...")
-    won_cp = 0x20A9
-    if won_cp in pretendard_cmap:
-        p_won_name = pretendard_cmap[won_cp]
-        i_won_name = inter.getBestCmap()[won_cp]
-        g = copy.deepcopy(pretendard_glyf[p_won_name])
-        width = pretendard_hmtx[p_won_name][0]
+    def _adopt_pretendard_glyph(cp):
+        """Overwrite the Inter glyph at `cp` with Pretendard's, CJK-scaled. Returns True on swap."""
+        if cp not in pretendard_cmap:
+            return False
+        target = inter.getBestCmap().get(cp)
+        if target is None:
+            return False
+        src = pretendard_cmap[cp]
+        g = copy.deepcopy(pretendard_glyf[src])
+        width = pretendard_hmtx[src][0]
         x_center = width / 2.0
-        if g.numberOfContours > 0 and g.coordinates:
+        if not g.isComposite() and g.numberOfContours > 0 and g.coordinates:
             new_coords = [(round(x_center + (x - x_center) * CJK_HSCALE), round(y * CJK_VSCALE) + Y_OFFSET)
                           for x, y in g.coordinates]
             g.coordinates = type(g.coordinates)(new_coords)
         if hasattr(g, 'yMin') and g.yMin is not None:
             g.yMin = round(g.yMin * CJK_VSCALE) + Y_OFFSET
             g.yMax = round(g.yMax * CJK_VSCALE) + Y_OFFSET
-        inter_glyf[i_won_name] = g
-        inter_hmtx[i_won_name] = pretendard_hmtx[p_won_name]
-        if p_won_name in pretendard_gvar and pretendard_gvar[p_won_name]:
-            won_variations = []
-            for tv in pretendard_gvar[p_won_name]:
+        inter_glyf[target] = g
+        inter_hmtx[target] = pretendard_hmtx[src]
+        variations = []
+        if src in pretendard_gvar and pretendard_gvar[src]:
+            for tv in pretendard_gvar[src]:
                 if 'wght' in tv.axes:
-                    won_variations.append(TupleVariation({'wght': tv.axes['wght']}, tv.coordinates))
-            inter_gvar.variations[i_won_name] = won_variations
+                    variations.append(TupleVariation({'wght': tv.axes['wght']}, tv.coordinates))
+        inter_gvar.variations[target] = variations
+        return True
+
+    # Replace ₩ with Pretendard's Korean-style won sign
+    print("  Replacing ₩ with Pretendard glyph...")
+    _adopt_pretendard_glyph(0x20A9)
+
+    # Rationale and measurements: see PRETENDARD_PREFERRED_RANGES.
+    print("  Adopting Pretendard enclosed/squared symbols (CJK size match)...")
+    inter_cmap_now = inter.getBestCmap()
+    swapped = 0
+    for start, end in PRETENDARD_PREFERRED_RANGES:
+        for cp in range(start, end + 1):
+            if cp not in inter_cmap_now or cp not in pretendard_cmap:
+                continue
+            i_glyph = inter_glyf[inter_cmap_now[cp]]
+            p_glyph = pretendard_glyf[pretendard_cmap[cp]]
+            i_h = (i_glyph.yMax - i_glyph.yMin) if getattr(i_glyph, 'yMin', None) is not None else 0
+            p_h = (p_glyph.yMax - p_glyph.yMin) if getattr(p_glyph, 'yMin', None) is not None else 0
+            if p_h <= 0 or i_h <= 0:
+                continue
+            if i_h / p_h < PRETENDARD_PREFERRED_MIN_RATIO:
+                continue
+            if _adopt_pretendard_glyph(cp):
+                swapped += 1
+    print(f"    {swapped} symbols resized to CJK proportions")
 
     # GSUB/GPOS scripts
     print("  Adding CJK scripts to GSUB/GPOS...")
