@@ -361,44 +361,62 @@ def merge(inter_ttf, pretendard_ttf, output_path):
     single_idx = len(gsub.LookupList.Lookup)
     gsub.LookupList.Lookup.append(single_lookup)
 
-    # Create ChainContextSubst: [CJK] symbol' → .case
-    input_glyphs = sorted(case_mapping.keys(), key=lambda g: glyph_order.index(g) if g in glyph_order else 999999)
+    # Paired delimiters must not be raised independently, or a pair splits: in
+    # "전환(DT)" the opening paren sees CJK behind it and becomes parenleft.case
+    # (centre y 745) while the closing paren has Latin behind and nothing ahead, so
+    # it stays parenleft's un-raised sibling (centre y 651). The 94-unit mismatch is
+    # visible from ~40px. These are directional, so they get one-sided context:
+    # an opener only rises when CJK FOLLOWS it, a closer only when CJK PRECEDES it.
+    # Both halves of "한글(가나)" then qualify, and neither half of "전환(DT)" does.
+    OPENERS = {'parenleft', 'bracketleft', 'braceleft'}
+    CLOSERS = {'parenright', 'bracketright', 'braceright'}
 
-    chain_st1 = otTables.ChainContextSubst()
-    chain_st1.Format = 3
-    bt_cov = otTables.Coverage()
-    bt_cov.Format = 1
-    bt_cov.glyphs = cjk_glyph_list
-    chain_st1.BacktrackCoverage = [bt_cov]
-    chain_st1.BacktrackCount = 1
-    in_cov = otTables.Coverage()
-    in_cov.Format = 1
-    in_cov.glyphs = input_glyphs
-    chain_st1.InputCoverage = [in_cov]
-    chain_st1.InputCount = 1
-    chain_st1.LookAheadCoverage = []
-    chain_st1.LookAheadCount = 0
-    slr1 = otTables.SubstLookupRecord()
-    slr1.SequenceIndex = 0
-    slr1.LookupListIndex = single_idx
-    chain_st1.SubstLookupRecord = [slr1]
-    chain_st1.SubstCount = 1
+    def _ordered(names):
+        return sorted(names, key=lambda g: glyph_order.index(g) if g in glyph_order else 999999)
 
-    # ChainContextSubst: symbol' [CJK] → .case
-    chain_st2 = copy.deepcopy(chain_st1)
-    chain_st2.BacktrackCoverage = []
-    chain_st2.BacktrackCount = 0
-    la_cov = otTables.Coverage()
-    la_cov.Format = 1
-    la_cov.glyphs = cjk_glyph_list
-    chain_st2.LookAheadCoverage = [la_cov]
-    chain_st2.LookAheadCount = 1
+    # Symbols with no handedness (@ … ellipsis etc.) keep the original symmetric
+    # rule — CJK on either side raises them.
+    input_glyphs = _ordered(k for k in case_mapping if k not in OPENERS and k not in CLOSERS)
+    opener_glyphs = _ordered(k for k in case_mapping if k in OPENERS)
+    closer_glyphs = _ordered(k for k in case_mapping if k in CLOSERS)
+
+    def _cov(glyphs):
+        c = otTables.Coverage()
+        c.Format = 1
+        c.glyphs = list(glyphs)
+        return c
+
+    def _chain(targets, backtrack=False, lookahead=False):
+        """ChainContextSubst format 3: raise `targets` when CJK sits on the requested side(s)."""
+        st = otTables.ChainContextSubst()
+        st.Format = 3
+        st.BacktrackCoverage = [_cov(cjk_glyph_list)] if backtrack else []
+        st.BacktrackCount = 1 if backtrack else 0
+        st.InputCoverage = [_cov(targets)]
+        st.InputCount = 1
+        st.LookAheadCoverage = [_cov(cjk_glyph_list)] if lookahead else []
+        st.LookAheadCount = 1 if lookahead else 0
+        slr = otTables.SubstLookupRecord()
+        slr.SequenceIndex = 0
+        slr.LookupListIndex = single_idx
+        st.SubstLookupRecord = [slr]
+        st.SubstCount = 1
+        return st
+
+    subtables = []
+    if input_glyphs:
+        subtables.append(_chain(input_glyphs, backtrack=True))
+        subtables.append(_chain(input_glyphs, lookahead=True))
+    if opener_glyphs:
+        subtables.append(_chain(opener_glyphs, lookahead=True))
+    if closer_glyphs:
+        subtables.append(_chain(closer_glyphs, backtrack=True))
 
     chain_lookup = otTables.Lookup()
     chain_lookup.LookupType = 6
     chain_lookup.LookupFlag = 0
-    chain_lookup.SubTable = [chain_st1, chain_st2]
-    chain_lookup.SubTableCount = 2
+    chain_lookup.SubTable = subtables
+    chain_lookup.SubTableCount = len(subtables)
     chain_idx = len(gsub.LookupList.Lookup)
     gsub.LookupList.Lookup.append(chain_lookup)
     gsub.LookupList.LookupCount = len(gsub.LookupList.Lookup)
