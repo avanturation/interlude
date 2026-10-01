@@ -26889,14 +26889,6 @@ name = fileName;
 value = InterludeVariable;
 },
 {
-name = familyName;
-value = "Interlude Variable";
-},
-{
-name = postscriptFontName;
-value = "Interlude-Variable";
-},
-{
 name = "Variable Font Origin";
 value = "INTERLUDE-MASTER-00";
 },
@@ -26911,13 +26903,24 @@ value = "wght; 100=Thin, 200=ExtraLight, 300=Light, 400=Regular*, 500=Medium, 60
 {
 name = "Axis Values";
 value = "wdth; 75=Condensed, 100>125=Normal*, 125=Expanded";
-},
-{
-name = fileName;
-value = InterludeNative;
 }
 );
 name = Regular;
+properties = (
+{
+key = familyNames;
+values = (
+{
+language = dflt;
+value = "Interlude Variable";
+}
+);
+},
+{
+key = postscriptFontName;
+value = "Interlude-Variable";
+}
+);
 type = variable;
 }
 );

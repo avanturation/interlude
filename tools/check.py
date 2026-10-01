@@ -6,6 +6,21 @@ import uharfbuzz as hb
 from fontTools.ttLib import TTFont
 from source_state import ROOT, SOURCE, source_hash, file_hash
 
+def check_variable_names(font):
+    expected = {1: 'Interlude Variable', 2: 'Regular',
+                4: 'Interlude Variable', 6: 'Interlude-Variable',
+                16: 'Interlude Variable', 17: 'Regular', 25: 'InterludeVariable'}
+    for name_id, value in expected.items():
+        records = [n for n in font['name'].names if n.nameID == name_id]
+        # IDs 16/17 can be omitted when identical to the legacy names.
+        assert records or name_id in (16, 17), ('Missing name', name_id)
+        for record in records:
+            assert record.toUnicode() == value, ('Incorrect variable name', name_id, record.toUnicode())
+    assert font['name'].getDebugName(3).endswith(';Interlude-Variable')
+    for instance in font['fvar'].instances:
+        ps_name = font['name'].getDebugName(instance.postscriptNameID)
+        assert ps_name.startswith('InterludeVariable-'), ('Variable instance name collision', ps_name)
+
 def check_fonts():
     version = (ROOT/'version.txt').read_text().strip()
     assert version == '1.3', 'This release is 1.3'
@@ -15,11 +30,19 @@ def check_fonts():
     assert (info['versionMajor'], info['versionMinor']) == (1, 300)
     assert len(info['fontMaster']) == 12
     assert not info.get('userData', {}).get('com.interlude.completeExport')
+    variable = [i for i in info['instances'] if i.get('type') == 'variable']
+    assert len(variable) == 1
+    properties = {p['key']: p for p in variable[0].get('properties', [])}
+    assert properties['familyNames']['values'] == [{'language': 'dflt', 'value': 'Interlude Variable'}]
+    assert properties['postscriptFontName']['value'] == 'Interlude-Variable'
+    filenames = [p['value'] for p in variable[0]['customParameters'] if p['name'] == 'fileName']
+    assert filenames == ['InterludeVariable'], 'Variable export must have one canonical filename'
     paths = [ROOT/'fonts'/('InterludeVariable.'+ext) for ext in ('ttf', 'woff2')]
     fonts = [TTFont(p) for p in paths]
     expected_axes = [('opsz',14,14,32), ('wght',100,400,900), ('wdth',75,100,125)]
     baseline = json.loads((ROOT/'tests/expected-font.json').read_text())
     for f in fonts:
+        check_variable_names(f)
         assert [(a.axisTag,a.minValue,a.defaultValue,a.maxValue) for a in f['fvar'].axes] == expected_axes
         assert abs(f['head'].fontRevision - 1.3) < .00002
         assert f['name'].getDebugName(5).startswith('Version 1.300')

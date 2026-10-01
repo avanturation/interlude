@@ -15,6 +15,8 @@
 
 ## 작업 순서
 
+가변 Export의 Family Name은 `Interlude Variable`, PostScript 이름은 `Interlude-Variable`입니다. 이 값은 Variable 인스턴스의 `properties`에 저장합니다. 구형 `familyName` 커스텀 파라미터는 현재 Glyphs에서 무시되므로 사용하지 않습니다. `make check`는 실제 TTF·WOFF2의 이름 테이블까지 검사합니다.
+
 1. Glyphs에서 `src/Interlude.glyphspackage`를 열어 수정합니다.
 2. File → Export → Variable → TrueType에서 `.ttf`와 `.woff2`를 선택하고 `fonts/`로 Export합니다.
 3. `make record-export`로 버전·문자·기능 회귀 검사를 통과한 Export를 기록합니다.
@@ -66,4 +68,4 @@ npm pack           # prepack에서 make dist 실행; 게시하지 않음
 
 이전 레포에 커밋돼 있던 14,430,640-byte TTF는 opsz/wght 두 축만 있는 오래된 파일입니다. 아래 용량 비교 기준은 wdth를 포함한 최신 1.2.4 배포본이며, 오래된 체크인 파일과 직접 비교한 수치가 아닙니다.
 
-1.3의 최적화된 TTF는 23,417,644 bytes로, 원본 배포본을 TTF로 푼 26,570,200 bytes보다 11.87% 작습니다. 한글 보정은 486개 축 위치에서 진단했고, 추가 최적화는 비대상 글리프 26,414개의 윤곽·가변 데이터를 유지한 채 커닝 중복과 한자 공통 윤곽을 정리했습니다.
+1.3의 최적화된 TTF는 23,418,180 bytes로, 원본 배포본을 TTF로 푼 26,570,200 bytes보다 11.87% 작습니다. 한글 보정은 486개 축 위치에서 진단했고, 추가 최적화는 비대상 글리프 26,414개의 윤곽·가변 데이터를 유지한 채 커닝 중복과 한자 공통 윤곽을 정리했습니다.

@@ -1,12 +1,20 @@
 {
   "release": "1.3",
   "nativeCompiler": "Glyphs 4.1.1 (4108), actual Export UI",
-  "comparedWith": "Previously verified optimized native prototype",
+  "comparedWith": "Initial 1.3 native export before variable naming correction",
   "changedTables": [
     "head",
-    "name"
+    "name",
+    "GSUB",
+    "STAT",
+    "fvar"
   ],
   "outlineAndLayoutTablesUnchanged": true,
-  "ttfBytes": 23417644,
-  "sha256": "3c4eb4f579b8b27519df5a514c6431645e9625a8bc1567d4c02e36cfd00aeef4"
+  "ttfBytes": 23418180,
+  "sha256": "cb90566dfdd5db1e98b2c7ba4860a74ae2ee0b6dcb2774e7578ff5ca2e47aff3",
+  "nameReferenceOnlyChanges": [
+    "GSUB",
+    "STAT",
+    "fvar"
+  ]
 }

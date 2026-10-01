@@ -1,10 +1,10 @@
 {
   "release": "1.3",
   "compiler": "Glyphs 4.1.1 (4108), native Variable TrueType export",
-  "sourceSHA256": "7145d296d966a7b08dbbf22a9009d30c18ee25af2c75ced06e869b0ffe4acfb2",
+  "sourceSHA256": "5a85755c31c65c07b5473cfe8839e4f6ee51da2db391a1d9a0d775d44dfea089",
   "files": {
-    "fonts/InterludeVariable.ttf": "3c4eb4f579b8b27519df5a514c6431645e9625a8bc1567d4c02e36cfd00aeef4",
-    "fonts/InterludeVariable.woff2": "e7847ff283db28bdc5abe27ba194aff7abab8b9148762cbb817b73c987899a1c"
+    "fonts/InterludeVariable.ttf": "cb90566dfdd5db1e98b2c7ba4860a74ae2ee0b6dcb2774e7578ff5ca2e47aff3",
+    "fonts/InterludeVariable.woff2": "e66082e746222189aa84df86f2338c4108fc704b024b202797d9847dbf24f085"
   },
   "shapingCases": 1308
 }
