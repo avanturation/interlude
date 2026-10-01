@@ -1,0 +1,244 @@
+{
+glyphname = uniFF53;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+alignment = -1;
+pos = (432,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+alignment = -1;
+pos = (432,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+alignment = -1;
+pos = (470,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+alignment = -1;
+pos = (351,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+alignment = -1;
+pos = (320,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+alignment = -1;
+pos = (544,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 2400;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+alignment = -1;
+pos = (470,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+alignment = -1;
+pos = (351,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+alignment = -1;
+pos = (358,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+alignment = -1;
+pos = (239,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+alignment = -1;
+pos = (582,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 2400;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+alignment = -1;
+pos = (463,0);
+ref = s;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 2400;
+}
+);
+production = uniFF53;
+unicode = 65363;
+userData = {
+com.interlude.reference = {
+file = s.full.glyph;
+glyphName = s.full;
+kind = "pretendard-jp";
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 21718;
+};
+}

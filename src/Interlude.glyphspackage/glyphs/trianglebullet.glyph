@@ -1,0 +1,184 @@
+{
+glyphname = trianglebullet;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(350,268,l),
+(888,594,l),
+(350,920,l)
+);
+}
+);
+width = 1152;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(318,268,l),
+(856,594,l),
+(318,920,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(442,396,l),
+(770,594,l),
+(442,792,l)
+);
+}
+);
+width = 1152;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(168,268,l),
+(706,594,l),
+(168,920,l)
+);
+}
+);
+width = 816;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(324,268,l),
+(728,594,l),
+(324,920,l)
+);
+}
+);
+width = 972;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(376,268,l),
+(1048,594,l),
+(376,920,l)
+);
+}
+);
+width = 1332;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(378,396,l),
+(706,594,l),
+(378,792,l)
+);
+}
+);
+width = 896;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(152,268,l),
+(690,594,l),
+(152,920,l)
+);
+}
+);
+width = 752;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(409,396,l),
+(655,594,l),
+(409,792,l)
+);
+}
+);
+width = 1008;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(155,268,l),
+(558,594,l),
+(155,920,l)
+);
+}
+);
+width = 660;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(475,396,l),
+(885,594,l),
+(475,792,l)
+);
+}
+);
+width = 1296;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(181,268,l),
+(854,594,l),
+(181,920,l)
+);
+}
+);
+width = 972;
+}
+);
+production = trianglebullet;
+unicode = 8227;
+userData = {
+com.interlude.reference = {
+file = trianglebullet.glyph;
+glyphName = trianglebullet;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1467;
+};
+}

@@ -1,8 +1,4 @@
-fonttools[woff]>=4.50.0
-fontmake>=3.9.0
-glyphsLib>=6.6.0
-glyphspkg>=0.2.0
-Brotli>=1.0.9
-zopfli>=0.2.2
-fontbakery>=0.12.0
-east-asian-spacing>=1.4.0
+fonttools[woff]==4.60.2
+Brotli==1.2.0
+openstep-plist==0.5.2
+uharfbuzz==0.51.7

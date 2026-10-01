@@ -1,0 +1,244 @@
+{
+glyphname = seven.dnom;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(126,0,l),
+(294,0,l),
+(639,672,l),
+(639,812,l),
+(71,812,l),
+(71,678,l),
+(469,678,l),
+(469,667,l)
+);
+}
+);
+width = 710;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(111,0,l),
+(270,0,l),
+(617,682,l),
+(617,812,l),
+(55,812,l),
+(55,681,l),
+(460,681,l),
+(460,681,l)
+);
+}
+);
+width = 672;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(138,0,l),
+(193,0,l),
+(571,717,l),
+(571,767,l),
+(87,767,l),
+(87,720,l),
+(514,720,l),
+(514,714,l)
+);
+}
+);
+width = 658;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(101,0,l),
+(345,0,l),
+(664,652,l),
+(664,842,l),
+(45,842,l),
+(45,658,l),
+(417,658,l),
+(417,651,l)
+);
+}
+);
+width = 709;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(126,0,l),
+(294,0,l),
+(639,672,l),
+(639,812,l),
+(71,812,l),
+(71,678,l),
+(469,678,l),
+(469,667,l)
+);
+}
+);
+width = 710;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(126,0,l),
+(294,0,l),
+(639,672,l),
+(639,812,l),
+(71,812,l),
+(71,678,l),
+(469,678,l),
+(469,667,l)
+);
+}
+);
+width = 710;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(149,0,l),
+(202,0,l),
+(589,719,l),
+(589,767,l),
+(71,767,l),
+(71,721,l),
+(538,721,l),
+(538,721,l)
+);
+}
+);
+width = 660;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(96,0,l),
+(341,0,l),
+(658,652,l),
+(658,842,l),
+(41,842,l),
+(41,643,l),
+(411,643,l),
+(411,642,l)
+);
+}
+);
+width = 699;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(138,0,l),
+(193,0,l),
+(571,717,l),
+(571,767,l),
+(87,767,l),
+(87,720,l),
+(514,720,l),
+(514,714,l)
+);
+}
+);
+width = 658;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(101,0,l),
+(345,0,l),
+(664,652,l),
+(664,842,l),
+(45,842,l),
+(45,658,l),
+(417,658,l),
+(417,651,l)
+);
+}
+);
+width = 709;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(138,0,l),
+(193,0,l),
+(571,717,l),
+(571,767,l),
+(87,767,l),
+(87,720,l),
+(514,720,l),
+(514,714,l)
+);
+}
+);
+width = 658;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(101,0,l),
+(345,0,l),
+(664,652,l),
+(664,842,l),
+(45,842,l),
+(45,658,l),
+(417,658,l),
+(417,651,l)
+);
+}
+);
+width = 709;
+}
+);
+production = seven.dnom;
+unicode = 57531;
+userData = {
+com.interlude.reference = {
+file = seven.dnom.glyph;
+glyphName = seven.dnom;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1686;
+};
+}

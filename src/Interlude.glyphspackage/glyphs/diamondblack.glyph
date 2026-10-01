@@ -1,0 +1,196 @@
+{
+glyphname = diamondblack;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2054,744,l),
+(1082,1722,l),
+(98,744,l),
+(1082,-232,l)
+);
+}
+);
+width = 2152;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2022,744,l),
+(1050,1722,l),
+(66,744,l),
+(1050,-232,l)
+);
+}
+);
+width = 2088;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2042,744,l),
+(1070,1722,l),
+(88,744,l),
+(1070,-232,l)
+);
+}
+);
+width = 2130;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2072,744,l),
+(1100,1722,l),
+(116,744,l),
+(1100,-232,l)
+);
+}
+);
+width = 2188;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2054,744,l),
+(1082,1722,l),
+(98,744,l),
+(1082,-232,l)
+);
+}
+);
+width = 2152;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2054,744,l),
+(1082,1722,l),
+(98,744,l),
+(1082,-232,l)
+);
+}
+);
+width = 2152;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1978,744,l),
+(1006,1722,l),
+(24,744,l),
+(1006,-232,l)
+);
+}
+);
+width = 2002;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2056,744,l),
+(1084,1722,l),
+(100,744,l),
+(1084,-232,l)
+);
+}
+);
+width = 2156;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2042,744,l),
+(1070,1722,l),
+(88,744,l),
+(1070,-232,l)
+);
+}
+);
+width = 2130;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2072,744,l),
+(1100,1722,l),
+(116,744,l),
+(1100,-232,l)
+);
+}
+);
+width = 2188;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2042,744,l),
+(1070,1722,l),
+(88,744,l),
+(1070,-232,l)
+);
+}
+);
+width = 2130;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2072,744,l),
+(1100,1722,l),
+(116,744,l),
+(1100,-232,l)
+);
+}
+);
+width = 2188;
+}
+);
+production = diamondblack;
+unicode = 9670;
+userData = {
+com.interlude.reference = {
+file = diamondblack.glyph;
+glyphName = diamondblack;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1860;
+};
+}

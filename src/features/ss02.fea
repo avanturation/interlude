@@ -1,9 +1,0 @@
-# ss02: Open four
-# Matches Pretendard ss02
-
-feature ss02 {
-  lookup LOOKUP_SS02 {
-    sub four by four.ss01;
-    sub four.tf by four.tf.ss01;
-  } LOOKUP_SS02;
-} ss02;

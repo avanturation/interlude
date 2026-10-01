@@ -1,0 +1,18 @@
+{
+  "1": {
+    "firstGlyphs": 1708,
+    "secondGlyphs": 22972,
+    "masters": 12,
+    "pairPositionsCompared": 470834112,
+    "differences": 0,
+    "pairs": []
+  },
+  "2": {
+    "firstGlyphs": 252,
+    "secondGlyphs": 22972,
+    "masters": 12,
+    "pairPositionsCompared": 69467328,
+    "differences": 0,
+    "pairs": []
+  }
+}

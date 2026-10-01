@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 
 export const InterludeDisplay = localFont({
-  src: "./fonts/InterludeVariable.woff2",
+  src: "../../../dist/woff2/InterludeVariable.woff2",
   variable: "--font-interlude-display",
   weight: "100 900",
   display: "swap",

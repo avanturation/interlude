@@ -1,0 +1,184 @@
+{
+glyphname = triagup;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,0,l),
+(1968,0,l),
+(1034,1582,l)
+);
+}
+);
+width = 2070;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(70,0,l),
+(1932,0,l),
+(1000,1582,l)
+);
+}
+);
+width = 2002;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,0,l),
+(1896,0,l),
+(992,1582,l)
+);
+}
+);
+width = 1986;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,0,l),
+(2078,0,l),
+(1102,1582,l)
+);
+}
+);
+width = 2202;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,0,l),
+(1968,0,l),
+(1034,1582,l)
+);
+}
+);
+width = 2070;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,0,l),
+(1968,0,l),
+(1034,1582,l)
+);
+}
+);
+width = 2070;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(26,0,l),
+(1832,0,l),
+(928,1582,l)
+);
+}
+);
+width = 1858;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(108,0,l),
+(2062,0,l),
+(1086,1582,l)
+);
+}
+);
+width = 2170;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,0,l),
+(1896,0,l),
+(992,1582,l)
+);
+}
+);
+width = 1986;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,0,l),
+(2078,0,l),
+(1102,1582,l)
+);
+}
+);
+width = 2202;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,0,l),
+(1896,0,l),
+(992,1582,l)
+);
+}
+);
+width = 1986;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,0,l),
+(2078,0,l),
+(1102,1582,l)
+);
+}
+);
+width = 2202;
+}
+);
+production = triagup;
+unicode = 9650;
+userData = {
+com.interlude.reference = {
+file = triagup.glyph;
+glyphName = triagup;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1845;
+};
+}

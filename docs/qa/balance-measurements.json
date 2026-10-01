@@ -1,0 +1,7295 @@
+{
+  "method": "Median raster horizontal runs through isolated Hangul vertical vowel stems and Latin HInum stems; 1024 ppem, no hinting. A diagnostic, not a perceptual equality score.",
+  "locations": [
+    {
+      "weight": 100,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 48.0,
+        "latin": 34.0,
+        "ratio": 1.41176
+      },
+      "after": {
+        "hangul": 38.0,
+        "latin": 34.0,
+        "ratio": 1.11765
+      }
+    },
+    {
+      "weight": 110,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 48.0,
+        "latin": 36.0,
+        "ratio": 1.33333
+      },
+      "after": {
+        "hangul": 38.0,
+        "latin": 36.0,
+        "ratio": 1.05556
+      }
+    },
+    {
+      "weight": 120,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 52.0,
+        "latin": 40.0,
+        "ratio": 1.3
+      },
+      "after": {
+        "hangul": 42.0,
+        "latin": 40.0,
+        "ratio": 1.05
+      }
+    },
+    {
+      "weight": 130,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 54.0,
+        "latin": 42.0,
+        "ratio": 1.28571
+      },
+      "after": {
+        "hangul": 46.0,
+        "latin": 42.0,
+        "ratio": 1.09524
+      }
+    },
+    {
+      "weight": 140,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 58.0,
+        "latin": 46.0,
+        "ratio": 1.26087
+      },
+      "after": {
+        "hangul": 48.0,
+        "latin": 46.0,
+        "ratio": 1.04348
+      }
+    },
+    {
+      "weight": 150,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 58.0,
+        "latin": 49.0,
+        "ratio": 1.18367
+      },
+      "after": {
+        "hangul": 52.0,
+        "latin": 49.0,
+        "ratio": 1.06122
+      }
+    },
+    {
+      "weight": 160,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 62.0,
+        "latin": 52.0,
+        "ratio": 1.19231
+      },
+      "after": {
+        "hangul": 56.0,
+        "latin": 52.0,
+        "ratio": 1.07692
+      }
+    },
+    {
+      "weight": 170,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 64.0,
+        "latin": 56.0,
+        "ratio": 1.14286
+      },
+      "after": {
+        "hangul": 58.0,
+        "latin": 56.0,
+        "ratio": 1.03571
+      }
+    },
+    {
+      "weight": 180,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 68.0,
+        "latin": 58.0,
+        "ratio": 1.17241
+      },
+      "after": {
+        "hangul": 62.0,
+        "latin": 58.0,
+        "ratio": 1.06897
+      }
+    },
+    {
+      "weight": 190,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 68.0,
+        "latin": 62.0,
+        "ratio": 1.09677
+      },
+      "after": {
+        "hangul": 66.0,
+        "latin": 62.0,
+        "ratio": 1.06452
+      }
+    },
+    {
+      "weight": 200,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 72.0,
+        "latin": 64.0,
+        "ratio": 1.125
+      },
+      "after": {
+        "hangul": 68.0,
+        "latin": 64.0,
+        "ratio": 1.0625
+      }
+    },
+    {
+      "weight": 210,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 75.0,
+        "latin": 68.0,
+        "ratio": 1.10294
+      },
+      "after": {
+        "hangul": 72.0,
+        "latin": 68.0,
+        "ratio": 1.05882
+      }
+    },
+    {
+      "weight": 220,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 78.0,
+        "latin": 70.0,
+        "ratio": 1.11429
+      },
+      "after": {
+        "hangul": 76.0,
+        "latin": 70.0,
+        "ratio": 1.08571
+      }
+    },
+    {
+      "weight": 230,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 80.0,
+        "latin": 74.0,
+        "ratio": 1.08108
+      },
+      "after": {
+        "hangul": 78.0,
+        "latin": 74.0,
+        "ratio": 1.05405
+      }
+    },
+    {
+      "weight": 240,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 82.0,
+        "latin": 76.0,
+        "ratio": 1.07895
+      },
+      "after": {
+        "hangul": 82.0,
+        "latin": 76.0,
+        "ratio": 1.07895
+      }
+    },
+    {
+      "weight": 250,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 86.0,
+        "latin": 80.0,
+        "ratio": 1.075
+      },
+      "after": {
+        "hangul": 86.0,
+        "latin": 80.0,
+        "ratio": 1.075
+      }
+    },
+    {
+      "weight": 260,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 88.0,
+        "latin": 84.0,
+        "ratio": 1.04762
+      },
+      "after": {
+        "hangul": 88.0,
+        "latin": 84.0,
+        "ratio": 1.04762
+      }
+    },
+    {
+      "weight": 270,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 92.0,
+        "latin": 86.0,
+        "ratio": 1.06977
+      },
+      "after": {
+        "hangul": 92.0,
+        "latin": 86.0,
+        "ratio": 1.06977
+      }
+    },
+    {
+      "weight": 280,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 92.0,
+        "latin": 90.0,
+        "ratio": 1.02222
+      },
+      "after": {
+        "hangul": 96.0,
+        "latin": 90.0,
+        "ratio": 1.06667
+      }
+    },
+    {
+      "weight": 290,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 96.0,
+        "latin": 92.0,
+        "ratio": 1.04348
+      },
+      "after": {
+        "hangul": 98.0,
+        "latin": 92.0,
+        "ratio": 1.06522
+      }
+    },
+    {
+      "weight": 300,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 99.0,
+        "latin": 96.0,
+        "ratio": 1.03125
+      },
+      "after": {
+        "hangul": 102.0,
+        "latin": 96.0,
+        "ratio": 1.0625
+      }
+    },
+    {
+      "weight": 310,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 102.0,
+        "latin": 98.0,
+        "ratio": 1.04082
+      },
+      "after": {
+        "hangul": 106.0,
+        "latin": 98.0,
+        "ratio": 1.08163
+      }
+    },
+    {
+      "weight": 320,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 104.0,
+        "latin": 102.0,
+        "ratio": 1.01961
+      },
+      "after": {
+        "hangul": 109.0,
+        "latin": 102.0,
+        "ratio": 1.06863
+      }
+    },
+    {
+      "weight": 330,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 106.0,
+        "latin": 106.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 112.0,
+        "latin": 106.0,
+        "ratio": 1.0566
+      }
+    },
+    {
+      "weight": 340,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 110.0,
+        "latin": 108.0,
+        "ratio": 1.01852
+      },
+      "after": {
+        "hangul": 116.0,
+        "latin": 108.0,
+        "ratio": 1.07407
+      }
+    },
+    {
+      "weight": 350,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 112.0,
+        "latin": 112.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 120.0,
+        "latin": 112.0,
+        "ratio": 1.07143
+      }
+    },
+    {
+      "weight": 360,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 114.0,
+        "latin": 116.0,
+        "ratio": 0.98276
+      },
+      "after": {
+        "hangul": 122.0,
+        "latin": 116.0,
+        "ratio": 1.05172
+      }
+    },
+    {
+      "weight": 370,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 116.0,
+        "latin": 118.0,
+        "ratio": 0.98305
+      },
+      "after": {
+        "hangul": 126.0,
+        "latin": 118.0,
+        "ratio": 1.0678
+      }
+    },
+    {
+      "weight": 380,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 120.0,
+        "latin": 122.0,
+        "ratio": 0.98361
+      },
+      "after": {
+        "hangul": 130.0,
+        "latin": 122.0,
+        "ratio": 1.06557
+      }
+    },
+    {
+      "weight": 390,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 122.0,
+        "latin": 124.0,
+        "ratio": 0.98387
+      },
+      "after": {
+        "hangul": 132.0,
+        "latin": 124.0,
+        "ratio": 1.06452
+      }
+    },
+    {
+      "weight": 400,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 126.0,
+        "latin": 128.0,
+        "ratio": 0.98438
+      },
+      "after": {
+        "hangul": 136.0,
+        "latin": 128.0,
+        "ratio": 1.0625
+      }
+    },
+    {
+      "weight": 410,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 128.0,
+        "latin": 130.0,
+        "ratio": 0.98462
+      },
+      "after": {
+        "hangul": 138.0,
+        "latin": 130.0,
+        "ratio": 1.06154
+      }
+    },
+    {
+      "weight": 420,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 130.0,
+        "latin": 132.0,
+        "ratio": 0.98485
+      },
+      "after": {
+        "hangul": 140.0,
+        "latin": 132.0,
+        "ratio": 1.06061
+      }
+    },
+    {
+      "weight": 430,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 132.0,
+        "latin": 136.0,
+        "ratio": 0.97059
+      },
+      "after": {
+        "hangul": 144.0,
+        "latin": 136.0,
+        "ratio": 1.05882
+      }
+    },
+    {
+      "weight": 440,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 134.0,
+        "latin": 138.0,
+        "ratio": 0.97101
+      },
+      "after": {
+        "hangul": 146.0,
+        "latin": 138.0,
+        "ratio": 1.05797
+      }
+    },
+    {
+      "weight": 450,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 138.0,
+        "latin": 142.0,
+        "ratio": 0.97183
+      },
+      "after": {
+        "hangul": 148.0,
+        "latin": 142.0,
+        "ratio": 1.04225
+      }
+    },
+    {
+      "weight": 460,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 140.0,
+        "latin": 144.0,
+        "ratio": 0.97222
+      },
+      "after": {
+        "hangul": 150.0,
+        "latin": 144.0,
+        "ratio": 1.04167
+      }
+    },
+    {
+      "weight": 470,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 142.0,
+        "latin": 148.0,
+        "ratio": 0.95946
+      },
+      "after": {
+        "hangul": 154.0,
+        "latin": 148.0,
+        "ratio": 1.04054
+      }
+    },
+    {
+      "weight": 480,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 144.0,
+        "latin": 150.0,
+        "ratio": 0.96
+      },
+      "after": {
+        "hangul": 156.0,
+        "latin": 150.0,
+        "ratio": 1.04
+      }
+    },
+    {
+      "weight": 490,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 146.0,
+        "latin": 152.0,
+        "ratio": 0.96053
+      },
+      "after": {
+        "hangul": 158.0,
+        "latin": 152.0,
+        "ratio": 1.03947
+      }
+    },
+    {
+      "weight": 500,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 150.0,
+        "latin": 156.0,
+        "ratio": 0.96154
+      },
+      "after": {
+        "hangul": 162.0,
+        "latin": 156.0,
+        "ratio": 1.03846
+      }
+    },
+    {
+      "weight": 510,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 152.0,
+        "latin": 158.0,
+        "ratio": 0.96203
+      },
+      "after": {
+        "hangul": 164.0,
+        "latin": 158.0,
+        "ratio": 1.03797
+      }
+    },
+    {
+      "weight": 520,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 154.0,
+        "latin": 162.0,
+        "ratio": 0.95062
+      },
+      "after": {
+        "hangul": 168.0,
+        "latin": 162.0,
+        "ratio": 1.03704
+      }
+    },
+    {
+      "weight": 530,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 156.0,
+        "latin": 164.0,
+        "ratio": 0.95122
+      },
+      "after": {
+        "hangul": 170.0,
+        "latin": 164.0,
+        "ratio": 1.03659
+      }
+    },
+    {
+      "weight": 540,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 158.0,
+        "latin": 168.0,
+        "ratio": 0.94048
+      },
+      "after": {
+        "hangul": 172.0,
+        "latin": 168.0,
+        "ratio": 1.02381
+      }
+    },
+    {
+      "weight": 550,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 161.0,
+        "latin": 170.0,
+        "ratio": 0.94706
+      },
+      "after": {
+        "hangul": 176.0,
+        "latin": 170.0,
+        "ratio": 1.03529
+      }
+    },
+    {
+      "weight": 560,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 164.0,
+        "latin": 172.0,
+        "ratio": 0.95349
+      },
+      "after": {
+        "hangul": 178.0,
+        "latin": 172.0,
+        "ratio": 1.03488
+      }
+    },
+    {
+      "weight": 570,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 166.0,
+        "latin": 176.0,
+        "ratio": 0.94318
+      },
+      "after": {
+        "hangul": 180.0,
+        "latin": 176.0,
+        "ratio": 1.02273
+      }
+    },
+    {
+      "weight": 580,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 168.0,
+        "latin": 178.0,
+        "ratio": 0.94382
+      },
+      "after": {
+        "hangul": 182.0,
+        "latin": 178.0,
+        "ratio": 1.02247
+      }
+    },
+    {
+      "weight": 590,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 170.0,
+        "latin": 182.0,
+        "ratio": 0.93407
+      },
+      "after": {
+        "hangul": 186.0,
+        "latin": 182.0,
+        "ratio": 1.02198
+      }
+    },
+    {
+      "weight": 600,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 174.0,
+        "latin": 184.0,
+        "ratio": 0.94565
+      },
+      "after": {
+        "hangul": 188.0,
+        "latin": 184.0,
+        "ratio": 1.02174
+      }
+    },
+    {
+      "weight": 610,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 176.0,
+        "latin": 188.0,
+        "ratio": 0.93617
+      },
+      "after": {
+        "hangul": 192.0,
+        "latin": 188.0,
+        "ratio": 1.02128
+      }
+    },
+    {
+      "weight": 620,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 178.0,
+        "latin": 190.0,
+        "ratio": 0.93684
+      },
+      "after": {
+        "hangul": 194.0,
+        "latin": 190.0,
+        "ratio": 1.02105
+      }
+    },
+    {
+      "weight": 630,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 180.0,
+        "latin": 192.0,
+        "ratio": 0.9375
+      },
+      "after": {
+        "hangul": 196.0,
+        "latin": 192.0,
+        "ratio": 1.02083
+      }
+    },
+    {
+      "weight": 640,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 182.0,
+        "latin": 196.0,
+        "ratio": 0.92857
+      },
+      "after": {
+        "hangul": 200.0,
+        "latin": 196.0,
+        "ratio": 1.02041
+      }
+    },
+    {
+      "weight": 650,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 186.0,
+        "latin": 198.0,
+        "ratio": 0.93939
+      },
+      "after": {
+        "hangul": 202.0,
+        "latin": 198.0,
+        "ratio": 1.0202
+      }
+    },
+    {
+      "weight": 660,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 188.0,
+        "latin": 200.0,
+        "ratio": 0.94
+      },
+      "after": {
+        "hangul": 205.0,
+        "latin": 200.0,
+        "ratio": 1.025
+      }
+    },
+    {
+      "weight": 670,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 190.0,
+        "latin": 204.0,
+        "ratio": 0.93137
+      },
+      "after": {
+        "hangul": 206.0,
+        "latin": 204.0,
+        "ratio": 1.0098
+      }
+    },
+    {
+      "weight": 680,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 192.0,
+        "latin": 208.0,
+        "ratio": 0.92308
+      },
+      "after": {
+        "hangul": 210.0,
+        "latin": 208.0,
+        "ratio": 1.00962
+      }
+    },
+    {
+      "weight": 690,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 195.0,
+        "latin": 210.0,
+        "ratio": 0.92857
+      },
+      "after": {
+        "hangul": 212.0,
+        "latin": 210.0,
+        "ratio": 1.00952
+      }
+    },
+    {
+      "weight": 700,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 198.0,
+        "latin": 212.0,
+        "ratio": 0.93396
+      },
+      "after": {
+        "hangul": 216.0,
+        "latin": 212.0,
+        "ratio": 1.01887
+      }
+    },
+    {
+      "weight": 710,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 200.0,
+        "latin": 216.0,
+        "ratio": 0.92593
+      },
+      "after": {
+        "hangul": 218.0,
+        "latin": 216.0,
+        "ratio": 1.00926
+      }
+    },
+    {
+      "weight": 720,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 202.0,
+        "latin": 218.0,
+        "ratio": 0.92661
+      },
+      "after": {
+        "hangul": 222.0,
+        "latin": 218.0,
+        "ratio": 1.01835
+      }
+    },
+    {
+      "weight": 730,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 206.0,
+        "latin": 224.0,
+        "ratio": 0.91964
+      },
+      "after": {
+        "hangul": 224.0,
+        "latin": 224.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 740,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 209.0,
+        "latin": 226.0,
+        "ratio": 0.92478
+      },
+      "after": {
+        "hangul": 228.0,
+        "latin": 226.0,
+        "ratio": 1.00885
+      }
+    },
+    {
+      "weight": 750,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 212.0,
+        "latin": 230.0,
+        "ratio": 0.92174
+      },
+      "after": {
+        "hangul": 230.0,
+        "latin": 230.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 760,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 214.0,
+        "latin": 234.0,
+        "ratio": 0.91453
+      },
+      "after": {
+        "hangul": 234.0,
+        "latin": 234.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 770,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 218.0,
+        "latin": 236.0,
+        "ratio": 0.92373
+      },
+      "after": {
+        "hangul": 238.0,
+        "latin": 236.0,
+        "ratio": 1.00847
+      }
+    },
+    {
+      "weight": 780,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 220.0,
+        "latin": 240.0,
+        "ratio": 0.91667
+      },
+      "after": {
+        "hangul": 241.0,
+        "latin": 240.0,
+        "ratio": 1.00417
+      }
+    },
+    {
+      "weight": 790,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 224.0,
+        "latin": 244.0,
+        "ratio": 0.91803
+      },
+      "after": {
+        "hangul": 244.0,
+        "latin": 244.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 800,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 226.0,
+        "latin": 246.0,
+        "ratio": 0.9187
+      },
+      "after": {
+        "hangul": 248.0,
+        "latin": 246.0,
+        "ratio": 1.00813
+      }
+    },
+    {
+      "weight": 810,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 230.0,
+        "latin": 250.0,
+        "ratio": 0.92
+      },
+      "after": {
+        "hangul": 252.0,
+        "latin": 250.0,
+        "ratio": 1.008
+      }
+    },
+    {
+      "weight": 820,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 233.0,
+        "latin": 254.0,
+        "ratio": 0.91732
+      },
+      "after": {
+        "hangul": 254.0,
+        "latin": 254.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 830,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 236.0,
+        "latin": 258.0,
+        "ratio": 0.91473
+      },
+      "after": {
+        "hangul": 258.0,
+        "latin": 258.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 840,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 240.0,
+        "latin": 262.0,
+        "ratio": 0.91603
+      },
+      "after": {
+        "hangul": 262.0,
+        "latin": 262.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 850,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 242.0,
+        "latin": 266.0,
+        "ratio": 0.90977
+      },
+      "after": {
+        "hangul": 266.0,
+        "latin": 266.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 860,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 246.0,
+        "latin": 268.0,
+        "ratio": 0.91791
+      },
+      "after": {
+        "hangul": 268.0,
+        "latin": 268.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 870,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 250.0,
+        "latin": 274.0,
+        "ratio": 0.91241
+      },
+      "after": {
+        "hangul": 272.0,
+        "latin": 274.0,
+        "ratio": 0.9927
+      }
+    },
+    {
+      "weight": 880,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 252.0,
+        "latin": 276.0,
+        "ratio": 0.91304
+      },
+      "after": {
+        "hangul": 276.0,
+        "latin": 276.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 890,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 256.0,
+        "latin": 280.0,
+        "ratio": 0.91429
+      },
+      "after": {
+        "hangul": 280.0,
+        "latin": 280.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 900,
+      "opsz": 14,
+      "width": 75,
+      "before": {
+        "hangul": 260.0,
+        "latin": 286.0,
+        "ratio": 0.90909
+      },
+      "after": {
+        "hangul": 284.0,
+        "latin": 286.0,
+        "ratio": 0.99301
+      }
+    },
+    {
+      "weight": 100,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 62.0,
+        "latin": 46.0,
+        "ratio": 1.34783
+      },
+      "after": {
+        "hangul": 52.0,
+        "latin": 46.0,
+        "ratio": 1.13043
+      }
+    },
+    {
+      "weight": 110,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 64.0,
+        "latin": 50.0,
+        "ratio": 1.28
+      },
+      "after": {
+        "hangul": 54.0,
+        "latin": 50.0,
+        "ratio": 1.08
+      }
+    },
+    {
+      "weight": 120,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 68.0,
+        "latin": 54.0,
+        "ratio": 1.25926
+      },
+      "after": {
+        "hangul": 58.0,
+        "latin": 54.0,
+        "ratio": 1.07407
+      }
+    },
+    {
+      "weight": 130,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 72.0,
+        "latin": 60.0,
+        "ratio": 1.2
+      },
+      "after": {
+        "hangul": 64.0,
+        "latin": 60.0,
+        "ratio": 1.06667
+      }
+    },
+    {
+      "weight": 140,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 74.0,
+        "latin": 64.0,
+        "ratio": 1.15625
+      },
+      "after": {
+        "hangul": 68.0,
+        "latin": 64.0,
+        "ratio": 1.0625
+      }
+    },
+    {
+      "weight": 150,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 78.0,
+        "latin": 68.0,
+        "ratio": 1.14706
+      },
+      "after": {
+        "hangul": 72.0,
+        "latin": 68.0,
+        "ratio": 1.05882
+      }
+    },
+    {
+      "weight": 160,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 82.0,
+        "latin": 74.0,
+        "ratio": 1.10811
+      },
+      "after": {
+        "hangul": 76.0,
+        "latin": 74.0,
+        "ratio": 1.02703
+      }
+    },
+    {
+      "weight": 170,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 86.0,
+        "latin": 78.0,
+        "ratio": 1.10256
+      },
+      "after": {
+        "hangul": 82.0,
+        "latin": 78.0,
+        "ratio": 1.05128
+      }
+    },
+    {
+      "weight": 180,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 88.0,
+        "latin": 82.0,
+        "ratio": 1.07317
+      },
+      "after": {
+        "hangul": 84.0,
+        "latin": 82.0,
+        "ratio": 1.02439
+      }
+    },
+    {
+      "weight": 190,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 92.0,
+        "latin": 86.0,
+        "ratio": 1.06977
+      },
+      "after": {
+        "hangul": 88.0,
+        "latin": 86.0,
+        "ratio": 1.02326
+      }
+    },
+    {
+      "weight": 200,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 96.0,
+        "latin": 92.0,
+        "ratio": 1.04348
+      },
+      "after": {
+        "hangul": 92.0,
+        "latin": 92.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 210,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 100.0,
+        "latin": 96.0,
+        "ratio": 1.04167
+      },
+      "after": {
+        "hangul": 98.0,
+        "latin": 96.0,
+        "ratio": 1.02083
+      }
+    },
+    {
+      "weight": 220,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 102.0,
+        "latin": 100.0,
+        "ratio": 1.02
+      },
+      "after": {
+        "hangul": 102.0,
+        "latin": 100.0,
+        "ratio": 1.02
+      }
+    },
+    {
+      "weight": 230,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 106.0,
+        "latin": 104.0,
+        "ratio": 1.01923
+      },
+      "after": {
+        "hangul": 106.0,
+        "latin": 104.0,
+        "ratio": 1.01923
+      }
+    },
+    {
+      "weight": 240,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 110.0,
+        "latin": 110.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 110.0,
+        "latin": 110.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 250,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 116.0,
+        "latin": 114.0,
+        "ratio": 1.01754
+      },
+      "after": {
+        "hangul": 116.0,
+        "latin": 114.0,
+        "ratio": 1.01754
+      }
+    },
+    {
+      "weight": 260,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 118.0,
+        "latin": 118.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 118.0,
+        "latin": 118.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 270,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 122.0,
+        "latin": 122.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 122.0,
+        "latin": 122.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 280,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 126.0,
+        "latin": 126.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 126.0,
+        "latin": 126.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 290,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 128.0,
+        "latin": 132.0,
+        "ratio": 0.9697
+      },
+      "after": {
+        "hangul": 130.0,
+        "latin": 132.0,
+        "ratio": 0.98485
+      }
+    },
+    {
+      "weight": 300,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 132.0,
+        "latin": 136.0,
+        "ratio": 0.97059
+      },
+      "after": {
+        "hangul": 136.0,
+        "latin": 136.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 310,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 136.0,
+        "latin": 140.0,
+        "ratio": 0.97143
+      },
+      "after": {
+        "hangul": 140.0,
+        "latin": 140.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 320,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 140.0,
+        "latin": 144.0,
+        "ratio": 0.97222
+      },
+      "after": {
+        "hangul": 144.0,
+        "latin": 144.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 330,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 142.0,
+        "latin": 150.0,
+        "ratio": 0.94667
+      },
+      "after": {
+        "hangul": 146.0,
+        "latin": 150.0,
+        "ratio": 0.97333
+      }
+    },
+    {
+      "weight": 340,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 146.0,
+        "latin": 154.0,
+        "ratio": 0.94805
+      },
+      "after": {
+        "hangul": 152.0,
+        "latin": 154.0,
+        "ratio": 0.98701
+      }
+    },
+    {
+      "weight": 350,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 150.0,
+        "latin": 158.0,
+        "ratio": 0.94937
+      },
+      "after": {
+        "hangul": 156.0,
+        "latin": 158.0,
+        "ratio": 0.98734
+      }
+    },
+    {
+      "weight": 360,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 154.0,
+        "latin": 162.0,
+        "ratio": 0.95062
+      },
+      "after": {
+        "hangul": 160.0,
+        "latin": 162.0,
+        "ratio": 0.98765
+      }
+    },
+    {
+      "weight": 370,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 156.0,
+        "latin": 168.0,
+        "ratio": 0.92857
+      },
+      "after": {
+        "hangul": 164.0,
+        "latin": 168.0,
+        "ratio": 0.97619
+      }
+    },
+    {
+      "weight": 380,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 160.0,
+        "latin": 172.0,
+        "ratio": 0.93023
+      },
+      "after": {
+        "hangul": 170.0,
+        "latin": 172.0,
+        "ratio": 0.98837
+      }
+    },
+    {
+      "weight": 390,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 164.0,
+        "latin": 176.0,
+        "ratio": 0.93182
+      },
+      "after": {
+        "hangul": 174.0,
+        "latin": 176.0,
+        "ratio": 0.98864
+      }
+    },
+    {
+      "weight": 400,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 168.0,
+        "latin": 182.0,
+        "ratio": 0.92308
+      },
+      "after": {
+        "hangul": 178.0,
+        "latin": 182.0,
+        "ratio": 0.97802
+      }
+    },
+    {
+      "weight": 410,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 170.0,
+        "latin": 186.0,
+        "ratio": 0.91398
+      },
+      "after": {
+        "hangul": 180.0,
+        "latin": 186.0,
+        "ratio": 0.96774
+      }
+    },
+    {
+      "weight": 420,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 174.0,
+        "latin": 190.0,
+        "ratio": 0.91579
+      },
+      "after": {
+        "hangul": 184.0,
+        "latin": 190.0,
+        "ratio": 0.96842
+      }
+    },
+    {
+      "weight": 430,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 178.0,
+        "latin": 192.0,
+        "ratio": 0.92708
+      },
+      "after": {
+        "hangul": 188.0,
+        "latin": 192.0,
+        "ratio": 0.97917
+      }
+    },
+    {
+      "weight": 440,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 180.0,
+        "latin": 196.0,
+        "ratio": 0.91837
+      },
+      "after": {
+        "hangul": 190.0,
+        "latin": 196.0,
+        "ratio": 0.96939
+      }
+    },
+    {
+      "weight": 450,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 184.0,
+        "latin": 200.0,
+        "ratio": 0.92
+      },
+      "after": {
+        "hangul": 194.0,
+        "latin": 200.0,
+        "ratio": 0.97
+      }
+    },
+    {
+      "weight": 460,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 188.0,
+        "latin": 204.0,
+        "ratio": 0.92157
+      },
+      "after": {
+        "hangul": 198.0,
+        "latin": 204.0,
+        "ratio": 0.97059
+      }
+    },
+    {
+      "weight": 470,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 188.0,
+        "latin": 208.0,
+        "ratio": 0.90385
+      },
+      "after": {
+        "hangul": 202.0,
+        "latin": 208.0,
+        "ratio": 0.97115
+      }
+    },
+    {
+      "weight": 480,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 192.0,
+        "latin": 212.0,
+        "ratio": 0.90566
+      },
+      "after": {
+        "hangul": 204.0,
+        "latin": 212.0,
+        "ratio": 0.96226
+      }
+    },
+    {
+      "weight": 490,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 196.0,
+        "latin": 216.0,
+        "ratio": 0.90741
+      },
+      "after": {
+        "hangul": 208.0,
+        "latin": 216.0,
+        "ratio": 0.96296
+      }
+    },
+    {
+      "weight": 500,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 198.0,
+        "latin": 220.0,
+        "ratio": 0.9
+      },
+      "after": {
+        "hangul": 212.0,
+        "latin": 220.0,
+        "ratio": 0.96364
+      }
+    },
+    {
+      "weight": 510,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 202.0,
+        "latin": 224.0,
+        "ratio": 0.90179
+      },
+      "after": {
+        "hangul": 216.0,
+        "latin": 224.0,
+        "ratio": 0.96429
+      }
+    },
+    {
+      "weight": 520,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 206.0,
+        "latin": 228.0,
+        "ratio": 0.90351
+      },
+      "after": {
+        "hangul": 218.0,
+        "latin": 228.0,
+        "ratio": 0.95614
+      }
+    },
+    {
+      "weight": 530,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 208.0,
+        "latin": 232.0,
+        "ratio": 0.89655
+      },
+      "after": {
+        "hangul": 222.0,
+        "latin": 232.0,
+        "ratio": 0.9569
+      }
+    },
+    {
+      "weight": 540,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 212.0,
+        "latin": 236.0,
+        "ratio": 0.89831
+      },
+      "after": {
+        "hangul": 226.0,
+        "latin": 236.0,
+        "ratio": 0.95763
+      }
+    },
+    {
+      "weight": 550,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 216.0,
+        "latin": 240.0,
+        "ratio": 0.9
+      },
+      "after": {
+        "hangul": 230.0,
+        "latin": 240.0,
+        "ratio": 0.95833
+      }
+    },
+    {
+      "weight": 560,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 218.0,
+        "latin": 244.0,
+        "ratio": 0.89344
+      },
+      "after": {
+        "hangul": 232.0,
+        "latin": 244.0,
+        "ratio": 0.95082
+      }
+    },
+    {
+      "weight": 570,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 222.0,
+        "latin": 248.0,
+        "ratio": 0.89516
+      },
+      "after": {
+        "hangul": 236.0,
+        "latin": 248.0,
+        "ratio": 0.95161
+      }
+    },
+    {
+      "weight": 580,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 226.0,
+        "latin": 252.0,
+        "ratio": 0.89683
+      },
+      "after": {
+        "hangul": 240.0,
+        "latin": 252.0,
+        "ratio": 0.95238
+      }
+    },
+    {
+      "weight": 590,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 228.0,
+        "latin": 256.0,
+        "ratio": 0.89062
+      },
+      "after": {
+        "hangul": 244.0,
+        "latin": 256.0,
+        "ratio": 0.95312
+      }
+    },
+    {
+      "weight": 600,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 232.0,
+        "latin": 260.0,
+        "ratio": 0.89231
+      },
+      "after": {
+        "hangul": 246.0,
+        "latin": 260.0,
+        "ratio": 0.94615
+      }
+    },
+    {
+      "weight": 610,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 234.0,
+        "latin": 264.0,
+        "ratio": 0.88636
+      },
+      "after": {
+        "hangul": 250.0,
+        "latin": 264.0,
+        "ratio": 0.94697
+      }
+    },
+    {
+      "weight": 620,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 236.0,
+        "latin": 268.0,
+        "ratio": 0.8806
+      },
+      "after": {
+        "hangul": 254.0,
+        "latin": 268.0,
+        "ratio": 0.94776
+      }
+    },
+    {
+      "weight": 630,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 240.0,
+        "latin": 272.0,
+        "ratio": 0.88235
+      },
+      "after": {
+        "hangul": 256.0,
+        "latin": 272.0,
+        "ratio": 0.94118
+      }
+    },
+    {
+      "weight": 640,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 244.0,
+        "latin": 276.0,
+        "ratio": 0.88406
+      },
+      "after": {
+        "hangul": 260.0,
+        "latin": 276.0,
+        "ratio": 0.94203
+      }
+    },
+    {
+      "weight": 650,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 246.0,
+        "latin": 280.0,
+        "ratio": 0.87857
+      },
+      "after": {
+        "hangul": 264.0,
+        "latin": 280.0,
+        "ratio": 0.94286
+      }
+    },
+    {
+      "weight": 660,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 250.0,
+        "latin": 284.0,
+        "ratio": 0.88028
+      },
+      "after": {
+        "hangul": 268.0,
+        "latin": 284.0,
+        "ratio": 0.94366
+      }
+    },
+    {
+      "weight": 670,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 254.0,
+        "latin": 288.0,
+        "ratio": 0.88194
+      },
+      "after": {
+        "hangul": 270.0,
+        "latin": 288.0,
+        "ratio": 0.9375
+      }
+    },
+    {
+      "weight": 680,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 256.0,
+        "latin": 292.0,
+        "ratio": 0.87671
+      },
+      "after": {
+        "hangul": 274.0,
+        "latin": 292.0,
+        "ratio": 0.93836
+      }
+    },
+    {
+      "weight": 690,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 260.0,
+        "latin": 296.0,
+        "ratio": 0.87838
+      },
+      "after": {
+        "hangul": 278.0,
+        "latin": 296.0,
+        "ratio": 0.93919
+      }
+    },
+    {
+      "weight": 700,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 264.0,
+        "latin": 300.0,
+        "ratio": 0.88
+      },
+      "after": {
+        "hangul": 282.0,
+        "latin": 300.0,
+        "ratio": 0.94
+      }
+    },
+    {
+      "weight": 710,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 268.0,
+        "latin": 306.0,
+        "ratio": 0.87582
+      },
+      "after": {
+        "hangul": 286.0,
+        "latin": 306.0,
+        "ratio": 0.93464
+      }
+    },
+    {
+      "weight": 720,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 270.0,
+        "latin": 310.0,
+        "ratio": 0.87097
+      },
+      "after": {
+        "hangul": 288.0,
+        "latin": 310.0,
+        "ratio": 0.92903
+      }
+    },
+    {
+      "weight": 730,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 274.0,
+        "latin": 314.0,
+        "ratio": 0.87261
+      },
+      "after": {
+        "hangul": 294.0,
+        "latin": 314.0,
+        "ratio": 0.93631
+      }
+    },
+    {
+      "weight": 740,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 278.0,
+        "latin": 320.0,
+        "ratio": 0.86875
+      },
+      "after": {
+        "hangul": 298.0,
+        "latin": 320.0,
+        "ratio": 0.93125
+      }
+    },
+    {
+      "weight": 750,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 282.0,
+        "latin": 324.0,
+        "ratio": 0.87037
+      },
+      "after": {
+        "hangul": 302.0,
+        "latin": 324.0,
+        "ratio": 0.9321
+      }
+    },
+    {
+      "weight": 760,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 288.0,
+        "latin": 330.0,
+        "ratio": 0.87273
+      },
+      "after": {
+        "hangul": 306.0,
+        "latin": 330.0,
+        "ratio": 0.92727
+      }
+    },
+    {
+      "weight": 770,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 292.0,
+        "latin": 334.0,
+        "ratio": 0.87425
+      },
+      "after": {
+        "hangul": 312.0,
+        "latin": 334.0,
+        "ratio": 0.93413
+      }
+    },
+    {
+      "weight": 780,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 294.0,
+        "latin": 338.0,
+        "ratio": 0.86982
+      },
+      "after": {
+        "hangul": 316.0,
+        "latin": 338.0,
+        "ratio": 0.93491
+      }
+    },
+    {
+      "weight": 790,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 298.0,
+        "latin": 344.0,
+        "ratio": 0.86628
+      },
+      "after": {
+        "hangul": 320.0,
+        "latin": 344.0,
+        "ratio": 0.93023
+      }
+    },
+    {
+      "weight": 800,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 302.0,
+        "latin": 348.0,
+        "ratio": 0.86782
+      },
+      "after": {
+        "hangul": 324.0,
+        "latin": 348.0,
+        "ratio": 0.93103
+      }
+    },
+    {
+      "weight": 810,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 306.0,
+        "latin": 354.0,
+        "ratio": 0.86441
+      },
+      "after": {
+        "hangul": 330.0,
+        "latin": 354.0,
+        "ratio": 0.9322
+      }
+    },
+    {
+      "weight": 820,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 312.0,
+        "latin": 360.0,
+        "ratio": 0.86667
+      },
+      "after": {
+        "hangul": 334.0,
+        "latin": 360.0,
+        "ratio": 0.92778
+      }
+    },
+    {
+      "weight": 830,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 316.0,
+        "latin": 364.0,
+        "ratio": 0.86813
+      },
+      "after": {
+        "hangul": 338.0,
+        "latin": 364.0,
+        "ratio": 0.92857
+      }
+    },
+    {
+      "weight": 840,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 320.0,
+        "latin": 370.0,
+        "ratio": 0.86486
+      },
+      "after": {
+        "hangul": 344.0,
+        "latin": 370.0,
+        "ratio": 0.92973
+      }
+    },
+    {
+      "weight": 850,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 324.0,
+        "latin": 376.0,
+        "ratio": 0.8617
+      },
+      "after": {
+        "hangul": 348.0,
+        "latin": 376.0,
+        "ratio": 0.92553
+      }
+    },
+    {
+      "weight": 860,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 328.0,
+        "latin": 382.0,
+        "ratio": 0.85864
+      },
+      "after": {
+        "hangul": 352.0,
+        "latin": 382.0,
+        "ratio": 0.92147
+      }
+    },
+    {
+      "weight": 870,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 332.0,
+        "latin": 386.0,
+        "ratio": 0.8601
+      },
+      "after": {
+        "hangul": 358.0,
+        "latin": 386.0,
+        "ratio": 0.92746
+      }
+    },
+    {
+      "weight": 880,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 336.0,
+        "latin": 392.0,
+        "ratio": 0.85714
+      },
+      "after": {
+        "hangul": 362.0,
+        "latin": 392.0,
+        "ratio": 0.92347
+      }
+    },
+    {
+      "weight": 890,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 340.0,
+        "latin": 396.0,
+        "ratio": 0.85859
+      },
+      "after": {
+        "hangul": 366.0,
+        "latin": 396.0,
+        "ratio": 0.92424
+      }
+    },
+    {
+      "weight": 900,
+      "opsz": 14,
+      "width": 100,
+      "before": {
+        "hangul": 346.0,
+        "latin": 402.0,
+        "ratio": 0.8607
+      },
+      "after": {
+        "hangul": 372.0,
+        "latin": 402.0,
+        "ratio": 0.92537
+      }
+    },
+    {
+      "weight": 100,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 78.0,
+        "latin": 54.0,
+        "ratio": 1.44444
+      },
+      "after": {
+        "hangul": 68.0,
+        "latin": 54.0,
+        "ratio": 1.25926
+      }
+    },
+    {
+      "weight": 110,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 80.0,
+        "latin": 58.0,
+        "ratio": 1.37931
+      },
+      "after": {
+        "hangul": 72.0,
+        "latin": 58.0,
+        "ratio": 1.24138
+      }
+    },
+    {
+      "weight": 120,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 84.0,
+        "latin": 64.0,
+        "ratio": 1.3125
+      },
+      "after": {
+        "hangul": 78.0,
+        "latin": 64.0,
+        "ratio": 1.21875
+      }
+    },
+    {
+      "weight": 130,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 88.0,
+        "latin": 68.0,
+        "ratio": 1.29412
+      },
+      "after": {
+        "hangul": 82.0,
+        "latin": 68.0,
+        "ratio": 1.20588
+      }
+    },
+    {
+      "weight": 140,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 94.0,
+        "latin": 74.0,
+        "ratio": 1.27027
+      },
+      "after": {
+        "hangul": 88.0,
+        "latin": 74.0,
+        "ratio": 1.18919
+      }
+    },
+    {
+      "weight": 150,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 98.0,
+        "latin": 78.0,
+        "ratio": 1.25641
+      },
+      "after": {
+        "hangul": 92.0,
+        "latin": 78.0,
+        "ratio": 1.17949
+      }
+    },
+    {
+      "weight": 160,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 102.0,
+        "latin": 84.0,
+        "ratio": 1.21429
+      },
+      "after": {
+        "hangul": 98.0,
+        "latin": 84.0,
+        "ratio": 1.16667
+      }
+    },
+    {
+      "weight": 170,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 108.0,
+        "latin": 88.0,
+        "ratio": 1.22727
+      },
+      "after": {
+        "hangul": 102.0,
+        "latin": 88.0,
+        "ratio": 1.15909
+      }
+    },
+    {
+      "weight": 180,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 112.0,
+        "latin": 94.0,
+        "ratio": 1.19149
+      },
+      "after": {
+        "hangul": 108.0,
+        "latin": 94.0,
+        "ratio": 1.14894
+      }
+    },
+    {
+      "weight": 190,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 116.0,
+        "latin": 98.0,
+        "ratio": 1.18367
+      },
+      "after": {
+        "hangul": 112.0,
+        "latin": 98.0,
+        "ratio": 1.14286
+      }
+    },
+    {
+      "weight": 200,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 122.0,
+        "latin": 104.0,
+        "ratio": 1.17308
+      },
+      "after": {
+        "hangul": 118.0,
+        "latin": 104.0,
+        "ratio": 1.13462
+      }
+    },
+    {
+      "weight": 210,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 126.0,
+        "latin": 108.0,
+        "ratio": 1.16667
+      },
+      "after": {
+        "hangul": 122.0,
+        "latin": 108.0,
+        "ratio": 1.12963
+      }
+    },
+    {
+      "weight": 220,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 130.0,
+        "latin": 114.0,
+        "ratio": 1.14035
+      },
+      "after": {
+        "hangul": 128.0,
+        "latin": 114.0,
+        "ratio": 1.12281
+      }
+    },
+    {
+      "weight": 230,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 134.0,
+        "latin": 120.0,
+        "ratio": 1.11667
+      },
+      "after": {
+        "hangul": 132.0,
+        "latin": 120.0,
+        "ratio": 1.1
+      }
+    },
+    {
+      "weight": 240,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 138.0,
+        "latin": 124.0,
+        "ratio": 1.1129
+      },
+      "after": {
+        "hangul": 138.0,
+        "latin": 124.0,
+        "ratio": 1.1129
+      }
+    },
+    {
+      "weight": 250,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 143.0,
+        "latin": 130.0,
+        "ratio": 1.1
+      },
+      "after": {
+        "hangul": 143.0,
+        "latin": 130.0,
+        "ratio": 1.1
+      }
+    },
+    {
+      "weight": 260,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 146.0,
+        "latin": 134.0,
+        "ratio": 1.08955
+      },
+      "after": {
+        "hangul": 148.0,
+        "latin": 134.0,
+        "ratio": 1.10448
+      }
+    },
+    {
+      "weight": 270,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 152.0,
+        "latin": 140.0,
+        "ratio": 1.08571
+      },
+      "after": {
+        "hangul": 153.0,
+        "latin": 140.0,
+        "ratio": 1.09286
+      }
+    },
+    {
+      "weight": 280,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 156.0,
+        "latin": 144.0,
+        "ratio": 1.08333
+      },
+      "after": {
+        "hangul": 158.0,
+        "latin": 144.0,
+        "ratio": 1.09722
+      }
+    },
+    {
+      "weight": 290,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 160.0,
+        "latin": 150.0,
+        "ratio": 1.06667
+      },
+      "after": {
+        "hangul": 163.0,
+        "latin": 150.0,
+        "ratio": 1.08667
+      }
+    },
+    {
+      "weight": 300,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 166.0,
+        "latin": 156.0,
+        "ratio": 1.0641
+      },
+      "after": {
+        "hangul": 170.0,
+        "latin": 156.0,
+        "ratio": 1.08974
+      }
+    },
+    {
+      "weight": 310,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 170.0,
+        "latin": 160.0,
+        "ratio": 1.0625
+      },
+      "after": {
+        "hangul": 174.0,
+        "latin": 160.0,
+        "ratio": 1.0875
+      }
+    },
+    {
+      "weight": 320,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 174.0,
+        "latin": 164.0,
+        "ratio": 1.06098
+      },
+      "after": {
+        "hangul": 180.0,
+        "latin": 164.0,
+        "ratio": 1.09756
+      }
+    },
+    {
+      "weight": 330,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 178.0,
+        "latin": 170.0,
+        "ratio": 1.04706
+      },
+      "after": {
+        "hangul": 184.0,
+        "latin": 170.0,
+        "ratio": 1.08235
+      }
+    },
+    {
+      "weight": 340,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 184.0,
+        "latin": 176.0,
+        "ratio": 1.04545
+      },
+      "after": {
+        "hangul": 190.0,
+        "latin": 176.0,
+        "ratio": 1.07955
+      }
+    },
+    {
+      "weight": 350,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 187.0,
+        "latin": 180.0,
+        "ratio": 1.03889
+      },
+      "after": {
+        "hangul": 194.0,
+        "latin": 180.0,
+        "ratio": 1.07778
+      }
+    },
+    {
+      "weight": 360,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 190.0,
+        "latin": 184.0,
+        "ratio": 1.03261
+      },
+      "after": {
+        "hangul": 200.0,
+        "latin": 184.0,
+        "ratio": 1.08696
+      }
+    },
+    {
+      "weight": 370,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 196.0,
+        "latin": 190.0,
+        "ratio": 1.03158
+      },
+      "after": {
+        "hangul": 204.0,
+        "latin": 190.0,
+        "ratio": 1.07368
+      }
+    },
+    {
+      "weight": 380,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 200.0,
+        "latin": 196.0,
+        "ratio": 1.02041
+      },
+      "after": {
+        "hangul": 210.0,
+        "latin": 196.0,
+        "ratio": 1.07143
+      }
+    },
+    {
+      "weight": 390,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 204.0,
+        "latin": 200.0,
+        "ratio": 1.02
+      },
+      "after": {
+        "hangul": 214.0,
+        "latin": 200.0,
+        "ratio": 1.07
+      }
+    },
+    {
+      "weight": 400,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 210.0,
+        "latin": 206.0,
+        "ratio": 1.01942
+      },
+      "after": {
+        "hangul": 220.0,
+        "latin": 206.0,
+        "ratio": 1.06796
+      }
+    },
+    {
+      "weight": 410,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 214.0,
+        "latin": 210.0,
+        "ratio": 1.01905
+      },
+      "after": {
+        "hangul": 224.0,
+        "latin": 210.0,
+        "ratio": 1.06667
+      }
+    },
+    {
+      "weight": 420,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 218.0,
+        "latin": 216.0,
+        "ratio": 1.00926
+      },
+      "after": {
+        "hangul": 228.0,
+        "latin": 216.0,
+        "ratio": 1.05556
+      }
+    },
+    {
+      "weight": 430,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 222.0,
+        "latin": 220.0,
+        "ratio": 1.00909
+      },
+      "after": {
+        "hangul": 232.0,
+        "latin": 220.0,
+        "ratio": 1.05455
+      }
+    },
+    {
+      "weight": 440,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 224.0,
+        "latin": 224.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 236.0,
+        "latin": 224.0,
+        "ratio": 1.05357
+      }
+    },
+    {
+      "weight": 450,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 228.0,
+        "latin": 228.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 241.0,
+        "latin": 228.0,
+        "ratio": 1.05702
+      }
+    },
+    {
+      "weight": 460,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 232.0,
+        "latin": 234.0,
+        "ratio": 0.99145
+      },
+      "after": {
+        "hangul": 244.0,
+        "latin": 234.0,
+        "ratio": 1.04274
+      }
+    },
+    {
+      "weight": 470,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 237.0,
+        "latin": 238.0,
+        "ratio": 0.9958
+      },
+      "after": {
+        "hangul": 248.0,
+        "latin": 238.0,
+        "ratio": 1.04202
+      }
+    },
+    {
+      "weight": 480,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 242.0,
+        "latin": 242.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 252.0,
+        "latin": 242.0,
+        "ratio": 1.04132
+      }
+    },
+    {
+      "weight": 490,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 246.0,
+        "latin": 246.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 258.0,
+        "latin": 246.0,
+        "ratio": 1.04878
+      }
+    },
+    {
+      "weight": 500,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 248.0,
+        "latin": 250.0,
+        "ratio": 0.992
+      },
+      "after": {
+        "hangul": 262.0,
+        "latin": 250.0,
+        "ratio": 1.048
+      }
+    },
+    {
+      "weight": 510,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 252.0,
+        "latin": 256.0,
+        "ratio": 0.98438
+      },
+      "after": {
+        "hangul": 266.0,
+        "latin": 256.0,
+        "ratio": 1.03906
+      }
+    },
+    {
+      "weight": 520,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 256.0,
+        "latin": 260.0,
+        "ratio": 0.98462
+      },
+      "after": {
+        "hangul": 270.0,
+        "latin": 260.0,
+        "ratio": 1.03846
+      }
+    },
+    {
+      "weight": 530,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 260.0,
+        "latin": 264.0,
+        "ratio": 0.98485
+      },
+      "after": {
+        "hangul": 274.0,
+        "latin": 264.0,
+        "ratio": 1.03788
+      }
+    },
+    {
+      "weight": 540,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 265.0,
+        "latin": 268.0,
+        "ratio": 0.98881
+      },
+      "after": {
+        "hangul": 278.0,
+        "latin": 268.0,
+        "ratio": 1.03731
+      }
+    },
+    {
+      "weight": 550,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 270.0,
+        "latin": 272.0,
+        "ratio": 0.99265
+      },
+      "after": {
+        "hangul": 284.0,
+        "latin": 272.0,
+        "ratio": 1.04412
+      }
+    },
+    {
+      "weight": 560,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 274.0,
+        "latin": 278.0,
+        "ratio": 0.98561
+      },
+      "after": {
+        "hangul": 288.0,
+        "latin": 278.0,
+        "ratio": 1.03597
+      }
+    },
+    {
+      "weight": 570,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 276.0,
+        "latin": 282.0,
+        "ratio": 0.97872
+      },
+      "after": {
+        "hangul": 291.0,
+        "latin": 282.0,
+        "ratio": 1.03191
+      }
+    },
+    {
+      "weight": 580,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 280.0,
+        "latin": 286.0,
+        "ratio": 0.97902
+      },
+      "after": {
+        "hangul": 296.0,
+        "latin": 286.0,
+        "ratio": 1.03497
+      }
+    },
+    {
+      "weight": 590,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 284.0,
+        "latin": 290.0,
+        "ratio": 0.97931
+      },
+      "after": {
+        "hangul": 300.0,
+        "latin": 290.0,
+        "ratio": 1.03448
+      }
+    },
+    {
+      "weight": 600,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 289.0,
+        "latin": 294.0,
+        "ratio": 0.98299
+      },
+      "after": {
+        "hangul": 304.0,
+        "latin": 294.0,
+        "ratio": 1.03401
+      }
+    },
+    {
+      "weight": 610,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 294.0,
+        "latin": 300.0,
+        "ratio": 0.98
+      },
+      "after": {
+        "hangul": 308.0,
+        "latin": 300.0,
+        "ratio": 1.02667
+      }
+    },
+    {
+      "weight": 620,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 298.0,
+        "latin": 304.0,
+        "ratio": 0.98026
+      },
+      "after": {
+        "hangul": 312.0,
+        "latin": 304.0,
+        "ratio": 1.02632
+      }
+    },
+    {
+      "weight": 630,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 300.0,
+        "latin": 310.0,
+        "ratio": 0.96774
+      },
+      "after": {
+        "hangul": 318.0,
+        "latin": 310.0,
+        "ratio": 1.02581
+      }
+    },
+    {
+      "weight": 640,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 304.0,
+        "latin": 314.0,
+        "ratio": 0.96815
+      },
+      "after": {
+        "hangul": 322.0,
+        "latin": 314.0,
+        "ratio": 1.02548
+      }
+    },
+    {
+      "weight": 650,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 308.0,
+        "latin": 318.0,
+        "ratio": 0.96855
+      },
+      "after": {
+        "hangul": 326.0,
+        "latin": 318.0,
+        "ratio": 1.02516
+      }
+    },
+    {
+      "weight": 660,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 312.0,
+        "latin": 324.0,
+        "ratio": 0.96296
+      },
+      "after": {
+        "hangul": 330.0,
+        "latin": 324.0,
+        "ratio": 1.01852
+      }
+    },
+    {
+      "weight": 670,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 318.0,
+        "latin": 328.0,
+        "ratio": 0.96951
+      },
+      "after": {
+        "hangul": 336.0,
+        "latin": 328.0,
+        "ratio": 1.02439
+      }
+    },
+    {
+      "weight": 680,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 322.0,
+        "latin": 332.0,
+        "ratio": 0.96988
+      },
+      "after": {
+        "hangul": 338.0,
+        "latin": 332.0,
+        "ratio": 1.01807
+      }
+    },
+    {
+      "weight": 690,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 326.0,
+        "latin": 336.0,
+        "ratio": 0.97024
+      },
+      "after": {
+        "hangul": 342.0,
+        "latin": 336.0,
+        "ratio": 1.01786
+      }
+    },
+    {
+      "weight": 700,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 328.0,
+        "latin": 340.0,
+        "ratio": 0.96471
+      },
+      "after": {
+        "hangul": 346.0,
+        "latin": 340.0,
+        "ratio": 1.01765
+      }
+    },
+    {
+      "weight": 710,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 334.0,
+        "latin": 346.0,
+        "ratio": 0.96532
+      },
+      "after": {
+        "hangul": 352.0,
+        "latin": 346.0,
+        "ratio": 1.01734
+      }
+    },
+    {
+      "weight": 720,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 338.0,
+        "latin": 352.0,
+        "ratio": 0.96023
+      },
+      "after": {
+        "hangul": 358.0,
+        "latin": 352.0,
+        "ratio": 1.01705
+      }
+    },
+    {
+      "weight": 730,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 343.0,
+        "latin": 356.0,
+        "ratio": 0.96348
+      },
+      "after": {
+        "hangul": 364.0,
+        "latin": 356.0,
+        "ratio": 1.02247
+      }
+    },
+    {
+      "weight": 740,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 350.0,
+        "latin": 362.0,
+        "ratio": 0.96685
+      },
+      "after": {
+        "hangul": 368.0,
+        "latin": 362.0,
+        "ratio": 1.01657
+      }
+    },
+    {
+      "weight": 750,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 354.0,
+        "latin": 368.0,
+        "ratio": 0.96196
+      },
+      "after": {
+        "hangul": 374.0,
+        "latin": 368.0,
+        "ratio": 1.0163
+      }
+    },
+    {
+      "weight": 760,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 360.0,
+        "latin": 374.0,
+        "ratio": 0.96257
+      },
+      "after": {
+        "hangul": 378.0,
+        "latin": 374.0,
+        "ratio": 1.0107
+      }
+    },
+    {
+      "weight": 770,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 364.0,
+        "latin": 378.0,
+        "ratio": 0.96296
+      },
+      "after": {
+        "hangul": 384.0,
+        "latin": 378.0,
+        "ratio": 1.01587
+      }
+    },
+    {
+      "weight": 780,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 368.0,
+        "latin": 384.0,
+        "ratio": 0.95833
+      },
+      "after": {
+        "hangul": 388.0,
+        "latin": 384.0,
+        "ratio": 1.01042
+      }
+    },
+    {
+      "weight": 790,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 374.0,
+        "latin": 390.0,
+        "ratio": 0.95897
+      },
+      "after": {
+        "hangul": 394.0,
+        "latin": 390.0,
+        "ratio": 1.01026
+      }
+    },
+    {
+      "weight": 800,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 378.0,
+        "latin": 396.0,
+        "ratio": 0.95455
+      },
+      "after": {
+        "hangul": 399.0,
+        "latin": 396.0,
+        "ratio": 1.00758
+      }
+    },
+    {
+      "weight": 810,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 384.0,
+        "latin": 402.0,
+        "ratio": 0.95522
+      },
+      "after": {
+        "hangul": 406.0,
+        "latin": 402.0,
+        "ratio": 1.00995
+      }
+    },
+    {
+      "weight": 820,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 388.0,
+        "latin": 408.0,
+        "ratio": 0.95098
+      },
+      "after": {
+        "hangul": 410.0,
+        "latin": 408.0,
+        "ratio": 1.0049
+      }
+    },
+    {
+      "weight": 830,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 394.0,
+        "latin": 414.0,
+        "ratio": 0.95169
+      },
+      "after": {
+        "hangul": 416.0,
+        "latin": 414.0,
+        "ratio": 1.00483
+      }
+    },
+    {
+      "weight": 840,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 400.0,
+        "latin": 420.0,
+        "ratio": 0.95238
+      },
+      "after": {
+        "hangul": 422.0,
+        "latin": 420.0,
+        "ratio": 1.00476
+      }
+    },
+    {
+      "weight": 850,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 404.0,
+        "latin": 426.0,
+        "ratio": 0.94836
+      },
+      "after": {
+        "hangul": 428.0,
+        "latin": 426.0,
+        "ratio": 1.00469
+      }
+    },
+    {
+      "weight": 860,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 410.0,
+        "latin": 432.0,
+        "ratio": 0.94907
+      },
+      "after": {
+        "hangul": 434.0,
+        "latin": 432.0,
+        "ratio": 1.00463
+      }
+    },
+    {
+      "weight": 870,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 416.0,
+        "latin": 438.0,
+        "ratio": 0.94977
+      },
+      "after": {
+        "hangul": 440.0,
+        "latin": 438.0,
+        "ratio": 1.00457
+      }
+    },
+    {
+      "weight": 880,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 420.0,
+        "latin": 444.0,
+        "ratio": 0.94595
+      },
+      "after": {
+        "hangul": 446.0,
+        "latin": 444.0,
+        "ratio": 1.0045
+      }
+    },
+    {
+      "weight": 890,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 426.0,
+        "latin": 450.0,
+        "ratio": 0.94667
+      },
+      "after": {
+        "hangul": 450.0,
+        "latin": 450.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 900,
+      "opsz": 14,
+      "width": 125,
+      "before": {
+        "hangul": 432.0,
+        "latin": 456.0,
+        "ratio": 0.94737
+      },
+      "after": {
+        "hangul": 458.0,
+        "latin": 456.0,
+        "ratio": 1.00439
+      }
+    },
+    {
+      "weight": 100,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 44.0,
+        "latin": 34.0,
+        "ratio": 1.29412
+      },
+      "after": {
+        "hangul": 32.0,
+        "latin": 34.0,
+        "ratio": 0.94118
+      }
+    },
+    {
+      "weight": 110,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 46.0,
+        "latin": 36.0,
+        "ratio": 1.27778
+      },
+      "after": {
+        "hangul": 32.0,
+        "latin": 36.0,
+        "ratio": 0.88889
+      }
+    },
+    {
+      "weight": 120,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 48.0,
+        "latin": 38.0,
+        "ratio": 1.26316
+      },
+      "after": {
+        "hangul": 36.0,
+        "latin": 38.0,
+        "ratio": 0.94737
+      }
+    },
+    {
+      "weight": 130,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 52.0,
+        "latin": 42.0,
+        "ratio": 1.2381
+      },
+      "after": {
+        "hangul": 40.0,
+        "latin": 42.0,
+        "ratio": 0.95238
+      }
+    },
+    {
+      "weight": 140,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 54.0,
+        "latin": 44.0,
+        "ratio": 1.22727
+      },
+      "after": {
+        "hangul": 42.0,
+        "latin": 44.0,
+        "ratio": 0.95455
+      }
+    },
+    {
+      "weight": 150,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 56.0,
+        "latin": 46.0,
+        "ratio": 1.21739
+      },
+      "after": {
+        "hangul": 46.0,
+        "latin": 46.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 160,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 58.0,
+        "latin": 50.0,
+        "ratio": 1.16
+      },
+      "after": {
+        "hangul": 50.0,
+        "latin": 50.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 170,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 62.0,
+        "latin": 52.0,
+        "ratio": 1.19231
+      },
+      "after": {
+        "hangul": 52.0,
+        "latin": 52.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 180,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 64.0,
+        "latin": 56.0,
+        "ratio": 1.14286
+      },
+      "after": {
+        "hangul": 56.0,
+        "latin": 56.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 190,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 66.0,
+        "latin": 58.0,
+        "ratio": 1.13793
+      },
+      "after": {
+        "hangul": 60.0,
+        "latin": 58.0,
+        "ratio": 1.03448
+      }
+    },
+    {
+      "weight": 200,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 70.0,
+        "latin": 62.0,
+        "ratio": 1.12903
+      },
+      "after": {
+        "hangul": 62.0,
+        "latin": 62.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 210,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 72.0,
+        "latin": 64.0,
+        "ratio": 1.125
+      },
+      "after": {
+        "hangul": 66.0,
+        "latin": 64.0,
+        "ratio": 1.03125
+      }
+    },
+    {
+      "weight": 220,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 74.0,
+        "latin": 68.0,
+        "ratio": 1.08824
+      },
+      "after": {
+        "hangul": 70.0,
+        "latin": 68.0,
+        "ratio": 1.02941
+      }
+    },
+    {
+      "weight": 230,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 76.0,
+        "latin": 70.0,
+        "ratio": 1.08571
+      },
+      "after": {
+        "hangul": 72.0,
+        "latin": 70.0,
+        "ratio": 1.02857
+      }
+    },
+    {
+      "weight": 240,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 80.0,
+        "latin": 74.0,
+        "ratio": 1.08108
+      },
+      "after": {
+        "hangul": 76.0,
+        "latin": 74.0,
+        "ratio": 1.02703
+      }
+    },
+    {
+      "weight": 250,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 82.0,
+        "latin": 76.0,
+        "ratio": 1.07895
+      },
+      "after": {
+        "hangul": 80.0,
+        "latin": 76.0,
+        "ratio": 1.05263
+      }
+    },
+    {
+      "weight": 260,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 86.0,
+        "latin": 78.0,
+        "ratio": 1.10256
+      },
+      "after": {
+        "hangul": 82.0,
+        "latin": 78.0,
+        "ratio": 1.05128
+      }
+    },
+    {
+      "weight": 270,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 88.0,
+        "latin": 82.0,
+        "ratio": 1.07317
+      },
+      "after": {
+        "hangul": 86.0,
+        "latin": 82.0,
+        "ratio": 1.04878
+      }
+    },
+    {
+      "weight": 280,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 90.0,
+        "latin": 84.0,
+        "ratio": 1.07143
+      },
+      "after": {
+        "hangul": 90.0,
+        "latin": 84.0,
+        "ratio": 1.07143
+      }
+    },
+    {
+      "weight": 290,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 92.0,
+        "latin": 88.0,
+        "ratio": 1.04545
+      },
+      "after": {
+        "hangul": 92.0,
+        "latin": 88.0,
+        "ratio": 1.04545
+      }
+    },
+    {
+      "weight": 300,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 96.0,
+        "latin": 90.0,
+        "ratio": 1.06667
+      },
+      "after": {
+        "hangul": 96.0,
+        "latin": 90.0,
+        "ratio": 1.06667
+      }
+    },
+    {
+      "weight": 310,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 98.0,
+        "latin": 92.0,
+        "ratio": 1.06522
+      },
+      "after": {
+        "hangul": 100.0,
+        "latin": 92.0,
+        "ratio": 1.08696
+      }
+    },
+    {
+      "weight": 320,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 100.0,
+        "latin": 96.0,
+        "ratio": 1.04167
+      },
+      "after": {
+        "hangul": 103.0,
+        "latin": 96.0,
+        "ratio": 1.07292
+      }
+    },
+    {
+      "weight": 330,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 104.0,
+        "latin": 96.0,
+        "ratio": 1.08333
+      },
+      "after": {
+        "hangul": 106.0,
+        "latin": 96.0,
+        "ratio": 1.10417
+      }
+    },
+    {
+      "weight": 340,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 106.0,
+        "latin": 102.0,
+        "ratio": 1.03922
+      },
+      "after": {
+        "hangul": 110.0,
+        "latin": 102.0,
+        "ratio": 1.07843
+      }
+    },
+    {
+      "weight": 350,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 110.0,
+        "latin": 104.0,
+        "ratio": 1.05769
+      },
+      "after": {
+        "hangul": 114.0,
+        "latin": 104.0,
+        "ratio": 1.09615
+      }
+    },
+    {
+      "weight": 360,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 110.0,
+        "latin": 106.0,
+        "ratio": 1.03774
+      },
+      "after": {
+        "hangul": 116.0,
+        "latin": 106.0,
+        "ratio": 1.09434
+      }
+    },
+    {
+      "weight": 370,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 114.0,
+        "latin": 110.0,
+        "ratio": 1.03636
+      },
+      "after": {
+        "hangul": 120.0,
+        "latin": 110.0,
+        "ratio": 1.09091
+      }
+    },
+    {
+      "weight": 380,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 116.0,
+        "latin": 112.0,
+        "ratio": 1.03571
+      },
+      "after": {
+        "hangul": 124.0,
+        "latin": 112.0,
+        "ratio": 1.10714
+      }
+    },
+    {
+      "weight": 390,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 120.0,
+        "latin": 114.0,
+        "ratio": 1.05263
+      },
+      "after": {
+        "hangul": 126.0,
+        "latin": 114.0,
+        "ratio": 1.10526
+      }
+    },
+    {
+      "weight": 400,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 124.0,
+        "latin": 118.0,
+        "ratio": 1.05085
+      },
+      "after": {
+        "hangul": 130.0,
+        "latin": 118.0,
+        "ratio": 1.10169
+      }
+    },
+    {
+      "weight": 410,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 124.0,
+        "latin": 120.0,
+        "ratio": 1.03333
+      },
+      "after": {
+        "hangul": 132.0,
+        "latin": 120.0,
+        "ratio": 1.1
+      }
+    },
+    {
+      "weight": 420,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 128.0,
+        "latin": 124.0,
+        "ratio": 1.03226
+      },
+      "after": {
+        "hangul": 134.0,
+        "latin": 124.0,
+        "ratio": 1.08065
+      }
+    },
+    {
+      "weight": 430,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 130.0,
+        "latin": 126.0,
+        "ratio": 1.03175
+      },
+      "after": {
+        "hangul": 138.0,
+        "latin": 126.0,
+        "ratio": 1.09524
+      }
+    },
+    {
+      "weight": 440,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 132.0,
+        "latin": 130.0,
+        "ratio": 1.01538
+      },
+      "after": {
+        "hangul": 140.0,
+        "latin": 130.0,
+        "ratio": 1.07692
+      }
+    },
+    {
+      "weight": 450,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 134.0,
+        "latin": 132.0,
+        "ratio": 1.01515
+      },
+      "after": {
+        "hangul": 142.0,
+        "latin": 132.0,
+        "ratio": 1.07576
+      }
+    },
+    {
+      "weight": 460,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 136.0,
+        "latin": 136.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 144.0,
+        "latin": 136.0,
+        "ratio": 1.05882
+      }
+    },
+    {
+      "weight": 470,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 138.0,
+        "latin": 138.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 148.0,
+        "latin": 138.0,
+        "ratio": 1.07246
+      }
+    },
+    {
+      "weight": 480,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 142.0,
+        "latin": 142.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 150.0,
+        "latin": 142.0,
+        "ratio": 1.05634
+      }
+    },
+    {
+      "weight": 490,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 144.0,
+        "latin": 144.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 152.0,
+        "latin": 144.0,
+        "ratio": 1.05556
+      }
+    },
+    {
+      "weight": 500,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 146.0,
+        "latin": 148.0,
+        "ratio": 0.98649
+      },
+      "after": {
+        "hangul": 156.0,
+        "latin": 148.0,
+        "ratio": 1.05405
+      }
+    },
+    {
+      "weight": 510,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 148.0,
+        "latin": 150.0,
+        "ratio": 0.98667
+      },
+      "after": {
+        "hangul": 158.0,
+        "latin": 150.0,
+        "ratio": 1.05333
+      }
+    },
+    {
+      "weight": 520,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 150.0,
+        "latin": 154.0,
+        "ratio": 0.97403
+      },
+      "after": {
+        "hangul": 162.0,
+        "latin": 154.0,
+        "ratio": 1.05195
+      }
+    },
+    {
+      "weight": 530,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 154.0,
+        "latin": 156.0,
+        "ratio": 0.98718
+      },
+      "after": {
+        "hangul": 164.0,
+        "latin": 156.0,
+        "ratio": 1.05128
+      }
+    },
+    {
+      "weight": 540,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 156.0,
+        "latin": 158.0,
+        "ratio": 0.98734
+      },
+      "after": {
+        "hangul": 166.0,
+        "latin": 158.0,
+        "ratio": 1.05063
+      }
+    },
+    {
+      "weight": 550,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 158.0,
+        "latin": 162.0,
+        "ratio": 0.97531
+      },
+      "after": {
+        "hangul": 170.0,
+        "latin": 162.0,
+        "ratio": 1.04938
+      }
+    },
+    {
+      "weight": 560,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 160.0,
+        "latin": 164.0,
+        "ratio": 0.97561
+      },
+      "after": {
+        "hangul": 172.0,
+        "latin": 164.0,
+        "ratio": 1.04878
+      }
+    },
+    {
+      "weight": 570,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 162.0,
+        "latin": 168.0,
+        "ratio": 0.96429
+      },
+      "after": {
+        "hangul": 174.0,
+        "latin": 168.0,
+        "ratio": 1.03571
+      }
+    },
+    {
+      "weight": 580,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 166.0,
+        "latin": 172.0,
+        "ratio": 0.96512
+      },
+      "after": {
+        "hangul": 176.0,
+        "latin": 172.0,
+        "ratio": 1.02326
+      }
+    },
+    {
+      "weight": 590,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 168.0,
+        "latin": 174.0,
+        "ratio": 0.96552
+      },
+      "after": {
+        "hangul": 180.0,
+        "latin": 174.0,
+        "ratio": 1.03448
+      }
+    },
+    {
+      "weight": 600,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 170.0,
+        "latin": 177.0,
+        "ratio": 0.96045
+      },
+      "after": {
+        "hangul": 182.0,
+        "latin": 177.0,
+        "ratio": 1.02825
+      }
+    },
+    {
+      "weight": 610,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 172.0,
+        "latin": 180.0,
+        "ratio": 0.95556
+      },
+      "after": {
+        "hangul": 186.0,
+        "latin": 180.0,
+        "ratio": 1.03333
+      }
+    },
+    {
+      "weight": 620,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 175.0,
+        "latin": 184.0,
+        "ratio": 0.95109
+      },
+      "after": {
+        "hangul": 188.0,
+        "latin": 184.0,
+        "ratio": 1.02174
+      }
+    },
+    {
+      "weight": 630,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 178.0,
+        "latin": 186.0,
+        "ratio": 0.95699
+      },
+      "after": {
+        "hangul": 190.0,
+        "latin": 186.0,
+        "ratio": 1.02151
+      }
+    },
+    {
+      "weight": 640,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 180.0,
+        "latin": 190.0,
+        "ratio": 0.94737
+      },
+      "after": {
+        "hangul": 194.0,
+        "latin": 190.0,
+        "ratio": 1.02105
+      }
+    },
+    {
+      "weight": 650,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 182.0,
+        "latin": 192.0,
+        "ratio": 0.94792
+      },
+      "after": {
+        "hangul": 196.0,
+        "latin": 192.0,
+        "ratio": 1.02083
+      }
+    },
+    {
+      "weight": 660,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 184.0,
+        "latin": 194.0,
+        "ratio": 0.94845
+      },
+      "after": {
+        "hangul": 199.0,
+        "latin": 194.0,
+        "ratio": 1.02577
+      }
+    },
+    {
+      "weight": 670,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 186.0,
+        "latin": 198.0,
+        "ratio": 0.93939
+      },
+      "after": {
+        "hangul": 200.0,
+        "latin": 198.0,
+        "ratio": 1.0101
+      }
+    },
+    {
+      "weight": 680,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 190.0,
+        "latin": 201.0,
+        "ratio": 0.94527
+      },
+      "after": {
+        "hangul": 204.0,
+        "latin": 201.0,
+        "ratio": 1.01493
+      }
+    },
+    {
+      "weight": 690,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 192.0,
+        "latin": 204.0,
+        "ratio": 0.94118
+      },
+      "after": {
+        "hangul": 206.0,
+        "latin": 204.0,
+        "ratio": 1.0098
+      }
+    },
+    {
+      "weight": 700,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 194.0,
+        "latin": 206.0,
+        "ratio": 0.94175
+      },
+      "after": {
+        "hangul": 210.0,
+        "latin": 206.0,
+        "ratio": 1.01942
+      }
+    },
+    {
+      "weight": 710,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 196.0,
+        "latin": 210.0,
+        "ratio": 0.93333
+      },
+      "after": {
+        "hangul": 212.0,
+        "latin": 210.0,
+        "ratio": 1.00952
+      }
+    },
+    {
+      "weight": 720,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 200.0,
+        "latin": 214.0,
+        "ratio": 0.93458
+      },
+      "after": {
+        "hangul": 216.0,
+        "latin": 214.0,
+        "ratio": 1.00935
+      }
+    },
+    {
+      "weight": 730,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 202.0,
+        "latin": 218.0,
+        "ratio": 0.92661
+      },
+      "after": {
+        "hangul": 218.0,
+        "latin": 218.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 740,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 206.0,
+        "latin": 220.0,
+        "ratio": 0.93636
+      },
+      "after": {
+        "hangul": 222.0,
+        "latin": 220.0,
+        "ratio": 1.00909
+      }
+    },
+    {
+      "weight": 750,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 210.0,
+        "latin": 226.0,
+        "ratio": 0.9292
+      },
+      "after": {
+        "hangul": 224.0,
+        "latin": 226.0,
+        "ratio": 0.99115
+      }
+    },
+    {
+      "weight": 760,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 212.0,
+        "latin": 228.0,
+        "ratio": 0.92982
+      },
+      "after": {
+        "hangul": 228.0,
+        "latin": 228.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 770,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 214.0,
+        "latin": 232.0,
+        "ratio": 0.92241
+      },
+      "after": {
+        "hangul": 232.0,
+        "latin": 232.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 780,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 218.0,
+        "latin": 236.0,
+        "ratio": 0.92373
+      },
+      "after": {
+        "hangul": 235.0,
+        "latin": 236.0,
+        "ratio": 0.99576
+      }
+    },
+    {
+      "weight": 790,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 220.0,
+        "latin": 238.0,
+        "ratio": 0.92437
+      },
+      "after": {
+        "hangul": 238.0,
+        "latin": 238.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 800,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 224.0,
+        "latin": 242.0,
+        "ratio": 0.92562
+      },
+      "after": {
+        "hangul": 242.0,
+        "latin": 242.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 810,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 226.0,
+        "latin": 248.0,
+        "ratio": 0.91129
+      },
+      "after": {
+        "hangul": 246.0,
+        "latin": 248.0,
+        "ratio": 0.99194
+      }
+    },
+    {
+      "weight": 820,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 230.0,
+        "latin": 250.0,
+        "ratio": 0.92
+      },
+      "after": {
+        "hangul": 248.0,
+        "latin": 250.0,
+        "ratio": 0.992
+      }
+    },
+    {
+      "weight": 830,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 233.0,
+        "latin": 256.0,
+        "ratio": 0.91016
+      },
+      "after": {
+        "hangul": 252.0,
+        "latin": 256.0,
+        "ratio": 0.98438
+      }
+    },
+    {
+      "weight": 840,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 236.0,
+        "latin": 258.0,
+        "ratio": 0.91473
+      },
+      "after": {
+        "hangul": 256.0,
+        "latin": 258.0,
+        "ratio": 0.99225
+      }
+    },
+    {
+      "weight": 850,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 240.0,
+        "latin": 262.0,
+        "ratio": 0.91603
+      },
+      "after": {
+        "hangul": 260.0,
+        "latin": 262.0,
+        "ratio": 0.99237
+      }
+    },
+    {
+      "weight": 860,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 242.0,
+        "latin": 268.0,
+        "ratio": 0.90299
+      },
+      "after": {
+        "hangul": 262.0,
+        "latin": 268.0,
+        "ratio": 0.97761
+      }
+    },
+    {
+      "weight": 870,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 246.0,
+        "latin": 270.0,
+        "ratio": 0.91111
+      },
+      "after": {
+        "hangul": 266.0,
+        "latin": 270.0,
+        "ratio": 0.98519
+      }
+    },
+    {
+      "weight": 880,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 250.0,
+        "latin": 274.0,
+        "ratio": 0.91241
+      },
+      "after": {
+        "hangul": 270.0,
+        "latin": 274.0,
+        "ratio": 0.9854
+      }
+    },
+    {
+      "weight": 890,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 252.0,
+        "latin": 278.0,
+        "ratio": 0.90647
+      },
+      "after": {
+        "hangul": 274.0,
+        "latin": 278.0,
+        "ratio": 0.98561
+      }
+    },
+    {
+      "weight": 900,
+      "opsz": 32,
+      "width": 75,
+      "before": {
+        "hangul": 256.0,
+        "latin": 284.0,
+        "ratio": 0.90141
+      },
+      "after": {
+        "hangul": 278.0,
+        "latin": 284.0,
+        "ratio": 0.97887
+      }
+    },
+    {
+      "weight": 100,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 58.0,
+        "latin": 46.0,
+        "ratio": 1.26087
+      },
+      "after": {
+        "hangul": 46.0,
+        "latin": 46.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 110,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 62.0,
+        "latin": 50.0,
+        "ratio": 1.24
+      },
+      "after": {
+        "hangul": 48.0,
+        "latin": 50.0,
+        "ratio": 0.96
+      }
+    },
+    {
+      "weight": 120,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 64.0,
+        "latin": 54.0,
+        "ratio": 1.18519
+      },
+      "after": {
+        "hangul": 52.0,
+        "latin": 54.0,
+        "ratio": 0.96296
+      }
+    },
+    {
+      "weight": 130,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 68.0,
+        "latin": 58.0,
+        "ratio": 1.17241
+      },
+      "after": {
+        "hangul": 58.0,
+        "latin": 58.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 140,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 72.0,
+        "latin": 64.0,
+        "ratio": 1.125
+      },
+      "after": {
+        "hangul": 62.0,
+        "latin": 64.0,
+        "ratio": 0.96875
+      }
+    },
+    {
+      "weight": 150,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 76.0,
+        "latin": 68.0,
+        "ratio": 1.11765
+      },
+      "after": {
+        "hangul": 66.0,
+        "latin": 68.0,
+        "ratio": 0.97059
+      }
+    },
+    {
+      "weight": 160,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 78.0,
+        "latin": 72.0,
+        "ratio": 1.08333
+      },
+      "after": {
+        "hangul": 70.0,
+        "latin": 72.0,
+        "ratio": 0.97222
+      }
+    },
+    {
+      "weight": 170,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 82.0,
+        "latin": 76.0,
+        "ratio": 1.07895
+      },
+      "after": {
+        "hangul": 76.0,
+        "latin": 76.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 180,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 86.0,
+        "latin": 80.0,
+        "ratio": 1.075
+      },
+      "after": {
+        "hangul": 78.0,
+        "latin": 80.0,
+        "ratio": 0.975
+      }
+    },
+    {
+      "weight": 190,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 90.0,
+        "latin": 84.0,
+        "ratio": 1.07143
+      },
+      "after": {
+        "hangul": 82.0,
+        "latin": 84.0,
+        "ratio": 0.97619
+      }
+    },
+    {
+      "weight": 200,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 92.0,
+        "latin": 88.0,
+        "ratio": 1.04545
+      },
+      "after": {
+        "hangul": 86.0,
+        "latin": 88.0,
+        "ratio": 0.97727
+      }
+    },
+    {
+      "weight": 210,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 96.0,
+        "latin": 92.0,
+        "ratio": 1.04348
+      },
+      "after": {
+        "hangul": 92.0,
+        "latin": 92.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 220,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 100.0,
+        "latin": 96.0,
+        "ratio": 1.04167
+      },
+      "after": {
+        "hangul": 96.0,
+        "latin": 96.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 230,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 104.0,
+        "latin": 100.0,
+        "ratio": 1.04
+      },
+      "after": {
+        "hangul": 100.0,
+        "latin": 100.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 240,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 106.0,
+        "latin": 104.0,
+        "ratio": 1.01923
+      },
+      "after": {
+        "hangul": 104.0,
+        "latin": 104.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 250,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 112.0,
+        "latin": 109.0,
+        "ratio": 1.02752
+      },
+      "after": {
+        "hangul": 110.0,
+        "latin": 109.0,
+        "ratio": 1.00917
+      }
+    },
+    {
+      "weight": 260,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 116.0,
+        "latin": 112.0,
+        "ratio": 1.03571
+      },
+      "after": {
+        "hangul": 112.0,
+        "latin": 112.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 270,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 118.0,
+        "latin": 116.0,
+        "ratio": 1.01724
+      },
+      "after": {
+        "hangul": 116.0,
+        "latin": 116.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 280,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 122.0,
+        "latin": 120.0,
+        "ratio": 1.01667
+      },
+      "after": {
+        "hangul": 120.0,
+        "latin": 120.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 290,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 126.0,
+        "latin": 126.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 124.0,
+        "latin": 126.0,
+        "ratio": 0.98413
+      }
+    },
+    {
+      "weight": 300,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 130.0,
+        "latin": 130.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 130.0,
+        "latin": 130.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 310,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 132.0,
+        "latin": 134.0,
+        "ratio": 0.98507
+      },
+      "after": {
+        "hangul": 134.0,
+        "latin": 134.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 320,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 136.0,
+        "latin": 138.0,
+        "ratio": 0.98551
+      },
+      "after": {
+        "hangul": 138.0,
+        "latin": 138.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 330,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 140.0,
+        "latin": 142.0,
+        "ratio": 0.98592
+      },
+      "after": {
+        "hangul": 140.0,
+        "latin": 142.0,
+        "ratio": 0.98592
+      }
+    },
+    {
+      "weight": 340,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 144.0,
+        "latin": 146.0,
+        "ratio": 0.9863
+      },
+      "after": {
+        "hangul": 146.0,
+        "latin": 146.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 350,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 146.0,
+        "latin": 150.0,
+        "ratio": 0.97333
+      },
+      "after": {
+        "hangul": 150.0,
+        "latin": 150.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 360,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 150.0,
+        "latin": 154.0,
+        "ratio": 0.97403
+      },
+      "after": {
+        "hangul": 154.0,
+        "latin": 154.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 370,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 154.0,
+        "latin": 158.0,
+        "ratio": 0.97468
+      },
+      "after": {
+        "hangul": 158.0,
+        "latin": 158.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 380,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 158.0,
+        "latin": 162.0,
+        "ratio": 0.97531
+      },
+      "after": {
+        "hangul": 164.0,
+        "latin": 162.0,
+        "ratio": 1.01235
+      }
+    },
+    {
+      "weight": 390,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 160.0,
+        "latin": 166.0,
+        "ratio": 0.96386
+      },
+      "after": {
+        "hangul": 168.0,
+        "latin": 166.0,
+        "ratio": 1.01205
+      }
+    },
+    {
+      "weight": 400,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 164.0,
+        "latin": 170.0,
+        "ratio": 0.96471
+      },
+      "after": {
+        "hangul": 172.0,
+        "latin": 170.0,
+        "ratio": 1.01176
+      }
+    },
+    {
+      "weight": 410,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 168.0,
+        "latin": 174.0,
+        "ratio": 0.96552
+      },
+      "after": {
+        "hangul": 174.0,
+        "latin": 174.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 420,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 170.0,
+        "latin": 178.0,
+        "ratio": 0.95506
+      },
+      "after": {
+        "hangul": 178.0,
+        "latin": 178.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 430,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 174.0,
+        "latin": 184.0,
+        "ratio": 0.94565
+      },
+      "after": {
+        "hangul": 182.0,
+        "latin": 184.0,
+        "ratio": 0.98913
+      }
+    },
+    {
+      "weight": 440,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 178.0,
+        "latin": 188.0,
+        "ratio": 0.94681
+      },
+      "after": {
+        "hangul": 184.0,
+        "latin": 188.0,
+        "ratio": 0.97872
+      }
+    },
+    {
+      "weight": 450,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 180.0,
+        "latin": 192.0,
+        "ratio": 0.9375
+      },
+      "after": {
+        "hangul": 188.0,
+        "latin": 192.0,
+        "ratio": 0.97917
+      }
+    },
+    {
+      "weight": 460,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 184.0,
+        "latin": 194.0,
+        "ratio": 0.94845
+      },
+      "after": {
+        "hangul": 192.0,
+        "latin": 194.0,
+        "ratio": 0.98969
+      }
+    },
+    {
+      "weight": 470,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 186.0,
+        "latin": 200.0,
+        "ratio": 0.93
+      },
+      "after": {
+        "hangul": 196.0,
+        "latin": 200.0,
+        "ratio": 0.98
+      }
+    },
+    {
+      "weight": 480,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 188.0,
+        "latin": 204.0,
+        "ratio": 0.92157
+      },
+      "after": {
+        "hangul": 198.0,
+        "latin": 204.0,
+        "ratio": 0.97059
+      }
+    },
+    {
+      "weight": 490,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 192.0,
+        "latin": 208.0,
+        "ratio": 0.92308
+      },
+      "after": {
+        "hangul": 202.0,
+        "latin": 208.0,
+        "ratio": 0.97115
+      }
+    },
+    {
+      "weight": 500,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 196.0,
+        "latin": 212.0,
+        "ratio": 0.92453
+      },
+      "after": {
+        "hangul": 206.0,
+        "latin": 212.0,
+        "ratio": 0.9717
+      }
+    },
+    {
+      "weight": 510,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 198.0,
+        "latin": 216.0,
+        "ratio": 0.91667
+      },
+      "after": {
+        "hangul": 210.0,
+        "latin": 216.0,
+        "ratio": 0.97222
+      }
+    },
+    {
+      "weight": 520,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 202.0,
+        "latin": 220.0,
+        "ratio": 0.91818
+      },
+      "after": {
+        "hangul": 212.0,
+        "latin": 220.0,
+        "ratio": 0.96364
+      }
+    },
+    {
+      "weight": 530,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 206.0,
+        "latin": 224.0,
+        "ratio": 0.91964
+      },
+      "after": {
+        "hangul": 216.0,
+        "latin": 224.0,
+        "ratio": 0.96429
+      }
+    },
+    {
+      "weight": 540,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 208.0,
+        "latin": 228.0,
+        "ratio": 0.91228
+      },
+      "after": {
+        "hangul": 220.0,
+        "latin": 228.0,
+        "ratio": 0.96491
+      }
+    },
+    {
+      "weight": 550,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 212.0,
+        "latin": 232.0,
+        "ratio": 0.91379
+      },
+      "after": {
+        "hangul": 224.0,
+        "latin": 232.0,
+        "ratio": 0.96552
+      }
+    },
+    {
+      "weight": 560,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 216.0,
+        "latin": 236.0,
+        "ratio": 0.91525
+      },
+      "after": {
+        "hangul": 226.0,
+        "latin": 236.0,
+        "ratio": 0.95763
+      }
+    },
+    {
+      "weight": 570,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 218.0,
+        "latin": 240.0,
+        "ratio": 0.90833
+      },
+      "after": {
+        "hangul": 230.0,
+        "latin": 240.0,
+        "ratio": 0.95833
+      }
+    },
+    {
+      "weight": 580,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 222.0,
+        "latin": 244.0,
+        "ratio": 0.90984
+      },
+      "after": {
+        "hangul": 234.0,
+        "latin": 244.0,
+        "ratio": 0.95902
+      }
+    },
+    {
+      "weight": 590,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 226.0,
+        "latin": 250.0,
+        "ratio": 0.904
+      },
+      "after": {
+        "hangul": 238.0,
+        "latin": 250.0,
+        "ratio": 0.952
+      }
+    },
+    {
+      "weight": 600,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 230.0,
+        "latin": 253.0,
+        "ratio": 0.90909
+      },
+      "after": {
+        "hangul": 240.0,
+        "latin": 253.0,
+        "ratio": 0.94862
+      }
+    },
+    {
+      "weight": 610,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 230.0,
+        "latin": 258.0,
+        "ratio": 0.89147
+      },
+      "after": {
+        "hangul": 244.0,
+        "latin": 258.0,
+        "ratio": 0.94574
+      }
+    },
+    {
+      "weight": 620,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 234.0,
+        "latin": 262.0,
+        "ratio": 0.89313
+      },
+      "after": {
+        "hangul": 248.0,
+        "latin": 262.0,
+        "ratio": 0.94656
+      }
+    },
+    {
+      "weight": 630,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 238.0,
+        "latin": 266.0,
+        "ratio": 0.89474
+      },
+      "after": {
+        "hangul": 250.0,
+        "latin": 266.0,
+        "ratio": 0.93985
+      }
+    },
+    {
+      "weight": 640,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 240.0,
+        "latin": 270.0,
+        "ratio": 0.88889
+      },
+      "after": {
+        "hangul": 254.0,
+        "latin": 270.0,
+        "ratio": 0.94074
+      }
+    },
+    {
+      "weight": 650,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 244.0,
+        "latin": 274.0,
+        "ratio": 0.89051
+      },
+      "after": {
+        "hangul": 258.0,
+        "latin": 274.0,
+        "ratio": 0.94161
+      }
+    },
+    {
+      "weight": 660,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 248.0,
+        "latin": 278.0,
+        "ratio": 0.89209
+      },
+      "after": {
+        "hangul": 262.0,
+        "latin": 278.0,
+        "ratio": 0.94245
+      }
+    },
+    {
+      "weight": 670,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 250.0,
+        "latin": 282.0,
+        "ratio": 0.88652
+      },
+      "after": {
+        "hangul": 264.0,
+        "latin": 282.0,
+        "ratio": 0.93617
+      }
+    },
+    {
+      "weight": 680,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 254.0,
+        "latin": 286.0,
+        "ratio": 0.88811
+      },
+      "after": {
+        "hangul": 268.0,
+        "latin": 286.0,
+        "ratio": 0.93706
+      }
+    },
+    {
+      "weight": 690,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 258.0,
+        "latin": 290.0,
+        "ratio": 0.88966
+      },
+      "after": {
+        "hangul": 272.0,
+        "latin": 290.0,
+        "ratio": 0.93793
+      }
+    },
+    {
+      "weight": 700,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 260.0,
+        "latin": 294.0,
+        "ratio": 0.88435
+      },
+      "after": {
+        "hangul": 276.0,
+        "latin": 294.0,
+        "ratio": 0.93878
+      }
+    },
+    {
+      "weight": 710,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 264.0,
+        "latin": 299.0,
+        "ratio": 0.88294
+      },
+      "after": {
+        "hangul": 280.0,
+        "latin": 299.0,
+        "ratio": 0.93645
+      }
+    },
+    {
+      "weight": 720,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 268.0,
+        "latin": 304.0,
+        "ratio": 0.88158
+      },
+      "after": {
+        "hangul": 282.0,
+        "latin": 304.0,
+        "ratio": 0.92763
+      }
+    },
+    {
+      "weight": 730,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 272.0,
+        "latin": 310.0,
+        "ratio": 0.87742
+      },
+      "after": {
+        "hangul": 288.0,
+        "latin": 310.0,
+        "ratio": 0.92903
+      }
+    },
+    {
+      "weight": 740,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 276.0,
+        "latin": 316.0,
+        "ratio": 0.87342
+      },
+      "after": {
+        "hangul": 292.0,
+        "latin": 316.0,
+        "ratio": 0.92405
+      }
+    },
+    {
+      "weight": 750,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 278.0,
+        "latin": 320.0,
+        "ratio": 0.86875
+      },
+      "after": {
+        "hangul": 296.0,
+        "latin": 320.0,
+        "ratio": 0.925
+      }
+    },
+    {
+      "weight": 760,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 284.0,
+        "latin": 326.0,
+        "ratio": 0.87117
+      },
+      "after": {
+        "hangul": 300.0,
+        "latin": 326.0,
+        "ratio": 0.92025
+      }
+    },
+    {
+      "weight": 770,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 288.0,
+        "latin": 330.0,
+        "ratio": 0.87273
+      },
+      "after": {
+        "hangul": 306.0,
+        "latin": 330.0,
+        "ratio": 0.92727
+      }
+    },
+    {
+      "weight": 780,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 292.0,
+        "latin": 336.0,
+        "ratio": 0.86905
+      },
+      "after": {
+        "hangul": 310.0,
+        "latin": 336.0,
+        "ratio": 0.92262
+      }
+    },
+    {
+      "weight": 790,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 296.0,
+        "latin": 340.0,
+        "ratio": 0.87059
+      },
+      "after": {
+        "hangul": 314.0,
+        "latin": 340.0,
+        "ratio": 0.92353
+      }
+    },
+    {
+      "weight": 800,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 300.0,
+        "latin": 346.0,
+        "ratio": 0.86705
+      },
+      "after": {
+        "hangul": 318.0,
+        "latin": 346.0,
+        "ratio": 0.91908
+      }
+    },
+    {
+      "weight": 810,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 302.0,
+        "latin": 350.0,
+        "ratio": 0.86286
+      },
+      "after": {
+        "hangul": 324.0,
+        "latin": 350.0,
+        "ratio": 0.92571
+      }
+    },
+    {
+      "weight": 820,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 308.0,
+        "latin": 356.0,
+        "ratio": 0.86517
+      },
+      "after": {
+        "hangul": 328.0,
+        "latin": 356.0,
+        "ratio": 0.92135
+      }
+    },
+    {
+      "weight": 830,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 312.0,
+        "latin": 362.0,
+        "ratio": 0.86188
+      },
+      "after": {
+        "hangul": 332.0,
+        "latin": 362.0,
+        "ratio": 0.91713
+      }
+    },
+    {
+      "weight": 840,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 316.0,
+        "latin": 368.0,
+        "ratio": 0.8587
+      },
+      "after": {
+        "hangul": 338.0,
+        "latin": 368.0,
+        "ratio": 0.91848
+      }
+    },
+    {
+      "weight": 850,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 320.0,
+        "latin": 374.0,
+        "ratio": 0.85561
+      },
+      "after": {
+        "hangul": 342.0,
+        "latin": 374.0,
+        "ratio": 0.91444
+      }
+    },
+    {
+      "weight": 860,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 326.0,
+        "latin": 378.0,
+        "ratio": 0.86243
+      },
+      "after": {
+        "hangul": 346.0,
+        "latin": 378.0,
+        "ratio": 0.91534
+      }
+    },
+    {
+      "weight": 870,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 330.0,
+        "latin": 384.0,
+        "ratio": 0.85938
+      },
+      "after": {
+        "hangul": 352.0,
+        "latin": 384.0,
+        "ratio": 0.91667
+      }
+    },
+    {
+      "weight": 880,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 334.0,
+        "latin": 390.0,
+        "ratio": 0.85641
+      },
+      "after": {
+        "hangul": 356.0,
+        "latin": 390.0,
+        "ratio": 0.91282
+      }
+    },
+    {
+      "weight": 890,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 338.0,
+        "latin": 396.0,
+        "ratio": 0.85354
+      },
+      "after": {
+        "hangul": 360.0,
+        "latin": 396.0,
+        "ratio": 0.90909
+      }
+    },
+    {
+      "weight": 900,
+      "opsz": 32,
+      "width": 100,
+      "before": {
+        "hangul": 344.0,
+        "latin": 400.0,
+        "ratio": 0.86
+      },
+      "after": {
+        "hangul": 366.0,
+        "latin": 400.0,
+        "ratio": 0.915
+      }
+    },
+    {
+      "weight": 100,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 74.0,
+        "latin": 54.0,
+        "ratio": 1.37037
+      },
+      "after": {
+        "hangul": 62.0,
+        "latin": 54.0,
+        "ratio": 1.14815
+      }
+    },
+    {
+      "weight": 110,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 78.0,
+        "latin": 58.0,
+        "ratio": 1.34483
+      },
+      "after": {
+        "hangul": 66.0,
+        "latin": 58.0,
+        "ratio": 1.13793
+      }
+    },
+    {
+      "weight": 120,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 82.0,
+        "latin": 62.0,
+        "ratio": 1.32258
+      },
+      "after": {
+        "hangul": 72.0,
+        "latin": 62.0,
+        "ratio": 1.16129
+      }
+    },
+    {
+      "weight": 130,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 86.0,
+        "latin": 68.0,
+        "ratio": 1.26471
+      },
+      "after": {
+        "hangul": 76.0,
+        "latin": 68.0,
+        "ratio": 1.11765
+      }
+    },
+    {
+      "weight": 140,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 92.0,
+        "latin": 73.0,
+        "ratio": 1.26027
+      },
+      "after": {
+        "hangul": 82.0,
+        "latin": 73.0,
+        "ratio": 1.12329
+      }
+    },
+    {
+      "weight": 150,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 96.0,
+        "latin": 77.0,
+        "ratio": 1.24675
+      },
+      "after": {
+        "hangul": 86.0,
+        "latin": 77.0,
+        "ratio": 1.11688
+      }
+    },
+    {
+      "weight": 160,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 100.0,
+        "latin": 82.0,
+        "ratio": 1.21951
+      },
+      "after": {
+        "hangul": 92.0,
+        "latin": 82.0,
+        "ratio": 1.12195
+      }
+    },
+    {
+      "weight": 170,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 104.0,
+        "latin": 87.0,
+        "ratio": 1.1954
+      },
+      "after": {
+        "hangul": 96.0,
+        "latin": 87.0,
+        "ratio": 1.10345
+      }
+    },
+    {
+      "weight": 180,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 108.0,
+        "latin": 92.0,
+        "ratio": 1.17391
+      },
+      "after": {
+        "hangul": 102.0,
+        "latin": 92.0,
+        "ratio": 1.1087
+      }
+    },
+    {
+      "weight": 190,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 112.0,
+        "latin": 96.0,
+        "ratio": 1.16667
+      },
+      "after": {
+        "hangul": 106.0,
+        "latin": 96.0,
+        "ratio": 1.10417
+      }
+    },
+    {
+      "weight": 200,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 118.0,
+        "latin": 101.0,
+        "ratio": 1.16832
+      },
+      "after": {
+        "hangul": 112.0,
+        "latin": 101.0,
+        "ratio": 1.10891
+      }
+    },
+    {
+      "weight": 210,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 122.0,
+        "latin": 106.0,
+        "ratio": 1.15094
+      },
+      "after": {
+        "hangul": 116.0,
+        "latin": 106.0,
+        "ratio": 1.09434
+      }
+    },
+    {
+      "weight": 220,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 126.0,
+        "latin": 110.0,
+        "ratio": 1.14545
+      },
+      "after": {
+        "hangul": 122.0,
+        "latin": 110.0,
+        "ratio": 1.10909
+      }
+    },
+    {
+      "weight": 230,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 130.0,
+        "latin": 114.0,
+        "ratio": 1.14035
+      },
+      "after": {
+        "hangul": 126.0,
+        "latin": 114.0,
+        "ratio": 1.10526
+      }
+    },
+    {
+      "weight": 240,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 136.0,
+        "latin": 119.0,
+        "ratio": 1.14286
+      },
+      "after": {
+        "hangul": 132.0,
+        "latin": 119.0,
+        "ratio": 1.10924
+      }
+    },
+    {
+      "weight": 250,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 140.0,
+        "latin": 125.0,
+        "ratio": 1.12
+      },
+      "after": {
+        "hangul": 137.0,
+        "latin": 125.0,
+        "ratio": 1.096
+      }
+    },
+    {
+      "weight": 260,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 144.0,
+        "latin": 128.0,
+        "ratio": 1.125
+      },
+      "after": {
+        "hangul": 142.0,
+        "latin": 128.0,
+        "ratio": 1.10938
+      }
+    },
+    {
+      "weight": 270,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 150.0,
+        "latin": 134.0,
+        "ratio": 1.1194
+      },
+      "after": {
+        "hangul": 147.0,
+        "latin": 134.0,
+        "ratio": 1.09701
+      }
+    },
+    {
+      "weight": 280,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 154.0,
+        "latin": 139.0,
+        "ratio": 1.10791
+      },
+      "after": {
+        "hangul": 152.0,
+        "latin": 139.0,
+        "ratio": 1.09353
+      }
+    },
+    {
+      "weight": 290,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 157.0,
+        "latin": 142.0,
+        "ratio": 1.10563
+      },
+      "after": {
+        "hangul": 157.0,
+        "latin": 142.0,
+        "ratio": 1.10563
+      }
+    },
+    {
+      "weight": 300,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 162.0,
+        "latin": 148.0,
+        "ratio": 1.09459
+      },
+      "after": {
+        "hangul": 164.0,
+        "latin": 148.0,
+        "ratio": 1.10811
+      }
+    },
+    {
+      "weight": 310,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 166.0,
+        "latin": 154.0,
+        "ratio": 1.07792
+      },
+      "after": {
+        "hangul": 168.0,
+        "latin": 154.0,
+        "ratio": 1.09091
+      }
+    },
+    {
+      "weight": 320,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 170.0,
+        "latin": 158.0,
+        "ratio": 1.07595
+      },
+      "after": {
+        "hangul": 174.0,
+        "latin": 158.0,
+        "ratio": 1.10127
+      }
+    },
+    {
+      "weight": 330,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 174.0,
+        "latin": 162.0,
+        "ratio": 1.07407
+      },
+      "after": {
+        "hangul": 178.0,
+        "latin": 162.0,
+        "ratio": 1.09877
+      }
+    },
+    {
+      "weight": 340,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 180.0,
+        "latin": 168.0,
+        "ratio": 1.07143
+      },
+      "after": {
+        "hangul": 184.0,
+        "latin": 168.0,
+        "ratio": 1.09524
+      }
+    },
+    {
+      "weight": 350,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 184.0,
+        "latin": 172.0,
+        "ratio": 1.06977
+      },
+      "after": {
+        "hangul": 188.0,
+        "latin": 172.0,
+        "ratio": 1.09302
+      }
+    },
+    {
+      "weight": 360,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 188.0,
+        "latin": 176.0,
+        "ratio": 1.06818
+      },
+      "after": {
+        "hangul": 194.0,
+        "latin": 176.0,
+        "ratio": 1.10227
+      }
+    },
+    {
+      "weight": 370,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 194.0,
+        "latin": 182.0,
+        "ratio": 1.06593
+      },
+      "after": {
+        "hangul": 198.0,
+        "latin": 182.0,
+        "ratio": 1.08791
+      }
+    },
+    {
+      "weight": 380,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 198.0,
+        "latin": 186.0,
+        "ratio": 1.06452
+      },
+      "after": {
+        "hangul": 204.0,
+        "latin": 186.0,
+        "ratio": 1.09677
+      }
+    },
+    {
+      "weight": 390,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 202.0,
+        "latin": 190.0,
+        "ratio": 1.06316
+      },
+      "after": {
+        "hangul": 208.0,
+        "latin": 190.0,
+        "ratio": 1.09474
+      }
+    },
+    {
+      "weight": 400,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 208.0,
+        "latin": 196.0,
+        "ratio": 1.06122
+      },
+      "after": {
+        "hangul": 214.0,
+        "latin": 196.0,
+        "ratio": 1.09184
+      }
+    },
+    {
+      "weight": 410,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 210.0,
+        "latin": 200.0,
+        "ratio": 1.05
+      },
+      "after": {
+        "hangul": 218.0,
+        "latin": 200.0,
+        "ratio": 1.09
+      }
+    },
+    {
+      "weight": 420,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 214.0,
+        "latin": 204.0,
+        "ratio": 1.04902
+      },
+      "after": {
+        "hangul": 222.0,
+        "latin": 204.0,
+        "ratio": 1.08824
+      }
+    },
+    {
+      "weight": 430,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 218.0,
+        "latin": 208.0,
+        "ratio": 1.04808
+      },
+      "after": {
+        "hangul": 226.0,
+        "latin": 208.0,
+        "ratio": 1.08654
+      }
+    },
+    {
+      "weight": 440,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 222.0,
+        "latin": 214.0,
+        "ratio": 1.03738
+      },
+      "after": {
+        "hangul": 230.0,
+        "latin": 214.0,
+        "ratio": 1.07477
+      }
+    },
+    {
+      "weight": 450,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 226.0,
+        "latin": 218.0,
+        "ratio": 1.0367
+      },
+      "after": {
+        "hangul": 235.0,
+        "latin": 218.0,
+        "ratio": 1.07798
+      }
+    },
+    {
+      "weight": 460,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 230.0,
+        "latin": 224.0,
+        "ratio": 1.02679
+      },
+      "after": {
+        "hangul": 238.0,
+        "latin": 224.0,
+        "ratio": 1.0625
+      }
+    },
+    {
+      "weight": 470,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 234.0,
+        "latin": 228.0,
+        "ratio": 1.02632
+      },
+      "after": {
+        "hangul": 242.0,
+        "latin": 228.0,
+        "ratio": 1.0614
+      }
+    },
+    {
+      "weight": 480,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 238.0,
+        "latin": 232.0,
+        "ratio": 1.02586
+      },
+      "after": {
+        "hangul": 246.0,
+        "latin": 232.0,
+        "ratio": 1.06034
+      }
+    },
+    {
+      "weight": 490,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 242.0,
+        "latin": 238.0,
+        "ratio": 1.01681
+      },
+      "after": {
+        "hangul": 252.0,
+        "latin": 238.0,
+        "ratio": 1.05882
+      }
+    },
+    {
+      "weight": 500,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 246.0,
+        "latin": 242.0,
+        "ratio": 1.01653
+      },
+      "after": {
+        "hangul": 256.0,
+        "latin": 242.0,
+        "ratio": 1.05785
+      }
+    },
+    {
+      "weight": 510,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 250.0,
+        "latin": 246.0,
+        "ratio": 1.01626
+      },
+      "after": {
+        "hangul": 260.0,
+        "latin": 246.0,
+        "ratio": 1.05691
+      }
+    },
+    {
+      "weight": 520,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 254.0,
+        "latin": 252.0,
+        "ratio": 1.00794
+      },
+      "after": {
+        "hangul": 264.0,
+        "latin": 252.0,
+        "ratio": 1.04762
+      }
+    },
+    {
+      "weight": 530,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 258.0,
+        "latin": 256.0,
+        "ratio": 1.00781
+      },
+      "after": {
+        "hangul": 268.0,
+        "latin": 256.0,
+        "ratio": 1.04688
+      }
+    },
+    {
+      "weight": 540,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 262.0,
+        "latin": 260.0,
+        "ratio": 1.00769
+      },
+      "after": {
+        "hangul": 272.0,
+        "latin": 260.0,
+        "ratio": 1.04615
+      }
+    },
+    {
+      "weight": 550,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 266.0,
+        "latin": 264.0,
+        "ratio": 1.00758
+      },
+      "after": {
+        "hangul": 278.0,
+        "latin": 264.0,
+        "ratio": 1.05303
+      }
+    },
+    {
+      "weight": 560,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 270.0,
+        "latin": 268.0,
+        "ratio": 1.00746
+      },
+      "after": {
+        "hangul": 282.0,
+        "latin": 268.0,
+        "ratio": 1.05224
+      }
+    },
+    {
+      "weight": 570,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 274.0,
+        "latin": 274.0,
+        "ratio": 1.0
+      },
+      "after": {
+        "hangul": 285.0,
+        "latin": 274.0,
+        "ratio": 1.04015
+      }
+    },
+    {
+      "weight": 580,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 278.0,
+        "latin": 280.0,
+        "ratio": 0.99286
+      },
+      "after": {
+        "hangul": 290.0,
+        "latin": 280.0,
+        "ratio": 1.03571
+      }
+    },
+    {
+      "weight": 590,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 282.0,
+        "latin": 284.0,
+        "ratio": 0.99296
+      },
+      "after": {
+        "hangul": 294.0,
+        "latin": 284.0,
+        "ratio": 1.03521
+      }
+    },
+    {
+      "weight": 600,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 286.0,
+        "latin": 288.0,
+        "ratio": 0.99306
+      },
+      "after": {
+        "hangul": 298.0,
+        "latin": 288.0,
+        "ratio": 1.03472
+      }
+    },
+    {
+      "weight": 610,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 290.0,
+        "latin": 293.0,
+        "ratio": 0.98976
+      },
+      "after": {
+        "hangul": 302.0,
+        "latin": 293.0,
+        "ratio": 1.03072
+      }
+    },
+    {
+      "weight": 620,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 294.0,
+        "latin": 298.0,
+        "ratio": 0.98658
+      },
+      "after": {
+        "hangul": 306.0,
+        "latin": 298.0,
+        "ratio": 1.02685
+      }
+    },
+    {
+      "weight": 630,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 298.0,
+        "latin": 302.0,
+        "ratio": 0.98675
+      },
+      "after": {
+        "hangul": 312.0,
+        "latin": 302.0,
+        "ratio": 1.03311
+      }
+    },
+    {
+      "weight": 640,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 302.0,
+        "latin": 307.0,
+        "ratio": 0.98371
+      },
+      "after": {
+        "hangul": 316.0,
+        "latin": 307.0,
+        "ratio": 1.02932
+      }
+    },
+    {
+      "weight": 650,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 306.0,
+        "latin": 312.0,
+        "ratio": 0.98077
+      },
+      "after": {
+        "hangul": 320.0,
+        "latin": 312.0,
+        "ratio": 1.02564
+      }
+    },
+    {
+      "weight": 660,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 310.0,
+        "latin": 316.0,
+        "ratio": 0.98101
+      },
+      "after": {
+        "hangul": 324.0,
+        "latin": 316.0,
+        "ratio": 1.02532
+      }
+    },
+    {
+      "weight": 670,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 314.0,
+        "latin": 321.0,
+        "ratio": 0.97819
+      },
+      "after": {
+        "hangul": 330.0,
+        "latin": 321.0,
+        "ratio": 1.02804
+      }
+    },
+    {
+      "weight": 680,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 318.0,
+        "latin": 326.0,
+        "ratio": 0.97546
+      },
+      "after": {
+        "hangul": 332.0,
+        "latin": 326.0,
+        "ratio": 1.0184
+      }
+    },
+    {
+      "weight": 690,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 322.0,
+        "latin": 330.0,
+        "ratio": 0.97576
+      },
+      "after": {
+        "hangul": 336.0,
+        "latin": 330.0,
+        "ratio": 1.01818
+      }
+    },
+    {
+      "weight": 700,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 326.0,
+        "latin": 334.0,
+        "ratio": 0.97605
+      },
+      "after": {
+        "hangul": 340.0,
+        "latin": 334.0,
+        "ratio": 1.01796
+      }
+    },
+    {
+      "weight": 710,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 330.0,
+        "latin": 340.0,
+        "ratio": 0.97059
+      },
+      "after": {
+        "hangul": 346.0,
+        "latin": 340.0,
+        "ratio": 1.01765
+      }
+    },
+    {
+      "weight": 720,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 336.0,
+        "latin": 346.0,
+        "ratio": 0.9711
+      },
+      "after": {
+        "hangul": 352.0,
+        "latin": 346.0,
+        "ratio": 1.01734
+      }
+    },
+    {
+      "weight": 730,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 340.0,
+        "latin": 352.0,
+        "ratio": 0.96591
+      },
+      "after": {
+        "hangul": 358.0,
+        "latin": 352.0,
+        "ratio": 1.01705
+      }
+    },
+    {
+      "weight": 740,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 346.0,
+        "latin": 358.0,
+        "ratio": 0.96648
+      },
+      "after": {
+        "hangul": 362.0,
+        "latin": 358.0,
+        "ratio": 1.01117
+      }
+    },
+    {
+      "weight": 750,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 350.0,
+        "latin": 364.0,
+        "ratio": 0.96154
+      },
+      "after": {
+        "hangul": 368.0,
+        "latin": 364.0,
+        "ratio": 1.01099
+      }
+    },
+    {
+      "weight": 760,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 356.0,
+        "latin": 369.0,
+        "ratio": 0.96477
+      },
+      "after": {
+        "hangul": 372.0,
+        "latin": 369.0,
+        "ratio": 1.00813
+      }
+    },
+    {
+      "weight": 770,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 360.0,
+        "latin": 376.0,
+        "ratio": 0.95745
+      },
+      "after": {
+        "hangul": 378.0,
+        "latin": 376.0,
+        "ratio": 1.00532
+      }
+    },
+    {
+      "weight": 780,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 366.0,
+        "latin": 381.0,
+        "ratio": 0.96063
+      },
+      "after": {
+        "hangul": 382.0,
+        "latin": 381.0,
+        "ratio": 1.00262
+      }
+    },
+    {
+      "weight": 790,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 370.0,
+        "latin": 387.0,
+        "ratio": 0.95607
+      },
+      "after": {
+        "hangul": 388.0,
+        "latin": 387.0,
+        "ratio": 1.00258
+      }
+    },
+    {
+      "weight": 800,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 374.0,
+        "latin": 391.0,
+        "ratio": 0.95652
+      },
+      "after": {
+        "hangul": 393.0,
+        "latin": 391.0,
+        "ratio": 1.00512
+      }
+    },
+    {
+      "weight": 810,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 380.0,
+        "latin": 398.0,
+        "ratio": 0.95477
+      },
+      "after": {
+        "hangul": 400.0,
+        "latin": 398.0,
+        "ratio": 1.00503
+      }
+    },
+    {
+      "weight": 820,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 386.0,
+        "latin": 404.0,
+        "ratio": 0.95545
+      },
+      "after": {
+        "hangul": 404.0,
+        "latin": 404.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 830,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 392.0,
+        "latin": 410.0,
+        "ratio": 0.9561
+      },
+      "after": {
+        "hangul": 410.0,
+        "latin": 410.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 840,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 396.0,
+        "latin": 416.0,
+        "ratio": 0.95192
+      },
+      "after": {
+        "hangul": 416.0,
+        "latin": 416.0,
+        "ratio": 1.0
+      }
+    },
+    {
+      "weight": 850,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 402.0,
+        "latin": 423.0,
+        "ratio": 0.95035
+      },
+      "after": {
+        "hangul": 422.0,
+        "latin": 423.0,
+        "ratio": 0.99764
+      }
+    },
+    {
+      "weight": 860,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 406.0,
+        "latin": 430.0,
+        "ratio": 0.94419
+      },
+      "after": {
+        "hangul": 428.0,
+        "latin": 430.0,
+        "ratio": 0.99535
+      }
+    },
+    {
+      "weight": 870,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 412.0,
+        "latin": 436.0,
+        "ratio": 0.94495
+      },
+      "after": {
+        "hangul": 434.0,
+        "latin": 436.0,
+        "ratio": 0.99541
+      }
+    },
+    {
+      "weight": 880,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 418.0,
+        "latin": 441.0,
+        "ratio": 0.94785
+      },
+      "after": {
+        "hangul": 440.0,
+        "latin": 441.0,
+        "ratio": 0.99773
+      }
+    },
+    {
+      "weight": 890,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 422.0,
+        "latin": 448.0,
+        "ratio": 0.94196
+      },
+      "after": {
+        "hangul": 444.0,
+        "latin": 448.0,
+        "ratio": 0.99107
+      }
+    },
+    {
+      "weight": 900,
+      "opsz": 32,
+      "width": 125,
+      "before": {
+        "hangul": 430.0,
+        "latin": 456.0,
+        "ratio": 0.94298
+      },
+      "after": {
+        "hangul": 452.0,
+        "latin": 456.0,
+        "ratio": 0.99123
+      }
+    }
+  ]
+}

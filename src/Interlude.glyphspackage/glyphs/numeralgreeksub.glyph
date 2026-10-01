@@ -1,0 +1,196 @@
+{
+glyphname = numeralgreeksub;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(433,-66,l),
+(310,-66,l),
+(120,-418,l),
+(310,-418,l)
+);
+}
+);
+width = 551;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(396,-64,l),
+(276,-64,l),
+(88,-416,l),
+(270,-416,l)
+);
+}
+);
+width = 482;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(346,-34,l),
+(302,-34,l),
+(136,-392,l),
+(192,-392,l)
+);
+}
+);
+width = 490;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(536,-114,l),
+(354,-114,l),
+(114,-456,l),
+(466,-456,l)
+);
+}
+);
+width = 642;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(433,-66,l),
+(310,-66,l),
+(120,-418,l),
+(310,-418,l)
+);
+}
+);
+width = 551;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(433,-66,l),
+(310,-66,l),
+(120,-418,l),
+(310,-418,l)
+);
+}
+);
+width = 551;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(282,-34,l),
+(238,-34,l),
+(72,-392,l),
+(128,-392,l)
+);
+}
+);
+width = 362;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(520,-114,l),
+(338,-114,l),
+(98,-456,l),
+(450,-456,l)
+);
+}
+);
+width = 610;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(346,-34,l),
+(302,-34,l),
+(136,-392,l),
+(192,-392,l)
+);
+}
+);
+width = 490;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(536,-114,l),
+(354,-114,l),
+(114,-456,l),
+(466,-456,l)
+);
+}
+);
+width = 642;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(346,-34,l),
+(302,-34,l),
+(136,-392,l),
+(192,-392,l)
+);
+}
+);
+width = 490;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(536,-114,l),
+(354,-114,l),
+(114,-456,l),
+(466,-456,l)
+);
+}
+);
+width = 642;
+}
+);
+production = numeralgreeksub;
+unicode = 885;
+userData = {
+com.interlude.reference = {
+file = numeralgreeksub.glyph;
+glyphName = numeralgreeksub;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 2598;
+};
+}

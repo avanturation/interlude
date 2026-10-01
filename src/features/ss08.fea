@@ -1,9 +1,0 @@
-# ss08: Straight three
-# Matches Pretendard ss08
-
-feature ss08 {
-  lookup LOOKUP_SS08 {
-    sub three by three.1;
-    sub three.tf by three.1.tf;
-  } LOOKUP_SS08;
-} ss08;

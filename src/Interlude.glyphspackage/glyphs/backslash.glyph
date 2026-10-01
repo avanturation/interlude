@@ -1,0 +1,196 @@
+{
+glyphname = backslash;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(526,-224,l),
+(692,-224,l),
+(212,1560,l),
+(46,1560,l)
+);
+}
+);
+width = 738;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(494,-224,l),
+(652,-224,l),
+(172,1560,l),
+(14,1560,l)
+);
+}
+);
+width = 666;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(546,-224,l),
+(594,-224,l),
+(114,1560,l),
+(66,1560,l)
+);
+}
+);
+width = 660;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(492,-224,l),
+(832,-224,l),
+(352,1560,l),
+(12,1560,l)
+);
+}
+);
+width = 844;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(403,-224,l),
+(528,-224,l),
+(168,1560,l),
+(43,1560,l)
+);
+}
+);
+width = 570;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(649,-224,l),
+(856,-224,l),
+(256,1560,l),
+(49,1560,l)
+);
+}
+);
+width = 906;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(482,-224,l),
+(530,-224,l),
+(50,1560,l),
+(2,1560,l)
+);
+}
+);
+width = 532;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(476,-224,l),
+(816,-224,l),
+(336,1560,l),
+(-4,1560,l)
+);
+}
+);
+width = 812;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(421,-224,l),
+(457,-224,l),
+(97,1560,l),
+(61,1560,l)
+);
+}
+);
+width = 518;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(371,-224,l),
+(626,-224,l),
+(266,1560,l),
+(11,1560,l)
+);
+}
+);
+width = 637;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(671,-224,l),
+(731,-224,l),
+(131,1560,l),
+(71,1560,l)
+);
+}
+);
+width = 802;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(604,-224,l),
+(1038,-224,l),
+(460,1560,l),
+(13,1560,l)
+);
+}
+);
+width = 1051;
+}
+);
+production = backslash;
+unicode = 92;
+userData = {
+com.interlude.reference = {
+file = backslash.glyph;
+glyphName = backslash;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1458;
+};
+}

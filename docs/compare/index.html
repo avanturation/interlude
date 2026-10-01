@@ -2,9 +2,9 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>Inter CJK — Font Comparison</title>
+<title>Interlude — Font Comparison</title>
 <style>
-@font-face{font-family:'Inter CJK';src:url('../../fonts/InterCJKVariable.ttf');font-weight:100 900}
+@font-face{font-family:'Interlude';src:url('../../fonts/InterludeVariable.ttf');font-weight:100 900}
 @font-face{font-family:'Inter';src:url('../../build/inter-variable.ttf');font-weight:100 900}
 @font-face{font-family:'Pretendard JP';src:url('../../build/pretendard-variable.ttf');font-weight:100 900}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,7 +17,7 @@ h2{font-size:11px;font-weight:600;color:#999;margin:28px 0 10px;text-transform:u
 .g3>div{background:#fff;padding:14px}
 .lbl{font-size:10px;color:#aaa;margin-bottom:4px;font-family:system-ui}
 .s{font-size:var(--sz,20px);font-weight:var(--wt,400);line-height:1.5}
-.f1 .s{font-family:'Inter CJK',sans-serif}
+.f1 .s{font-family:'Interlude',sans-serif}
 .f2 .s{font-family:'Inter',sans-serif}
 .f3 .s{font-family:'Pretendard JP',sans-serif}
 .feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;margin-bottom:20px}
@@ -33,15 +33,15 @@ th{background:#f9f9f9;font-weight:600}
 </style>
 </head>
 <body>
-<h1 style="font-size:22px;margin-bottom:6px">Inter CJK — Font Comparison</h1>
-<p style="color:#666;margin-bottom:20px;font-size:13px">Inter CJK vs Inter vs Pretendard JP</p>
+<h1 style="font-size:22px;margin-bottom:6px">Interlude — Font Comparison</h1>
+<p style="color:#666;margin-bottom:20px;font-size:13px">Interlude vs Inter vs Pretendard JP</p>
 <div class="ctrl">
 <label>Size:<input type=range id=sz min=12 max=48 value=20><span id=sv>20</span>px</label>
 <label>Weight:<input type=range id=wt min=100 max=900 step=100 value=400><span id=wv>400</span></label>
 </div>
 <div id=content></div>
 <script>
-const F=[['Inter CJK','f1'],['Inter','f2'],['Pretendard JP','f3']];
+const F=[['Interlude','f1'],['Inter','f2'],['Pretendard JP','f3']];
 const $=document.getElementById('content');
 function sec(title,samples){
 let h='<h2>'+title+'</h2><div class="g3">';
@@ -92,7 +92,7 @@ html+='</div>';
 html+='</div>';
 html+=sec('Japanese',[['東京タワー Tokyo Tower こんにちは']]);
 html+=`<h2>fontbakery 비교</h2><table>
-<tr><th>Check</th><th>Inter</th><th>Pretendard</th><th>SUIT</th><th>Inter CJK</th></tr>
+<tr><th>Check</th><th>Inter</th><th>Pretendard</th><th>SUIT</th><th>Interlude</th></tr>
 <tr><td>FAIL 수</td><td class=no>8</td><td class=no>7</td><td>2</td><td class=ok>5</td></tr>
 <tr><td>smart_dropout</td><td class=no>FAIL</td><td class=no>FAIL</td><td class=no>FAIL</td><td class=ok>PASS ✓</td></tr>
 <tr><td>no_mac_entries</td><td>PASS</td><td class=no>FAIL</td><td>PASS</td><td class=ok>PASS ✓</td></tr>

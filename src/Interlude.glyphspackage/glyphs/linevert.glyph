@@ -1,0 +1,196 @@
+{
+glyphname = linevert;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(259,1561,l),
+(104,1561,l),
+(104,1151,l),
+(259,1151,l)
+);
+}
+);
+width = 363;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(224,1560,l),
+(72,1560,l),
+(72,1152,l),
+(224,1152,l)
+);
+}
+);
+width = 296;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(146,1542,l),
+(98,1542,l),
+(98,1164,l),
+(146,1164,l)
+);
+}
+);
+width = 244;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(334,1592,l),
+(114,1592,l),
+(114,1132,l),
+(334,1132,l)
+);
+}
+);
+width = 448;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(212,1561,l),
+(96,1561,l),
+(96,1151,l),
+(212,1151,l)
+);
+}
+);
+width = 308;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(306,1561,l),
+(112,1561,l),
+(112,1151,l),
+(306,1151,l)
+);
+}
+);
+width = 418;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(82,1542,l),
+(34,1542,l),
+(34,1164,l),
+(82,1164,l)
+);
+}
+);
+width = 116;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(318,1592,l),
+(98,1592,l),
+(98,1132,l),
+(318,1132,l)
+);
+}
+);
+width = 416;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(127,1542,l),
+(91,1542,l),
+(91,1164,l),
+(127,1164,l)
+);
+}
+);
+width = 218;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(270,1592,l),
+(105,1592,l),
+(105,1132,l),
+(270,1132,l)
+);
+}
+);
+width = 375;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(165,1542,l),
+(105,1542,l),
+(105,1164,l),
+(165,1164,l)
+);
+}
+);
+width = 270;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(398,1592,l),
+(123,1592,l),
+(123,1132,l),
+(398,1132,l)
+);
+}
+);
+width = 521;
+}
+);
+production = linevert;
+unicode = 712;
+userData = {
+com.interlude.reference = {
+file = linevert.glyph;
+glyphName = linevert;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 2874;
+};
+}

@@ -1,0 +1,196 @@
+{
+glyphname = primerev;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(356,951,l),
+(302,1490,l),
+(102,1490,l),
+(224,951,l)
+);
+}
+);
+width = 456;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(318,954,l),
+(264,1490,l),
+(70,1490,l),
+(192,954,l)
+);
+}
+);
+width = 386;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(218,998,l),
+(166,1490,l),
+(114,1490,l),
+(186,998,l)
+);
+}
+);
+width = 332;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(520,884,l),
+(468,1490,l),
+(130,1490,l),
+(254,884,l)
+);
+}
+);
+width = 652;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(356,951,l),
+(302,1490,l),
+(102,1490,l),
+(224,951,l)
+);
+}
+);
+width = 456;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(356,951,l),
+(302,1490,l),
+(102,1490,l),
+(224,951,l)
+);
+}
+);
+width = 456;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(154,998,l),
+(102,1490,l),
+(50,1490,l),
+(122,998,l)
+);
+}
+);
+width = 204;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(504,884,l),
+(452,1490,l),
+(114,1490,l),
+(238,884,l)
+);
+}
+);
+width = 620;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(218,998,l),
+(166,1490,l),
+(114,1490,l),
+(186,998,l)
+);
+}
+);
+width = 332;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(520,884,l),
+(468,1490,l),
+(130,1490,l),
+(254,884,l)
+);
+}
+);
+width = 652;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(218,998,l),
+(166,1490,l),
+(114,1490,l),
+(186,998,l)
+);
+}
+);
+width = 332;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(520,884,l),
+(468,1490,l),
+(130,1490,l),
+(254,884,l)
+);
+}
+);
+width = 652;
+}
+);
+production = primerev;
+unicode = 8245;
+userData = {
+com.interlude.reference = {
+file = primerev.glyph;
+glyphName = primerev;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1496;
+};
+}

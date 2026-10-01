@@ -1,0 +1,6 @@
+*.glyph text eol=lf
+*.plist text eol=lf
+*.ttf binary
+*.woff2 binary
+# Preserve upstream license text verbatim, including its whitespace.
+docs/licenses/*.txt -whitespace

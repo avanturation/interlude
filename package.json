@@ -1,7 +1,7 @@
 {
   "name": "interlude-ui",
-  "version": "1.2.4",
-  "description": "Interface typeface balancing Latin–CJK harmony with screen density",
+  "version": "1.3.0",
+  "description": "Interface typeface balancing Latin\u2013CJK harmony with screen density",
   "license": "OFL-1.1",
   "author": "avanturation",
   "repository": {
@@ -29,7 +29,8 @@
     "packages/next/dist/",
     "packages/next/font.d.ts",
     "packages/next/sans.d.ts",
-    "packages/next/display.d.ts"
+    "packages/next/display.d.ts",
+    "dist/licenses/"
   ],
   "exports": {
     ".": "./dist/css/interlude.css",
@@ -52,6 +53,16 @@
   },
   "scripts": {
     "build": "make all",
-    "dist": "make dist"
+    "dist": "make dist",
+    "test": "make test",
+    "prepack": "make dist"
+  },
+  "peerDependencies": {
+    "next": ">=13.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
   }
 }

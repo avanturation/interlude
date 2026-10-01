@@ -1,0 +1,9 @@
+{
+  "release": "1.3",
+  "staticFonts": 54,
+  "staticShapingComparisons": 162,
+  "maxStaticPositionRounding": 1,
+  "unicodeSubsetCoverage": 22241,
+  "canonicalWOFF2CopiedUnchanged": true,
+  "cssURLsExist": true
+}

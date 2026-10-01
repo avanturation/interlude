@@ -1,0 +1,195 @@
+{
+glyphname = comma.numr;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,395,l),
+(213,395,l),
+(338,848,l),
+(173,848,l)
+);
+}
+);
+width = 472;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(20,432,l),
+(132,432,l),
+(263,823,l),
+(100,823,l)
+);
+}
+);
+width = 345;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(128,403,l),
+(169,403,l),
+(278,853,l),
+(228,853,l)
+);
+}
+);
+width = 474;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,323,l),
+(298,323,l),
+(464,856,l),
+(160,856,l)
+);
+}
+);
+width = 611;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,395,l),
+(213,395,l),
+(338,848,l),
+(173,848,l)
+);
+}
+);
+width = 472;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,395,l),
+(213,395,l),
+(338,848,l),
+(173,848,l)
+);
+}
+);
+width = 472;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(52,429,l),
+(92,429,l),
+(188,863,l),
+(138,863,l)
+);
+}
+);
+width = 290;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(18,421,l),
+(211,421,l),
+(320,848,l),
+(61,848,l)
+);
+}
+);
+width = 371;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(128,403,l),
+(169,403,l),
+(278,853,l),
+(228,853,l)
+);
+}
+);
+width = 474;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,323,l),
+(298,323,l),
+(464,856,l),
+(160,856,l)
+);
+}
+);
+width = 611;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(128,403,l),
+(169,403,l),
+(278,853,l),
+(228,853,l)
+);
+}
+);
+width = 474;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,323,l),
+(298,323,l),
+(464,856,l),
+(160,856,l)
+);
+}
+);
+width = 611;
+}
+);
+production = comma.numr;
+userData = {
+com.interlude.reference = {
+file = comma.numr.glyph;
+glyphName = comma.numr;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1721;
+};
+}

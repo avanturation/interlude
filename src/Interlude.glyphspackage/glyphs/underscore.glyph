@@ -1,0 +1,196 @@
+{
+glyphname = underscore;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(934,0,l),
+(0,0,l),
+(0,-166,l),
+(934,-166,l)
+);
+}
+);
+width = 934;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(930,0,l),
+(0,0,l),
+(0,-160,l),
+(930,-160,l)
+);
+}
+);
+width = 930;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(884,0,l),
+(0,0,l),
+(0,-46,l),
+(884,-46,l)
+);
+}
+);
+width = 884;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1010,0,l),
+(0,0,l),
+(0,-286,l),
+(1010,-286,l)
+);
+}
+);
+width = 1010;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(700,0,l),
+(0,0,l),
+(0,-166,l),
+(700,-166,l)
+);
+}
+);
+width = 700;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1168,0,l),
+(0,0,l),
+(0,-166,l),
+(1168,-166,l)
+);
+}
+);
+width = 1168;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(884,0,l),
+(0,0,l),
+(0,-46,l),
+(884,-46,l)
+);
+}
+);
+width = 884;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1010,0,l),
+(0,0,l),
+(0,-286,l),
+(1010,-286,l)
+);
+}
+);
+width = 1010;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(663,0,l),
+(0,0,l),
+(0,-46,l),
+(663,-46,l)
+);
+}
+);
+width = 663;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(758,0,l),
+(0,0,l),
+(0,-286,l),
+(758,-286,l)
+);
+}
+);
+width = 758;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1105,0,l),
+(0,0,l),
+(0,-46,l),
+(1105,-46,l)
+);
+}
+);
+width = 1105;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1262,0,l),
+(0,0,l),
+(0,-286,l),
+(1262,-286,l)
+);
+}
+);
+width = 1262;
+}
+);
+production = underscore;
+unicode = 95;
+userData = {
+com.interlude.reference = {
+file = underscore.glyph;
+glyphName = underscore;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1543;
+};
+}

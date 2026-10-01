@@ -1,0 +1,196 @@
+{
+glyphname = pipe;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(354,1488,l),
+(192,1488,l),
+(192,0,l),
+(354,0,l)
+);
+}
+);
+width = 546;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(320,1490,l),
+(160,1490,l),
+(160,0,l),
+(320,0,l)
+);
+}
+);
+width = 480;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(216,1516,l),
+(168,1516,l),
+(168,0,l),
+(216,0,l)
+);
+}
+);
+width = 382;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(428,1446,l),
+(232,1446,l),
+(232,0,l),
+(428,0,l)
+);
+}
+);
+width = 660;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(300,1488,l),
+(178,1488,l),
+(178,0,l),
+(300,0,l)
+);
+}
+);
+width = 478;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(408,1488,l),
+(206,1488,l),
+(206,0,l),
+(408,0,l)
+);
+}
+);
+width = 614;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(152,1516,l),
+(104,1516,l),
+(104,0,l),
+(152,0,l)
+);
+}
+);
+width = 254;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(412,1446,l),
+(216,1446,l),
+(216,0,l),
+(412,0,l)
+);
+}
+);
+width = 628;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(191,1516,l),
+(155,1516,l),
+(155,0,l),
+(191,0,l)
+);
+}
+);
+width = 345;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(362,1446,l),
+(215,1446,l),
+(215,0,l),
+(362,0,l)
+);
+}
+);
+width = 577;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(241,1516,l),
+(181,1516,l),
+(181,0,l),
+(241,0,l)
+);
+}
+);
+width = 419;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(494,1446,l),
+(249,1446,l),
+(249,0,l),
+(494,0,l)
+);
+}
+);
+width = 743;
+}
+);
+production = pipe;
+unicode = 448;
+userData = {
+com.interlude.reference = {
+file = pipe.glyph;
+glyphName = pipe;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 2421;
+};
+}

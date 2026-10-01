@@ -1,0 +1,196 @@
+{
+glyphname = uniFF0D;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1610,659,l),
+(1610,831,l),
+(326,831,l),
+(326,659,l)
+);
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1597,659,l),
+(1597,831,l),
+(339,831,l),
+(339,659,l)
+);
+}
+);
+width = 1862;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1513,717,l),
+(1513,773,l),
+(421,773,l),
+(421,717,l)
+);
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1654,593,l),
+(1654,899,l),
+(282,899,l),
+(282,593,l)
+);
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1214,659,l),
+(1214,831,l),
+(251,831,l),
+(251,659,l)
+);
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2020,659,l),
+(2020,831,l),
+(415,831,l),
+(415,659,l)
+);
+}
+);
+width = 2400;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1500,717,l),
+(1500,773,l),
+(434,773,l),
+(434,717,l)
+);
+}
+);
+width = 1862;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1641,593,l),
+(1641,899,l),
+(295,899,l),
+(295,593,l)
+);
+}
+);
+width = 1862;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1142,717,l),
+(1142,773,l),
+(323,773,l),
+(323,717,l)
+);
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1248,593,l),
+(1248,899,l),
+(219,899,l),
+(219,593,l)
+);
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1898,717,l),
+(1898,773,l),
+(533,773,l),
+(533,717,l)
+);
+}
+);
+width = 2400;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(2074,593,l),
+(2074,899,l),
+(359,899,l),
+(359,593,l)
+);
+}
+);
+width = 2400;
+}
+);
+production = uniFF0D;
+unicode = 65293;
+userData = {
+com.interlude.reference = {
+file = hyphen.full.glyph;
+glyphName = hyphen.full;
+kind = "pretendard-jp";
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 21648;
+};
+}

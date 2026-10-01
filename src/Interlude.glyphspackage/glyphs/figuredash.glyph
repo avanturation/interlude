@@ -1,0 +1,196 @@
+{
+glyphname = figuredash;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1228,748,l),
+(96,748,l),
+(96,582,l),
+(1228,582,l)
+);
+}
+);
+width = 1328;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1224,745,l),
+(96,745,l),
+(96,585,l),
+(1224,585,l)
+);
+}
+);
+width = 1320;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1208,686,l),
+(112,686,l),
+(112,640,l),
+(1208,640,l)
+);
+}
+);
+width = 1320;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1272,815,l),
+(48,815,l),
+(48,513,l),
+(1272,513,l)
+);
+}
+);
+width = 1320;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(938,748,l),
+(89,748,l),
+(89,582,l),
+(938,582,l)
+);
+}
+);
+width = 1030;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1518,748,l),
+(103,748,l),
+(103,582,l),
+(1518,582,l)
+);
+}
+);
+width = 1626;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1208,686,l),
+(112,686,l),
+(112,640,l),
+(1208,640,l)
+);
+}
+);
+width = 1320;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1288,816,l),
+(32,816,l),
+(32,514,l),
+(1288,514,l)
+);
+}
+);
+width = 1320;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(926,686,l),
+(104,686,l),
+(104,640,l),
+(926,640,l)
+);
+}
+);
+width = 1030;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(962,815,l),
+(44,815,l),
+(44,513,l),
+(962,513,l)
+);
+}
+);
+width = 1006;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1490,686,l),
+(120,686,l),
+(120,640,l),
+(1490,640,l)
+);
+}
+);
+width = 1610;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1582,815,l),
+(52,815,l),
+(52,513,l),
+(1582,513,l)
+);
+}
+);
+width = 1634;
+}
+);
+production = figuredash;
+unicode = 8210;
+userData = {
+com.interlude.reference = {
+file = figuredash.glyph;
+glyphName = figuredash;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1461;
+};
+}

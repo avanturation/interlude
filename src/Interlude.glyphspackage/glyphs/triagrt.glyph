@@ -1,0 +1,184 @@
+{
+glyphname = triagrt;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(192,-186,l),
+(1777,744,l),
+(192,1676,l)
+);
+}
+);
+width = 1877;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(160,-186,l),
+(1742,744,l),
+(160,1676,l)
+);
+}
+);
+width = 1810;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(168,-186,l),
+(1704,744,l),
+(168,1676,l)
+);
+}
+);
+width = 1790;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(230,-186,l),
+(1890,744,l),
+(230,1676,l)
+);
+}
+);
+width = 2014;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(192,-186,l),
+(1777,744,l),
+(192,1676,l)
+);
+}
+);
+width = 1877;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(192,-186,l),
+(1777,744,l),
+(192,1676,l)
+);
+}
+);
+width = 1877;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(104,-186,l),
+(1640,744,l),
+(104,1676,l)
+);
+}
+);
+width = 1662;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(214,-186,l),
+(1874,744,l),
+(214,1676,l)
+);
+}
+);
+width = 1982;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(168,-186,l),
+(1704,744,l),
+(168,1676,l)
+);
+}
+);
+width = 1790;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(230,-186,l),
+(1890,744,l),
+(230,1676,l)
+);
+}
+);
+width = 2014;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(168,-186,l),
+(1704,744,l),
+(168,1676,l)
+);
+}
+);
+width = 1790;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(230,-186,l),
+(1890,744,l),
+(230,1676,l)
+);
+}
+);
+width = 2014;
+}
+);
+production = triagrt;
+unicode = (9654,9658);
+userData = {
+com.interlude.reference = {
+file = triagrt.glyph;
+glyphName = triagrt;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1847;
+};
+}

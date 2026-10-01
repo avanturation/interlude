@@ -1,0 +1,64 @@
+{
+glyphname = uni2008;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+width = 590;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+width = 450;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+width = 554;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+width = 764;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+width = 590;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+width = 590;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+width = 400;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+width = 544;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+width = 554;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+width = 764;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+width = 554;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+width = 764;
+}
+);
+production = uni2008;
+unicode = 8200;
+userData = {
+com.interlude.reference = {
+file = punctuationspace.glyph;
+glyphName = punctuationspace;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1789;
+};
+}

@@ -1,0 +1,193 @@
+{
+glyphname = uniE103;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,770,l),
+(120,638,l),
+(746,638,l),
+(746,770,l)
+);
+}
+);
+width = 866;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,770,l),
+(120,638,l),
+(746,638,l),
+(746,770,l)
+);
+}
+);
+width = 866;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(122,724,l),
+(122,678,l),
+(660,678,l),
+(660,724,l)
+);
+}
+);
+width = 780;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,896,l),
+(124,688,l),
+(886,688,l),
+(886,896,l)
+);
+}
+);
+width = 1010;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,770,l),
+(120,638,l),
+(746,638,l),
+(746,770,l)
+);
+}
+);
+width = 866;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,770,l),
+(120,638,l),
+(746,638,l),
+(746,770,l)
+);
+}
+);
+width = 866;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(122,724,l),
+(122,678,l),
+(660,678,l),
+(660,724,l)
+);
+}
+);
+width = 780;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,896,l),
+(124,688,l),
+(886,688,l),
+(886,896,l)
+);
+}
+);
+width = 1010;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(122,724,l),
+(122,678,l),
+(660,678,l),
+(660,724,l)
+);
+}
+);
+width = 780;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,896,l),
+(124,688,l),
+(886,688,l),
+(886,896,l)
+);
+}
+);
+width = 1010;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(122,724,l),
+(122,678,l),
+(660,678,l),
+(660,724,l)
+);
+}
+);
+width = 780;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,896,l),
+(124,688,l),
+(886,688,l),
+(886,896,l)
+);
+}
+);
+width = 1010;
+}
+);
+production = uniE103;
+userData = {
+com.interlude.reference = {
+kind = "interlude-derived";
+note = "No direct upstream reference matched.";
+};
+com.interlude.referenceGID = 22823;
+};
+}

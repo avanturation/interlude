@@ -76,11 +76,11 @@ export default function RootLayout({ children }) {
 ```css
 /* globals.css */
 body {
-  font-family: var(--font-interlude-ui), sans-serif;
+  font-family: var(--font-interlude), sans-serif;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-interlude-ui-display), sans-serif;
+  font-family: var(--font-interlude-display), sans-serif;
 }
 ```
 
@@ -166,16 +166,24 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 - 7,138자 CJK 통합 한자 (Pretendard 기반)
 - CJK 기호·호환·반각/전각 문자 (Inter & Pretendard 혼합)
 
-## Build
+## 소스와 빌드
 
-Inter와 Pretendard의 릴리즈 바이너리를 다운로드한 후, Interlude 설계 원칙에 맞는 패치를 진행해 빌드합니다.
+**Interlude 1.3부터 `src/Interlude.glyphspackage`가 기준 소스입니다.** Inter·Pretendard를 다시 다운로드해 합치는 빌드는 제거했습니다.
 
-```bash
-git clone https://github.com/avanturation/interlude.git
+Glyphs 4에서 소스를 열고 **File → Export → Variable → TrueType → TTF + WOFF2**로 `fonts/`에 내보냅니다. 플러그인이나 후처리는 필요하지 않습니다. Makefile은 검증·정적 인스턴스·웹 서브셋·패키징을 담당합니다.
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
 python3 -m pip install -r requirements.txt
-make clean
-make all
+make check          # 커밋된 네이티브 폰트 검증
+make dist           # 웹·npm 배포 파일
+make package        # 정적 TTF 54개·TTC·릴리스 ZIP까지 생성
 ```
+
+소스 수정 후 Glyphs에서 Export했다면 `make record-export`로 대응 관계를 기록합니다. 자세한 작업 순서, upstream 비교, 제거한 코드와 알려진 차이는 [빌드 문서](docs/BUILD.md)를 참고하세요.
+
+릴리스 이름은 **1.3**입니다. npm은 `1.3.0`, OpenType/Glyphs는 `1.300`으로 같은 릴리스를 표기합니다.
 
 ## Credits
 
@@ -184,7 +192,7 @@ make all
 
 ### Contribute
 
-Interlude는 UI 디자이너로서 평소 가지고 있던 생각들을 조합해 서체 전용 툴 없이 OpenCode 만으로 제작되었습니다. 폰트에 대한 지식이 부족한 만큼, 오픈소스 커뮤니티의 많은 피드백과 기여가 필요합니다. Issues와 Pull Request를 통해 기여해주시면 감사하겠습니다.
+1.3부터 Glyphs 소스에서 직접 윤곽·마스터·앵커·기능을 편집합니다. 글리프를 수정할 때는 12개 마스터의 호환성을 유지하고, 소스와 네이티브 Export 파일을 함께 검증해주세요. Issues와 Pull Request를 환영합니다.
 
 ### License
 

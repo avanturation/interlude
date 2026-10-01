@@ -1,0 +1,196 @@
+{
+glyphname = uni2071.ccmp;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(277,1363,l),
+(90,1363,l),
+(90,562,l),
+(277,562,l)
+);
+}
+);
+width = 363;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(242,1362,l),
+(58,1362,l),
+(58,562,l),
+(242,562,l)
+);
+}
+);
+width = 296;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,1356,l),
+(72,1356,l),
+(72,562,l),
+(120,562,l)
+);
+}
+);
+width = 192;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(488,1374,l),
+(242,1374,l),
+(242,562,l),
+(488,562,l)
+);
+}
+);
+width = 724;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(277,1363,l),
+(90,1363,l),
+(90,562,l),
+(277,562,l)
+);
+}
+);
+width = 363;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(277,1363,l),
+(90,1363,l),
+(90,562,l),
+(277,562,l)
+);
+}
+);
+width = 363;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(56,1356,l),
+(8,1356,l),
+(8,562,l),
+(56,562,l)
+);
+}
+);
+width = 64;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(472,1374,l),
+(226,1374,l),
+(226,562,l),
+(472,562,l)
+);
+}
+);
+width = 692;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,1356,l),
+(72,1356,l),
+(72,562,l),
+(120,562,l)
+);
+}
+);
+width = 192;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(488,1374,l),
+(242,1374,l),
+(242,562,l),
+(488,562,l)
+);
+}
+);
+width = 724;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,1356,l),
+(72,1356,l),
+(72,562,l),
+(120,562,l)
+);
+}
+);
+width = 192;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(488,1374,l),
+(242,1374,l),
+(242,562,l),
+(488,562,l)
+);
+}
+);
+width = 724;
+}
+);
+production = uni2071.ccmp;
+unicode = 57588;
+userData = {
+com.interlude.reference = {
+file = uni2071.ccmp.glyph;
+glyphName = uni2071.ccmp;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 2894;
+};
+}

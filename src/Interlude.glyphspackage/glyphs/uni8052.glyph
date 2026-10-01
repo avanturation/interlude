@@ -1,0 +1,232 @@
+{
+glyphname = uni8052;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+738,
+1056
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+743,
+1056
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1862;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+746,
+1104
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+724,
+984
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1920;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+561,
+1056
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+931,
+1056
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 2400;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+751,
+1104
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1862;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+729,
+984
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1862;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+568,
+1104
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+551,
+984
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 1440;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+940,
+1104
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 2400;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+ref = _part.hani.0217;
+pos = (
+913,
+984
+);
+alignment = -1;
+},
+{
+ref = _part.hanrest.uni8052;
+alignment = -1;
+}
+);
+width = 2400;
+}
+);
+production = uni8052;
+unicode = 32850;
+userData = {
+com.interlude.reference = {
+file = uni8052.glyph;
+glyphName = uni8052;
+kind = "pretendard-jp";
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 8156;
+};
+}

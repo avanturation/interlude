@@ -1,0 +1,196 @@
+{
+glyphname = minus.dnom;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(665,468,l),
+(116,468,l),
+(116,336,l),
+(665,336,l)
+);
+}
+);
+width = 781;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(670,462,l),
+(123,462,l),
+(123,333,l),
+(670,333,l)
+);
+}
+);
+width = 793;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(613,406,l),
+(133,406,l),
+(133,360,l),
+(613,360,l)
+);
+}
+);
+width = 746;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(704,508,l),
+(102,508,l),
+(102,318,l),
+(704,318,l)
+);
+}
+);
+width = 806;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(665,468,l),
+(116,468,l),
+(116,336,l),
+(665,336,l)
+);
+}
+);
+width = 781;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(665,468,l),
+(116,468,l),
+(116,336,l),
+(665,336,l)
+);
+}
+);
+width = 781;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(612,416,l),
+(133,416,l),
+(133,370,l),
+(612,370,l)
+);
+}
+);
+width = 745;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(707,503,l),
+(105,503,l),
+(105,312,l),
+(707,312,l)
+);
+}
+);
+width = 812;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(613,406,l),
+(133,406,l),
+(133,360,l),
+(613,360,l)
+);
+}
+);
+width = 746;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(704,508,l),
+(102,508,l),
+(102,318,l),
+(704,318,l)
+);
+}
+);
+width = 806;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(613,406,l),
+(133,406,l),
+(133,360,l),
+(613,360,l)
+);
+}
+);
+width = 746;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(704,508,l),
+(102,508,l),
+(102,318,l),
+(704,318,l)
+);
+}
+);
+width = 806;
+}
+);
+production = minus.dnom;
+unicode = 57545;
+userData = {
+com.interlude.reference = {
+file = minus.dnom.glyph;
+glyphName = minus.dnom;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1691;
+};
+}

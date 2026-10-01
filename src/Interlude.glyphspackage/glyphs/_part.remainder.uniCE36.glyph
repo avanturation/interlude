@@ -1,0 +1,380 @@
+{
+glyphname = _part.remainder.uniCE36;
+category = Letter;
+script = hangul;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1709,
+612,
+l
+),
+(
+1709,
+761,
+l
+),
+(
+70,
+761,
+l
+),
+(
+70,
+612,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1692,
+614,
+l
+),
+(
+1692,
+760,
+l
+),
+(
+87,
+760,
+l
+),
+(
+87,
+614,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1681,
+684,
+l
+),
+(
+1681,
+735,
+l
+),
+(
+94,
+735,
+l
+),
+(
+94,
+684,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1753,
+513,
+l
+),
+(
+1753,
+798,
+l
+),
+(
+38,
+798,
+l
+),
+(
+38,
+513,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1289,
+612,
+l
+),
+(
+1289,
+761,
+l
+),
+(
+59,
+761,
+l
+),
+(
+59,
+612,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+2143,
+612,
+l
+),
+(
+2143,
+761,
+l
+),
+(
+95,
+761,
+l
+),
+(
+95,
+612,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1664,
+686,
+l
+),
+(
+1664,
+734,
+l
+),
+(
+111,
+734,
+l
+),
+(
+111,
+686,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1736,
+515,
+l
+),
+(
+1736,
+797,
+l
+),
+(
+55,
+797,
+l
+),
+(
+55,
+515,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1267,
+684,
+l
+),
+(
+1267,
+735,
+l
+),
+(
+78,
+735,
+l
+),
+(
+78,
+684,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1324,
+513,
+l
+),
+(
+1324,
+798,
+l
+),
+(
+35,
+798,
+l
+),
+(
+35,
+513,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+2109,
+684,
+l
+),
+(
+2109,
+735,
+l
+),
+(
+124,
+735,
+l
+),
+(
+124,
+684,
+l
+)
+);
+}
+);
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+2196,
+513,
+l
+),
+(
+2196,
+798,
+l
+),
+(
+55,
+798,
+l
+),
+(
+55,
+513,
+l
+)
+);
+}
+);
+width = 0;
+}
+);
+export = 1;
+}

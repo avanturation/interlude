@@ -1,0 +1,340 @@
+{
+  "originalBytes": 24174748,
+  "optimizedBytes": 23417644,
+  "changedSourceGlyphs": 1878,
+  "unchangedGlyphsChecked": 26414,
+  "unchangedOutlineDifferences": [],
+  "unchangedVariationDifferences": [],
+  "locations": [
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 100,
+        "wdth": 75
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 100,
+        "wdth": 100
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 100,
+        "wdth": 125
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 400,
+        "wdth": 75
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 400,
+        "wdth": 100
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 400,
+        "wdth": 125
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 900,
+        "wdth": 75
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 900,
+        "wdth": 100
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 14,
+        "wght": 900,
+        "wdth": 125
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 100,
+        "wdth": 75
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 100,
+        "wdth": 100
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 100,
+        "wdth": 125
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 400,
+        "wdth": 75
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 400,
+        "wdth": 100
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 400,
+        "wdth": 125
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 900,
+        "wdth": 75
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 900,
+        "wdth": 100
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 32,
+        "wght": 900,
+        "wdth": 125
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 31.417832205170534,
+        "wght": 721.8273402684744,
+        "wdth": 121.23358015476931
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 28.15492342875755,
+        "wght": 101.34777827966168,
+        "wdth": 96.39210091075076
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 16.83605129965851,
+        "wght": 523.8029231289311,
+        "wdth": 84.9959874250729
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 23.77004789163898,
+        "wght": 384.0100472607149,
+        "wdth": 116.60213630425002
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 21.130426833660962,
+        "wght": 701.8177871523134,
+        "wdth": 106.88000537166081
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 26.83160568227168,
+        "wght": 887.6427718980162,
+        "wdth": 93.80967097956142
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 17.016305575089557,
+        "wght": 624.6404658262156,
+        "wdth": 116.53075734488198
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 22.389156849905905,
+        "wght": 246.3312897120024,
+        "wdth": 105.77064792674642
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 27.45611518963301,
+        "wght": 873.8726750318691,
+        "wdth": 118.02212019343224
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 23.215833653964026,
+        "wght": 393.2609456051089,
+        "wdth": 122.3722669722658
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 28.239583199918826,
+        "wght": 445.9831249186646,
+        "wdth": 121.14323293041464
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    },
+    {
+      "location": {
+        "opsz": 23.531620747447676,
+        "wght": 881.0228983654812,
+        "wdth": 79.46851026496942
+      },
+      "advanceDifferences": 0,
+      "maxExtentDifference": 0,
+      "changedExtents": 0,
+      "examples": []
+    }
+  ]
+}

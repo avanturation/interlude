@@ -1,0 +1,64 @@
+{
+glyphname = uni200D;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+width = 0;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+width = 0;
+}
+);
+production = uni200D;
+unicode = 65279;
+userData = {
+com.interlude.reference = {
+file = zerowidthspace.glyph;
+glyphName = zerowidthspace;
+kind = "pretendard-jp";
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 2572;
+};
+}

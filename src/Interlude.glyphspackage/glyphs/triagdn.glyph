@@ -1,0 +1,184 @@
+{
+glyphname = triagdn;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,1490,l),
+(1034,-94,l),
+(1968,1490,l)
+);
+}
+);
+width = 2070;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(70,1490,l),
+(1000,-94,l),
+(1932,1490,l)
+);
+}
+);
+width = 2002;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,1490,l),
+(992,-94,l),
+(1896,1490,l)
+);
+}
+);
+width = 1986;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,1490,l),
+(1102,-94,l),
+(2080,1490,l)
+);
+}
+);
+width = 2204;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,1490,l),
+(1034,-94,l),
+(1968,1490,l)
+);
+}
+);
+width = 2070;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,1490,l),
+(1034,-94,l),
+(1968,1490,l)
+);
+}
+);
+width = 2070;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(26,1490,l),
+(928,-94,l),
+(1832,1490,l)
+);
+}
+);
+width = 1858;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(108,1490,l),
+(1086,-94,l),
+(2064,1490,l)
+);
+}
+);
+width = 2172;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,1490,l),
+(992,-94,l),
+(1896,1490,l)
+);
+}
+);
+width = 1986;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,1490,l),
+(1102,-94,l),
+(2080,1490,l)
+);
+}
+);
+width = 2204;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,1490,l),
+(992,-94,l),
+(1896,1490,l)
+);
+}
+);
+width = 1986;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(124,1490,l),
+(1102,-94,l),
+(2080,1490,l)
+);
+}
+);
+width = 2204;
+}
+);
+production = triagdn;
+unicode = 9660;
+userData = {
+com.interlude.reference = {
+file = triagdn.glyph;
+glyphName = triagdn;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1844;
+};
+}

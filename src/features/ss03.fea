@@ -1,8 +1,0 @@
-# ss03: Centered colon
-# Matches Pretendard ss03 - colon centered between CJK and Latin
-
-feature ss03 {
-  lookup LOOKUP_SS03 {
-    sub colon by colon.case;
-  } LOOKUP_SS03;
-} ss03;

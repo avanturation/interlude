@@ -1,0 +1,12 @@
+{
+  "release": "1.3",
+  "nativeCompiler": "Glyphs 4.1.1 (4108), actual Export UI",
+  "comparedWith": "Previously verified optimized native prototype",
+  "changedTables": [
+    "head",
+    "name"
+  ],
+  "outlineAndLayoutTablesUnchanged": true,
+  "ttfBytes": 23417644,
+  "sha256": "3c4eb4f579b8b27519df5a514c6431645e9625a8bc1567d4c02e36cfd00aeef4"
+}

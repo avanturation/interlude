@@ -1,0 +1,196 @@
+{
+glyphname = endash;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1024,719,l),
+(0,719,l),
+(0,553,l),
+(1024,553,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1024,688,l),
+(0,688,l),
+(0,528,l),
+(1024,528,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1024,662,l),
+(0,662,l),
+(0,616,l),
+(1024,616,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1024,744,l),
+(0,744,l),
+(0,442,l),
+(1024,442,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(768,719,l),
+(0,719,l),
+(0,553,l),
+(768,553,l)
+);
+}
+);
+width = 768;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1280,719,l),
+(0,719,l),
+(0,553,l),
+(1280,553,l)
+);
+}
+);
+width = 1280;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1024,630,l),
+(0,630,l),
+(0,584,l),
+(1024,584,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1024,720,l),
+(0,720,l),
+(0,418,l),
+(1024,418,l)
+);
+}
+);
+width = 1024;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(768,662,l),
+(0,662,l),
+(0,616,l),
+(768,616,l)
+);
+}
+);
+width = 768;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(768,744,l),
+(0,744,l),
+(0,442,l),
+(768,442,l)
+);
+}
+);
+width = 768;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1280,662,l),
+(0,662,l),
+(0,616,l),
+(1280,616,l)
+);
+}
+);
+width = 1280;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(1280,744,l),
+(0,744,l),
+(0,442,l),
+(1280,442,l)
+);
+}
+);
+width = 1280;
+}
+);
+production = endash;
+unicode = 8211;
+userData = {
+com.interlude.reference = {
+file = endash.glyph;
+glyphName = endash;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1460;
+};
+}

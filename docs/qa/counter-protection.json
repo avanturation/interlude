@@ -1,0 +1,5431 @@
+{
+  "changed": 1085,
+  "retiredHelpers": 701,
+  "changes": [
+    {
+      "glyph": "uniC092",
+      "character": "삒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE17",
+      "character": "븗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF5C",
+      "character": "뽜",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD3E",
+      "character": "괾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF60",
+      "character": "뽠",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF25",
+      "character": "뼥",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC0A1",
+      "character": "삡",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniADE7",
+      "character": "귧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE6B",
+      "character": "빫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC09F",
+      "character": "삟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC73",
+      "character": "뱳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB6F",
+      "character": "뭯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC172",
+      "character": "셲",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBC36",
+      "character": "밶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF2",
+      "character": "뻲",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCD86",
+      "character": "춆",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB73",
+      "character": "뭳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6B2",
+      "character": "횲",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD446",
+      "character": "푆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB20F",
+      "character": "눏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFDD",
+      "character": "뿝",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEE3",
+      "character": "뻣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFED",
+      "character": "뿭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF4A",
+      "character": "뽊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB2",
+      "character": "뾲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD787",
+      "character": "힇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA3",
+      "character": "뾣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEFB",
+      "character": "뻻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC08D",
+      "character": "삍",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF18",
+      "character": "뼘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD00B",
+      "character": "퀋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD75C",
+      "character": "흜",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBE92",
+      "character": "뺒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC052",
+      "character": "쁒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB8D",
+      "character": "쮍",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBF2B",
+      "character": "뼫",
+      "strength": 0
+    },
+    {
+      "glyph": "uniB24A",
+      "character": "뉊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCBC4",
+      "character": "쯄",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniCD62",
+      "character": "쵢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA71",
+      "character": "쩱",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBED7",
+      "character": "뻗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD542",
+      "character": "핂",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEAF",
+      "character": "뺯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF1D",
+      "character": "뼝",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC033",
+      "character": "쀳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3E6",
+      "character": "쏦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC076",
+      "character": "쁶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD643",
+      "character": "홃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF44",
+      "character": "뽄",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF01",
+      "character": "뼁",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCD7E",
+      "character": "쵾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD1A6",
+      "character": "톦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF6E",
+      "character": "뽮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCDB6",
+      "character": "춶",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC6",
+      "character": "뿆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE33",
+      "character": "븳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE76",
+      "character": "빶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD462",
+      "character": "푢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF0F",
+      "character": "뼏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD726",
+      "character": "휦",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD6DF",
+      "character": "훟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6EF",
+      "character": "훯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFAC",
+      "character": "뾬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE74",
+      "character": "빴",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC4",
+      "character": "뿄",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF46",
+      "character": "뽆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF03",
+      "character": "뼃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB6E3",
+      "character": "뛣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE89",
+      "character": "뺉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC62F",
+      "character": "옯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC049",
+      "character": "쁉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6E9",
+      "character": "훩",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD724",
+      "character": "휤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE8C",
+      "character": "뺌",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD2AB",
+      "character": "튫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEA9",
+      "character": "뺩",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC3E",
+      "character": "밾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEB8",
+      "character": "뺸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniADCA",
+      "character": "귊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFE9",
+      "character": "뿩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF8",
+      "character": "뿸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4A9",
+      "character": "쒩",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC06E",
+      "character": "쁮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAC42",
+      "character": "걂",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEBE",
+      "character": "뺾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE9A",
+      "character": "뺚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBECE",
+      "character": "뻎",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD641",
+      "character": "홁",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC031",
+      "character": "쀱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB41",
+      "character": "쭁",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC074",
+      "character": "쁴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC837",
+      "character": "젷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC089",
+      "character": "삉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC458",
+      "character": "쑘",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCA73",
+      "character": "쩳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF86",
+      "character": "뾆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBED5",
+      "character": "뻕",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFA1",
+      "character": "뾡",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD778",
+      "character": "흸",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEEA",
+      "character": "뻪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC05C",
+      "character": "쁜",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFB0",
+      "character": "뾰",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEDA",
+      "character": "뻚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA57",
+      "character": "쩗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD698",
+      "character": "횘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCCC5",
+      "character": "쳅",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE90",
+      "character": "뺐",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF9F",
+      "character": "뾟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB503",
+      "character": "딃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD2E3",
+      "character": "틣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC050",
+      "character": "쁐",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniADEE",
+      "character": "귮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC028",
+      "character": "쀨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF62",
+      "character": "뽢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF27",
+      "character": "뼧",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCE2F",
+      "character": "츯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC0A3",
+      "character": "삣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC04A",
+      "character": "쁊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD42A",
+      "character": "퐪",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB112",
+      "character": "넒",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD5D2",
+      "character": "헒",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniAFC3",
+      "character": "꿃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEE1",
+      "character": "뻡",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC02B",
+      "character": "쀫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB8A3",
+      "character": "뢣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC71",
+      "character": "뱱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF0",
+      "character": "뻰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD1AE",
+      "character": "톮",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniCD84",
+      "character": "춄",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB71",
+      "character": "뭱",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB4AF",
+      "character": "뒯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE94",
+      "character": "뺔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAE1E",
+      "character": "긞",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC054",
+      "character": "쁔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE9C",
+      "character": "뺜",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD661",
+      "character": "홡",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEC8",
+      "character": "뻈",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBE69",
+      "character": "빩",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAD06",
+      "character": "괆",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFB4",
+      "character": "뾴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFA5",
+      "character": "뾥",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC48",
+      "character": "뱈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB6D3",
+      "character": "뛓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC75",
+      "character": "뱵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF4",
+      "character": "뻴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD704",
+      "character": "휄",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE8A",
+      "character": "뺊",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBAEB",
+      "character": "뫫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEE5",
+      "character": "뻥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC189",
+      "character": "솉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD9",
+      "character": "뿙",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFAA",
+      "character": "뾪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD5D6",
+      "character": "헖",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC094",
+      "character": "삔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC17E",
+      "character": "셾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC069",
+      "character": "쁩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC07E",
+      "character": "쁾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF66",
+      "character": "뽦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC0A7",
+      "character": "삧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBD6F",
+      "character": "뵯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAE3A",
+      "character": "긺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFFE",
+      "character": "뿾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC956",
+      "character": "쥖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF42",
+      "character": "뽂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBDE6",
+      "character": "뷦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF07",
+      "character": "뼇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBACF",
+      "character": "뫏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC6B",
+      "character": "뱫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE70",
+      "character": "빰",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC04C",
+      "character": "쁌",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFC0",
+      "character": "뿀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC03B",
+      "character": "쀻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBAE8",
+      "character": "뫨",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC38E",
+      "character": "쎎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA77",
+      "character": "쩷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBED1",
+      "character": "뻑",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBAF9",
+      "character": "뫹",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF9D",
+      "character": "뾝",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC035",
+      "character": "쀵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC070",
+      "character": "쁰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD758",
+      "character": "흘",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC91E",
+      "character": "줞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEEC",
+      "character": "뻬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC05A",
+      "character": "쁚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC037",
+      "character": "쀷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB7F",
+      "character": "뭿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC072",
+      "character": "쁲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC08F",
+      "character": "삏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF38",
+      "character": "뼸",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC23A",
+      "character": "숺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD647",
+      "character": "홇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD75A",
+      "character": "흚",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniCA75",
+      "character": "쩵",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBED3",
+      "character": "뻓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB8F",
+      "character": "쮏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCBAB",
+      "character": "쮫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF4C",
+      "character": "뽌",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE7B",
+      "character": "빻",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD077",
+      "character": "큷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC293",
+      "character": "슓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB6D",
+      "character": "뭭",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB893",
+      "character": "뢓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD722",
+      "character": "휢",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCDBF",
+      "character": "춿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC09D",
+      "character": "삝",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB8EE",
+      "character": "룮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFDF",
+      "character": "뿟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF3B",
+      "character": "뼻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFEF",
+      "character": "뿯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB43F",
+      "character": "됿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC2",
+      "character": "뿂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE72",
+      "character": "빲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF5A",
+      "character": "뽚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB5AB",
+      "character": "떫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCD4A",
+      "character": "쵊",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBF40",
+      "character": "뽀",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF05",
+      "character": "뼅",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD67E",
+      "character": "홾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC277",
+      "character": "쉷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD706",
+      "character": "휆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6ED",
+      "character": "훭",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC77",
+      "character": "뱷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC176",
+      "character": "셶",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBC32",
+      "character": "밲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF6",
+      "character": "뻶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6B6",
+      "character": "횶",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF0D",
+      "character": "뼍",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF64",
+      "character": "뽤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFCB",
+      "character": "뿋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC703",
+      "character": "윃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF21",
+      "character": "뼡",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFBB",
+      "character": "뾻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC0A5",
+      "character": "삥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB957",
+      "character": "륗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC096",
+      "character": "삖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCDDB",
+      "character": "췛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD272",
+      "character": "퉲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD237",
+      "character": "툷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF99",
+      "character": "뾙",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEAD",
+      "character": "뺭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBAB3",
+      "character": "몳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF59",
+      "character": "뽙",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD663",
+      "character": "홣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE96",
+      "character": "뺖",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC056",
+      "character": "쁖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4F6",
+      "character": "쓶",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA7",
+      "character": "뾧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD1C7",
+      "character": "퇇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB6",
+      "character": "뾶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD70D",
+      "character": "휍",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCBBE",
+      "character": "쮾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC836",
+      "character": "젶",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC075",
+      "character": "쁵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC030",
+      "character": "쀰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC03F",
+      "character": "쀿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC088",
+      "character": "삈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD62",
+      "character": "굢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCA72",
+      "character": "쩲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC2FE",
+      "character": "싾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC87B",
+      "character": "졻",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBED4",
+      "character": "뻔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC993",
+      "character": "즓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFE8",
+      "character": "뿨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC05E",
+      "character": "쁞",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF9",
+      "character": "뿹",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC69",
+      "character": "뱩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4A8",
+      "character": "쒨",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniAC43",
+      "character": "걃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD725",
+      "character": "휥",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBCE6",
+      "character": "볦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEA8",
+      "character": "뺨",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFFA",
+      "character": "뿺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD1AC",
+      "character": "톬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD21E",
+      "character": "툞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6F9",
+      "character": "훹",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB6EF",
+      "character": "뛯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC02D",
+      "character": "쀭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEB9",
+      "character": "뺹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCA7F",
+      "character": "쩿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC6F",
+      "character": "뱯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE75",
+      "character": "빵",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC5",
+      "character": "뿅",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF02",
+      "character": "뼂",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF47",
+      "character": "뽇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE88",
+      "character": "뺈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB38",
+      "character": "쬸",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC048",
+      "character": "쁈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEE0",
+      "character": "뻠",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAFFF",
+      "character": "꿿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB97A",
+      "character": "륺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8A2",
+      "character": "뢢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC35",
+      "character": "밵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC3C",
+      "character": "밼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF1",
+      "character": "뻱",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC977",
+      "character": "쥷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC70",
+      "character": "뱰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC171",
+      "character": "셱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCCBF",
+      "character": "첿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCF4D",
+      "character": "콍",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE8E",
+      "character": "뺎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCCCF",
+      "character": "쳏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8AF",
+      "character": "뢯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC17A",
+      "character": "셺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC029",
+      "character": "쀩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC9E7",
+      "character": "짧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC07A",
+      "character": "쁺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF26",
+      "character": "뼦",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF63",
+      "character": "뽣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC0A2",
+      "character": "삢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB2EE",
+      "character": "닮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC1B3",
+      "character": "솳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD5D3",
+      "character": "헓",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC091",
+      "character": "삑",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB113",
+      "character": "넓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC897",
+      "character": "좗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFAE",
+      "character": "뾮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD699",
+      "character": "횙",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA56",
+      "character": "쩖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAE03",
+      "character": "긃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE91",
+      "character": "뺑",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAE1A",
+      "character": "긚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC051",
+      "character": "쁑",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEBC",
+      "character": "뺼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBECC",
+      "character": "뻌",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCF5F",
+      "character": "콟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA0",
+      "character": "뾠",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC06C",
+      "character": "쁬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD779",
+      "character": "흹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC4B",
+      "character": "뱋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB1",
+      "character": "뾱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB033",
+      "character": "뀳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4E0",
+      "character": "쓠",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC8EB",
+      "character": "죫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF19",
+      "character": "뼙",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE93",
+      "character": "뺓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF1B",
+      "character": "뼛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC053",
+      "character": "쁓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD567",
+      "character": "핧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA8E",
+      "character": "쪎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC4E2",
+      "character": "쓢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCE47",
+      "character": "칇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB3",
+      "character": "뾳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD312",
+      "character": "팒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA2",
+      "character": "뾢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC37",
+      "character": "밷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF3",
+      "character": "뻳",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBC72",
+      "character": "뱲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC173",
+      "character": "셳",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD6B3",
+      "character": "횳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAC0A",
+      "character": "갊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD77A",
+      "character": "흺",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBEE2",
+      "character": "뻢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniACF2",
+      "character": "곲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB5F",
+      "character": "뭟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC093",
+      "character": "삓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBD53",
+      "character": "뵓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD232",
+      "character": "툲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8BE",
+      "character": "뢾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFCF",
+      "character": "뿏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC392",
+      "character": "쎒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF24",
+      "character": "뼤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF61",
+      "character": "뽡",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC0A0",
+      "character": "삠",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF6C",
+      "character": "뽬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFBF",
+      "character": "뾿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB35E",
+      "character": "덞",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBFDB",
+      "character": "뿛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF3F",
+      "character": "뼿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFEB",
+      "character": "뿫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD2F",
+      "character": "촯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB56",
+      "character": "뭖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCDCB",
+      "character": "췋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8DA",
+      "character": "룚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD727",
+      "character": "휧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE6D",
+      "character": "빭",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD583",
+      "character": "햃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF00",
+      "character": "뼀",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF45",
+      "character": "뽅",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD216",
+      "character": "툖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6CD",
+      "character": "훍",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC7",
+      "character": "뿇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE77",
+      "character": "빷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF5E",
+      "character": "뽞",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD4E",
+      "character": "쵎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF2D",
+      "character": "뼭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBED6",
+      "character": "뻖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC077",
+      "character": "쁷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB7B",
+      "character": "뭻",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC032",
+      "character": "쀲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC08B",
+      "character": "삋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC6D9",
+      "character": "웙",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC18B",
+      "character": "솋",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD75E",
+      "character": "흞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD642",
+      "character": "홂",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC25F",
+      "character": "쉟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE7F",
+      "character": "빿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEFD",
+      "character": "뻽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC197",
+      "character": "솗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD257",
+      "character": "퉗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC69F",
+      "character": "욟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC3",
+      "character": "뿃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE73",
+      "character": "빳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCDA2",
+      "character": "춢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF04",
+      "character": "뼄",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBFCD",
+      "character": "뿍",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF41",
+      "character": "뽁",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF6A",
+      "character": "뽪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFBD",
+      "character": "뾽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF0B",
+      "character": "뼋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD723",
+      "character": "휣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6EB",
+      "character": "훫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD467",
+      "character": "푧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB9AB",
+      "character": "릫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD67C",
+      "character": "홼",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC26B",
+      "character": "쉫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD60B",
+      "character": "혋",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD70B",
+      "character": "휋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4AA",
+      "character": "쒪",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCD67",
+      "character": "쵧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD033",
+      "character": "퀳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB2B7",
+      "character": "늷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD5F0",
+      "character": "헰",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6C3",
+      "character": "훃",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC073",
+      "character": "쁳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC036",
+      "character": "쀶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3E3",
+      "character": "쏣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF39",
+      "character": "뼹",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB22F",
+      "character": "눯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD646",
+      "character": "홆",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA74",
+      "character": "쩴",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBED2",
+      "character": "뻒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEAB",
+      "character": "뺫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3FA",
+      "character": "쏺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA6",
+      "character": "뾦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD483",
+      "character": "풃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE7D",
+      "character": "빽",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEFF",
+      "character": "뻿",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF4E",
+      "character": "뽎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4E6",
+      "character": "쓦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB7",
+      "character": "뾷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC0AB",
+      "character": "삫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD563",
+      "character": "핣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCCC2",
+      "character": "쳂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF2F",
+      "character": "뼯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD3F",
+      "character": "촿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF58",
+      "character": "뽘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC46F",
+      "character": "쑯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC4FE",
+      "character": "쓾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD662",
+      "character": "홢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE97",
+      "character": "뺗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB8D8",
+      "character": "룘",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC486",
+      "character": "쒆",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC057",
+      "character": "쁗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF20",
+      "character": "뼠",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC747",
+      "character": "읇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF65",
+      "character": "뽥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCACB",
+      "character": "쫋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC0A4",
+      "character": "삤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE6F",
+      "character": "빯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniADE2",
+      "character": "귢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD49A",
+      "character": "풚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB913",
+      "character": "뤓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC097",
+      "character": "삗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB99B",
+      "character": "릛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB26A",
+      "character": "뉪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6CF",
+      "character": "훏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD273",
+      "character": "퉳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF98",
+      "character": "뾘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEE6",
+      "character": "뻦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF3D",
+      "character": "뼽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD742",
+      "character": "흂",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD707",
+      "character": "휇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC09B",
+      "character": "삛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB6B",
+      "character": "뭫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC33",
+      "character": "밳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF7",
+      "character": "뻷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC76",
+      "character": "뱶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD5B",
+      "character": "굛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC177",
+      "character": "셷",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD6B7",
+      "character": "횷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD83",
+      "character": "춃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC04E",
+      "character": "쁎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD69B",
+      "character": "횛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD8",
+      "character": "뿘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC6D",
+      "character": "뱭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC095",
+      "character": "삕",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD8E",
+      "character": "궎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6AE",
+      "character": "횮",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCB4E",
+      "character": "쭎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC068",
+      "character": "쁨",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF22",
+      "character": "뼢",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF67",
+      "character": "뽧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB92F",
+      "character": "뤯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCE2B",
+      "character": "츫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC0A6",
+      "character": "삦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF5",
+      "character": "뻵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC74",
+      "character": "뱴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFFC",
+      "character": "뿼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC175",
+      "character": "셵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD740",
+      "character": "흀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD705",
+      "character": "휅",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEE4",
+      "character": "뻤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC188",
+      "character": "솈",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC02F",
+      "character": "쀯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB5",
+      "character": "뾵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEEE",
+      "character": "뻮",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBEDE",
+      "character": "뻞",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC7F",
+      "character": "뱿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA4",
+      "character": "뾤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE95",
+      "character": "뺕",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF9B",
+      "character": "뾛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC055",
+      "character": "쁕",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC8BD",
+      "character": "좽",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD625",
+      "character": "혥",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD660",
+      "character": "홠",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD3F7",
+      "character": "폷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC03D",
+      "character": "쀽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEC9",
+      "character": "뻉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD07",
+      "character": "괇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4DF",
+      "character": "쓟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE68",
+      "character": "빨",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC06A",
+      "character": "쁪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD50A",
+      "character": "픊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCE0F",
+      "character": "츏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB487",
+      "character": "뒇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCB6A",
+      "character": "쭪",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBAE9",
+      "character": "뫩",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB86A",
+      "character": "롪",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA76",
+      "character": "쩶",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEBA",
+      "character": "뺺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE9E",
+      "character": "뺞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBECA",
+      "character": "뻊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD644",
+      "character": "홄",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC94F",
+      "character": "쥏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC071",
+      "character": "쁱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC034",
+      "character": "쀴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF06",
+      "character": "뼆",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF43",
+      "character": "뽃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCFCF",
+      "character": "쿏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC17C",
+      "character": "셼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC07C",
+      "character": "쁼",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE71",
+      "character": "빱",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC1",
+      "character": "뿁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBDDF",
+      "character": "뷟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBCAE",
+      "character": "벮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBAED",
+      "character": "뫭",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD721",
+      "character": "휡",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBC3A",
+      "character": "밺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAE0A",
+      "character": "긊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC040",
+      "character": "쁀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE80",
+      "character": "뺀",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC87E",
+      "character": "졾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC03A",
+      "character": "쀺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD795",
+      "character": "힕",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC05B",
+      "character": "쁛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEB1",
+      "character": "뺱",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC7C",
+      "character": "뱼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6F1",
+      "character": "훱",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEA0",
+      "character": "뺠",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB6C7",
+      "character": "뛇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD9E",
+      "character": "춞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFFF",
+      "character": "뿿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF1",
+      "character": "뿱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC02C",
+      "character": "쀬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFE0",
+      "character": "뿠",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD21B",
+      "character": "툛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD3EB",
+      "character": "폫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC6A",
+      "character": "뱪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC080",
+      "character": "삀",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC038",
+      "character": "쀸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF72",
+      "character": "뽲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF37",
+      "character": "뼷",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBAEA",
+      "character": "뫪",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFB9",
+      "character": "뾹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB97F",
+      "character": "륿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC01E",
+      "character": "쀞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE8B",
+      "character": "뺋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC3D",
+      "character": "밽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFA8",
+      "character": "뾨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC907",
+      "character": "줇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC942",
+      "character": "쥂",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF56",
+      "character": "뽖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF13",
+      "character": "뼓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC059",
+      "character": "쁙",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC07F",
+      "character": "쁿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE99",
+      "character": "뺙",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC17F",
+      "character": "셿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE64",
+      "character": "빤",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEC5",
+      "character": "뻅",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFAB",
+      "character": "뾫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC099",
+      "character": "삙",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD4",
+      "character": "뿔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF96",
+      "character": "뾖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBECD",
+      "character": "뻍",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEBD",
+      "character": "뺽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAE1F",
+      "character": "긟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC021",
+      "character": "쀡",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC064",
+      "character": "쁤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB7B3",
+      "character": "랳",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD2C7",
+      "character": "틇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC2AF",
+      "character": "슯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD709",
+      "character": "휉",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCAC7",
+      "character": "쫇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEF9",
+      "character": "뻹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC06D",
+      "character": "쁭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC179",
+      "character": "셹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC78",
+      "character": "뱸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC6F6",
+      "character": "웶",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEE8",
+      "character": "뻨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB61B",
+      "character": "똛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCB16",
+      "character": "쬖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC023",
+      "character": "쀣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC066",
+      "character": "쁦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF1E",
+      "character": "뼞",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCC53",
+      "character": "챓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD653",
+      "character": "홓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC0A8",
+      "character": "삨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCDF7",
+      "character": "췷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF69",
+      "character": "뽩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB47B",
+      "character": "둻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF94",
+      "character": "뾔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD1E7",
+      "character": "퇧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD6",
+      "character": "뿖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC186",
+      "character": "솆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB87",
+      "character": "뮇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD026",
+      "character": "퀦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC6DB",
+      "character": "웛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC47",
+      "character": "뱇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB887",
+      "character": "뢇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC27E",
+      "character": "쉾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB8CB",
+      "character": "룋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE66",
+      "character": "빦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEC7",
+      "character": "뻇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB967",
+      "character": "륧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFBA",
+      "character": "뾺",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF6D",
+      "character": "뽭",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFCA",
+      "character": "뿊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF54",
+      "character": "뽔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF11",
+      "character": "뼑",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFE2",
+      "character": "뿢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD413",
+      "character": "퐓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFEE",
+      "character": "뿮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF3A",
+      "character": "뼺",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBFDE",
+      "character": "뿞",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF3",
+      "character": "뿳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC4A2",
+      "character": "쒢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC127",
+      "character": "섧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF70",
+      "character": "뽰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF35",
+      "character": "뼵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE6C",
+      "character": "빬",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF5B",
+      "character": "뽛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC453",
+      "character": "쑓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC082",
+      "character": "삂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB68B",
+      "character": "뚋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6CC",
+      "character": "훌",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniCAA0",
+      "character": "쪠",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA78",
+      "character": "쩸",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCB8E",
+      "character": "쮎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF2C",
+      "character": "뼬",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD75B",
+      "character": "흛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC08E",
+      "character": "삎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB32",
+      "character": "쬲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB983",
+      "character": "릃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC042",
+      "character": "쁂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE82",
+      "character": "뺂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEA2",
+      "character": "뺢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE7A",
+      "character": "빺",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBEFC",
+      "character": "뻼",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBEB3",
+      "character": "뺳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD13",
+      "character": "촓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB947",
+      "character": "륇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC457",
+      "character": "쑗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC086",
+      "character": "삆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFBC",
+      "character": "뾼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF6F",
+      "character": "뽯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF74",
+      "character": "뽴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFCC",
+      "character": "뿌",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF31",
+      "character": "뼱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniACEB",
+      "character": "곫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniADAA",
+      "character": "궪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF7",
+      "character": "뿷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6EE",
+      "character": "훮",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBCBA",
+      "character": "벺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF0E",
+      "character": "뼎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCDD6",
+      "character": "췖",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBFE6",
+      "character": "뿦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC44E",
+      "character": "쑎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD1D7",
+      "character": "퇗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEB7",
+      "character": "뺷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD70E",
+      "character": "휎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD793",
+      "character": "힓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD60E",
+      "character": "혎",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBEA6",
+      "character": "뺦",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD6E6",
+      "character": "훦",
+      "strength": 0
+    },
+    {
+      "glyph": "uniB24B",
+      "character": "뉋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB19F",
+      "character": "놟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF49",
+      "character": "뽉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC003",
+      "character": "쀃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB73",
+      "character": "쭳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC046",
+      "character": "쁆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE86",
+      "character": "뺆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEAE",
+      "character": "뺮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE7C",
+      "character": "빼",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEFA",
+      "character": "뻺",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC3FF",
+      "character": "쏿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC182",
+      "character": "솂",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF4B",
+      "character": "뽋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD5B",
+      "character": "쵛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB83",
+      "character": "뮃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF2A",
+      "character": "뼪",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBFD2",
+      "character": "뿒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC027",
+      "character": "쀧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC062",
+      "character": "쁢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC46A",
+      "character": "쑪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBBCB",
+      "character": "믋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF28",
+      "character": "뼨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD2DF",
+      "character": "틟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD596",
+      "character": "햖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE6A",
+      "character": "빪",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD2EF",
+      "character": "틯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6D2",
+      "character": "훒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF50",
+      "character": "뽐",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAD3F",
+      "character": "괿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF15",
+      "character": "뼕",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD697",
+      "character": "횗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD203",
+      "character": "툃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6CA",
+      "character": "훊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE62",
+      "character": "빢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEC3",
+      "character": "뻃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB963",
+      "character": "륣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC473",
+      "character": "쑳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB99E",
+      "character": "릞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF3C",
+      "character": "뼼",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC243",
+      "character": "쉃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB6E",
+      "character": "뭮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB883",
+      "character": "뢃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC09E",
+      "character": "삞",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD777",
+      "character": "흷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE60",
+      "character": "빠",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBEC1",
+      "character": "뻁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC6C",
+      "character": "뱬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC04B",
+      "character": "쁋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCE2E",
+      "character": "츮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6D0",
+      "character": "훐",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF52",
+      "character": "뽒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3B0",
+      "character": "쎰",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF17",
+      "character": "뼗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8D2",
+      "character": "룒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC018",
+      "character": "쀘",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBCFF",
+      "character": "볿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD4A3",
+      "character": "풣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB94B",
+      "character": "륋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFFD",
+      "character": "뿽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD1AF",
+      "character": "톯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC02A",
+      "character": "쀪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC39F",
+      "character": "쎟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCD49",
+      "character": "쵉",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAFE3",
+      "character": "꿣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC81",
+      "character": "벁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB496",
+      "character": "뒖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC180",
+      "character": "솀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3DE",
+      "character": "쏞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEDB",
+      "character": "뻛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD2C3",
+      "character": "틃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC39",
+      "character": "밹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC025",
+      "character": "쀥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC060",
+      "character": "쁠",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF9E",
+      "character": "뾞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAD77",
+      "character": "굷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC4DA",
+      "character": "쓚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC03C",
+      "character": "쀼",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFD0",
+      "character": "뿐",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF92",
+      "character": "뾒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA67",
+      "character": "쩧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB58",
+      "character": "뭘",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC4BE",
+      "character": "쒾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC06F",
+      "character": "쁯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEA4",
+      "character": "뺤",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD791",
+      "character": "힑",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniB8F7",
+      "character": "룷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEB5",
+      "character": "뺵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCE0A",
+      "character": "츊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC9",
+      "character": "뿉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE79",
+      "character": "빹",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC001",
+      "character": "쀁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC044",
+      "character": "쁄",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3BA",
+      "character": "쎺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE84",
+      "character": "뺄",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE9B",
+      "character": "뺛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBECF",
+      "character": "뻏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEBF",
+      "character": "뺿",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC079",
+      "character": "쁹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC07D",
+      "character": "쁽",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAD93",
+      "character": "궓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC17D",
+      "character": "셽",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD24E",
+      "character": "퉎",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCA83",
+      "character": "쪃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF76",
+      "character": "뽶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF33",
+      "character": "뼳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBED8",
+      "character": "뻘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC455",
+      "character": "쑕",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC084",
+      "character": "삄",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBAEC",
+      "character": "뫬",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniADCB",
+      "character": "귋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFE4",
+      "character": "뿤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC3F",
+      "character": "밿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC927",
+      "character": "줧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC962",
+      "character": "쥢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF5",
+      "character": "뿵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6CE",
+      "character": "훎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD692",
+      "character": "횒",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBE67",
+      "character": "빧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF5D",
+      "character": "뽝",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB966",
+      "character": "륦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEC6",
+      "character": "뻆",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3A6",
+      "character": "쎦",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8D5",
+      "character": "룕",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD59B",
+      "character": "햛",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE6E",
+      "character": "빮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF10",
+      "character": "뼐",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF55",
+      "character": "뽕",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCACA",
+      "character": "쫊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB886",
+      "character": "뢆",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC09A",
+      "character": "삚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD772",
+      "character": "흲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFEC",
+      "character": "뿬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB4CB",
+      "character": "듋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFDC",
+      "character": "뿜",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBDAB",
+      "character": "붫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF4F",
+      "character": "뽏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB86",
+      "character": "뮆",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD027",
+      "character": "퀧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEFE",
+      "character": "뻾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC067",
+      "character": "쁧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD0F7",
+      "character": "탷",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBB7C",
+      "character": "뭼",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC022",
+      "character": "쀢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC46E",
+      "character": "쑮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC0A9",
+      "character": "삩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF68",
+      "character": "뽨",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC08C",
+      "character": "삌",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD65D",
+      "character": "홝",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF95",
+      "character": "뾕",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD0E6",
+      "character": "탦",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBF2E",
+      "character": "뼮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD1E6",
+      "character": "퇦",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniCB8C",
+      "character": "쮌",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC0AA",
+      "character": "삪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD7",
+      "character": "뿗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEA3",
+      "character": "뺣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEB2",
+      "character": "뺲",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCE12",
+      "character": "츒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD796",
+      "character": "힖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC4AB",
+      "character": "쒫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD70A",
+      "character": "휊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD60A",
+      "character": "혊",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBEAA",
+      "character": "뺪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD7E",
+      "character": "굾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD676",
+      "character": "홶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF09",
+      "character": "뼉",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC043",
+      "character": "쁃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB982",
+      "character": "릂",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE83",
+      "character": "뺃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF1C",
+      "character": "뼜",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF6B",
+      "character": "뽫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF34",
+      "character": "뼴",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF71",
+      "character": "뽱",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBAE6",
+      "character": "뫦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC452",
+      "character": "쑒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD5BB",
+      "character": "햻",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC083",
+      "character": "삃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB942",
+      "character": "륂",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFE3",
+      "character": "뿣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF2",
+      "character": "뿲",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6EA",
+      "character": "훪",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD756",
+      "character": "흖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD713",
+      "character": "휓",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF0A",
+      "character": "뼊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC081",
+      "character": "삁",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFAD",
+      "character": "뾭",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC039",
+      "character": "쀹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD34A",
+      "character": "퍊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF36",
+      "character": "뼶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC6D2",
+      "character": "웒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF73",
+      "character": "뽳",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC3B",
+      "character": "밻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBDC7",
+      "character": "뷇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFF0",
+      "character": "뿰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE8D",
+      "character": "뺍",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB733",
+      "character": "뜳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFE1",
+      "character": "뿡",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6FB",
+      "character": "훻",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD794",
+      "character": "힔",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEB0",
+      "character": "뺰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCE10",
+      "character": "츐",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB90A",
+      "character": "뤊",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC06B",
+      "character": "쁫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEA1",
+      "character": "뺡",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD769",
+      "character": "흩",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniC041",
+      "character": "쁁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC004",
+      "character": "쀄",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE81",
+      "character": "뺁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE9F",
+      "character": "뺟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBECB",
+      "character": "뻋",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEBB",
+      "character": "뺻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB86B",
+      "character": "롫",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD56",
+      "character": "굖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD2C6",
+      "character": "틆",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD708",
+      "character": "휈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC79",
+      "character": "뱹",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEF8",
+      "character": "뻸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC6F7",
+      "character": "웷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC185",
+      "character": "솅",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCD71",
+      "character": "쵱",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBB84",
+      "character": "뮄",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEDF",
+      "character": "뻟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBD1B",
+      "character": "봛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEEF",
+      "character": "뻯",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC05D",
+      "character": "쁝",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEE9",
+      "character": "뻩",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC4DE",
+      "character": "쓞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD20F",
+      "character": "툏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC098",
+      "character": "삘",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD5",
+      "character": "뿕",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBDA2",
+      "character": "붢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF97",
+      "character": "뾗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC065",
+      "character": "쁥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC020",
+      "character": "쀠",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF9A",
+      "character": "뾚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF12",
+      "character": "뼒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB263",
+      "character": "뉣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF57",
+      "character": "뽗",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC3B5",
+      "character": "쎵",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC058",
+      "character": "쁘",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8D7",
+      "character": "룗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE98",
+      "character": "뺘",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBE65",
+      "character": "빥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB90",
+      "character": "쮐",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEC4",
+      "character": "뻄",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC04F",
+      "character": "쁏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD69A",
+      "character": "횚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD52F",
+      "character": "픯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCCEC",
+      "character": "쳬",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC02E",
+      "character": "쀮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFB8",
+      "character": "뾸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF8C",
+      "character": "뾌",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCE4B",
+      "character": "칋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC943",
+      "character": "쥃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD1AB",
+      "character": "톫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFA9",
+      "character": "뾩",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE9D",
+      "character": "뺝",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD23B",
+      "character": "툻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC822",
+      "character": "젢",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC061",
+      "character": "쁡",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC024",
+      "character": "쀤",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFD1",
+      "character": "뿑",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBC80",
+      "character": "벀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC181",
+      "character": "솁",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB497",
+      "character": "뒗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB80",
+      "character": "뮀",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC4A",
+      "character": "뱊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCA5A",
+      "character": "쩚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC48F",
+      "character": "쒏",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCAC2",
+      "character": "쫂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCCBE",
+      "character": "첾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE8F",
+      "character": "뺏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD4BF",
+      "character": "풿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAFE2",
+      "character": "꿢",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD0EA",
+      "character": "탪",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBAEE",
+      "character": "뫮",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAFFE",
+      "character": "꿾",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE61",
+      "character": "빡",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEC0",
+      "character": "뻀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFAF",
+      "character": "뾯",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB2EF",
+      "character": "닯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF16",
+      "character": "뼖",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF53",
+      "character": "뽓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC07B",
+      "character": "쁻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC17B",
+      "character": "셻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFE5",
+      "character": "뿥",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD21F",
+      "character": "툟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD9A",
+      "character": "춚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFFB",
+      "character": "뿻",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFF4",
+      "character": "뿴",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD715",
+      "character": "휕",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC078",
+      "character": "쁸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniAD92",
+      "character": "궒",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF32",
+      "character": "뼲",
+      "strength": 0
+    },
+    {
+      "glyph": "uniBF77",
+      "character": "뽷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC04D",
+      "character": "쁍",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBED9",
+      "character": "뻙",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC454",
+      "character": "쑔",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC6E",
+      "character": "뱮",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD2A7",
+      "character": "튧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniAE5E",
+      "character": "깞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFC8",
+      "character": "뿈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD219",
+      "character": "툙",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniD55E",
+      "character": "핞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE78",
+      "character": "빸",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC03E",
+      "character": "쀾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC045",
+      "character": "쁅",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC000",
+      "character": "쀀",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE85",
+      "character": "뺅",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF9C",
+      "character": "뾜",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEA5",
+      "character": "뺥",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB0A2",
+      "character": "낢",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEDD",
+      "character": "뻝",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB8F6",
+      "character": "룶",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEED",
+      "character": "뻭",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC05F",
+      "character": "쁟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEB4",
+      "character": "뺴",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC18A",
+      "character": "솊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD75F",
+      "character": "흟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF48",
+      "character": "뽈",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC08A",
+      "character": "삊",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC047",
+      "character": "쁇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCB37",
+      "character": "쬷",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC002",
+      "character": "쀂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBE87",
+      "character": "뺇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEB6",
+      "character": "뺶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF4D",
+      "character": "뽍",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD16",
+      "character": "촖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD792",
+      "character": "힒",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEA7",
+      "character": "뺧",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE7E",
+      "character": "빾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD63E",
+      "character": "혾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC25E",
+      "character": "쉞",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCDBA",
+      "character": "춺",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBFF6",
+      "character": "뿶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC09C",
+      "character": "삜",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB8DB",
+      "character": "룛",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBB23",
+      "character": "묣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD5ED",
+      "character": "헭",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFE7",
+      "character": "뿧",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBFEA",
+      "character": "뿪",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF3E",
+      "character": "뼾",
+      "strength": 0
+    },
+    {
+      "glyph": "uniC223",
+      "character": "숣",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFDA",
+      "character": "뿚",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF5F",
+      "character": "뽟",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC456",
+      "character": "쑖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC087",
+      "character": "삇",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD0AF",
+      "character": "킯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF30",
+      "character": "뼰",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF75",
+      "character": "뽵",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC207",
+      "character": "숇",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC8D",
+      "character": "벍",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniAC0B",
+      "character": "갋",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD77B",
+      "character": "흻",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF0C",
+      "character": "뼌",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD6EC",
+      "character": "훬",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD776",
+      "character": "흶",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniADC6",
+      "character": "귆",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniB35F",
+      "character": "덟",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD103",
+      "character": "턃",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFBE",
+      "character": "뾾",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniD6D3",
+      "character": "훓",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBF14",
+      "character": "뼔",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFCE",
+      "character": "뿎",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF51",
+      "character": "뽑",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniB8BF",
+      "character": "뢿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD696",
+      "character": "횖",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBE63",
+      "character": "빣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC472",
+      "character": "쑲",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBB3F",
+      "character": "묿",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC437",
+      "character": "쐷",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBEC2",
+      "character": "뻂",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD03A",
+      "character": "퀺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD28F",
+      "character": "튏",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBEAC",
+      "character": "뺬",
+      "strength": 0
+    },
+    {
+      "glyph": "uniD13A",
+      "character": "턺",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBFD3",
+      "character": "뿓",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC063",
+      "character": "쁣",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC026",
+      "character": "쀦",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniBF1A",
+      "character": "뼚",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD1F3",
+      "character": "퇳",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniCC6F",
+      "character": "챯",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBF29",
+      "character": "뼩",
+      "strength": 0
+    },
+    {
+      "glyph": "uniCDF2",
+      "character": "췲",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniCD6B",
+      "character": "쵫",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniD70C",
+      "character": "휌",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniC517",
+      "character": "씗",
+      "strength": 0.5
+    },
+    {
+      "glyph": "uniBC82",
+      "character": "벂",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniC183",
+      "character": "솃",
+      "strength": 0.25
+    },
+    {
+      "glyph": "uniCD32",
+      "character": "촲",
+      "strength": 0.75
+    },
+    {
+      "glyph": "uniBB82",
+      "character": "뮂",
+      "strength": 0.5
+    }
+  ]
+}

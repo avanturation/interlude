@@ -2,22 +2,22 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>Inter CJK Lab</title>
+<title>Interlude Lab</title>
 <style>
 @font-face {
-  font-family: 'Inter CJK Variable';
+  font-family: 'Interlude Variable';
   font-weight: 100 900;
   font-style: normal;
-  src: url('../../fonts/InterCJKVariable.ttf');
+  src: url('../../fonts/InterludeVariable.ttf');
 }
 @font-face {
-  font-family: 'Inter CJK Display Variable';
+  font-family: 'Interlude Display Variable';
   font-weight: 100 900;
   font-style: normal;
-  src: url('../../fonts/InterCJKDisplayVariable.ttf');
+  src: url('../../fonts/InterludeVariable.ttf');
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter CJK Variable', sans-serif; background: #fff; color: #111; padding: 24px; }
+body { font-family: 'Interlude Variable', sans-serif; background: #fff; color: #111; padding: 24px; }
 .controls { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; padding: 16px 0; z-index: 10; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 .controls label { font-size: 12px; color: #666; display: flex; align-items: center; gap: 4px; }
 .controls input[type="range"] { width: 120px; }
@@ -41,7 +41,7 @@ h2 { font-size: 13px; font-weight: 600; color: #999; margin: 32px 0 12px; text-t
 <div class="controls">
   <label>Size: <input type="range" id="size" min="10" max="72" value="20"><span id="size-val">20</span>px</label>
   <label>Weight: <input type="range" id="weight" min="100" max="900" step="100" value="400"><span id="weight-val">400</span></label>
-  <label>Family: <select id="family"><option value="Inter CJK Variable">Inter CJK</option><option value="Inter CJK Display Variable">Inter CJK Display</option></select></label>
+  <label>Family: <select id="family"><option value="Interlude Variable">Interlude</option><option value="Interlude Display Variable">Interlude Display</option></select></label>
 </div>
 
 <h2>Korean + Latin Mixed</h2>
@@ -147,6 +147,8 @@ function update() {
   document.body.style.setProperty('--size', sizeSlider.value + 'px');
   document.body.style.setProperty('--weight', weightSlider.value);
   document.body.style.fontFamily = `'${familySelect.value}', sans-serif`;
+  document.body.style.fontVariationSettings = `'opsz' ${familySelect.value.includes('Display') ? 32 : 14}`;
+  document.body.style.fontOpticalSizing = 'none';
   sizeVal.textContent = sizeSlider.value;
   weightVal.textContent = weightSlider.value;
 }

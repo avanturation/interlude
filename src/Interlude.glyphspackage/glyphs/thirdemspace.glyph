@@ -1,0 +1,64 @@
+{
+glyphname = thirdemspace;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+width = 684;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+width = 684;
+}
+);
+production = thirdemspace;
+unicode = 8196;
+userData = {
+com.interlude.reference = {
+file = thirdemspace.glyph;
+glyphName = thirdemspace;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1785;
+};
+}

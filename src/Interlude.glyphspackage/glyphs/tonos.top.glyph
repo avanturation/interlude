@@ -1,0 +1,196 @@
+{
+glyphname = tonos.top;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(162,1264,l),
+(287,1264,l),
+(389,1558,l),
+(196,1558,l)
+);
+}
+);
+width = 553;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(130,1192,l),
+(250,1192,l),
+(339,1490,l),
+(169,1490,l)
+);
+}
+);
+width = 482;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,1283,l),
+(156,1283,l),
+(207,1557,l),
+(158,1557,l)
+);
+}
+);
+width = 326;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(256,1256,l),
+(480,1256,l),
+(624,1582,l),
+(288,1582,l)
+);
+}
+);
+width = 822;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(162,1264,l),
+(287,1264,l),
+(389,1558,l),
+(196,1558,l)
+);
+}
+);
+width = 553;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(162,1264,l),
+(287,1264,l),
+(389,1558,l),
+(196,1558,l)
+);
+}
+);
+width = 553;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(53,1192,l),
+(95,1192,l),
+(142,1490,l),
+(92,1490,l)
+);
+}
+);
+width = 198;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(241,1181,l),
+(465,1181,l),
+(609,1507,l),
+(273,1507,l)
+);
+}
+);
+width = 774;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,1283,l),
+(156,1283,l),
+(207,1557,l),
+(158,1557,l)
+);
+}
+);
+width = 326;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(256,1256,l),
+(480,1256,l),
+(624,1582,l),
+(288,1582,l)
+);
+}
+);
+width = 822;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(120,1283,l),
+(156,1283,l),
+(207,1557,l),
+(158,1557,l)
+);
+}
+);
+width = 326;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(256,1256,l),
+(480,1256,l),
+(624,1582,l),
+(288,1582,l)
+);
+}
+);
+width = 822;
+}
+);
+production = tonos.top;
+unicode = 61082;
+userData = {
+com.interlude.reference = {
+file = tonos.top.glyph;
+glyphName = tonos.top;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 2810;
+};
+}

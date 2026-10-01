@@ -1,0 +1,9 @@
+{
+  "ppem": 64,
+  "glyphs": 1878,
+  "comparisons": 33804,
+  "pixelIdentical": 28283,
+  "maxNormalizedAbsoluteDifference": 0.002445104995685109,
+  "maxInkAreaRelativeDifference": 0.002373190142870841,
+  "worst": []
+}

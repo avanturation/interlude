@@ -1,0 +1,472 @@
+{
+glyphname = k.subs;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 812;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+417,
+-302
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+203,
+510
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 729;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+375,
+-326
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+177,
+486
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 714;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+379,
+-284
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+168,
+483
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 928;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+465,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+252,
+528
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 636;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+417,
+-302
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+203,
+510
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 988;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+417,
+-302
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+203,
+510
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 617;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+335,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+142,
+453
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 784;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+396,
+-346
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+201,
+496
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 571;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+379,
+-284
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+168,
+483
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 722;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+465,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+252,
+528
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 857;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+379,
+-284
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+168,
+483
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = k.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1134;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+465,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+252,
+528
+);
+}
+);
+}
+);
+production = k.subs;
+unicode = 8342;
+userData = {
+com.interlude.reference = {
+file = k.subs.glyph;
+glyphName = k.subs;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1634;
+};
+}

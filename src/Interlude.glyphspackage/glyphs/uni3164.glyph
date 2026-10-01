@@ -1,0 +1,64 @@
+{
+glyphname = uni3164;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+width = 1770;
+}
+);
+production = uni3164;
+unicode = 12644;
+userData = {
+com.interlude.reference = {
+file = "fillerC_ompa-ko.glyph";
+glyphName = "fillerCompa-ko";
+kind = "pretendard-jp";
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 3429;
+};
+}

@@ -1,0 +1,232 @@
+{
+glyphname = uniD2E1;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1544,
+625
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1529,
+625
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1717;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1480,
+617
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1640,
+640
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1770;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1165,
+625
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1328;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1935,
+625
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 2212;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1465,
+617
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1717;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1625,
+640
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1717;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1114,
+617
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1328;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1238,
+640
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 1328;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+1858,
+617
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 2212;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+ref = _part.hangul.0374;
+pos = (
+2054,
+640
+);
+alignment = -1;
+},
+{
+ref = _part.remainder.uniD2E1;
+alignment = -1;
+}
+);
+width = 2212;
+}
+);
+production = uniD2E1;
+unicode = 53985;
+userData = {
+com.interlude.reference = {
+file = "tyilt-ko.glyph";
+glyphName = "tyilt-ko";
+kind = "pretendard-jp";
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 20397;
+};
+}

@@ -1,0 +1,472 @@
+{
+glyphname = z.subs;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 823;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+404,
+-302
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+407,
+317
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 696;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+348,
+-326
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+347,
+250
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 756;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+355,
+-284
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+366,
+299
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 910;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+463,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+459,
+340
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 656;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+404,
+-302
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+407,
+317
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 990;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+404,
+-302
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+407,
+317
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 639;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+319,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+320,
+230
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 748;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+374,
+-346
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+372,
+251
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 609;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+355,
+-284
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+366,
+299
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 725;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+463,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+459,
+340
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 903;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+355,
+-284
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+366,
+299
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+alignment = -1;
+pos = (
+0,
+-1200
+);
+ref = z.sups;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1095;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+463,
+-314
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+459,
+340
+);
+}
+);
+}
+);
+production = z.subs;
+unicode = 57521;
+userData = {
+com.interlude.reference = {
+file = z.subs.glyph;
+glyphName = z.subs;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1649;
+};
+}

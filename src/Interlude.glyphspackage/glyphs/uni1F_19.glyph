@@ -1,0 +1,832 @@
+{
+glyphname = uni1F19;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+alignment = -1;
+pos = (
+354,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+18,
+-68
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1585;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+993,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+993,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1451,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+993,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+alignment = -1;
+pos = (
+297,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+-30,
+-5
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1484;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+929,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+940,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1414,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+929,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+alignment = -1;
+pos = (
+290,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+48,
+-67
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1486;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+930,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+930,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1338,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+930,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+alignment = -1;
+pos = (
+451,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+-24,
+-105
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1706;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+1084,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+1086,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1617,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+1084,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+alignment = -1;
+pos = (
+266,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+14,
+-68
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1189;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+993,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+993,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1451,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+993,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+alignment = -1;
+pos = (
+442,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+22,
+-68
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1981;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+993,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+993,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1451,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+993,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+alignment = -1;
+pos = (
+257,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+-20,
+0
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1402;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+876,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+873,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1327,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+876,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+alignment = -1;
+pos = (
+407,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+-40,
+-42
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1701;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+1064,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+1062,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1641,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+1064,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+alignment = -1;
+pos = (
+202,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+44,
+-67
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1090;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+930,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+930,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1338,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+930,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+alignment = -1;
+pos = (
+363,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+-28,
+-105
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1310;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+1084,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+1086,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1617,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+1084,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+alignment = -1;
+pos = (
+378,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+52,
+-67
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 1882;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+930,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+930,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1338,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+930,
+1490
+);
+}
+);
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+alignment = -1;
+pos = (
+539,
+0
+);
+ref = E;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+},
+{
+alignment = -1;
+pos = (
+-20,
+-105
+);
+ref = uni1FFE;
+userData = {
+com.interlude.linearTransform = (
+1,
+0,
+0,
+1
+);
+};
+}
+);
+width = 2102;
+anchors = (
+{
+name = ILMC4_0_0;
+pos = (
+1084,
+0
+);
+},
+{
+name = ILMC5_0_0;
+pos = (
+1086,
+0
+);
+},
+{
+name = ILMC7_0_0;
+pos = (
+1617,
+0
+);
+},
+{
+name = ILMC8_0_0;
+pos = (
+1084,
+1490
+);
+}
+);
+}
+);
+production = uni1F19;
+unicode = 7961;
+userData = {
+com.interlude.reference = {
+file = uni1F_19.glyph;
+glyphName = uni1F19;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 126;
+};
+}

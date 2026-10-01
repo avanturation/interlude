@@ -1,0 +1,195 @@
+{
+glyphname = comma.dnom;
+layers = (
+{
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,-287,l),
+(213,-287,l),
+(338,166,l),
+(173,166,l)
+);
+}
+);
+width = 472;
+},
+{
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(20,-225,l),
+(132,-225,l),
+(263,166,l),
+(100,166,l)
+);
+}
+);
+width = 345;
+},
+{
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(128,-298,l),
+(169,-298,l),
+(278,152,l),
+(228,152,l)
+);
+}
+);
+width = 474;
+},
+{
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,-341,l),
+(298,-341,l),
+(464,192,l),
+(160,192,l)
+);
+}
+);
+width = 611;
+},
+{
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,-287,l),
+(213,-287,l),
+(338,166,l),
+(173,166,l)
+);
+}
+);
+width = 472;
+},
+{
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(102,-287,l),
+(213,-287,l),
+(338,166,l),
+(173,166,l)
+);
+}
+);
+width = 472;
+},
+{
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(52,-274,l),
+(92,-274,l),
+(188,160,l),
+(138,160,l)
+);
+}
+);
+width = 290;
+},
+{
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(18,-237,l),
+(211,-237,l),
+(320,190,l),
+(61,190,l)
+);
+}
+);
+width = 371;
+},
+{
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(128,-298,l),
+(169,-298,l),
+(278,152,l),
+(228,152,l)
+);
+}
+);
+width = 474;
+},
+{
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,-341,l),
+(298,-341,l),
+(464,192,l),
+(160,192,l)
+);
+}
+);
+width = 611;
+},
+{
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(128,-298,l),
+(169,-298,l),
+(278,152,l),
+(228,152,l)
+);
+}
+);
+width = 474;
+},
+{
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(90,-341,l),
+(298,-341,l),
+(464,192,l),
+(160,192,l)
+);
+}
+);
+width = 611;
+}
+);
+production = comma.dnom;
+userData = {
+com.interlude.reference = {
+file = comma.dnom.glyph;
+glyphName = comma.dnom;
+kind = inter;
+note = "Reference match; production geometry is reconstructed from Interlude.";
+};
+com.interlude.referenceGID = 1696;
+};
+}
