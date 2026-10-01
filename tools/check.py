@@ -12,8 +12,8 @@ def check_variable_names(font):
                 16: 'Interlude Variable', 17: 'Regular', 25: 'InterludeVariable'}
     for name_id, value in expected.items():
         records = [n for n in font['name'].names if n.nameID == name_id]
-        # IDs 16/17 can be omitted when identical to the legacy names.
-        assert records or name_id in (16, 17), ('Missing name', name_id)
+        # 16/17 can duplicate legacy names; web subsets omit optional ID 25.
+        assert records or name_id in (16, 17, 25), ('Missing name', name_id)
         for record in records:
             assert record.toUnicode() == value, ('Incorrect variable name', name_id, record.toUnicode())
     assert font['name'].getDebugName(3).endswith(';Interlude-Variable')
@@ -43,6 +43,7 @@ def check_fonts():
     baseline = json.loads((ROOT/'tests/expected-font.json').read_text())
     for f in fonts:
         check_variable_names(f)
+        assert f['name'].getDebugName(25) == 'InterludeVariable'
         assert [(a.axisTag,a.minValue,a.defaultValue,a.maxValue) for a in f['fvar'].axes] == expected_axes
         assert abs(f['head'].fontRevision - 1.3) < .00002
         assert f['name'].getDebugName(5).startswith('Version 1.300')

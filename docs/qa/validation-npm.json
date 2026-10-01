@@ -2,11 +2,13 @@
   "release": "1.3",
   "npmVersion": "1.3.0",
   "archive": "interlude-ui-1.3.0.tgz",
-  "bytes": 64068177,
-  "unpackedBytes": 64482240,
+  "bytes": 64083264,
+  "unpackedBytes": 64495922,
   "files": 221,
   "exportsResolved": true,
   "nextFontPathsResolved": true,
   "canonicalVariableWOFF2Copies": 1,
-  "originalLicensesIncluded": true
+  "variableFilesWithVerifiedNames": 188,
+  "originalLicensesIncluded": true,
+  "sha512": "d688f6c355db881887b3372d3cebcb09dc27010df4fd2f51f44d2ac1c73c7617f9db6809c4c6b8d773b1e78832c45db5780391bb33a91be8d345713700d219ba"
 }
