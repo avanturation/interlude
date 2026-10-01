@@ -168,9 +168,8 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 
 ## 소스와 빌드
 
-**Interlude 1.3부터 `src/Interlude.glyphspackage`가 기준 소스입니다.** Inter·Pretendard를 다시 다운로드해 합치는 빌드는 제거했습니다.
-
-Glyphs 4에서 소스를 열고 **File → Export → Variable → TrueType → TTF + WOFF2**로 `fonts/`에 내보냅니다. 플러그인이나 후처리는 필요하지 않습니다. Makefile은 검증·정적 인스턴스·웹 서브셋·패키징을 담당합니다.
+Glyphs 4에서 `src/Interlude.glyphspackage` 소스를 열고 **File → Export → Variable → TrueType → TTF + WOFF2**로 `fonts/`에 내보냅니다.
+폰트 검증, Dynamic Subset, 패키징 등이 필요한 경우 Makefile로 아래와 같은 후처리를 진행해주세요.
 
 ```sh
 python3 -m venv .venv
@@ -180,10 +179,6 @@ make check          # 커밋된 네이티브 폰트 검증
 make dist           # 웹·npm 배포 파일
 make package        # 정적 TTF 54개·TTC·릴리스 ZIP까지 생성
 ```
-
-소스 수정 후 Glyphs에서 Export했다면 `make record-export`로 대응 관계를 기록합니다. 자세한 작업 순서, upstream 비교, 제거한 코드와 알려진 차이는 [빌드 문서](docs/BUILD.md)를 참고하세요.
-
-릴리스 이름은 **1.3**입니다. npm은 `1.3.0`, OpenType/Glyphs는 `1.300`으로 같은 릴리스를 표기합니다.
 
 ## Credits
 
