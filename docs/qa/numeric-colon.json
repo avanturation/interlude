@@ -1,0 +1,57 @@
+{
+  "release": "1.3.1",
+  "compiler": "Glyphs 4.1.1 (4108), native Variable TrueType export",
+  "scope": "Center colons between full-size lining digits independently of calt; preserve non-numeric colons and raised/lowered figures.",
+  "requiredFeature": "rlig",
+  "files": {
+    "fonts/InterludeVariable.ttf": "4a845132df3964973aabb0ea9c12a10505f3d6e1cc702e6e53ec330f4b1b3a64",
+    "fonts/InterludeVariable.woff2": "5b5ddd017d954ed479de2bc349b4fe88bb3e9ffba99b415cf998c4cccb005ebb"
+  },
+  "shapingRegressionCases": 1308,
+  "numericColonChecks": 26892,
+  "initialFixValidation": {
+    "sourceCommit": "87d9f19f78cb34d695b13dfa7de2da0628b5b713",
+    "compiler": "Glyphs 4.1.1 (4108), native Export",
+    "identicalTables": [
+      "hhea",
+      "maxp",
+      "OS/2",
+      "hmtx",
+      "cmap",
+      "loca",
+      "glyf",
+      "name",
+      "post",
+      "gasp",
+      "BASE",
+      "GDEF",
+      "GPOS",
+      "STAT",
+      "avar",
+      "fvar",
+      "gvar"
+    ],
+    "changedTables": [
+      "head",
+      "GSUB"
+    ],
+    "scope": "Center colons between full-size lining digits independently of calt; preserve non-numeric colons and raised/lowered figures.",
+    "variableFontSHA256": "1530faf6894d78829d593b34604133403582a10db1b6a1f9b654a36aa8ca5bf9",
+    "shapingRegressionCases": 1308,
+    "numericColonChecks": 26892,
+    "coreTextWithCaltOff": {
+      "1:29": "colon.case",
+      "12:34:56": "colon.case / colon.case",
+      "timeWithHangul": "colon.case",
+      "a:b": "colon"
+    },
+    "desktop": {
+      "staticFonts": 54,
+      "staticShapingComparisons": 1134,
+      "maxStaticPositionRounding": 1,
+      "ttcStyles": 54,
+      "ttcSHA256": "eaf7dc7c18465cb2cb588a74aff619ef2924e9c23876112a140886c3c6c063d5",
+      "ttcBytes": 276220892
+    }
+  }
+}

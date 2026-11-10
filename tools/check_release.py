@@ -7,6 +7,7 @@ from source_state import ROOT,file_hash
 from release import verify_subsets
 from static_fonts import WEIGHTS,FAMILIES,WIDTHS
 from check import check_variable_names
+from versioning import RELEASE, FONT_VERSION, FONT_REVISION
 
 def shape(font,text):
     buf=hb.Buffer();buf.add_str(text);buf.guess_segment_properties();hb.shape(font,buf)
@@ -22,9 +23,10 @@ def main():
                 assert not {'fvar','gvar','HVAR','MVAR'}&set(f.keys()),path.name
                 assert f.getBestCmap()==cmap,path.name
                 assert (f['OS/2'].usWeightClass,f['OS/2'].usWidthClass)==(weight,width_class)
-                assert f['name'].getDebugName(5).startswith('Version 1.300')
+                assert abs(f['head'].fontRevision-FONT_REVISION)<.00002,path.name
+                assert f['name'].getDebugName(5).startswith(FONT_VERSION)
                 identity=(f['name'].getDebugName(1),f['name'].getDebugName(2));assert identity not in seen,identity;seen.add(identity)
-                assert f['name'].getDebugName(3).startswith('1.3;')
+                assert f['name'].getDebugName(3).startswith(RELEASE+';')
                 assert f['name'].getDebugName(16)==family
                 assert f['name'].getDebugName(6)==f'{prefix}{width_name}-{style}'
                 vfont.set_variations({'opsz':opsz,'wght':weight,'wdth':width});sfont=hb.Font(hb.Face(path.read_bytes()))
@@ -34,7 +36,10 @@ def main():
                     assert delta<=1,(path.name,text,delta)
                     compared+=1
     ttc=TTCollection(ROOT/'build/Interlude.ttc');assert len(ttc.fonts)==54
-    for f in ttc.fonts:f.close()
+    for f in ttc.fonts:
+        assert abs(f['head'].fontRevision-FONT_REVISION)<.00002
+        assert f['name'].getDebugName(5).startswith(FONT_VERSION)
+        f.close()
     covered=verify_subsets(ROOT/'dist/dynamic-subset')
     for path in (ROOT/'dist/dynamic-subset').glob('*.woff2'):
         with TTFont(path) as font:check_variable_names(font)
@@ -52,9 +57,9 @@ def main():
         ('ttf', 'InterludeVariable.ttf', ROOT/'fonts/InterludeVariable.ttf'),
         ('web', 'woff2/InterludeVariable.woff2', ROOT/'fonts/InterludeVariable.woff2'),
     ]:
-        with zipfile.ZipFile(ROOT/'build'/f'Interlude-1.3-{kind}.zip') as z:
+        with zipfile.ZipFile(ROOT/'build'/f'Interlude-{RELEASE}-{kind}.zip') as z:
             assert z.testzip() is None
             assert hashlib.sha256(z.read(member)).hexdigest() == file_hash(source_path), 'Stale variable font in ZIP'
-    result={'release':'1.3','staticFonts':54,'staticShapingComparisons':compared,'maxStaticPositionRounding':max_delta,'unicodeSubsetCoverage':covered,'canonicalWOFF2CopiedUnchanged':True,'cssURLsExist':True}
+    result={'release':RELEASE,'staticFonts':54,'staticShapingComparisons':compared,'maxStaticPositionRounding':max_delta,'unicodeSubsetCoverage':covered,'canonicalWOFF2CopiedUnchanged':True,'cssURLsExist':True}
     (ROOT/'build/validation-release.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 if __name__=='__main__':main()

@@ -1,0 +1,77 @@
+{
+  "repository": "adobe-fonts/source-han-sans",
+  "commit": "a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/TTF/Subset/SourceHanSansTW-VF.ttf",
+      "file": "SourceHanSansTW-VF.ttf",
+      "bytes": 11911704,
+      "sha256": "cf6889f4c0f1adeaf814ca3e98cc692d9e2d706501cf7545b9b58f6e3966b6ac"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/TTF/Subset/SourceHanSansHK-VF.ttf",
+      "file": "SourceHanSansHK-VF.ttf",
+      "bytes": 11880280,
+      "sha256": "bfcc64d804db5263958df388ed2bd448148bd392505231c6556ce3c0f61ecc6f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/LICENSE.txt",
+      "file": "LICENSE.txt",
+      "bytes": 4463,
+      "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/a4f7cf94edfb9d7ffbdfc4841de276358bd7e0f2/Variable/TTF/Subset/SourceHanSansCN-VF.ttf",
+      "file": "SourceHanSansCN-VF.ttf",
+      "bytes": 17749860,
+      "sha256": "25a01e41b5cc99893eb35a6cd2cc7611841dc19eb03cbaf7f0c1de8210f2ba0b"
+    }
+  ],
+  "upstreamVersion": "2.005",
+  "nativeCompiler": "Glyphs 4.1.1 (4108), native Variable TrueType Export",
+  "regions": {
+    "SC": {
+      "sourceWeightMapping": {
+        "100": 250,
+        "400": 400,
+        "900": 900
+      },
+      "transforms": {
+        "xScale": 1.935,
+        "yScale": 1.97632,
+        "yOffset": 22,
+        "hanAdvance": 1920,
+        "displayXScale": 0.98
+      }
+    },
+    "TC": {
+      "sourceWeightMapping": {
+        "100": 250,
+        "400": 400,
+        "900": 900
+      },
+      "transforms": {
+        "xScale": 1.935,
+        "yScale": 1.97632,
+        "yOffset": 22,
+        "hanAdvance": 1920,
+        "displayXScale": 0.98
+      }
+    },
+    "HK": {
+      "sourceWeightMapping": {
+        "100": 250,
+        "400": 400,
+        "900": 900
+      },
+      "transforms": {
+        "xScale": 1.935,
+        "yScale": 1.97632,
+        "yOffset": 22,
+        "hanAdvance": 1920,
+        "displayXScale": 0.98
+      }
+    }
+  },
+  "notes": "Independent editable regional packages; upstream binaries are provenance only, not build dependencies. Native spacing, contextual Bopomofo tones and vertical origins are stored in the packages."
+}

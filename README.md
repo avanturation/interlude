@@ -8,6 +8,10 @@ Interlude는 라틴과 CJK가 같은 화면 안에서 따로 튀지 않도록, �
 
 [**최신 버전 다운로드하기**](https://github.com/avanturation/interlude/releases/latest)
 
+일반판의 기본 지원 언어는 한국어·일본어입니다. 한·일용 한자와 공용 문장부호는 유지하므로, 같은 한자를 공유하는 중국어도 일부 표시됩니다. 중국어 전용 확장 데이터와 지역별 자형은 일반판에 합치지 않고 `Interlude SC Variable`(간체), `Interlude TC Variable`(대만 번체), `Interlude HK Variable`(홍콩 번체)로 분리합니다. 일반판과 중국어판의 배포 버전은 **1.3.1**, 폰트 내부 버전은 **1.301**입니다.
+
+[중국어 3종의 사용·소스·검증](docs/CHINESE.md) · [배포 파일 준비와 게시 방법](docs/RELEASING.md)
+
 <br/>
 
 <picture>
@@ -169,6 +173,7 @@ Static 폰트에서는 별도 패밀리로 분리되어 있습니다:
 ## 소스와 빌드
 
 Glyphs 4에서 `src/Interlude.glyphspackage` 소스를 열고 **File → Export → Variable → TrueType → TTF + WOFF2**로 `fonts/`에 내보냅니다.
+중국어 3종은 같은 폴더의 `InterludeSC.glyphspackage`, `InterludeTC.glyphspackage`, `InterludeHK.glyphspackage`를 각각 열어 같은 방식으로 Export합니다. 모든 패키지는 원본 Inter/Pretendard/Source Han Sans 다운로드나 보완 플러그인 없이 독립적으로 편집·Export할 수 있습니다.
 폰트 검증, Dynamic Subset, 패키징 등이 필요한 경우 Makefile로 아래와 같은 후처리를 진행해주세요.
 
 ```sh

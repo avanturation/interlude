@@ -1,14 +1,17 @@
 {
-  "release": "1.3",
-  "npmVersion": "1.3.0",
-  "archive": "interlude-ui-1.3.0.tgz",
-  "bytes": 64083264,
-  "unpackedBytes": 64495922,
-  "files": 221,
+  "release": "1.3.1",
+  "npmVersion": "1.3.1",
+  "archive": "interlude-ui-1.3.1.tgz",
+  "bytes": 64078860,
+  "unpackedBytes": 64500189,
+  "files": 222,
   "exportsResolved": true,
+  "cssURLsResolved": true,
   "nextFontPathsResolved": true,
   "canonicalVariableWOFF2Copies": 1,
   "variableFilesWithVerifiedNames": 188,
+  "fontsWithVerifiedVersions": 206,
   "originalLicensesIncluded": true,
-  "sha512": "d688f6c355db881887b3372d3cebcb09dc27010df4fd2f51f44d2ac1c73c7617f9db6809c4c6b8d773b1e78832c45db5780391bb33a91be8d345713700d219ba"
+  "sha256": "800547687c40562edbc648943fc17079f361dfbd6e3d1975e5ccb0e23da25ca5",
+  "sha512": "05ae887a1c8e137cb7851f22a8409385f60f96ee06d16022bc5be42623fc6b803eaab861b59a73e464a13667c4637e3affec137072bcf3b09d034005b432d49d"
 }

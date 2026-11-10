@@ -1,8 +1,8 @@
-# Interlude 1.3의 소스와 배포
+# Interlude 1.3.1의 소스와 배포
 
 ## 결정: Glyphs로 컴파일, Make로 검증·배포
 
-편집 원본은 `src/Interlude.glyphspackage` 하나입니다. Glyphs 4.1.1 (4108)에서 Variable → TrueType → TTF와 WOFF2를 `fonts/`에 Export합니다. 플러그인이나 Export 후 테이블 보완은 필요하지 않습니다. `make`는 폰트 원본을 컴파일하지 않습니다.
+일반판 편집 원본은 `src/Interlude.glyphspackage`입니다. 중국어는 같은 폴더의 `InterludeSC.glyphspackage`, `InterludeTC.glyphspackage`, `InterludeHK.glyphspackage`로 분리합니다. Glyphs 4.1.1 (4108)에서 각 패키지를 열고 Variable → TrueType → TTF와 WOFF2를 `fonts/`에 Export합니다. 플러그인이나 Export 후 테이블 보완은 필요하지 않습니다. `make`는 폰트 원본을 컴파일하지 않습니다.
 
 검토한 upstream은 Inter 4.1과 Pretendard 1.3.9입니다.
 
@@ -14,6 +14,8 @@
 별도의 fontmake 경로를 추가하면 같은 소스에 컴파일러가 둘 생겨 커닝·가변 델타·글리프 순서 차이까지 유지보수해야 합니다. 현재 요구인 Glyphs Export 결과를 기준으로 한 가지 컴파일 경로를 유지합니다. Glyphs가 없는 환경에서도 커밋된 `fonts/`를 검증하고 배포 파생물을 만들 수 있습니다.
 
 ## 작업 순서
+
+숫자 사이 콜론의 중앙 정렬은 기본 적용되는 `rlig` 규칙입니다. `calt`를 꺼도 `1:29`와 `16:9`는 중앙 정렬되며, 일반 문장의 콜론은 기존 문맥 보정 설정을 따릅니다. `make check`는 전 굵기·폭·옵티컬 사이즈의 양 끝에서 숫자 스타일과 문장부호 회귀 검사를 수행합니다.
 
 가변 Export의 Family Name은 `Interlude Variable`, PostScript 이름은 `Interlude-Variable`입니다. 이 값은 Variable 인스턴스의 `properties`에 저장합니다. 구형 `familyName` 커스텀 파라미터는 현재 Glyphs에서 무시되므로 사용하지 않습니다. `make check`는 실제 TTF·WOFF2의 이름 테이블까지 검사합니다.
 
@@ -31,11 +33,13 @@ python3 -m venv .venv
 python3 -m pip install -r requirements.txt
 make check         # 커밋된 네이티브 출력과 소스가 대응하는지 확인
 make test          # 검증 도구 테스트
+make check-chinese # SC·TC·HK 소스·출력·영문 조판·중국어 기능 검증
 make dist          # 웹 서브셋, 정적 웹폰트 18개, CSS, Next.js/npm 파일
 make fonts         # Text/Display × 3폭 × 9굵기 = 54개 정적 TTF + TTC
-make package       # 위 결과를 Interlude-1.3-ttf.zip, Interlude-1.3-web.zip으로 묶기
+make package       # 일반판 TTF·웹·소스 ZIP과 중국어 폰트·소스 ZIP
 python3 tools/check_release.py  # 전체 package 결과의 내용 검사
 npm pack           # prepack에서 make dist 실행; 게시하지 않음
+make release       # 위 ZIP + npm tgz + 릴리스 노트·체크섬, build/release/1.3.1/
 ```
 
 기본 `make`는 도움말만 출력합니다. `make all`은 `make dist`와 같습니다. 폰트 자동 설치, 외부 다운로드, npm 게시, GitHub 릴리스 생성은 수행하지 않습니다. `make clean`은 `build/`, `dist/`, 이전 빌드의 Next.js 폰트 복사본만 지웁니다.
@@ -43,13 +47,16 @@ npm pack           # prepack에서 make dist 실행; 게시하지 않음
 ## 폴더
 
 - `src/Interlude.glyphspackage/`: 12마스터, 윤곽·컴포넌트·앵커·OpenType 기능을 포함한 기준 소스.
+- `src/InterludeSC.glyphspackage/`, `InterludeTC.glyphspackage/`, `InterludeHK.glyphspackage/`: 지역별 중국어 독립 소스. 각각 12마스터와 네이티브 기능 포함.
+- `src/chinese-provenance.json`: Source Han Sans 2.005의 고정 커밋·원본 SHA-256·지역별 변형 값. upstream 바이너리는 재빌드 의존성이 아님.
 - `src/provenance.json`: Inter 4.1, Pretendard JP 1.3.9, Interlude 1.2.4 기준 파일의 출처.
 - `fonts/`: Glyphs가 직접 출력한 가변 TTF·WOFF2와 소스/출력 해시. 버전 관리 대상.
-- `tools/`: 검증, 정적 인스턴스, 서브셋, 배포 패키징. 원본 윤곽을 바꾸는 빌더가 아님.
+- `tools/`: 검증, 정적 인스턴스, 서브셋, 배포 패키징. 중국어 검사도 저장소 안의 소스·폰트만 사용. 원본 윤곽을 바꾸는 빌더가 아님.
 - `web/`: CSS와 고정된 Unicode 분할 계획. 빌드 중 Pretendard CSS를 받지 않음.
 - `packages/next/`: 기존 `interlude-ui/font` import 경로를 위한 코드. 별도 npm 패키지/버전은 없음. `dist/woff2/InterludeVariable.woff2`를 공유해 같은 폰트를 중복 포함하지 않음.
 - `tests/`: 54개 기능·혼합문자·가변 위치의 고정 회귀 기준과 도구 테스트.
 - `docs/qa/`: 한글 균형, 속공간 보호, 한자 부품화, 커닝 검증의 근거.
+- `docs/qa/chinese/`: 지역별 문자·마스터 검사와 실제 네이티브 출력의 미리보기. `fonts/chinese-export-manifest.json`은 소스·출력 SHA-256과 조판·세로쓰기·주음 검사 결과.
 - `build/`, `dist/`: 생성물. Git에 포함하지 않음.
 
 정적 TTF와 서브셋은 네이티브 파일에서 파생하며, 가변 원본 파일을 덮어쓰지 않습니다. 웹 서브셋은 문자를 서로 다른 font-face로 나누므로 파일 경계를 넘는 문맥 치환이나 결합 부호 조합은 전체 WOFF2와 동작이 다를 수 있습니다. 혼합문자 OpenType 동작을 모두 우선할 때는 전체 Variable WOFF2를 사용하세요.
@@ -62,7 +69,7 @@ npm pack           # prepack에서 make dist 실행; 게시하지 않음
 
 ## 버전과 알려진 차이
 
-공개 릴리스·태그·ZIP·CHANGELOG는 **1.3**입니다. `version.txt`도 `1.3`입니다. npm의 SemVer 필드만 `1.3.0`, Glyphs 및 OpenType의 숫자 표기는 `1.300`입니다. 두 표기는 동일한 1.3 릴리스를 뜻하며 패치 릴리스를 추가한 것이 아닙니다.
+공개 릴리스·태그·ZIP·CHANGELOG·`version.txt`·npm 패키지는 **1.3.1**입니다. Glyphs 및 OpenType의 숫자 표기는 **1.301**입니다. `tools/versioning.py`가 `version.txt`의 SemVer를 폰트 버전으로 변환해 검증합니다. 일반판은 한국어·일본어와 공용 한자를 유지하며, 중국어 전용 확장 데이터는 별도 SC·TC·HK 소스에서 관리합니다.
 
 이전 네이티브 시험판에서 확인한 제한은 그대로입니다. Glyphs 4.1.1은 MVAR를 생성하지 않아 밑줄·취소선·x-height 메타데이터는 origin master 값입니다. 실제 윤곽의 축 변화는 유지됩니다. `bullet.case`의 이전 불연속 동작은 연속 보간으로 정리됐고 TrueType 반올림의 미세한 차이가 있습니다. 한자 부품화는 소스 좌표가 동일하지만 64px 래스터 비교의 정규화 절대 알파 차이 합은 최대 0.245%였습니다. 이전 바이너리와 바이트 또는 모든 픽셀이 동일하다는 의미는 아닙니다.
 

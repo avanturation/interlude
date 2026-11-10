@@ -1,0 +1,717 @@
+{
+category = Letter;
+glyphname = zhTone02EA.vertBopo;
+layers = (
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+929,
+831,
+l
+),
+(
+929,
+681,
+l
+),
+(
+411,
+681,
+l
+),
+(
+411,
+831,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+470,
+1683,
+l
+),
+(
+470,
+680,
+l
+),
+(
+319,
+680,
+l
+),
+(
+319,
+1683,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1152;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+930,
+831,
+l
+),
+(
+930,
+681,
+l
+),
+(
+422,
+681,
+l
+),
+(
+422,
+831,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+480,
+1683,
+l
+),
+(
+480,
+680,
+l
+),
+(
+332,
+680,
+l
+),
+(
+332,
+1683,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1152;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+908,
+741,
+l
+),
+(
+908,
+682,
+l
+),
+(
+393,
+682,
+l
+),
+(
+393,
+741,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+420,
+1678,
+l
+),
+(
+420,
+682,
+l
+),
+(
+360,
+682,
+l
+),
+(
+360,
+1678,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1152;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+964,
+971,
+l
+),
+(
+964,
+678,
+l
+),
+(
+439,
+678,
+l
+),
+(
+439,
+971,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+550,
+1690,
+l
+),
+(
+550,
+676,
+l
+),
+(
+255,
+676,
+l
+),
+(
+255,
+1690,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1152;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+697,
+831,
+l
+),
+(
+697,
+681,
+l
+),
+(
+308,
+681,
+l
+),
+(
+308,
+831,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+353,
+1683,
+l
+),
+(
+353,
+680,
+l
+),
+(
+239,
+680,
+l
+),
+(
+239,
+1683,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 864;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1162,
+831,
+l
+),
+(
+1162,
+681,
+l
+),
+(
+514,
+681,
+l
+),
+(
+514,
+831,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+588,
+1683,
+l
+),
+(
+588,
+680,
+l
+),
+(
+399,
+680,
+l
+),
+(
+399,
+1683,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1440;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+909,
+741,
+l
+),
+(
+909,
+682,
+l
+),
+(
+404,
+682,
+l
+),
+(
+404,
+741,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+431,
+1678,
+l
+),
+(
+431,
+682,
+l
+),
+(
+372,
+682,
+l
+),
+(
+372,
+1678,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1152;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+964,
+971,
+l
+),
+(
+964,
+678,
+l
+),
+(
+450,
+678,
+l
+),
+(
+450,
+971,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+558,
+1690,
+l
+),
+(
+558,
+676,
+l
+),
+(
+270,
+676,
+l
+),
+(
+270,
+1690,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1152;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+681,
+741,
+l
+),
+(
+681,
+682,
+l
+),
+(
+295,
+682,
+l
+),
+(
+295,
+741,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+315,
+1678,
+l
+),
+(
+315,
+682,
+l
+),
+(
+270,
+682,
+l
+),
+(
+270,
+1678,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 864;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+723,
+971,
+l
+),
+(
+723,
+678,
+l
+),
+(
+329,
+678,
+l
+),
+(
+329,
+971,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+412,
+1690,
+l
+),
+(
+412,
+676,
+l
+),
+(
+192,
+676,
+l
+),
+(
+192,
+1690,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 864;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1134,
+741,
+l
+),
+(
+1134,
+682,
+l
+),
+(
+491,
+682,
+l
+),
+(
+491,
+741,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+525,
+1678,
+l
+),
+(
+525,
+682,
+l
+),
+(
+450,
+682,
+l
+),
+(
+450,
+1678,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1440;
+},
+{
+anchors = ();
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+1205,
+971,
+l
+),
+(
+1205,
+678,
+l
+),
+(
+549,
+678,
+l
+),
+(
+549,
+971,
+l
+)
+);
+},
+{
+closed = 1;
+nodes = (
+(
+687,
+1690,
+l
+),
+(
+687,
+676,
+l
+),
+(
+319,
+676,
+l
+),
+(
+319,
+1690,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 1440;
+}
+);
+production = zhTone02EA.vertBopo;
+script = bopomofo;
+subCategory = Modifier;
+}

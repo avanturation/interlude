@@ -9,3 +9,4 @@ venv/
 node_modules/
 *.glyphsbackup
 *.glyphspackagebackup
+UIState.plist

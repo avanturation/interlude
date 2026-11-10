@@ -1,0 +1,633 @@
+{
+category = Mark;
+glyphname = zhTone030C.vertBopo;
+layers = (
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-00";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+580,
+666,
+l
+),
+(
+90,
+1441,
+l
+),
+(
+265,
+1441,
+l
+),
+(
+580,
+922,
+l
+),
+(
+883,
+1440,
+l
+),
+(
+1067,
+1440,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+19,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-01";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+588,
+666,
+l
+),
+(
+108,
+1441,
+l
+),
+(
+279,
+1441,
+l
+),
+(
+588,
+922,
+l
+),
+(
+885,
+1440,
+l
+),
+(
+1065,
+1440,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-02";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+579,
+720,
+l
+),
+(
+149,
+1437,
+l
+),
+(
+207,
+1437,
+l
+),
+(
+580,
+824,
+l
+),
+(
+942,
+1437,
+l
+),
+(
+1004,
+1437,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-03";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+582,
+581,
+l
+),
+(
+-2,
+1447,
+l
+),
+(
+356,
+1447,
+l
+),
+(
+580,
+1073,
+l
+),
+(
+791,
+1445,
+l
+),
+(
+1165,
+1445,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-04";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+435,
+666,
+l
+),
+(
+68,
+1441,
+l
+),
+(
+199,
+1441,
+l
+),
+(
+435,
+922,
+l
+),
+(
+663,
+1440,
+l
+),
+(
+800,
+1440,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-05";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+725,
+666,
+l
+),
+(
+113,
+1441,
+l
+),
+(
+331,
+1441,
+l
+),
+(
+726,
+922,
+l
+),
+(
+1104,
+1440,
+l
+),
+(
+1334,
+1440,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+19,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-06";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+586,
+720,
+l
+),
+(
+165,
+1437,
+l
+),
+(
+222,
+1437,
+l
+),
+(
+588,
+824,
+l
+),
+(
+943,
+1437,
+l
+),
+(
+1003,
+1437,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+19,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-07";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+590,
+581,
+l
+),
+(
+17,
+1447,
+l
+),
+(
+368,
+1447,
+l
+),
+(
+588,
+1073,
+l
+),
+(
+795,
+1445,
+l
+),
+(
+1161,
+1445,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-08";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+434,
+720,
+l
+),
+(
+112,
+1437,
+l
+),
+(
+155,
+1437,
+l
+),
+(
+435,
+824,
+l
+),
+(
+707,
+1437,
+l
+),
+(
+753,
+1437,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-09";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+437,
+581,
+l
+),
+(
+-1,
+1447,
+l
+),
+(
+267,
+1447,
+l
+),
+(
+435,
+1073,
+l
+),
+(
+594,
+1445,
+l
+),
+(
+874,
+1445,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-10";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+723,
+720,
+l
+),
+(
+186,
+1437,
+l
+),
+(
+259,
+1437,
+l
+),
+(
+726,
+824,
+l
+),
+(
+1178,
+1437,
+l
+),
+(
+1255,
+1437,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+},
+{
+anchors = (
+{
+name = _zhVertTone3_0_0;
+pos = (
+0,
+22
+);
+}
+);
+layerId = "INTERLUDE-MASTER-11";
+shapes = (
+{
+closed = 1;
+nodes = (
+(
+728,
+581,
+l
+),
+(
+-2,
+1447,
+l
+),
+(
+445,
+1447,
+l
+),
+(
+726,
+1073,
+l
+),
+(
+989,
+1445,
+l
+),
+(
+1456,
+1445,
+l
+)
+);
+}
+);
+vertOrigin = 263;
+vertWidth = 2048;
+width = 0;
+}
+);
+production = zhTone030C.vertBopo;
+script = bopomofo;
+subCategory = Nonspacing;
+}
