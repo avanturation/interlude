@@ -17,19 +17,13 @@
           100,
           400,
           900
-        ],
-        [
-          "wdth",
-          75,
-          100,
-          125
         ]
       ],
       "codepoints": 31976,
       "glyphs": 32408,
-      "latinShapingCases": 436,
+      "latinShapingCases": 109,
       "maxLatinPositionError": 0,
-      "outlineMasterCases": 540,
+      "outlineMasterCases": 270,
       "maxBoundsError": 0,
       "maxAreaError": 0.00289818826040299,
       "featureTags": [
@@ -100,21 +94,22 @@
       ],
       "files": {
         "InterludeSCVariable.ttf": {
-          "bytes": 57479064,
-          "sha256": "9d27126da94c2ccb4fa58882960417715f169550c7ea9d0b3965797f74cd7243"
+          "bytes": 34853088,
+          "sha256": "921bd1f9e880f53510ea51facb560440c3603486b171d111f7f13311b5fbf43a"
         },
         "InterludeSCVariable.woff2": {
-          "bytes": 30873472,
-          "sha256": "d219476dd886236e83feb9ffa96421ffbb9bfbff788ec00874af88b630bcde2f"
+          "bytes": 17785940,
+          "sha256": "e7783bfa1454779efee4c3f570c20b9761385e89060a47c1995840119d2d1f6e"
         }
       },
-      "numericColonCases": 216,
-      "chineseWidthCases": 54,
-      "punctuationWidthCases": 54,
-      "verticalOriginCases": 54,
-      "bopomofoCases": 864,
+      "numericColonCases": 72,
+      "chineseWidthCases": 18,
+      "punctuationWidthCases": 18,
+      "verticalOriginCases": 18,
+      "bopomofoCases": 288,
+      "fixedWidth": 100,
       "release": "1.3.1",
-      "sourceSHA256": "a81de4f0d3fb3d59ee69ca1dae9be833743d696c5a808e9bcd59e2fca23f26df",
+      "sourceSHA256": "e1c25859261530becd8c315b5ed6d5fb9712b9ad2c12f7fc05848dd951fe53c9",
       "baselineSHA256": "4a845132df3964973aabb0ea9c12a10505f3d6e1cc702e6e53ec330f4b1b3a64"
     },
     "TC": {
@@ -133,21 +128,15 @@
           100,
           400,
           900
-        ],
-        [
-          "wdth",
-          75,
-          100,
-          125
         ]
       ],
       "codepoints": 21813,
       "glyphs": 22294,
-      "latinShapingCases": 436,
+      "latinShapingCases": 109,
       "maxLatinPositionError": 0,
-      "outlineMasterCases": 480,
+      "outlineMasterCases": 240,
       "maxBoundsError": 0,
-      "maxAreaError": 0.0024179876641264326,
+      "maxAreaError": 0.0014965886477756245,
       "featureTags": [
         "aalt",
         "calt",
@@ -216,21 +205,22 @@
       ],
       "files": {
         "InterludeTCVariable.ttf": {
-          "bytes": 38251632,
-          "sha256": "e40e9669282f74b2493e1397ef0fd4b1476dba4bfbed598d7cced95d26cbd3d1"
+          "bytes": 23331212,
+          "sha256": "b19903d016c94eb6bbd2b1f0d19723c7c80990b4af880c5af685c00190c93624"
         },
         "InterludeTCVariable.woff2": {
-          "bytes": 20480444,
-          "sha256": "2f499eb111c87254a88e4a963de3f28cf1a87c938a575724375d7bcd57f64ea5"
+          "bytes": 11942804,
+          "sha256": "56b6a9e8bc22b6a0e1ffab0eb4c640946c2b0b12cff86d5ba254218be716ffed"
         }
       },
-      "numericColonCases": 216,
-      "chineseWidthCases": 54,
-      "punctuationWidthCases": 54,
-      "verticalOriginCases": 54,
-      "bopomofoCases": 864,
+      "numericColonCases": 72,
+      "chineseWidthCases": 18,
+      "punctuationWidthCases": 18,
+      "verticalOriginCases": 18,
+      "bopomofoCases": 288,
+      "fixedWidth": 100,
       "release": "1.3.1",
-      "sourceSHA256": "4acd5c684aee5c8bbc3cee260054678ccdbcc60de34f12a2d84d6d55585d8e56",
+      "sourceSHA256": "b49869a5ab53f7136309520ccba4e8599df2fa969aaa2494a201f4f0b110d467",
       "baselineSHA256": "4a845132df3964973aabb0ea9c12a10505f3d6e1cc702e6e53ec330f4b1b3a64"
     },
     "HK": {
@@ -249,21 +239,15 @@
           100,
           400,
           900
-        ],
-        [
-          "wdth",
-          75,
-          100,
-          125
         ]
       ],
       "codepoints": 21822,
       "glyphs": 22297,
-      "latinShapingCases": 436,
+      "latinShapingCases": 109,
       "maxLatinPositionError": 0,
-      "outlineMasterCases": 480,
+      "outlineMasterCases": 240,
       "maxBoundsError": 0,
-      "maxAreaError": 0.0024179876641264326,
+      "maxAreaError": 0.0012311841825072846,
       "featureTags": [
         "aalt",
         "calt",
@@ -332,21 +316,22 @@
       ],
       "files": {
         "InterludeHKVariable.ttf": {
-          "bytes": 38168204,
-          "sha256": "2e216af2a905128d228b7ebd92f970f594d15f507f45186b219b6120b414886a"
+          "bytes": 23279680,
+          "sha256": "1c9d201f4408c9108e8e8586ebc225ebe0a9cf3f12ad145a7a8a610061f02955"
         },
         "InterludeHKVariable.woff2": {
-          "bytes": 20551040,
-          "sha256": "833ea7d3f825fd6c98abfcd72b894f3608764fc3c1be9e0fd726c328d4234578"
+          "bytes": 12015752,
+          "sha256": "8943201c53d6816e5ba01c5cbe64c755af3ea1e8310fb4a0c6e6175a1ea7367c"
         }
       },
-      "numericColonCases": 216,
-      "chineseWidthCases": 54,
-      "punctuationWidthCases": 54,
-      "verticalOriginCases": 54,
-      "bopomofoCases": 864,
+      "numericColonCases": 72,
+      "chineseWidthCases": 18,
+      "punctuationWidthCases": 18,
+      "verticalOriginCases": 18,
+      "bopomofoCases": 288,
+      "fixedWidth": 100,
       "release": "1.3.1",
-      "sourceSHA256": "c20ecaee90214cb6619aaa050e6ce4e6b9ed8d9a5dc618bbe9ed8c2366cb151f",
+      "sourceSHA256": "bed30086270d05163274279971c2dad878351b3c363a09381429f556bb15acff",
       "baselineSHA256": "4a845132df3964973aabb0ea9c12a10505f3d6e1cc702e6e53ec330f4b1b3a64"
     }
   }

@@ -18,35 +18,11 @@ layerId = "INTERLUDE-MASTER-03";
 width = 550;
 },
 {
-layerId = "INTERLUDE-MASTER-04";
-width = 550;
-},
-{
-layerId = "INTERLUDE-MASTER-05";
-width = 550;
-},
-{
 layerId = "INTERLUDE-MASTER-06";
 width = 550;
 },
 {
 layerId = "INTERLUDE-MASTER-07";
-width = 550;
-},
-{
-layerId = "INTERLUDE-MASTER-08";
-width = 550;
-},
-{
-layerId = "INTERLUDE-MASTER-09";
-width = 550;
-},
-{
-layerId = "INTERLUDE-MASTER-10";
-width = 550;
-},
-{
-layerId = "INTERLUDE-MASTER-11";
 width = 550;
 }
 );

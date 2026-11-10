@@ -27,7 +27,10 @@ pos = (
 },
 {
 name = _zhTone1_0_0;
-pos = (0,22);
+pos = (
+0,
+22
+);
 }
 );
 layerId = "INTERLUDE-MASTER-00";
@@ -85,7 +88,10 @@ pos = (
 },
 {
 name = _zhTone1_0_0;
-pos = (19,22);
+pos = (
+19,
+22
+);
 }
 );
 layerId = "INTERLUDE-MASTER-01";
@@ -143,7 +149,10 @@ pos = (
 },
 {
 name = _zhTone1_0_0;
-pos = (0,22);
+pos = (
+0,
+22
+);
 }
 );
 layerId = "INTERLUDE-MASTER-02";
@@ -201,7 +210,10 @@ pos = (
 },
 {
 name = _zhTone1_0_0;
-pos = (0,22);
+pos = (
+0,
+22
+);
 }
 );
 layerId = "INTERLUDE-MASTER-03";
@@ -239,122 +251,6 @@ anchors = (
 {
 name = _ILMC8_0_0;
 pos = (
-414,
-1118
-);
-},
-{
-name = _ILMC9_0_0;
-pos = (
-414,
-1118
-);
-},
-{
-name = ILMC9_0_0;
-pos = (
-414,
-1558
-);
-},
-{
-name = _zhTone1_0_0;
-pos = (0,22);
-}
-);
-layerId = "INTERLUDE-MASTER-04";
-shapes = (
-{
-closed = 1;
-nodes = (
-(
-337,
-1264,
-l
-),
-(
-445,
-1264,
-l
-),
-(
-343,
-1558,
-l
-),
-(
-196,
-1558,
-l
-)
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _ILMC8_0_0;
-pos = (
-414,
-1118
-);
-},
-{
-name = _ILMC9_0_0;
-pos = (
-414,
-1118
-);
-},
-{
-name = ILMC9_0_0;
-pos = (
-414,
-1558
-);
-},
-{
-name = _zhTone1_0_0;
-pos = (0,22);
-}
-);
-layerId = "INTERLUDE-MASTER-05";
-shapes = (
-{
-closed = 1;
-nodes = (
-(
-346,
-1264,
-l
-),
-(
-517,
-1264,
-l
-),
-(
-356,
-1558,
-l
-),
-(
-124,
-1558,
-l
-)
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _ILMC8_0_0;
-pos = (
 322,
 1056
 );
@@ -375,7 +271,10 @@ pos = (
 },
 {
 name = _zhTone1_0_0;
-pos = (19,22);
+pos = (
+19,
+22
+);
 }
 );
 layerId = "INTERLUDE-MASTER-06";
@@ -433,7 +332,10 @@ pos = (
 },
 {
 name = _zhTone1_0_0;
-pos = (19,22);
+pos = (
+19,
+22
+);
 }
 );
 layerId = "INTERLUDE-MASTER-07";
@@ -459,238 +361,6 @@ l
 (
 64,
 1507,
-l
-)
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _ILMC8_0_0;
-pos = (
-365,
-1118
-);
-},
-{
-name = _ILMC9_0_0;
-pos = (
-365,
-1118
-);
-},
-{
-name = ILMC9_0_0;
-pos = (
-361,
-1557
-);
-},
-{
-name = _zhTone1_0_0;
-pos = (0,22);
-}
-);
-layerId = "INTERLUDE-MASTER-08";
-shapes = (
-{
-closed = 1;
-nodes = (
-(
-331,
-1283,
-l
-),
-(
-364,
-1283,
-l
-),
-(
-253,
-1557,
-l
-),
-(
-209,
-1557,
-l
-)
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _ILMC8_0_0;
-pos = (
-518,
-1118
-);
-},
-{
-name = _ILMC9_0_0;
-pos = (
-518,
-1118
-);
-},
-{
-name = ILMC9_0_0;
-pos = (
-518,
-1582
-);
-},
-{
-name = _zhTone1_0_0;
-pos = (0,22);
-}
-);
-layerId = "INTERLUDE-MASTER-09";
-shapes = (
-{
-closed = 1;
-nodes = (
-(
-394,
-1256,
-l
-),
-(
-586,
-1256,
-l
-),
-(
-486,
-1582,
-l
-),
-(
-236,
-1582,
-l
-)
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _ILMC8_0_0;
-pos = (
-365,
-1118
-);
-},
-{
-name = _ILMC9_0_0;
-pos = (
-365,
-1118
-);
-},
-{
-name = ILMC9_0_0;
-pos = (
-361,
-1557
-);
-},
-{
-name = _zhTone1_0_0;
-pos = (0,22);
-}
-);
-layerId = "INTERLUDE-MASTER-10";
-shapes = (
-{
-closed = 1;
-nodes = (
-(
-356,
-1283,
-l
-),
-(
-409,
-1283,
-l
-),
-(
-233,
-1557,
-l
-),
-(
-164,
-1557,
-l
-)
-);
-}
-);
-width = 0;
-},
-{
-anchors = (
-{
-name = _ILMC8_0_0;
-pos = (
-518,
-1118
-);
-},
-{
-name = _ILMC9_0_0;
-pos = (
-518,
-1118
-);
-},
-{
-name = ILMC9_0_0;
-pos = (
-518,
-1582
-);
-},
-{
-name = _zhTone1_0_0;
-pos = (0,22);
-}
-);
-layerId = "INTERLUDE-MASTER-11";
-shapes = (
-{
-closed = 1;
-nodes = (
-(
-385,
-1256,
-l
-),
-(
-688,
-1256,
-l
-),
-(
-529,
-1582,
-l
-),
-(
-134,
-1582,
 l
 )
 );

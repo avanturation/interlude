@@ -31,20 +31,6 @@ vertWidth = 2048;
 width = 440;
 },
 {
-layerId = "INTERLUDE-MASTER-04";
-shapes = ();
-vertOrigin = 263;
-vertWidth = 2048;
-width = 322;
-},
-{
-layerId = "INTERLUDE-MASTER-05";
-shapes = ();
-vertOrigin = 263;
-vertWidth = 2048;
-width = 536;
-},
-{
 layerId = "INTERLUDE-MASTER-06";
 shapes = ();
 vertOrigin = 263;
@@ -57,34 +43,6 @@ shapes = ();
 vertOrigin = 263;
 vertWidth = 2048;
 width = 440;
-},
-{
-layerId = "INTERLUDE-MASTER-08";
-shapes = ();
-vertOrigin = 263;
-vertWidth = 2048;
-width = 317;
-},
-{
-layerId = "INTERLUDE-MASTER-09";
-shapes = ();
-vertOrigin = 263;
-vertWidth = 2048;
-width = 330;
-},
-{
-layerId = "INTERLUDE-MASTER-10";
-shapes = ();
-vertOrigin = 263;
-vertWidth = 2048;
-width = 528;
-},
-{
-layerId = "INTERLUDE-MASTER-11";
-shapes = ();
-vertOrigin = 263;
-vertWidth = 2048;
-width = 550;
 }
 );
 production = zhAlt1;

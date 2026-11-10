@@ -2,7 +2,6 @@
   font-family: "Interlude SC Variable";
   font-style: normal;
   font-weight: 100 900;
-  font-stretch: 75% 125%;
   font-display: swap;
   src: url("./InterludeSCVariable.woff2") format("woff2");
 }
@@ -11,7 +10,6 @@
   font-family: "Interlude TC Variable";
   font-style: normal;
   font-weight: 100 900;
-  font-stretch: 75% 125%;
   font-display: swap;
   src: url("./InterludeTCVariable.woff2") format("woff2");
 }
@@ -20,7 +18,6 @@
   font-family: "Interlude HK Variable";
   font-style: normal;
   font-weight: 100 900;
-  font-stretch: 75% 125%;
   font-display: swap;
   src: url("./InterludeHKVariable.woff2") format("woff2");
 }

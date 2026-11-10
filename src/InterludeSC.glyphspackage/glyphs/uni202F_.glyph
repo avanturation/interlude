@@ -18,36 +18,12 @@ layerId = "INTERLUDE-MASTER-03";
 width = 280;
 },
 {
-layerId = "INTERLUDE-MASTER-04";
-width = 372;
-},
-{
-layerId = "INTERLUDE-MASTER-05";
-width = 372;
-},
-{
 layerId = "INTERLUDE-MASTER-06";
 width = 244;
 },
 {
 layerId = "INTERLUDE-MASTER-07";
 width = 248;
-},
-{
-layerId = "INTERLUDE-MASTER-08";
-width = 372;
-},
-{
-layerId = "INTERLUDE-MASTER-09";
-width = 280;
-},
-{
-layerId = "INTERLUDE-MASTER-10";
-width = 372;
-},
-{
-layerId = "INTERLUDE-MASTER-11";
-width = 280;
 }
 );
 production = uni202F;

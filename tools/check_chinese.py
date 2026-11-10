@@ -24,13 +24,13 @@ def han(c):
     return 0x3400 <= c <= 0x9FFF or 0xF900 <= c <= 0xFAFF or 0x20000 <= c <= 0x3347F
 
 
-AXES=[('opsz',14,14,32),('wght',100,400,900),('wdth',75,100,125)]
+AXES=[('opsz',14,14,32),('wght',100,400,900)]
 ALIASES=json.loads((ROOT/'docs/qa/chinese/native-name-aliases.json').read_text())
 
 def shaper(path):
     tt=TTFont(path);font=hb.Font(hb.Face(path.read_bytes()));order=tt.getGlyphOrder()
     def shape(text,loc=None,features=None,language='en',direction=None):
-        font.set_variations(loc or {'opsz':14,'wght':400,'wdth':100})
+        font.set_variations(loc or {'opsz':14,'wght':400})
         b=hb.Buffer();b.add_str(text);b.guess_segment_properties();b.language=language
         if direction:b.direction=direction
         hb.shape(font,b,features or {})
@@ -54,6 +54,8 @@ def verify(region):
     assert abs(font['head'].fontRevision-FONT_REVISION)<.00002
     assert names.getDebugName(5).startswith(FONT_VERSION)
     assert [(a.axisTag,a.minValue,a.defaultValue,a.maxValue) for a in font['fvar'].axes]==AXES
+    assert 'wdth' not in [axis.AxisTag for axis in font['STAT'].table.DesignAxisRecord.Axis]
+    assert all('wdth' not in instance.coordinates for instance in font['fvar'].instances)
     assert font['OS/2'].usWeightClass==400,font['OS/2'].usWeightClass
     assert font['OS/2'].usWidthClass==5,font['OS/2'].usWidthClass
     assert (font['hhea'].ascent,font['hhea'].descent)==(2024,-532)
@@ -62,7 +64,10 @@ def verify(region):
     assert (int(info['versionMajor']),int(info['versionMinor'])) == (MAJOR,FONT_MINOR)
     assert not info.get('userData',{}).get('com.interlude.completeExport')
     assert int(info.get('userData',{}).get('com.interlude.nativeRefinements',0)) == 1
-    assert len(info['fontMaster']) == 12
+    assert [a['tag'] for a in info['axes']]==['opsz','wght']
+    assert len(info['fontMaster']) == 6
+    assert all(len(m['axesValues'])==2 for m in info['fontMaster'])
+    assert all('wdth:' not in f.get('code','') for f in info.get('features',[])+info.get('featurePrefixes',[]))
     masters={m['id'] for m in info['fontMaster']}
     cmap={}
     for n in order:
@@ -84,9 +89,10 @@ def verify(region):
     cases=json.loads((BASE/'tests/expected-font.json').read_text())['shaping']
     latin_cases=0;max_position_error=0
     for case in cases:
+        if case['location'].get('wdth',100)!=100:continue
         text=case['text']
         if any(cjk(ord(c)) or korean_kana(ord(c)) or ord(c) not in actual for c in text):continue
-        a=base_shape(text,case['location'],case['features'],case['language']);b=shape(text,case['location'],case['features'],case['language'])
+        a=base_shape(text,case['location'],case['features'],case['language']);b=shape(text,{k:v for k,v in case['location'].items() if k!='wdth'},case['features'],case['language'])
         assert len(a)==len(b),(text,a,b)
         for aa,bb in zip(a,b):
             assert aa[:2]==bb[:2],(text,aa,bb)
@@ -96,7 +102,7 @@ def verify(region):
     outline_cases=0;max_bounds_error=0;max_area_error=0
     sample='一中口日木国國骨直令述返里字体體与與测试測試开发開發软件軟體时间時間臺灣香港澳門廣東話鬱龘𠮷'
     for m in info['fontMaster']:
-        loc=dict(zip(['opsz','wght','wdth'],map(float,m['axesValues'])));gs=font.getGlyphSet(location=loc)
+        loc=dict(zip(['opsz','wght'],map(float,m['axesValues'])));gs=font.getGlyphSet(location=loc)
         for c in sample:
             cp=ord(c)
             if cp not in cmap:continue
@@ -110,22 +116,22 @@ def verify(region):
             e=abs(abs(area_a.value)-abs(area_b.value))/max(1,abs(area_a.value));max_area_error=max(max_area_error,e)
             assert e<.004,(c,loc,e)
             outline_cases+=1
-    for o,w,wd in itertools.product([14,32],range(100,901,100),[75,100,125]):
-        loc={'opsz':o,'wght':w,'wdth':wd}
+    for o,w in itertools.product([14,32],range(100,901,100)):
+        loc={'opsz':o,'wght':w}
         for text in ['1:29','12:34','00:59','123:456']:
             result=shape(text,loc,{'calt':False})
             assert any('colon.case' in row[0] for row in result),(text,loc,result)
-        expected=1920*wd/100
+        expected=1920
         assert abs(shape('中',loc,language='zh')[0][2]-expected)<=1,(loc,shape('中',loc,language='zh'))
     for text in ['字體與介面','臺灣香港澳門','ㄅㄆㄇㄈ','ㄅ\u0301ㄆ\u0300ㄇ\u030c','中文，。「」（）']:
         for direction in ['ltr','ttb']:
             r=shape(text,language='zh',direction=direction)
             assert all(x[0]!='.notdef' for x in r),(text,direction,r)
     if info.get('userData',{}).get('com.interlude.nativeRefinements'):
-        for o,w,wd in itertools.product([14,32],range(100,901,100),[75,100,125]):
-            loc={'opsz':o,'wght':w,'wdth':wd}
+        for o,w in itertools.product([14,32],range(100,901,100)):
+            loc={'opsz':o,'wght':w}
             a=shape('）。',loc,{'chws':False,'kern':False},language='zh-TW');b=shape('）。',loc,{'chws':True,'kern':False},language='zh-TW')
-            assert sum(x[2] for x in b)-sum(x[2] for x in a)==-960*wd/100,(wd,a,b)
+            assert sum(x[2] for x in b)-sum(x[2] for x in a)==-960,(loc,a,b)
             vertical=shape('中',loc,language='zh-TW',direction='ttb')
             assert vertical[0][3]==-2048 and vertical[0][5]==-1761,vertical
             for text in ['ㄧˊ','ㄧ\u0301','ㄨˋ','ㄨ\u0300','ㄩˇ','ㄩ\u030c','ㄧ˪','ㄧ˫']:
@@ -140,7 +146,7 @@ def verify(region):
     # Compare original table bytes, rather than a decompile/recompile round trip.
     for tag in ['GSUB','GPOS','GDEF','gvar','fvar','avar']+(['MVAR'] if 'MVAR' in font else []):assert wf.reader[tag]==font.reader[tag],tag
     result={'region':region,'family':family,'compiler':'Glyphs 4.1.1 (4108), native Variable TrueType Export','axes':AXES,'codepoints':len(actual),'glyphs':len(font.getGlyphOrder()),'latinShapingCases':latin_cases,'maxLatinPositionError':max_position_error,'outlineMasterCases':outline_cases,'maxBoundsError':max_bounds_error,'maxAreaError':max_area_error,'featureTags':sorted(tags),'files':{p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in [path,woff]}}
-    result.update({'numericColonCases':216,'chineseWidthCases':54,'punctuationWidthCases':54,'verticalOriginCases':54,'bopomofoCases':864})
+    result.update({'numericColonCases':72,'chineseWidthCases':18,'punctuationWidthCases':18,'verticalOriginCases':18,'bopomofoCases':288,'fixedWidth':100})
     result.update({'release':RELEASE,'sourceSHA256':source_hash(src),'baselineSHA256':file_hash(BASE/'fonts/InterludeVariable.ttf')})
     font.close();wf.close();baseline.close()
     print(region,'native source, names, axes, versions, layout and outlines verified',flush=True)

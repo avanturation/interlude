@@ -74,42 +74,6 @@ com.interlude.linearTransform = (
 width = 905;
 },
 {
-layerId = "INTERLUDE-MASTER-04";
-shapes = (
-{
-alignment = -1;
-ref = uni1FCE;
-userData = {
-com.interlude.linearTransform = (
-1,
-0,
-0,
-1
-);
-};
-}
-);
-width = 743;
-},
-{
-layerId = "INTERLUDE-MASTER-05";
-shapes = (
-{
-alignment = -1;
-ref = uni1FCE;
-userData = {
-com.interlude.linearTransform = (
-1,
-0,
-0,
-1
-);
-};
-}
-);
-width = 743;
-},
-{
 layerId = "INTERLUDE-MASTER-06";
 shapes = (
 {
@@ -144,78 +108,6 @@ com.interlude.linearTransform = (
 }
 );
 width = 824;
-},
-{
-layerId = "INTERLUDE-MASTER-08";
-shapes = (
-{
-alignment = -1;
-ref = uni1FCE;
-userData = {
-com.interlude.linearTransform = (
-1,
-0,
-0,
-1
-);
-};
-}
-);
-width = 545;
-},
-{
-layerId = "INTERLUDE-MASTER-09";
-shapes = (
-{
-alignment = -1;
-ref = uni1FCE;
-userData = {
-com.interlude.linearTransform = (
-1,
-0,
-0,
-1
-);
-};
-}
-);
-width = 905;
-},
-{
-layerId = "INTERLUDE-MASTER-10";
-shapes = (
-{
-alignment = -1;
-ref = uni1FCE;
-userData = {
-com.interlude.linearTransform = (
-1,
-0,
-0,
-1
-);
-};
-}
-);
-width = 545;
-},
-{
-layerId = "INTERLUDE-MASTER-11";
-shapes = (
-{
-alignment = -1;
-ref = uni1FCE;
-userData = {
-com.interlude.linearTransform = (
-1,
-0,
-0,
-1
-);
-};
-}
-);
-width = 905;
 }
 );
 production = uni1FCE.tonos;
