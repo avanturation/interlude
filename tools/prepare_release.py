@@ -53,9 +53,8 @@ def main():
     for name in names:rows.append(f'| [{name}]({name}) | {(out/name).stat().st_size/1000000:.2f} MB |')
     rows+=['','[릴리스 노트](release-notes.md) · [실제 게시 명령](PUBLISH.md) · [SHA-256](SHA256SUMS)','']
     (out/'README.md').write_text('\n'.join(rows))
-    sums=[]
-    for path in sorted(out.iterdir()):
-        if path.is_file() and path.name!='SHA256SUMS':sums.append(file_hash(path)+'  '+path.name)
+    # Match the files uploaded by the GitHub command; npm has its own report.
+    sums=[file_hash(out/name)+'  '+name for name in sorted(names[:-1])]
     (out/'SHA256SUMS').write_text('\n'.join(sums)+'\n')
     print('Prepared release:',out,flush=True)
     print('Verified npm:',validation['fontsWithVerifiedVersions'],'fonts;',validation['bytes'],'bytes',flush=True)

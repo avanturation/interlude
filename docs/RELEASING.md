@@ -18,3 +18,5 @@ make release
 `make release`는 모든 소스·네이티브 출력과 정적·웹 결과를 검사한 다음 npm의 prepack 중복 실행 없이 패키지를 묶습니다. npm tarball 안의 실제 이름·버전·경로·라이선스도 확인합니다. 커밋된 폰트를 사용하므로 Glyphs가 없는 환경에서도 배포 파일을 준비할 수 있습니다.
 
 GitHub에는 위 ZIP과 일반 Variable 파일을 릴리스 자산으로 올립니다. npm에는 준비된 tgz 자체를 게시합니다. `PUBLISH.md`의 명령은 릴리스 폴더에서 실행하며 GitHub 릴리스와 npm 게시를 각각 수행합니다. npm 인증은 계정의 패스키/브라우저 인증 절차를 따릅니다. `make release`는 태그·릴리스·npm 게시를 자동 실행하지 않습니다.
+
+`SHA256SUMS`는 GitHub에 올리는 7개 폰트·ZIP 파일만 나열하므로 릴리스 자산을 내려받아 그대로 검사할 수 있습니다. npm tgz의 해시는 `validation-npm.json`과 `manifest.json`에 별도로 기록됩니다.
